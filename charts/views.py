@@ -5,4 +5,5 @@ def index(request):
     print("")
     print("index")
     context = {}
-    return render(request, 'templates/front-end/index.html', context)
+    # return render(request, 'templates/front-end/index.html', context)
+    return render(request, 'front-end/index.html', context)

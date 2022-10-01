@@ -1,0 +1,8 @@
+package-lock.json
+node_modules/
+dist/
+webpack-stats.json
+charts/__pycache__/
+db.sqlite3
+formula1charts/__pycache__/urls.cpython-39.pyc
+formula1charts/__pycache__/wsgi.cpython-39.pyc
