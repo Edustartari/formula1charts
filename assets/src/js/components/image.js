@@ -12,7 +12,7 @@ const Image = ({ name }) => {
         console.log(`Image with name "${image}"`);
         // If the image doesn't exist. return null
         if (!image) return null;
-        return <img src={image.default} />;
+        return <img className="image-component-container" src={image.default} />;
     } catch (error) {
         console.log(`Image with name "${name}" does not exist`);
         return null;

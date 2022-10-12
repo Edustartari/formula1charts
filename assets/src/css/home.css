@@ -1,3 +1,65 @@
-.title {
-    color: blue;
+.home-desktop-container {
+
+}
+.home-desktop-menu {
+    position: absolute;
+    right: 80px;
+    top: 80px;
+    color: white;
+    z-index: 1;
+}
+.home-desktop-card {
+    margin: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.home-desktop-card .image-component-container{
+    width: 100%;
+}
+.home-desktop-card .image-component-container:hover{
+
+}
+.home-desktop-card:hover {
+
+}
+.home-desktop-card-opacity {
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.8) 10%,rgba(0,0,0,0) 76%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.home-desktop-card-text {
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+}
+.home-desktop-card-title {
+    color: white;
+    text-shadow: 0 0 25px rgba(0,0,0,.7);
+    line-height: 1.1;
+    font-size: 50px;
+    font-family: Sentinel A,Sentinel B;
+    font-weight: 600;
+    font-style: normal;
+}
+.home-desktop-card-subtitle {
+    color: white;
+    text-shadow: 0 0 25px rgba(0,0,0,.7);
+    line-height: 1.1;
+    font-size: 26px;
+    font-family: Sentinel A,Sentinel B;
+    font-weight: 600;
+    font-style: normal;
+    text-align: center;
+}
+.home-desktop-card,
+.home-desktop-menu:hover {
+    cursor: pointer;
+}
+.home-desktop-first-card {
+    cursor: default;
 }
