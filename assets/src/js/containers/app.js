@@ -2,10 +2,13 @@ import React from 'react';
 import {isMobile} from 'react-device-detect';
 import {
     BrowserRouter as Router,
-    Routes,
-    Route
+    Switch,
+    Route,
+    Link,
+    Redirect,
 } from "react-router-dom";
 import Home from './home.js';
+import AllSeasons from './all_seasons.js';
 
 console.log('')
 console.log('isMobile')
@@ -17,13 +20,22 @@ class AppDesktop extends React.Component {
         this.state = {}
     }
     render () {
+        console.log("")
+        console.log("")
+        console.log("AppDesktop render")
+        console.log("")
         return (
             <div>
                 <Router>
                     {/* {path_location !== '/login' && <Header/>} */}
-                    <Routes>
-                        <Route path="/" element={<Home />} />
-                    </Routes>
+                    <Switch>
+                        <Route exact path="/" >
+                            <Home />
+                        </Route>
+                        <Route path="/all-seasons" >
+                            <AllSeasons />
+                        </Route>
+                    </Switch>
                 </Router>
             </div>
         )

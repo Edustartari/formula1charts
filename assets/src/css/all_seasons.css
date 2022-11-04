@@ -1,0 +1,55 @@
+.all-seasons-desktop-container {
+    position: relative;
+}
+.all-seasons-desktop-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.all-seasons-desktop-card {
+    /* width: calc(100% / 5); */
+    /* height: 20vw; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+}
+.all-seasons-desktop-card-text {
+    color: white;
+    text-shadow: 0 0 25px rgb(0 0 0 / 70%);
+    line-height: 1.1;
+    font-size: 50px;
+    font-family: Sentinel A,Sentinel B;
+    font-weight: 600;
+    font-style: normal;
+    background-color: rgba(0,0,0,0.5);
+    padding: 2px 5px;
+    border: 5px solid white;
+    border-radius: 3px;
+}
+.all-seasons-desktop-buttons {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+}
+.all-seasons-desktop-buttons-details {
+    display: flex;
+    padding: 13px 15px;
+    font-size: 18px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #6495ed;
+}
+.all-seasons-desktop-buttons-details:nth-child(1) {
+    margin: 0 0 10px 0;
+}
+.all-seasons-desktop-buttons-details:hover {
+    background-color: #1c64e5;
+}
+.all-seasons-desktop-buttons-details:hover,
+.all-seasons-desktop-card:hover {
+    cursor: pointer;
+}
+
