@@ -9,6 +9,8 @@ import {
 } from "react-router-dom";
 import Home from './home.js';
 import AllSeasons from './all_seasons.js';
+import Season from './season.js';
+import Pilots from './pilots.js';
 
 console.log('')
 console.log('isMobile')
@@ -34,6 +36,12 @@ class AppDesktop extends React.Component {
                         </Route>
                         <Route path="/all-seasons" >
                             <AllSeasons />
+                        </Route>
+                        <Route path="/pilots" >
+                            <Pilots />
+                        </Route>
+                        <Route path="/:slug" >
+                            <Season />
                         </Route>
                     </Switch>
                 </Router>

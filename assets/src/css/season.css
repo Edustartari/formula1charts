@@ -1,0 +1,104 @@
+.season-desktop-container {
+
+}
+.season-desktop-menu {
+    position: absolute;
+    right: 80px;
+    top: 80px;
+    color: white;
+    z-index: 1;
+}
+.season-desktop-card {
+    margin: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.season-desktop-card:nth-child(3){
+    margin-top: 0px;
+}
+.season-desktop-card .image-component-container{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.season-desktop-card .image-component-container:hover{
+
+}
+.season-desktop-card:hover {
+
+}
+.season-desktop-card-opacity {
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.8) 10%,rgba(0,0,0,0) 76%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.season-desktop-card-text {
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+}
+.season-desktop-card-title {
+    color: white;
+    text-shadow: 0 0 25px rgba(0,0,0,.7);
+    line-height: 1.1;
+    font-size: 50px;
+    font-family: Sentinel A,Sentinel B;
+    font-weight: 600;
+    font-style: normal;
+}
+.season-desktop-card-subtitle {
+    color: white;
+    text-shadow: 0 0 25px rgba(0,0,0,.7);
+    line-height: 1.1;
+    font-size: 26px;
+    font-family: Sentinel A,Sentinel B;
+    font-weight: 600;
+    font-style: normal;
+    text-align: center;
+}
+.season-desktop-card:hover,
+.season-desktop-menu:hover {
+    cursor: pointer;
+}
+.season-desktop-first-card {
+    height: calc(100vh - 40px);
+    padding-bottom: 0px;
+    box-sizing: border-box;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.season-desktop-first-card:hover {
+    cursor: default;
+}
+.season-desktop-text {
+    padding: 20px 80px;
+}
+.season-desktop-text-title {
+    font-family: Sentinel;
+    font-size: 2.8125rem;
+    font-style: normal;
+    color: #707070;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+}
+.season-desktop-text-description {
+    font-family: Museo Sans,sans-serif;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #707070;
+    font-size: inherit;
+    letter-spacing: .075em;
+}
+.season-desktop-filters {
+    margin: 20px;
+}
+.season-desktop-chart {
+    margin: 20px;
+}

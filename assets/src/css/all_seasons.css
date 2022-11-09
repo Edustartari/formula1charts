@@ -52,4 +52,6 @@
 .all-seasons-desktop-card:hover {
     cursor: pointer;
 }
-
+.all-seasons-desktop-cards-container a {
+    text-decoration: none;
+}
