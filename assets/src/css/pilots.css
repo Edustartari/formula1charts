@@ -1,0 +1,38 @@
+.pilots-desktop-container {
+    margin: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.pilots-desktop-photos-list {
+    position: fixed;
+    top: 0px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100vh;
+}
+.pilots-desktop-photo-card {
+
+}
+.pilots-desktop-chart {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.pilots-desktop-menu {
+    position: fixed;
+    top: 0px;
+    right: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
