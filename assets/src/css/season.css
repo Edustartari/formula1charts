@@ -101,4 +101,6 @@
 }
 .season-desktop-chart {
     margin: 20px;
+    width: 100%;
+    height: 500px;
 }

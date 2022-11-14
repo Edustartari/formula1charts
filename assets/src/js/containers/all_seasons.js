@@ -39,6 +39,9 @@ class AllSeasons extends React.Component  {
 			card_height: 100,
 		};
 		this.change_card_size = this.change_card_size.bind(this);
+
+		// When page loads first time, just set page to display the top
+		document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 	}
 
 	// Function to change card size

@@ -12,20 +12,12 @@ import AllSeasons from './all_seasons.js';
 import Season from './season.js';
 import Pilots from './pilots.js';
 
-console.log('')
-console.log('isMobile')
-console.log(isMobile)
-
 class AppDesktop extends React.Component {
     constructor(props){
         super(props)
         this.state = {}
     }
     render () {
-        console.log("")
-        console.log("")
-        console.log("AppDesktop render")
-        console.log("")
         return (
             <div>
                 <Router>
