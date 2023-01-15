@@ -59,7 +59,7 @@ class AllSeasons extends React.Component  {
 	
 	render(){
 		// Create list of years since the year 1951 until 2022, and reverse it
-		let years = _.range(1951, 2023).reverse();
+		let years = _.range(1950, 2023).reverse();
 		// Create list of season cards
 		let season_cards = years.map((year) => {
 			return(
