@@ -1,4 +1,5 @@
 {% load render_bundle from webpack_loader %}
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,4 +20,5 @@
     <!-- Webpack rendered JS -->
     {% render_bundle 'main' 'js' %}
 </body>
+{% block javascript %}{% endblock %}
 </html>

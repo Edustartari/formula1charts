@@ -8,7 +8,13 @@
 {% endblock %}
     
 {% block javascript %}
-<script>
+<script type="text/javascript">
     var content = {}
+    console.log('')
+    console.log('===================')
+    console.log('content')
+    console.log(content)
+    content.final_result = {{ final_result|safe }};
+    console.log(content)
 </script>
 {% endblock %}

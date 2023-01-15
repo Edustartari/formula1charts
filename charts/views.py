@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 import requests
 import copy
 import pydash
+import json
 
 # ================================================================================================
 # =================================================================================================
@@ -12,8 +13,8 @@ import pydash
 # Create your procedures here.
 
 def get_positions_points(year, result):
-	print('')
-	print('get_positions_points')
+	# print('')
+	# print('get_positions_points')
 	total_points = 0
 	positions_points = {
 		'first': 25,
@@ -144,138 +145,141 @@ def get_positions_data(year):
 	# get path to src/html folder
 	path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 	# get path to src/html/seasons folder
-	path = os.path.join(path, 'assets\src\html')
+	# print('path: ' + path)
+	path = os.path.join(path, 'assets/src/html')
+
+	# print('path: ' + path)
 
 	positions_list = []
-	# if int(year) == 1950:
-	# 	races = []
-	# 	current_positions_list = []
-	# 	total_positions_list = []
-	# 	pilots = []
+	if int(year) == 1950:
+		races = []
+		current_positions_list = []
+		total_positions_list = []
+		pilots = []
 
-	# 	with open(path + '\\' + year + '.html', 'rb') as f:
-	# 		soup = BeautifulSoup(f, 'html.parser')
-	# 		# Get the first table soon after the id World_Championship_of_Drivers_standings from the h2 element
-	# 		table = soup.find('span', id='World_Championship_of_Drivers_standings').find_next('table')
-	# 		# from the second table inside table, get the first tr inside tbody
-	# 		second_table = table.find('table').find('tbody')
-	# 		# from second_table, get the first tr
-	# 		tr = second_table.find('tr')
+		with open(path + '/' + year + '.html', 'rb') as f:
+			soup = BeautifulSoup(f, 'html.parser')
+			# Get the first table soon after the id World_Championship_of_Drivers_standings from the h2 element
+			table = soup.find('span', id='World_Championship_of_Drivers_standings').find_next('table')
+			# from the second table inside table, get the first tr inside tbody
+			second_table = table.find('table').find('tbody')
+			# from second_table, get the first tr
+			tr = second_table.find('tr')
 
-	# 		# Starting from the third td, get each th
-	# 		th = tr.find_all('th')[2:-1]
-	# 		# For each th, get the title property and title string inside a tag
-	# 		for element in th:
-	# 			race_info = element.find('a')
-	# 			title = race_info.get('title')
-	# 			title_string = race_info.string
-	# 			# Get image src inside img tag
-	# 			flag_icon = element.find('span')
-	# 			flag_icon = flag_icon.find('img').get('src')
-	# 			race_dict = {}
-	# 			race_dict['title'] = title
-	# 			race_dict['title_string'] = title_string
-	# 			race_dict['flag_icon'] = flag_icon
-	# 			races.append(race_dict)
+			# Starting from the third td, get each th
+			th = tr.find_all('th')[2:-1]
+			# For each th, get the title property and title string inside a tag
+			for element in th:
+				race_info = element.find('a')
+				title = race_info.get('title')
+				title_string = race_info.string
+				# Get image src inside img tag
+				flag_icon = element.find('span')
+				flag_icon = flag_icon.find('img').get('src')
+				race_dict = {}
+				race_dict['title'] = title
+				race_dict['title_string'] = title_string
+				race_dict['flag_icon'] = flag_icon
+				races.append(race_dict)
 
 
-	# 		# from second_table, get all tr starting from the second
-	# 		tr = second_table.find_all('tr')[1:-1]
-	# 		for element in tr:
-	# 			pilot_dict = {}
-	# 			# Get the first td inside tr
-	# 			td = element.find('td')
-	# 			pilot_dict['flag_icon'] = td.find('img').get('src')
-	# 			# Find the second a tag inside td
-	# 			pilot_dict['pilot_name'] = td.find_all('a')[1].string
-	# 			pilots.append(pilot_dict)
+			# from second_table, get all tr starting from the second
+			tr = second_table.find_all('tr')[1:-1]
+			for element in tr:
+				pilot_dict = {}
+				# Get the first td inside tr
+				td = element.find('td')
+				pilot_dict['flag_icon'] = td.find('img').get('src')
+				# Find the second a tag inside td
+				pilot_dict['pilot_name'] = td.find_all('a')[1].string
+				pilots.append(pilot_dict)
 
-	# 		default_races_values = []
-	# 		for race in races:
-	# 			race_dict = {}
-	# 			race_dict['x'] = race['title_string']
-	# 			race_dict['y'] = 0
-	# 			default_races_values.append(race_dict)                
+			default_races_values = []
+			for race in races:
+				race_dict = {}
+				race_dict['x'] = race['title_string']
+				race_dict['y'] = 0
+				default_races_values.append(race_dict)                
 
-	# 		default_pilots_values = []
-	# 		for pilot in pilots:
-	# 			pilot_dict = {}
-	# 			pilot_dict['id'] = pilot['pilot_name']
-	# 			pilot_dict['data'] = []
-	# 			default_pilots_values.append(pilot_dict)
+			default_pilots_values = []
+			for pilot in pilots:
+				pilot_dict = {}
+				pilot_dict['id'] = pilot['pilot_name']
+				pilot_dict['data'] = []
+				default_pilots_values.append(pilot_dict)
 
-	# 		ranking_test = []
-	# 		ranking_test_2 = []
+			ranking_test = []
+			ranking_test_2 = []
 
-	# 		stop_now = 0
-	# 		for race in range(0, len(races)):
-	# 			ranking_points = []
-	# 			race_string = races[race]['title_string']
-	# 			data_info = {}
-	# 			tr = second_table.find_all('tr')[1:-1]
+			stop_now = 0
+			for race in range(0, len(races)):
+				ranking_points = []
+				race_string = races[race]['title_string']
+				data_info = {}
+				tr = second_table.find_all('tr')[1:-1]
 				
-	# 			ranking_pilots = []
-	# 			for index, element in enumerate(tr):
-	# 				# Get the first td inside tr
-	# 				td = element.find('td')
-	# 				pilot_name = td.find_all('a')[1].string
-	# 				result = element.find_all('td')[race + 1]
-	# 				total = len(result.contents)
-	# 				points = get_positions_points(year, result)
+				ranking_pilots = []
+				for index, element in enumerate(tr):
+					# Get the first td inside tr
+					td = element.find('td')
+					pilot_name = td.find_all('a')[1].string
+					result = element.find_all('td')[race + 1]
+					total = len(result.contents)
+					points = get_positions_points(year, result)
 
-	# 				ranking_points.append(points)
-	# 				if len(current_positions_list) == 0 or len(current_positions_list) < len(default_pilots_values):
-	# 					current_positions_list.append([points])
-	# 					amount_total = points
-	# 					total_positions_list.append([points])
-	# 				else:
-	# 					current_positions_list[tr.index(element)].append(points)
-	# 					amount_total = points + total_positions_list[tr.index(element)][-1]
-	# 					total_positions_list[tr.index(element)].append(amount_total)
-
-
-	# 				ranking_pilots.append({'pilot_name': pilot_name, 'y': amount_total, 'race_string': race_string})
-
-	# 				ranking_test_2.append(ranking_pilots)
-
-	# 			# From ranking_pilots, find all highests values and change the value to 1, and then get the second highest value and change it to 2, and so on
-	# 			test_2 = pydash.max_by(ranking_pilots, 'y')
-
-	# 			# Use while to iterate over ranking_pilots and the find the highest values and change to 1. 
-	# 			# Remove the item(s) after all found, then find all the second highets values and repeat the operation !
-	# 			count = 1
-	# 			current_points = False
-	# 			continue_while = True
-	# 			while continue_while:
-	# 				test = pydash.max_by(ranking_pilots, 'y')
-	# 				new_value = test
-
-	# 				ranking_pilots = pydash.pull_all_by(ranking_pilots, [test], 'pilot_name')
-
-	# 				if current_points == False:
-	# 					current_points = new_value['y']
-
-	# 				if current_points != new_value['y']:
-	# 					count += 1
-	# 				current_points = new_value['y']
-
-	# 				new_value['y'] = count
-	# 				ranking_test.append(new_value)
-
-	# 				if len(ranking_pilots) == 0:
-	# 					continue_while = False
-
-	# 		for e in ranking_test:
-	# 			for i in default_pilots_values:
-	# 				if e['pilot_name'] == i['id']:
-	# 					i['data'].append({'x': e['race_string'], 'y': e['y']})
-
-	# 		print('')
-	# 		print('default_pilots_values 2')
-	# 		print(default_pilots_values)
+					ranking_points.append(points)
+					if len(current_positions_list) == 0 or len(current_positions_list) < len(default_pilots_values):
+						current_positions_list.append([points])
+						amount_total = points
+						total_positions_list.append([points])
+					else:
+						current_positions_list[tr.index(element)].append(points)
+						amount_total = points + total_positions_list[tr.index(element)][-1]
+						total_positions_list[tr.index(element)].append(amount_total)
 
 
-	# 	return positions_list
+					ranking_pilots.append({'pilot_name': pilot_name, 'y': amount_total, 'race_string': race_string})
+
+					ranking_test_2.append(ranking_pilots)
+
+				# From ranking_pilots, find all highests values and change the value to 1, and then get the second highest value and change it to 2, and so on
+				test_2 = pydash.max_by(ranking_pilots, 'y')
+
+				# Use while to iterate over ranking_pilots and the find the highest values and change to 1. 
+				# Remove the item(s) after all found, then find all the second highets values and repeat the operation !
+				count = 1
+				current_points = False
+				continue_while = True
+				while continue_while:
+					test = pydash.max_by(ranking_pilots, 'y')
+					new_value = test
+
+					ranking_pilots = pydash.pull_all_by(ranking_pilots, [test], 'pilot_name')
+
+					if current_points == False:
+						current_points = new_value['y']
+
+					if current_points != new_value['y']:
+						count += 1
+					current_points = new_value['y']
+
+					new_value['y'] = count
+					ranking_test.append(new_value)
+
+					if len(ranking_pilots) == 0:
+						continue_while = False
+
+			for e in ranking_test:
+				for i in default_pilots_values:
+					if e['pilot_name'] == i['id']:
+						i['data'].append({'x': e['race_string'], 'y': e['y']})
+
+			print('')
+			print('default_pilots_values 2')
+			print(default_pilots_values)
+
+		positions_list = default_pilots_values
+		return positions_list
 	return positions_list
 
 
@@ -310,8 +314,6 @@ def season_view(request, year):
 		'amazing', 'awesome', 'incredible', 'brilliant', 'excellent', 'fabulous', 'fantastic', 'fun', 'great', 'inspiring', 'interesting', 'perfect', 'remarkable', 'satisfying', 'super', 'superb', 'wonderful', 'amusing', 'engaging', 'entertaining', 'fascinating', 'impressive', 'inviting', 'magnificent', 'memorable', 'mesmerizing', 'stunning'
 	]
 
-
-
 	for season in years:
 		url_end_sufix = "_Formula_One_World_Championship"
 		if int(season) <= 1980:
@@ -324,6 +326,8 @@ def season_view(request, year):
 
 	data = get_positions_data(year)
 
-	context = {}
+	context = {
+		'final_result': json.dumps(data)
+	}
 
 	return render(request, 'front-end/season.html', context)
