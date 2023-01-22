@@ -10,10 +10,6 @@ import {
 import { ResponsiveBump } from '@nivo/bump';
 import final_result_test from './final_result_test.js';
 
-console.log('')
-console.log('final_result_test')
-console.log(final_result_test)
-const data_test = final_result_test;
 
 class Season extends React.Component {
     constructor(props){
@@ -49,7 +45,7 @@ class Season extends React.Component {
                 <div className='season-desktop-filters'>CHART FILTERS</div>
                 <div className='season-desktop-chart'>
                     <ResponsiveBump
-                        data={data_test}
+                        data={content.final_result}
                         colors={{ scheme: 'spectral' }}
                         lineWidth={3}
                         activeLineWidth={6}

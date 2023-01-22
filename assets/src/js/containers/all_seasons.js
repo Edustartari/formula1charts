@@ -63,7 +63,7 @@ class AllSeasons extends React.Component  {
 		// Create list of season cards
 		let season_cards = years.map((year) => {
 			return(
-				<SeasonCard year={year} {...this.state}/>
+				<SeasonCard key={year} year={year} {...this.state}/>
 			)
 		})
 

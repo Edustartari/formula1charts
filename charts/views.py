@@ -275,8 +275,8 @@ def get_positions_data(year):
 						i['data'].append({'x': e['race_string'], 'y': e['y']})
 
 			print('')
-			print('default_pilots_values 2')
-			print(default_pilots_values)
+			# print('default_pilots_values 2')
+			# print(default_pilots_values)
 
 		positions_list = default_pilots_values
 		return positions_list
@@ -325,6 +325,7 @@ def season_view(request, year):
 		# print('url: ', url)
 
 	data = get_positions_data(year)
+	# data = [1,2,3]
 
 	context = {
 		'final_result': json.dumps(data)
