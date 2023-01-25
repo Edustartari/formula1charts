@@ -15,6 +15,9 @@
     console.log('content inside seasong html 2')
     console.log(content)
     content.final_result = {{ final_result|safe }};
+    content.year = {{ year|safe }};
+    content.champion_name = {{ champion_name|safe }};
+    content.season_title = {{ season_title|safe }};
     console.log(content)
 </script>
 <script src="{% static 'season_bundle.js' %}"></script>

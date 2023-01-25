@@ -6,6 +6,7 @@ import requests
 import copy
 import pydash
 import json
+import random
 
 # ================================================================================================
 # =================================================================================================
@@ -64,7 +65,7 @@ def get_positions_points(year, result):
 		else:
 			return 'unknown'
 
-	if int(year) == 1950:
+	if int(year) in [1950,1951]:
 		positions_points['first'] = 8
 		positions_points['second'] = 6
 		positions_points['third'] = 4
@@ -151,7 +152,8 @@ def get_positions_data(year):
 	# print('path: ' + path)
 
 	positions_list = []
-	if int(year) == 1950:
+	champion_name = ''
+	if int(year) in [1950,1951]:
 		races = []
 		current_positions_list = []
 		total_positions_list = []
@@ -159,6 +161,14 @@ def get_positions_data(year):
 
 		with open(path + '/' + year + '.html', 'rb') as f:
 			soup = BeautifulSoup(f, 'html.parser')
+
+			# Get div with class "motorsport-season-nav-subheader"
+			div = soup.find('div', class_='motorsport-season-nav-subheader')
+			# Inside the div, find the second a tag
+			a = div.find_all('a')[1]
+			# Get the string inside the a tag
+			champion_name = a.string
+
 			# Get the first table soon after the id World_Championship_of_Drivers_standings from the h2 element
 			table = soup.find('span', id='World_Championship_of_Drivers_standings').find_next('table')
 			# from the second table inside table, get the first tr inside tbody
@@ -279,8 +289,8 @@ def get_positions_data(year):
 			# print(default_pilots_values)
 
 		positions_list = default_pilots_values
-		return positions_list
-	return positions_list
+		return positions_list, champion_name
+	return positions_list, champion_name
 
 
 # =================================================================================================
@@ -313,6 +323,8 @@ def season_view(request, year):
 	adjetives = [
 		'amazing', 'awesome', 'incredible', 'brilliant', 'excellent', 'fabulous', 'fantastic', 'fun', 'great', 'inspiring', 'interesting', 'perfect', 'remarkable', 'satisfying', 'super', 'superb', 'wonderful', 'amusing', 'engaging', 'entertaining', 'fascinating', 'impressive', 'inviting', 'magnificent', 'memorable', 'mesmerizing', 'stunning'
 	]
+	# Get random adjetive from the list.
+	random_adjetive = random.choice(adjetives)
 
 	for season in years:
 		url_end_sufix = "_Formula_One_World_Championship"
@@ -324,11 +336,13 @@ def season_view(request, year):
 		url = url + str(season) + url_end_sufix
 		# print('url: ', url)
 
-	data = get_positions_data(year)
-	# data = [1,2,3]
+	data, champion_name = get_positions_data(year)
 
 	context = {
-		'final_result': json.dumps(data)
+		'final_result': json.dumps(data),
+		'year': year,
+		'champion_name': json.dumps(champion_name),
+		'season_title': json.dumps(random_adjetive)
 	}
 
 	return render(request, 'front-end/season.html', context)

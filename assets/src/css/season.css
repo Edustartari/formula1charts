@@ -50,6 +50,7 @@
     font-family: Sentinel A,Sentinel B;
     font-weight: 600;
     font-style: normal;
+    text-transform: uppercase;
 }
 .season-desktop-card-subtitle {
     color: white;
@@ -87,6 +88,7 @@
     color: #707070;
     font-weight: 600;
     margin: 0 0 10px 0;
+    text-transform: capitalize;
 }
 .season-desktop-text-description {
     font-family: Museo Sans,sans-serif;

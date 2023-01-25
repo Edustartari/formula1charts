@@ -23,15 +23,13 @@ class Season extends React.Component {
                 <div className='season-desktop-menu'>MENU</div>
                 <div className='season-desktop-card season-desktop-first-card' style={{backgroundImage: "url('" + image.default + "')"}}>
                     <div className='season-desktop-card-text'>
-                        <div className='season-desktop-card-subtitle'>1991</div>
-                        <div className='season-desktop-card-title'>AYRTON SENNA</div>
+                        <div className='season-desktop-card-subtitle'>{content.year}</div>
+                        <div className='season-desktop-card-title'>{content.champion_name}</div>
                     </div>
                     <div className='season-desktop-card-opacity'></div>
                 </div>
                 <div className='season-desktop-text'>
-                    <div className='season-desktop-text-title'>
-                        Amazing
-                    </div>
+                    <div className='season-desktop-text-title'>{content.season_title}</div>
                     <div className='season-desktop-text-description'>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                         Integer at finibus mauris. Pellentesque sagittis malesuada purus non auctor. 
