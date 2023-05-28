@@ -132,9 +132,6 @@ def season_view(request, year):
 	already_added = []
 	champion_name = ''
 	for race in range(1, int(total_races) + 1):
-		print('')
-		print('total_races:' + str(total_races))
-		print('race:' + str(race))
 
 		data = {}
 		with open(standings_path + '/' + year + '/' + year + '_race_' + str(race) + '.json', 'r') as outfile:
