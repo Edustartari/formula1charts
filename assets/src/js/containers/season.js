@@ -8,8 +8,6 @@ import {
     Route
 } from "react-router-dom";
 import { ResponsiveBump } from '@nivo/bump';
-import final_result_test from './final_result_test.js';
-
 
 class Season extends React.Component {
     constructor(props){
@@ -44,7 +42,7 @@ class Season extends React.Component {
                 <div className='season-desktop-chart'>
                     <ResponsiveBump
                         data={content.final_result}
-                        colors={{ scheme: 'spectral' }}
+                        colors={{ scheme: 'category10' }}
                         lineWidth={3}
                         activeLineWidth={6}
                         inactiveLineWidth={3}
@@ -59,7 +57,7 @@ class Season extends React.Component {
                         axisTop={{
                             tickSize: 5,
                             tickPadding: 5,
-                            tickRotation: 0,
+                            tickRotation: -60,
                             legend: '',
                             legendPosition: 'middle',
                             legendOffset: -36
@@ -67,7 +65,7 @@ class Season extends React.Component {
                         axisBottom={{
                             tickSize: 5,
                             tickPadding: 5,
-                            tickRotation: 0,
+                            tickRotation: 50,
                             legend: '',
                             legendPosition: 'middle',
                             legendOffset: 32
@@ -80,8 +78,12 @@ class Season extends React.Component {
                             legendPosition: 'middle',
                             legendOffset: -40
                         }}
-                        margin={{ top: 40, right: 100, bottom: 40, left: 60 }}
-                        // axisRight={null}
+                        margin={{ top: 70, right: 100, bottom: 70, left: 60 }}
+                        // tooltip={(point) => {
+                        //     console.log(point)
+                        //     // return <div>{point['z']}</div>;
+                        //     return <div>TESTING!</div>;
+                        // }}
                     />
                 </div>
             </div>

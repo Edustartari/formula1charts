@@ -25,6 +25,7 @@
     "@mui/material": "^5.11.6",
     "@nivo/bump": "^0.80.0",
     "@nivo/core": "^0.80.0",
+    "@nivo/line": "^0.83.0",
     "babel-loader": "^7.1.5",
     "css-loader": "^6.7.1",
     "file-loader": "^6.2.0",
