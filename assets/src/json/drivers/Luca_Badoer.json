@@ -1,0 +1,30 @@
+{
+    "nationality": {
+        "nationality_acronym": "ITA",
+        "nationality_href": "/wiki/Italy",
+        "nationality_title": "Italy",
+        "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/0/03/Flag_of_Italy.svg/revision/latest?cb=20081106192030"
+    },
+    "name": "Luca Badoer",
+    "id": "Luca_Badoer",
+    "image": "https://static.wikia.nocookie.net/f1wikia/images/8/8f/Badoer.jpg/revision/latest/scale-to-width-down/333?cb=20121231122811",
+    "birth_date": "1971-01-25",
+    "death_date": false,
+    "status": "Retired",
+    "total_seasons": 5,
+    "seasons_years": [
+        1993,
+        1995,
+        1996,
+        1999,
+        2009
+    ],
+    "titles": "0",
+    "races": "58 (50 starts)",
+    "poles": "0",
+    "wins": "0",
+    "podiums": "0",
+    "fastestlaps": "0",
+    "points": "0",
+    "introduction": "Luca Badoer (born 25 January 1971 in Montebelluna, Veneto, Italy) is a retired Formula One driver who drove for Lola, Forti and Minardi as well as testing and starting two races for Ferrari between 1993 to 2010.  During his career, Badoer entered 58 F1 races, starting 50, but failed to score any points.  He is the the most experienced driver in F1 to have never scored a World Championship point."
+}

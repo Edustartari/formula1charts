@@ -8,6 +8,8 @@ import pydash
 import json
 import random
 import time
+from tqdm import tqdm
+import urllib.parse
 
 # ================================================================================================
 # =================================================================================================
@@ -80,6 +82,255 @@ def get_drivers_standings():
 
 	return True
 
+def get_years(years_tag):
+	season_years = []
+	total_seasons = 0
+	temporary_value = 0
+	action = False
+	for item in years_tag:
+		print(item)
+		# If item is a string, append it to season_years list
+		if ',' in item or ' ' in item:
+			print('if')
+			pass
+		# Check if item is the tag <br/>
+		elif item.name == 'br':
+			print('elif')
+			pass
+		elif '–' in item or '-' in item:
+			action = True
+		# If item is a tag, get the text inside it and append it to season_years list
+		else:
+			current_year = item.text
+			if current_year == 'present':
+				current_year = datetime.now().year
+
+			if action:
+				total_seasons += int(current_year) - int(temporary_value)
+				action = False
+				# For each year between temporary_value and current_year, append it to season_years list
+				for i in range(int(temporary_value) + 1, int(current_year) + 1):
+					season_years.append(int(i))
+			else:
+				season_years.append(int(current_year))
+				total_seasons += 1
+			temporary_value = current_year
+	return season_years, total_seasons
+
+def get_driver_info():
+
+	# Create a list of alfabetic letters from A to Z.
+	alfabet = [chr(i) for i in range(ord('A'), ord('Z') + 1)]
+	print('alfabet: ' + str(alfabet))
+
+	for letter in alfabet:
+	# for letter in alfabet[:1]:
+		print('letter: ' + letter)
+		# time.sleep(5)
+		# Use BeautifulSoup to get the html of each pilot, starting by letter A.
+		url = 'https://f1.fandom.com/wiki/Category:Drivers?from=' + letter
+		html = requests.get(url).text
+		soup = BeautifulSoup(html, 'html.parser')
+
+		# Get drivers list
+		elements = soup.find_all('ul', class_='category-page__members-for-char')
+
+		# Get all the links (each link is a driver)
+		a_tags = []
+		for element in elements:
+			a_tags += element.find_all('a', class_='category-page__member-link')
+		
+		# From each a tag, get the info that we need.
+		for a_tag in tqdm(a_tags):
+		# for a_tag in tqdm(a_tags[:1]):
+			print('')
+			# time.sleep(5)
+			driver_id = a_tag['href']
+			driver_id = urllib.parse.unquote(driver_id)
+			driver_id = driver_id.replace('/wiki/', '')
+			driver_id = "Alan_Jones"
+			print('driver_id: ' + driver_id)
+			new_driver = {
+				'nationality': {}
+			}
+			html = requests.get('https://f1.fandom.com/wiki/' + driver_id).text
+			soup = BeautifulSoup(html, 'html.parser')
+
+			# Get aside_tag that contains the mais stats we want
+			aside_tag = soup.find_all('aside', class_='pi-theme-f1-wide-label')
+
+			try:
+				name = aside_tag[0].find('h2', {'data-source': 'name'}).text
+				new_driver['name'] = name
+				new_driver['id'] = driver_id
+			except Exception as e:
+				print(e)
+				continue
+
+			# Get driver image
+			try:
+				figure_tag = aside_tag[0].find('figure')
+				img_link = figure_tag.find('img')['src']
+				new_driver['image'] = img_link
+			except:
+				new_driver['image'] = False
+
+			# Get section element inside aside_tag
+			section_tag = aside_tag[0].find('section')
+
+			# Get birth_date
+			try:
+				birth_date = section_tag.find('div', {'data-source': 'birth date'})
+				birth_date = birth_date.find('div', class_='pi-data-value')
+				birth_date = birth_date.find('span', class_='bday').text
+				new_driver['birth_date'] = birth_date
+			except:
+				new_driver['birth_date'] = False
+
+			# Get death_date
+			try:
+				death_date = section_tag.find('div', {'data-source': 'death date'})
+				death_date = death_date.find('div', class_='pi-data-value')
+				death_date = death_date.find('span', class_='dday').text
+				new_driver['death_date'] = death_date
+			except:
+				new_driver['death_date'] = False
+
+			# Get nationality
+			try:
+				nationality_tag = section_tag.find('div', {'data-source': 'nationality'})
+				nationality_tag = nationality_tag.find('div', class_='pi-data-value')
+				nationality_acronym = nationality_tag.find_all('a')[1].text
+				nationality_href = nationality_tag.find_all('a')[1]['href']
+				nationality_title = nationality_tag.find_all('a')[1]['title']
+				span_tag = nationality_tag.find_all('span')[0]
+				nationality_flag = span_tag.find('a')['href']
+				
+				new_driver['nationality'] = {
+					'nationality_acronym': nationality_acronym,
+					'nationality_href': nationality_href,
+					'nationality_title': nationality_title,
+					'nationality_flag': nationality_flag
+				}
+			except:
+				new_driver['nationality'] = False
+				
+			try:
+				section_tag = aside_tag[0].find_all('section')[1]
+			except:
+				continue
+
+			# Get status
+			try:
+				status_tag = section_tag.find('div', {'data-source': 'status'})
+				status = status_tag.find('div', class_='pi-data-value').text
+				new_driver['status'] = status
+			except:
+				new_driver['status'] = False
+
+			# Get years and total seasons
+			try:
+				years_tag = section_tag.find('div', {'data-source': 'years'})
+				years_tag = years_tag.find('div', class_='pi-data-value')
+				years_tag = years_tag.contents
+
+				seasons_years, total_seasons = get_years(years_tag)
+				new_driver['total_seasons'] = total_seasons
+				new_driver['seasons_years'] = seasons_years
+				# If the info is not found here, go after wikipedia link.
+				# The id is the same, just change to https://en.wikipedia.org/wiki/DRIVER_ID
+				# Example: https://en.wikipedia.org/wiki/Fernando_Alonso
+			except:
+				try:
+					html = requests.get('https://en.wikipedia.org/wiki/' + driver_id).text
+					new_html = BeautifulSoup(html, 'html.parser')
+
+					table_tag = new_html.find_all('table', class_='biography')
+					tr_tag = table_tag[0].find('th', text='Active years')
+					td_tag = tr_tag.find_next_sibling('td').contents
+
+					seasons_years, total_seasons = get_years(td_tag)
+					new_driver['total_seasons'] = total_seasons
+					new_driver['seasons_years'] = seasons_years
+				except:
+					new_driver['total_seasons'] = False
+					new_driver['seasons_years'] = False
+
+			# Get world titles 
+			try:
+				titles_tag = section_tag.find('div', {'data-source': 'championships'})
+				titles = titles_tag.find('div', class_='pi-data-value').text
+				new_driver['titles'] = titles
+			except:
+				new_driver['titles'] = False
+
+			# Get races 
+			try:
+				races_tag = section_tag.find('div', {'data-source': 'races'})
+				races = races_tag.find('div', class_='pi-data-value').text
+				new_driver['races'] = races
+			except:
+				new_driver['races'] = False
+
+			# Get poles 
+			try:
+				poles_tag = section_tag.find('div', {'data-source': 'poles'})
+				poles = poles_tag.find('div', class_='pi-data-value').text
+				new_driver['poles'] = poles
+			except:
+				new_driver['poles'] = False
+
+			# Get wins 
+			try:
+				wins_tag = section_tag.find('div', {'data-source': 'wins'})
+				wins = wins_tag.find('div', class_='pi-data-value').text
+				new_driver['wins'] = wins
+			except:
+				new_driver['wins'] = False
+
+			# Get podiums 
+			try:
+				podiums_tag = section_tag.find('div', {'data-source': 'podiums'})
+				podiums = podiums_tag.find('div', class_='pi-data-value').text
+				new_driver['podiums'] = podiums
+			except:
+				new_driver['podiums'] = False
+
+			# Get fastestlaps 
+			try:
+				fastestlaps_tag = section_tag.find('div', {'data-source': 'fastestlaps'})
+				fastestlaps = fastestlaps_tag.find('div', class_='pi-data-value').text
+				new_driver['fastestlaps'] = fastestlaps
+			except:
+				new_driver['fastestlaps'] = False
+
+			# Get points 
+			try:
+				points_tag = section_tag.find('div', {'data-source': 'points'})
+				points = points_tag.find('div', class_='pi-data-value').text
+				new_driver['points'] = points
+			except:
+				new_driver['points'] = False
+
+			# Get introduction text
+			try:
+				introduction_tag = soup.find_all('div', class_='mw-parser-output')		
+				introduction_tag = introduction_tag[0].find_all('p')[1]
+				introduction = introduction_tag.text
+				introduction = introduction.encode('ascii', 'ignore').decode('ascii')
+				introduction = introduction.replace('\n', '')
+				new_driver['introduction'] = str(introduction)
+			except:
+				new_driver['introduction'] = False
+
+			# Save json_example to a file inside path
+			with open('assets/src/json/drivers/' + driver_id + '.json', 'w') as outfile:
+				json.dump(new_driver, outfile)
+
+	return
+
+
+
 # =================================================================================================
 # =================================================================================================
 # =================================================================================================
@@ -106,9 +357,7 @@ def season_view(request, year):
 		return HttpResponseRedirect('/')
 
 	# Return a list with 80 positive adjetives.
-	adjetives = [
-		'amazing', 'awesome', 'incredible', 'brilliant', 'excellent', 'fabulous', 'fantastic', 'fun', 'great', 'inspiring', 'interesting', 'perfect', 'remarkable', 'satisfying', 'super', 'superb', 'wonderful', 'amusing', 'engaging', 'entertaining', 'fascinating', 'impressive', 'inviting', 'magnificent', 'memorable', 'mesmerizing', 'stunning'
-	]
+	adjetives = ['Amazing','Awesome','Beautiful','satisfying','super','amusing','entertaining','Brilliant','memorable','Cool','Creative','Delicious','Elegant','Excellent','Fabulous','Fantastic','Fun','Gorgeous','Great','Impressive','Incredible','Interesting','Magnificent','Marvelous','Outstanding','Perfect','Powerful','Smart','Spectacular','Splendid','Stunning','Superb','Superior','Supreme','Terrific','Wonderful','Wondrous','Alluring','Appealing','Dazzling','Divine','Enchanting','Engaging','Enticing','Excellent','Exquisite','Fair','Fascinating','Glorious','Gorgeous','Grand','Heavenly','Magnetic','Marvelous','Mesmerizing','Miraculous','Mythical','Pleasant','Ravishing','Sublime','Amazing','Astonishing','Awe-inspiring','Breathtaking','Captivating','Delightful','remarkable']
 	# Get random adjetive from the list.
 	season_adjetive = random.choice(adjetives)
 

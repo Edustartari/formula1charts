@@ -15,7 +15,13 @@ class Season extends React.Component {
         this.state = {}
     }
     render(){
-        const image = require(`../../img/f1_background_ferrari_2.jpg`);
+        let image;
+        try {
+            image = require(`../../img/season_` + content.year + `_car.jpg`);
+        } catch (error) {
+            image = require(`../../img/f1_background_ferrari_2.jpg`);
+        }
+
         return(
             <div className='season-desktop-container'>
                 <div className='season-desktop-menu'>MENU</div>
