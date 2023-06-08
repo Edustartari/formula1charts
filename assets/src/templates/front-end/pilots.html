@@ -1,0 +1,24 @@
+{% extends 'front-end/index.html' %}
+{% load static %}
+
+{% block links %}
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+    
+{% block javascript %}
+<script type="text/javascript">
+    var content = {}
+    console.log('')
+    console.log('===================')
+    console.log('content inside pilots html')
+    console.log(content)
+    // content.final_result = {{ final_result|safe }};
+    // content.year = {{ year|safe }};
+    // content.champion_name = {{ champion_name|safe }};
+    // content.season_title = {{ season_title|safe }};
+    // console.log(content)
+</script>
+<script src="{% static 'pilots_bundle.js' %}"></script>
+{% endblock %}

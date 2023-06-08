@@ -329,7 +329,86 @@ def get_driver_info():
 
 	return
 
+def add_percentage_info():
+	# Get all files inside assets/src/json/drivers
+	main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+	drivers_path = os.path.join(main_path, 'assets/src/json/drivers')
+	drivers = os.listdir(drivers_path)
+	
+	# Enter each file and rename the key name with the file name.
+	for driver in tqdm(drivers):
+		with open(drivers_path + '/' + driver) as json_file:
+			data = json.load(json_file)
+			print('')
+			print(driver)
+			try:
+				races = data['races'].split('(')[0]
+				races = int(races)
+				titles = int(data['titles'])
+				poles = int(data['poles'])
+				wins = int(data['wins'])
+				podiums = int(data['podiums'])
+				total_seasons = int(data['total_seasons'])
 
+				try:
+					titles_percentage = round(((titles*100) / total_seasons), 2)
+					data['titles_percentage'] = titles_percentage
+				except:
+					data['titles_percentage'] = 0
+
+				try:
+					poles_percentage = round(((poles*100) / races), 2)
+					data['poles_percentage'] = poles_percentage
+				except:
+					data['poles_percentage'] = 0
+
+				try:
+					wins_percentage = round(((wins*100) / races), 2)
+					data['wins_percentage'] = wins_percentage
+				except:
+					data['wins_percentage'] = 0
+
+				try:
+					podiums_percentage = round(((podiums*100) / races), 2)
+					data['podiums_percentage'] = podiums_percentage
+				except:
+					data['podiums_percentage'] = 0
+
+				with open(drivers_path + '/' + driver, 'w', encoding='utf-8') as outfile:
+					json.dump(data, outfile)
+			except Exception as e:
+				print("***********************************")
+				print(e)
+	return True
+
+def save_images():
+	# Get all files inside assets/src/json/drivers
+	main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+	print('main_path: ' + str(main_path))
+	drivers_path = "/Users/magroove/coding/edu_projects/formula1charts/assets/src/json/drivers/statistics"
+	print('drivers_path: ' + str(drivers_path))
+	drivers = os.listdir(drivers_path)
+
+	# Upload each image from each driver to the folder assets/src/img/drivers_imgages
+	for driver in tqdm(drivers[:1]):
+	# for driver in tqdm(drivers):
+		time.sleep(5)
+		print('')
+		print(driver)
+		with open(drivers_path + '/' + driver) as json_file:
+			data = json.load(json_file)
+			try:
+				img_link = data['image']
+				if img_link:
+					img_name = driver.replace('.json', '.jpg')
+					img_path = os.path.join(main_path, 'assets/src/img/drivers_images')
+					img_path = img_path + '/' + img_name
+					img_data = requests.get(img_link).content
+					with open(img_path, 'wb') as handler:
+						handler.write(img_data)
+			except Exception as e:
+				print("***********************************")
+				print(e)
 
 # =================================================================================================
 # =================================================================================================
@@ -422,3 +501,11 @@ def season_view(request, year):
 	}
 
 	return render(request, 'front-end/season.html', context)
+
+
+def pilots(request):
+	print('')
+	print('pilots view...')
+	context = {}
+
+	return render(request, 'front-end/pilots.html', context)
