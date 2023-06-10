@@ -10,21 +10,100 @@ import {
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Select from '@mui/material/Select';
+import { ResponsiveRadar } from '@nivo/radar'
+
+const drivers = content.drivers;
 
 class Pilots extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            age: ''
+            drivers: drivers,
+            driver_1: {},
+            driver_2: {},
+            driver_3: {},
+            driver_4: {},
+            driver_5: {},
+            radar_list: [],
+            toggle_option: 'absolute',
         }
         this.handleChange = this.handleChange.bind(this);
     }
 
-    handleChange(event) {
+    componentDidMount(){
+        let drivers_list = _.filter(drivers, function(o) { return o.wins > 0; });
+        let random_drivers = _.sampleSize(drivers_list, 5)
+        console.log(random_drivers)
+        for(let i = 0; i < random_drivers.length; i++){
+            this.handleChange('driver_' + (i + 1),random_drivers[i]['id'])
+        }
+    }
+
+    handleChange(key,value) {
+        let driver_id = value
+        let current_driver = this.state[key]
+        let selected_driver = _.find(drivers, {id: driver_id})
+        this.setState({[key]: selected_driver})
+        
+        let temporary_dict = this.state.radar_list
+        
+        // Remove the keys in which the driver with the current key appears from the radar_list
+        for (let item of temporary_dict){
+            if(current_driver['name'] in item){
+                delete item[current_driver['name']]
+            }
+        }
+        
+        if(this.state.toggle_option === 'absolute'){
+            let driver_dict = {
+                'total_seasons': selected_driver.total_seasons,
+                'titles': selected_driver.titles,
+                // 'races': selected_driver.races,
+                'poles': selected_driver.poles,
+                'wins': selected_driver.wins,
+                'podiums': selected_driver.podiums,
+            }
+            
+            if (temporary_dict.length === 0) {
+                for (const [key, value] of Object.entries(driver_dict)) {
+                    temporary_dict.push(
+                        {
+                            'absolute':key,
+                            [selected_driver.name]: value
+                        }
+                    )
+                }
+            } else {
+                for (let item of temporary_dict) {
+                    if(item['absolute'] in driver_dict){
+                        item[selected_driver.name] = driver_dict[item['absolute']]
+                    }
+                }
+            }
+        } else {
+            let driver_dict = {
+                'name': selected_driver.name,
+                'position': key,
+                'total_seasons': selected_driver.total_seasons,
+                'titles': selected_driver.titles,
+                'races': selected_driver.races,
+                'poles': selected_driver.poles,
+                'wins': selected_driver.wins,
+                'podiums': selected_driver.podiums,
+                'titles_percentage': selected_driver.titles_percentage,
+                'poles_percentage': selected_driver.poles_percentage,
+                'wins_percentage': selected_driver.wins_percentage,
+                'podiums_percentage': selected_driver.podiums_percentage
+            }
+            
+            let temporary_dict = {}
+            temporary_dict['absolute'] = driver_dict
+        }
+
         this.setState({
-            age: event.target.value
-        });
+            radar_list: temporary_dict
+        })
     }
 
     // Add several filters to help usrs interact with charts???
@@ -34,110 +113,191 @@ class Pilots extends React.Component {
 
     render(){
         let image_test = require(`../../img/f1_background_ferrari_2.jpg`);
-        console.log(image_test)
-        return(
-            <div className='pilots-desktop-container'>
-                <div className='pilots-desktop-menu'>
-                    <div className='pilots-desktop-menu-button'>
-                        TOGGLE OPTION
+        let driver_1_image = ''
+        let driver_2_image = ''
+        let driver_3_image = ''
+        let driver_4_image = ''
+        let driver_5_image = ''
+        try {
+            driver_1_image = require(`../../img/${this.state.driver_1.image}`);
+        } catch (error) {
+            driver_1_image = require(`../../img/default_image.jpg`);
+        }
+        try {
+            driver_2_image = require(`../../img/${this.state.driver_2.image}`);
+        } catch (error) {
+            driver_2_image = require(`../../img/default_image.jpg`);
+        }
+        try {
+            driver_3_image = require(`../../img/${this.state.driver_3.image}`);
+        } catch (error) {
+            driver_3_image = require(`../../img/default_image.jpg`);
+        }
+        try {
+            driver_4_image = require(`../../img/${this.state.driver_4.image}`);
+        } catch (error) {
+            driver_4_image = require(`../../img/default_image.jpg`);
+        }
+        try {
+            driver_5_image = require(`../../img/${this.state.driver_5.image}`);
+        } catch (error) {
+            driver_5_image = require(`../../img/default_image.jpg`);
+        }
+
+        const theme = {
+            fontSize: '16px'
+        };
+
+        if (this.state.radar_list.length < 5) {
+            <div>Loading...</div>
+        } else {
+            return(
+                <div className='pilots-desktop-container'>
+                    <div className='pilots-desktop-menu'>
+                        <div className='pilots-desktop-menu-button'>
+                            TOGGLE OPTION
+                        </div>
                     </div>
+                    <div className='pilots-desktop-photos-list'>
+                        <div className='pilots-desktop-photo-card'>
+                            <img src={driver_1_image.default} />
+                            <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
+                                <Select
+                                    labelId="demo-simple-select-standard-label"
+                                    id="demo-simple-select-standard"
+                                    value={this.state.driver_1['id']}
+                                    onChange={(event) => this.handleChange('driver_1',event.target.value)}
+                                >
+                                    {drivers.map((driver) => {
+                                        return(
+                                            <MenuItem key={driver['id']} value={driver['id']}>{driver['name']}</MenuItem>
+                                        )
+                                    })}
+                                </Select>
+                            </FormControl>
+                        </div>
+                        <div className='pilots-desktop-photo-card'>
+                            <img src={driver_2_image.default} />
+                            <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
+                                <Select
+                                    labelId="demo-simple-select-standard-label"
+                                    id="demo-simple-select-standard"
+                                    value={this.state.driver_2.id}
+                                    onChange={(event) => this.handleChange('driver_2',event.target.value)}
+                                >
+                                    {this.state.drivers.map((driver) => {
+                                        return(
+                                            <MenuItem key={driver['id']} value={driver['id']}>{driver['name']}</MenuItem>
+                                        )
+                                    })}
+                                </Select>
+                            </FormControl>
+                        </div>
+                        <div className='pilots-desktop-photo-card'>
+                            <img src={driver_3_image.default} />
+                            <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
+                                <Select
+                                    labelId="demo-simple-select-standard-label"
+                                    id="demo-simple-select-standard"
+                                    value={this.state.driver_3.id}
+                                    onChange={(event) => this.handleChange('driver_3',event.target.value)}
+                                >
+                                    {this.state.drivers.map((driver) => {
+                                        return(
+                                            <MenuItem key={driver['id']} value={driver['id']}>{driver['name']}</MenuItem>
+                                        )
+                                    })}
+                                </Select>
+                            </FormControl>
+                        </div>
+                        <div className='pilots-desktop-photo-card'>
+                            <img src={driver_4_image.default} />
+                            <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
+                                <Select
+                                    labelId="demo-simple-select-standard-label"
+                                    id="demo-simple-select-standard"
+                                    value={this.state.driver_4.id}
+                                    onChange={(event) => this.handleChange('driver_4',event.target.value)}
+                                >
+                                    {this.state.drivers.map((driver) => {
+                                        return(
+                                            <MenuItem key={driver['id']} value={driver['id']}>{driver['name']}</MenuItem>
+                                        )
+                                    })}
+                                </Select>
+                            </FormControl>
+                        </div>
+                        <div className='pilots-desktop-photo-card'>
+                            <img src={driver_5_image.default} />
+                            <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
+                                <Select
+                                    labelId="demo-simple-select-standard-label"
+                                    id="demo-simple-select-standard"
+                                    value={this.state.driver_5.id}
+                                    onChange={(event) => this.handleChange('driver_5',event.target.value)}
+                                >
+                                    {this.state.drivers.map((driver) => {
+                                        return(
+                                            <MenuItem key={driver['id']} value={driver['id']}>{driver['name']}</MenuItem>
+                                        )
+                                    })}
+                                </Select>
+                            </FormControl>
+                        </div>
+                    </div>
+                    <div className='pilots-desktop-chart'>
+                        <div className='pilots-desktop-chart-details'>
+                            <ResponsiveRadar
+                                data={this.state.radar_list}
+                                keys={[ this.state.driver_1["name"], this.state.driver_2["name"], this.state.driver_3["name"], this.state.driver_4["name"], this.state.driver_5["name"] ]}
+                                indexBy="absolute"
+                                valueFormat=">-.0f"
+                                margin={{ top: 70, right: 80, bottom: 40, left: 80 }}
+                                borderColor={{ from: 'color', modifiers: [] }}
+                                gridLevels={6}
+                                gridLabelOffset={36}
+                                dotColor={{ from: 'color', modifiers: [] }}
+                                dotBorderWidth={2}
+                                dotBorderColor={{ from: 'color', modifiers: [] }}
+                                colors={{ scheme: 'category10' }}
+                                blendMode="multiply"
+                                motionConfig={{
+                                    mass: 1,
+                                    tension: 171,
+                                    friction: 26,
+                                    clamp: false,
+                                    precision: 0.01,
+                                    velocity: 0
+                                }}
+                                legends={[
+                                    {
+                                        anchor: 'top-left',
+                                        direction: 'column',
+                                        translateX: -50,
+                                        translateY: -40,
+                                        itemWidth: 80,
+                                        itemHeight: 20,
+                                        itemTextColor: '#999',
+                                        symbolSize: 12,
+                                        symbolShape: 'circle',
+                                        effects: [
+                                            {
+                                                on: 'hover',
+                                                style: {
+                                                    itemTextColor: '#000'
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]}
+                                theme={theme}
+                            />
+                        </div>
+                    </div>
+                    <div className='pilots-desktop-chart'>CHART TWO</div>
                 </div>
-                <div className='pilots-desktop-photos-list'>
-                    <div className='pilots-desktop-photo-card'>
-                        <img src={image_test.default} />
-                        <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
-                            <Select
-                                labelId="demo-simple-select-standard-label"
-                                id="demo-simple-select-standard"
-                                value={this.state.age}
-                                onChange={this.handleChange}
-                            >
-                                <MenuItem value="">
-                                    <em>None</em>
-                                </MenuItem>
-                                <MenuItem value={10}>Ten</MenuItem>
-                                <MenuItem value={20}>Twenty</MenuItem>
-                                <MenuItem value={30}>Thirty</MenuItem>
-                            </Select>
-                        </FormControl>
-                    </div>
-                    <div className='pilots-desktop-photo-card'>
-                        <img src={image_test.default} />
-                        <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
-                            <Select
-                                labelId="demo-simple-select-standard-label"
-                                id="demo-simple-select-standard"
-                                value={this.state.age}
-                                onChange={this.handleChange}
-                            >
-                                <MenuItem value="">
-                                    <em>None</em>
-                                </MenuItem>
-                                <MenuItem value={10}>Ten</MenuItem>
-                                <MenuItem value={20}>Twenty</MenuItem>
-                                <MenuItem value={30}>Thirty</MenuItem>
-                            </Select>
-                        </FormControl>
-                    </div>
-                    <div className='pilots-desktop-photo-card'>
-                        <img src={image_test.default} />
-                        <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
-                            <Select
-                                labelId="demo-simple-select-standard-label"
-                                id="demo-simple-select-standard"
-                                value={this.state.age}
-                                onChange={this.handleChange}
-                            >
-                                <MenuItem value="">
-                                    <em>None</em>
-                                </MenuItem>
-                                <MenuItem value={10}>Ten</MenuItem>
-                                <MenuItem value={20}>Twenty</MenuItem>
-                                <MenuItem value={30}>Thirty</MenuItem>
-                            </Select>
-                        </FormControl>
-                    </div>
-                    <div className='pilots-desktop-photo-card'>
-                        <img src={image_test.default} />
-                        <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
-                            <Select
-                                labelId="demo-simple-select-standard-label"
-                                id="demo-simple-select-standard"
-                                value={this.state.age}
-                                onChange={this.handleChange}
-                            >
-                                <MenuItem value="">
-                                    <em>None</em>
-                                </MenuItem>
-                                <MenuItem value={10}>Ten</MenuItem>
-                                <MenuItem value={20}>Twenty</MenuItem>
-                                <MenuItem value={30}>Thirty</MenuItem>
-                            </Select>
-                        </FormControl>
-                    </div>
-                    <div className='pilots-desktop-photo-card'>
-                        <img src={image_test.default} />
-                        <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
-                            <Select
-                                labelId="demo-simple-select-standard-label"
-                                id="demo-simple-select-standard"
-                                value={this.state.age}
-                                onChange={this.handleChange}
-                            >
-                                <MenuItem value="">
-                                    <em>None</em>
-                                </MenuItem>
-                                <MenuItem value={10}>Ten</MenuItem>
-                                <MenuItem value={20}>Twenty</MenuItem>
-                                <MenuItem value={30}>Thirty</MenuItem>
-                            </Select>
-                        </FormControl>
-                    </div>
-                </div>
-                <div className='pilots-desktop-chart'>CHART ONE</div>
-                <div className='pilots-desktop-chart'>CHART TWO</div>
-            </div>
-        )
+            )
+        }
     }
 }
 

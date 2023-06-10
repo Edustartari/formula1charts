@@ -10,6 +10,7 @@ import random
 import time
 from tqdm import tqdm
 import urllib.parse
+import base64
 
 # ================================================================================================
 # =================================================================================================
@@ -506,6 +507,61 @@ def season_view(request, year):
 def pilots(request):
 	print('')
 	print('pilots view...')
-	context = {}
+
+	# Get all files inside assets/src/json/drivers
+	main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+	drivers_path = "/Users/magroove/coding/edu_projects/formula1charts/assets/src/json/drivers/statistics"
+	drivers = os.listdir(drivers_path)
+
+	drivers_list = []
+	for driver in drivers:
+		print(driver)
+		with open(drivers_path + '/' + driver) as json_file:
+			data = json.load(json_file)
+			try:
+				driver_dict = {}
+				driver_dict['nationality'] = data['nationality']
+				driver_dict['name'] = data['name']
+				driver_dict['id'] = data['id']
+				driver_dict['birth_date'] = data['birth_date']
+				driver_dict['death_date'] = data['death_date']
+				driver_dict['status'] = data['status']
+				driver_dict['total_seasons'] = data['total_seasons']
+				driver_dict['seasons_years'] = data['seasons_years']
+				driver_dict['titles'] = int(data['titles'])
+				races = data['races'].split('(')[0]
+				races = int(races)
+				driver_dict['races'] = races
+				driver_dict['poles'] = int(data['poles'])
+				driver_dict['wins'] = int(data['wins'])
+				driver_dict['podiums'] = int(data['podiums'])
+				driver_dict['fastestlaps'] = data['fastestlaps']
+				driver_dict['points'] = data['points']
+				driver_dict['introduction'] = data['introduction']
+				driver_dict['titles_percentage'] = data['titles_percentage']
+				driver_dict['poles_percentage'] = data['poles_percentage']
+				driver_dict['wins_percentage'] = data['wins_percentage']
+				driver_dict['podiums_percentage'] = data['podiums_percentage']
+				if data['image']:
+					# Get image path from folder assets/src/img/drivers_images
+					img_name = driver.replace('.json', '.jpg')
+					img_path = 'drivers_images' + '/' + img_name
+					driver_dict['image'] = img_path
+
+				else:
+					driver_dict['image'] = False
+				drivers_list.append(driver_dict)
+
+				pass
+			except Exception as e:
+				print("***********************************")
+				print(e)
+
+	# Order drivers_list by name
+	drivers_list = pydash.sort_by(drivers_list, 'name')
+
+	context = {
+		'drivers': json.dumps(drivers_list)
+	}
 
 	return render(request, 'front-end/pilots.html', context)
