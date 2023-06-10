@@ -7,11 +7,11 @@ import {
     Routes,
     Route
 } from "react-router-dom";
-import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { ResponsiveRadar } from '@nivo/radar'
+import Switch from '@mui/material/Switch';
 
 const drivers = content.drivers;
 
@@ -25,7 +25,8 @@ class Pilots extends React.Component {
             driver_3: {},
             driver_4: {},
             driver_5: {},
-            radar_list: [],
+            radar_list_absolute: [],
+            radar_list_percentage: [],
             toggle_option: 'absolute',
         }
         this.handleChange = this.handleChange.bind(this);
@@ -34,7 +35,6 @@ class Pilots extends React.Component {
     componentDidMount(){
         let drivers_list = _.filter(drivers, function(o) { return o.wins > 0; });
         let random_drivers = _.sampleSize(drivers_list, 5)
-        console.log(random_drivers)
         for(let i = 0; i < random_drivers.length; i++){
             this.handleChange('driver_' + (i + 1),random_drivers[i]['id'])
         }
@@ -46,65 +46,74 @@ class Pilots extends React.Component {
         let selected_driver = _.find(drivers, {id: driver_id})
         this.setState({[key]: selected_driver})
         
-        let temporary_dict = this.state.radar_list
+        let temporary_radar_list_absolute = this.state.radar_list_absolute
+        let temporary_radar_list_percentage = this.state.radar_list_percentage
         
-        // Remove the keys in which the driver with the current key appears from the radar_list
-        for (let item of temporary_dict){
+        // Remove the keys in which the driver with the current key appears from the radar_list_absolute
+        for (let item of temporary_radar_list_absolute){
+            if(current_driver['name'] in item){
+                delete item[current_driver['name']]
+            }
+        }
+        for (let item of temporary_radar_list_percentage){
             if(current_driver['name'] in item){
                 delete item[current_driver['name']]
             }
         }
         
-        if(this.state.toggle_option === 'absolute'){
-            let driver_dict = {
+        let driver_dict = {
+            'absolute' : {
                 'total_seasons': selected_driver.total_seasons,
                 'titles': selected_driver.titles,
                 // 'races': selected_driver.races,
                 'poles': selected_driver.poles,
                 'wins': selected_driver.wins,
                 'podiums': selected_driver.podiums,
-            }
-            
-            if (temporary_dict.length === 0) {
-                for (const [key, value] of Object.entries(driver_dict)) {
-                    temporary_dict.push(
-                        {
-                            'absolute':key,
-                            [selected_driver.name]: value
-                        }
-                    )
-                }
-            } else {
-                for (let item of temporary_dict) {
-                    if(item['absolute'] in driver_dict){
-                        item[selected_driver.name] = driver_dict[item['absolute']]
-                    }
-                }
-            }
-        } else {
-            let driver_dict = {
-                'name': selected_driver.name,
-                'position': key,
-                'total_seasons': selected_driver.total_seasons,
-                'titles': selected_driver.titles,
-                'races': selected_driver.races,
-                'poles': selected_driver.poles,
-                'wins': selected_driver.wins,
-                'podiums': selected_driver.podiums,
+            },
+            'percentage' : {
                 'titles_percentage': selected_driver.titles_percentage,
                 'poles_percentage': selected_driver.poles_percentage,
                 'wins_percentage': selected_driver.wins_percentage,
                 'podiums_percentage': selected_driver.podiums_percentage
             }
+        }
             
-            let temporary_dict = {}
-            temporary_dict['absolute'] = driver_dict
+        if (temporary_radar_list_absolute.length === 0) {
+            for (const [key, value] of Object.entries(driver_dict['absolute'])) {
+                temporary_radar_list_absolute.push(
+                    {
+                        'absolute':key,
+                        [selected_driver.name]: value
+                    }
+                )
+            }
+            for (const [key, value] of Object.entries(driver_dict['percentage'])) {
+                temporary_radar_list_percentage.push(
+                    {
+                        'percentage':key,
+                        [selected_driver.name]: value
+                    }
+                )
+            }
+        } else {
+            for (let item of temporary_radar_list_absolute) {
+                if(item['absolute'] in driver_dict['absolute']){
+                    item[selected_driver.name] = driver_dict['absolute'][item['absolute']]
+                }
+            }
+            for (let item of temporary_radar_list_percentage) {
+                if(item['percentage'] in driver_dict['percentage']){
+                    item[selected_driver.name] = driver_dict['percentage'][item['percentage']]
+                }
+            }
         }
 
         this.setState({
-            radar_list: temporary_dict
+            radar_list_absolute: temporary_radar_list_absolute,
+            radar_list_percentage: temporary_radar_list_percentage
         })
     }
+
 
     // Add several filters to help usrs interact with charts???
     // For example: select all pilots with 2 titles
@@ -148,14 +157,22 @@ class Pilots extends React.Component {
             fontSize: '16px'
         };
 
-        if (this.state.radar_list.length < 5) {
+        if (this.state.radar_list_absolute.length < 5) {
             <div>Loading...</div>
         } else {
             return(
                 <div className='pilots-desktop-container'>
                     <div className='pilots-desktop-menu'>
-                        <div className='pilots-desktop-menu-button'>
-                            TOGGLE OPTION
+                        <div 
+                            className='pilots-desktop-menu-button'
+                            onClick={() => this.setState({toggle_option: this.state.toggle_option === 'absolute' ? 'percentage' : 'absolute'})}
+                            style={this.state.toggle_option === 'absolute' ? {} : {backgroundColor: '#ffcccc', borderColor: '#ff9292'}}
+                        >
+                            {this.state.toggle_option === 'percentage' && 'Percentage'}
+                            <Switch 
+                                checked={this.state.toggle_option === 'absolute' ? true : false}
+                            />
+                            {this.state.toggle_option === 'absolute' && 'Absolute'}
                         </div>
                     </div>
                     <div className='pilots-desktop-photos-list'>
@@ -248,9 +265,9 @@ class Pilots extends React.Component {
                     <div className='pilots-desktop-chart'>
                         <div className='pilots-desktop-chart-details'>
                             <ResponsiveRadar
-                                data={this.state.radar_list}
+                                data={this.state.toggle_option === 'absolute' ? this.state.radar_list_absolute: this.state.radar_list_percentage}
                                 keys={[ this.state.driver_1["name"], this.state.driver_2["name"], this.state.driver_3["name"], this.state.driver_4["name"], this.state.driver_5["name"] ]}
-                                indexBy="absolute"
+                                indexBy={this.state.toggle_option === 'absolute' ? 'absolute' : 'percentage'}
                                 valueFormat=">-.0f"
                                 margin={{ top: 70, right: 80, bottom: 40, left: 80 }}
                                 borderColor={{ from: 'color', modifiers: [] }}
