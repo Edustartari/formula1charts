@@ -10,15 +10,6 @@
 {% block javascript %}
 <script type="text/javascript">
     var content = {}
-    console.log('')
-    console.log('===================')
-    console.log('content inside pilots html')
-    content.drivers = {{ drivers|safe }};
-    console.log(content)
-    // content.year = {{ year|safe }};
-    // content.champion_name = {{ champion_name|safe }};
-    // content.season_title = {{ season_title|safe }};
-    // console.log(content)
 </script>
 <script src="{% static 'pilots_bundle.js' %}"></script>
 {% endblock %}

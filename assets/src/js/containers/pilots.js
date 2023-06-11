@@ -12,14 +12,17 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { ResponsiveRadar } from '@nivo/radar'
 import Switch from '@mui/material/Switch';
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
 
-const drivers = content.drivers;
+// const drivers = content.drivers;
 
 class Pilots extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            drivers: drivers,
+            loading: true,
+            drivers: [],
             driver_1: {},
             driver_2: {},
             driver_3: {},
@@ -30,20 +33,33 @@ class Pilots extends React.Component {
             toggle_option: 'absolute',
         }
         this.handleChange = this.handleChange.bind(this);
+        this.load_content = this.load_content.bind(this);
+
+        this.load_content()
     }
 
-    componentDidMount(){
-        let drivers_list = _.filter(drivers, function(o) { return o.wins > 0; });
-        let random_drivers = _.sampleSize(drivers_list, 5)
-        for(let i = 0; i < random_drivers.length; i++){
-            this.handleChange('driver_' + (i + 1),random_drivers[i]['id'])
-        }
+    load_content(){
+        fetch('/pilots-list')
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+            this.setState({drivers: data.drivers});
+            console.log('finish fetch...')
+            console.log(this.state.drivers)
+
+            let drivers_list = _.filter(this.state.drivers, function(o) { return o.wins > 0; });
+            let random_drivers = _.sampleSize(drivers_list, 5)
+            for(let i = 0; i < random_drivers.length; i++){
+                this.handleChange('driver_' + (i + 1),random_drivers[i]['id'])
+            }
+            this.setState({loading: false});
+        })
     }
 
     handleChange(key,value) {
         let driver_id = value
         let current_driver = this.state[key]
-        let selected_driver = _.find(drivers, {id: driver_id})
+        let selected_driver = _.find(this.state.drivers, {id: driver_id})
         this.setState({[key]: selected_driver})
         
         let temporary_radar_list_absolute = this.state.radar_list_absolute
@@ -157,8 +173,12 @@ class Pilots extends React.Component {
             fontSize: '16px'
         };
 
-        if (this.state.radar_list_absolute.length < 5) {
-            <div>Loading...</div>
+        if (this.state.loading) {
+            return (
+                <Backdrop open={this.state.loading}>
+                    <CircularProgress color="inherit" />
+                </Backdrop>
+            )
         } else {
             return(
                 <div className='pilots-desktop-container'>
@@ -185,7 +205,7 @@ class Pilots extends React.Component {
                                     value={this.state.driver_1['id']}
                                     onChange={(event) => this.handleChange('driver_1',event.target.value)}
                                 >
-                                    {drivers.map((driver) => {
+                                    {this.state.drivers.map((driver) => {
                                         return(
                                             <MenuItem key={driver['id']} value={driver['id']}>{driver['name']}</MenuItem>
                                         )

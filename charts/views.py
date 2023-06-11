@@ -11,6 +11,7 @@ import time
 from tqdm import tqdm
 import urllib.parse
 import base64
+from django.http import JsonResponse
 
 # ================================================================================================
 # =================================================================================================
@@ -505,8 +506,10 @@ def season_view(request, year):
 
 
 def pilots(request):
-	print('')
-	print('pilots view...')
+	context = {}
+	return render(request, 'front-end/pilots.html', context)
+
+def pilots_list(request):
 
 	# Get all files inside assets/src/json/drivers
 	main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -515,7 +518,7 @@ def pilots(request):
 
 	drivers_list = []
 	for driver in drivers:
-		print(driver)
+		# print(driver)
 		with open(drivers_path + '/' + driver) as json_file:
 			data = json.load(json_file)
 			try:
@@ -554,14 +557,13 @@ def pilots(request):
 
 				pass
 			except Exception as e:
-				print("***********************************")
-				print(e)
+				pass
 
 	# Order drivers_list by name
 	drivers_list = pydash.sort_by(drivers_list, 'name')
 
 	context = {
-		'drivers': json.dumps(drivers_list)
+		'drivers': drivers_list
 	}
 
-	return render(request, 'front-end/pilots.html', context)
+	return JsonResponse(context, safe=False) 
