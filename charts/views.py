@@ -424,11 +424,6 @@ def index(request):
 	return render(request, 'front-end/index.html', context)
 
 def season_view(request, year):
-	print('')
-	print('season_view 2')
-	print('')
-	print(year)
-	print(type(year))
 
 	# Make a list of year beginning with 1951 until the current year.
 	current_year = datetime.now().year
@@ -456,7 +451,6 @@ def season_view(request, year):
 	print('total_races: ' + str(total_races))
 
 	standings_path = os.path.join(main_path, 'assets/src/json/standings/driver_standings_after_a_race')
-	print('standings_path: ' + standings_path)
 
 	final_result_test = []
 	already_added = []

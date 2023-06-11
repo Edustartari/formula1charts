@@ -41,8 +41,9 @@
     margin: 0 0 0 230px;
 }
 .pilots-desktop-chart-details {
-    height: 80%;
+    height: 75%;
     width: 90%;
+    position: relative;
 }
 .pilots-desktop-menu {
     position: fixed;
@@ -69,11 +70,17 @@
     background-color: lightblue;
 }
 .pilots-desktop-menu-button .css-1yjjitx-MuiSwitch-track {
-    /* background-color: #000; */
     background-color: red;
 }
 .pilots-desktop-menu-button:hover {
     cursor: pointer;
+}
+.pilots-desktop-chart-details-note {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30%;
+    font-size: 14px;
 }
 
 /* Adapt classes based on differente screen sizes */

@@ -329,6 +329,13 @@ class Pilots extends React.Component {
                                 ]}
                                 theme={theme}
                             />
+                            {this.state.toggle_option === 'percentage' &&
+                                <div className='pilots-desktop-chart-details-note'>
+                                    Titles: according to total seasons disputed
+                                    <br/>
+                                    Wins, podiums and poles: according to total races
+                                </div>
+                            }
                         </div>
                     </div>
                     <div className='pilots-desktop-chart'>CHART TWO</div>
