@@ -32,6 +32,10 @@
     overflow: hidden;
     height: 70vh;
 }
+.home-desktop-card:hover {
+    padding: 40px;
+    transition: all 0.5s ease-in-out;
+}
 .home-desktop-card:nth-child(3){
     margin-top: 0px;
 }
@@ -40,8 +44,11 @@
     height: 100%;
     object-fit: cover;
 }
-.home-desktop-card .image-component-container:hover{
-
+.home-desktop-card:hover .image-component-container{
+    box-sizing: border-box;
+    border-radius: 50px;
+    transition: all 0.5s ease-in-out;
+    box-shadow: -5px 5px 70px 40px rgba(0, 0, 0, 0.5);
 }
 .home-desktop-card:hover {
 
