@@ -24,7 +24,6 @@ class Season extends React.Component {
 
         return(
             <div className='season-desktop-container'>
-                <div className='season-desktop-menu'>MENU</div>
                 <div className='season-desktop-card season-desktop-first-card' style={{backgroundImage: "url('" + image.default + "')"}}>
                     <div className='season-desktop-card-text'>
                         <div className='season-desktop-card-subtitle'>{content.year}</div>

@@ -1,13 +1,6 @@
 .season-desktop-container {
 
 }
-.season-desktop-menu {
-    position: absolute;
-    right: 80px;
-    top: 80px;
-    color: white;
-    z-index: 1;
-}
 .season-desktop-card {
     margin: 20px;
     position: relative;
