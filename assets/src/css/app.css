@@ -12,11 +12,28 @@
     align-items: center;
 }
 .home-desktop-menu-item {
-    color: grey;
+    position: relative;
+}
+.home-desktop-menu-item-button {
+    color: #454545;
     margin: 60px 40px 0 0;
     font-weight: normal;
     padding: 10px 30px;
     border-radius: 2px;
-    border: 1px solid grey;
+    border: 1px solid #454545;
     box-shadow: 5px 5px 5px -5px black;
+    background-color: rgba(0,0,0,0.4);
+}
+.home-desktop-menu-list {
+    border: 1px solid #454545;
+    position: absolute;
+    background-color: white;
+    right: 0px;
+    margin: 5px 40px 0 0;
+    border-radius: 5px;
+}
+.home-desktop-menu-list-item {
+    padding: 10px 15px;
+    width: 100px;
+    border-bottom: 1px solid #454545;
 }
