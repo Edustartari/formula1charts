@@ -23,7 +23,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 
-function TemporaryDrawer() {
+function Menu() {
     const [state, setState] = React.useState({
         top: false,
         left: false,
@@ -41,47 +41,57 @@ function TemporaryDrawer() {
 
     const list = (anchor) => (
         <Box
-            sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
+            sx={{ width: 250 }}
             role="presentation"
             onClick={toggleDrawer(anchor, false)}
             onKeyDown={toggleDrawer(anchor, false)}
         >
-            <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                    <ListItem key={text} disablePadding>
+            <List className='home-desktop-menu-list'>
+                <Link to="/">
+                    <ListItem key={'Home'} disablePadding>
                         <ListItemButton>
-                            <ListItemText primary={text} />
+                            <ListItemText primary={'Home'} />
                         </ListItemButton>
                     </ListItem>
-                ))}
+                </Link>
+                <Link to="/all-seasons">
+                    <ListItem key={'All Seasons'} disablePadding>
+                        <ListItemButton>
+                            <ListItemText primary={'All Seasons'} />
+                        </ListItemButton>
+                    </ListItem>
+                </Link>
+                <Link to="/pilots">
+                    <ListItem key={'Pilots'} disablePadding>
+                        <ListItemButton>
+                            <ListItemText primary={'Pilots'} />
+                        </ListItemButton>
+                    </ListItem>
+                </Link>
             </List>
                 <Divider />
             <List>
-                {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                    <ListItem key={text} disablePadding>
-                        <ListItemButton>
-                            <ListItemText primary={text} />
-                        </ListItemButton>
-                    </ListItem>
-                ))}
+                <ListItem key={'About'} disablePadding>
+                    <ListItemButton>
+                        <ListItemText primary={'About'} />
+                    </ListItemButton>
+                </ListItem>
             </List>
         </Box>
     );
 
     return (
     <div>
-        {['left', 'right', 'top', 'bottom'].map((anchor) => (
-        <React.Fragment key={anchor}>
-            <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
+        <React.Fragment key={'right'}>
+            <Button onClick={toggleDrawer('right', true)}>MENU</Button>
             <Drawer
-                anchor={anchor}
-                open={state[anchor]}
-                onClose={toggleDrawer(anchor, false)}
+                anchor={'right'}
+                open={state['right']}
+                onClose={toggleDrawer('right', false)}
             >
-                {list(anchor)}
+                {list('right')}
             </Drawer>
         </React.Fragment>
-        ))}
     </div>
     );
 }
@@ -152,21 +162,8 @@ class AppDesktop extends React.Component {
                     <div className='home-desktop-menu' id='home-desktop-menu'>
                         <div className='home-desktop-menu-item' id='home-desktop-menu-item'>
                             <div className='home-desktop-menu-item-button' id='home-desktop-menu-item-button' onClick={() => this.handle_change('open_menu', true)}>
-                                <TemporaryDrawer/>
+                                <Menu/>
                             </div>
-                            {/* {this.state.open_menu &&
-                                <div className='home-desktop-menu-list' id='home-desktop-menu-list'>
-                                    <div className='home-desktop-menu-list-item'>
-                                        <Link onClick={() => this.handle_change('open_menu', false)} to="/">Home</Link>
-                                    </div>
-                                    <div className='home-desktop-menu-list-item'>
-                                        <Link onClick={() => this.handle_change('open_menu', false)} to="/all-seasons">All Seasons</Link>
-                                    </div>
-                                    <div className='home-desktop-menu-list-item'>
-                                        <Link onClick={() => this.handle_change('open_menu', false)} to="/pilots">Pilots</Link>
-                                    </div>
-                                </div>
-                            } */}
                         </div>
                     </div>
                     <Switch>
