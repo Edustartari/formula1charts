@@ -20,6 +20,7 @@
     margin: 30px 0 0px 0;
     border: 1px solid #dbdbdb;
     border-radius: 5px;
+    cursor: pointer;
 }
 .pilots-desktop-photo-card img{
     width: 100%;
@@ -81,6 +82,97 @@
     right: 0;
     width: 30%;
     font-size: 14px;
+}
+.pilots-desktop-photo-card-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px;
+}
+.pilots-desktop-photo-card-title-text {
+    
+}
+.pilots-desktop-photo-card-title .material-icons{
+    
+}
+.pilots-dialog {
+
+}
+.pilots-overlay{
+    min-width: 400px;
+    position: unset;
+    max-height: 700px;
+    min-height: 300px;
+    overflow: auto;
+}
+.pilots-overlay-title{
+    font-size: 24px;
+    font-weight: bold;
+    background-color: white;
+    width: -webkit-fill-available;
+    padding: 15px;
+    position: absolute;
+}
+.pilots-overlay-input{
+    margin: 140px 0;
+}
+.pilots-overlay .css-1u3bzj6-MuiFormControl-root-MuiTextField-root{
+    background-color: white;
+    width: -webkit-fill-available;
+    padding: 15px;
+    position: absolute;
+    top: 48px;
+}
+.pilots-overlay .css-1c2i806-MuiFormLabel-root-MuiInputLabel-root{
+    left: 12px;
+    top: 10px;
+}
+.pilots-overlay .css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root{
+    left: 12px;
+    top: 10px;
+}
+.pilots-overlay-subtitle{
+    margin: 30px 0 0 0;
+}
+.pilots-overlay-list .css-1869usk-MuiFormControl-root{
+    margin: 8px 0 0 0;
+    width: 100%;
+}
+.pilots-overlay-button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0 0 0;
+    padding: 15px;
+    background-color: white;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: -webkit-fill-available;
+}
+.pilots-overlay-button{
+    border-radius: 5px;
+    background-color: #1a7ccb;
+    color: white;
+    padding: 12px;
+    cursor: pointer;
+}
+.pilots-overlay-button-erase {
+    padding: 13px;
+}
+.pilots-overlay-button-erase:hover {
+    background-color: #dbdbdb;
+    cursor: pointer;
+}
+.pilots-overlay-input-filter {
+
+}
+.pilots-overlay-input-item {
+    padding: 5px 15px;
+}
+.pilots-overlay-input-item:hover {
+    background-color: #dbdbdb;
+    cursor: pointer;
 }
 
 /* Adapt classes based on differente screen sizes */

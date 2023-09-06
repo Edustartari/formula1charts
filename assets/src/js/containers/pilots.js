@@ -14,8 +14,79 @@ import { ResponsiveRadar } from '@nivo/radar'
 import Switch from '@mui/material/Switch';
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
+import Dialog from '@mui/material/Dialog';
+import TextField from '@mui/material/TextField';
+import FuzzySearch from "fuzzy-search";
 
 // const drivers = content.drivers;
+
+function PilotsOverlay(props){
+
+    const [driver_name, set_driver_name] = React.useState('');
+    const [filtered_driver, set_filtered_driver] = React.useState('');
+    const [filtered_list, set_filtered_list] = React.useState(props.drivers);
+
+    function filter_driver(value){
+        console.log('')
+        console.log('value: ', value)
+
+        let drivers_list = props.drivers;
+
+        if(value.length > 0){
+            let searcher = new FuzzySearch(props.drivers, ['name'],{caseSensitive: false});
+        	drivers_list = searcher.search(value);
+        }
+        set_filtered_list(drivers_list);
+        set_driver_name(value);
+        console.log('drivers_list: ', drivers_list)
+
+    }
+
+    function close_dialog(confirm){
+        console.log('')
+        console.log('close_dialog')
+        console.log('confirm: ', confirm)
+        if(confirm){
+            props.select_driver(props.open_dialog, filtered_driver)
+        }
+        props.handle_change('open_dialog', false);
+        set_filtered_driver('');
+        set_filtered_list(props.drivers);
+    }
+
+    console.log('filtered_driver: ', filtered_driver)
+
+    return(
+        <Dialog className='pilots-dialog' onClose={() => close_dialog(false)} open={props.open_dialog.length > 0 ? true : false}>
+            <div className='pilots-overlay'>
+                <div className='pilots-overlay-title'>Select driver:</div>
+                <TextField value={driver_name} id="standard-basic" label="Driver Name" variant="standard" onChange={(event) => filter_driver(event.target.value)}/>
+                <div className='pilots-overlay-input'>
+                    {filtered_list.length > 0 &&
+                        <div className='pilots-overlay-input-filter'>
+                            {filtered_list.map((driver) => {
+                                return(
+                                    <div 
+                                        key={driver['id']}
+                                        className='pilots-overlay-input-item'
+                                        onClick={() => set_filtered_driver(driver)}
+                                        style={{backgroundColor: filtered_driver['id'] === driver['id'] ? '#8baaff' : ''}}
+                                    >
+                                        {driver['name']}
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    }
+                </div>
+                <div className='pilots-overlay-button-container'>
+                    <div className='pilots-overlay-button-erase' onClick={() => {set_filtered_list(props.drivers), set_filtered_driver(''), set_driver_name('')}}>ERASE</div>
+                    <div className='pilots-overlay-button' onClick={() => close_dialog(true)}>CONFIRM</div>
+                </div>
+            </div>
+        </Dialog>
+    )
+}
 
 class Pilots extends React.Component {
     constructor(props){
@@ -31,11 +102,17 @@ class Pilots extends React.Component {
             radar_list_absolute: [],
             radar_list_percentage: [],
             toggle_option: 'absolute',
+            open_dialog: false
         }
-        this.handleChange = this.handleChange.bind(this);
+        this.select_driver = this.select_driver.bind(this);
         this.load_content = this.load_content.bind(this);
+        this.handle_change = this.handle_change.bind(this);
 
         this.load_content()
+    }
+
+    handle_change(key, value){
+        this.setState({[key]: value})
     }
 
     load_content(){
@@ -50,16 +127,22 @@ class Pilots extends React.Component {
             let drivers_list = _.filter(this.state.drivers, function(o) { return o.wins > 0; });
             let random_drivers = _.sampleSize(drivers_list, 5)
             for(let i = 0; i < random_drivers.length; i++){
-                this.handleChange('driver_' + (i + 1),random_drivers[i]['id'])
+                this.select_driver('driver_' + (i + 1),random_drivers[i])
             }
             this.setState({loading: false});
         })
     }
 
-    handleChange(key,value) {
-        let driver_id = value
+    select_driver(key,value) {
+        console.log('')
+        console.log('select_driver')
+        console.log('key: ', key)
+        console.log('value: ', value)
+        let driver_id = value.id
         let current_driver = this.state[key]
+        console.log('this.state.drivers: ', this.state.drivers)
         let selected_driver = _.find(this.state.drivers, {id: driver_id})
+        console.log('selected_driver: ', selected_driver)
         this.setState({[key]: selected_driver})
         
         let temporary_radar_list_absolute = this.state.radar_list_absolute
@@ -196,90 +279,50 @@ class Pilots extends React.Component {
                         </div>
                     </div>
                     <div className='pilots-desktop-photos-list'>
-                        <div className='pilots-desktop-photo-card'>
+                        <div className='pilots-desktop-photo-card' onClick={() => this.setState({open_dialog: 'driver_1'})}>
                             <img src={driver_1_image.default} />
-                            <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
-                                <Select
-                                    labelId="demo-simple-select-standard-label"
-                                    id="demo-simple-select-standard"
-                                    value={this.state.driver_1['id']}
-                                    onChange={(event) => this.handleChange('driver_1',event.target.value)}
-                                >
-                                    {this.state.drivers.map((driver) => {
-                                        return(
-                                            <MenuItem key={driver['id']} value={driver['id']}>{driver['name']}</MenuItem>
-                                        )
-                                    })}
-                                </Select>
-                            </FormControl>
+                            <div className='pilots-desktop-photo-card-title'>
+                                <div className='pilots-desktop-photo-card-title-text'>
+                                    {this.state.driver_1['name']}
+                                </div>
+                                <span className="material-icons">expand_more</span>
+                            </div>
                         </div>
-                        <div className='pilots-desktop-photo-card'>
+                        <div className='pilots-desktop-photo-card' onClick={() => this.setState({open_dialog: 'driver_2'})}>
                             <img src={driver_2_image.default} />
-                            <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
-                                <Select
-                                    labelId="demo-simple-select-standard-label"
-                                    id="demo-simple-select-standard"
-                                    value={this.state.driver_2.id}
-                                    onChange={(event) => this.handleChange('driver_2',event.target.value)}
-                                >
-                                    {this.state.drivers.map((driver) => {
-                                        return(
-                                            <MenuItem key={driver['id']} value={driver['id']}>{driver['name']}</MenuItem>
-                                        )
-                                    })}
-                                </Select>
-                            </FormControl>
+                            <div className='pilots-desktop-photo-card-title'>
+                                <div className='pilots-desktop-photo-card-title-text'>
+                                    {this.state.driver_2['name']}
+                                </div>
+                                <span className="material-icons">expand_more</span>
+                            </div>
                         </div>
-                        <div className='pilots-desktop-photo-card'>
+                        <div className='pilots-desktop-photo-card' onClick={() => this.setState({open_dialog: 'driver_3'})}>
                             <img src={driver_3_image.default} />
-                            <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
-                                <Select
-                                    labelId="demo-simple-select-standard-label"
-                                    id="demo-simple-select-standard"
-                                    value={this.state.driver_3.id}
-                                    onChange={(event) => this.handleChange('driver_3',event.target.value)}
-                                >
-                                    {this.state.drivers.map((driver) => {
-                                        return(
-                                            <MenuItem key={driver['id']} value={driver['id']}>{driver['name']}</MenuItem>
-                                        )
-                                    })}
-                                </Select>
-                            </FormControl>
+                            <div className='pilots-desktop-photo-card-title'>
+                                <div className='pilots-desktop-photo-card-title-text'>
+                                    {this.state.driver_3['name']}
+                                </div>
+                                <span className="material-icons">expand_more</span>
+                            </div>
                         </div>
-                        <div className='pilots-desktop-photo-card'>
+                        <div className='pilots-desktop-photo-card' onClick={() => this.setState({open_dialog: 'driver_4'})}>
                             <img src={driver_4_image.default} />
-                            <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
-                                <Select
-                                    labelId="demo-simple-select-standard-label"
-                                    id="demo-simple-select-standard"
-                                    value={this.state.driver_4.id}
-                                    onChange={(event) => this.handleChange('driver_4',event.target.value)}
-                                >
-                                    {this.state.drivers.map((driver) => {
-                                        return(
-                                            <MenuItem key={driver['id']} value={driver['id']}>{driver['name']}</MenuItem>
-                                        )
-                                    })}
-                                </Select>
-                            </FormControl>
+                            <div className='pilots-desktop-photo-card-title'>
+                                <div className='pilots-desktop-photo-card-title-text'>
+                                    {this.state.driver_4['name']}
+                                </div>
+                                <span className="material-icons">expand_more</span>
+                            </div>
                         </div>
-                        <div className='pilots-desktop-photo-card'>
+                        <div className='pilots-desktop-photo-card' onClick={() => this.setState({open_dialog: 'driver_5'})}>
                             <img src={driver_5_image.default} />
-                            <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
-                                <Select
-                                    labelId="demo-simple-select-standard-label"
-                                    id="demo-simple-select-standard"
-                                    value={this.state.driver_5.id}
-                                    onChange={(event) => this.handleChange('driver_5',event.target.value)}
-                                >
-                                    {this.state.drivers.map((driver) => {
-                                        return(
-                                            <MenuItem key={driver['id']} value={driver['id']}>{driver['name']}</MenuItem>
-                                        )
-                                    })}
-                                </Select>
-                            </FormControl>
+                            <div className='pilots-desktop-photo-card-title'>
+                                <div className='pilots-desktop-photo-card-title-text'>
+                                    {this.state.driver_5['name']}
+                                </div>
+                                <span className="material-icons">expand_more</span>
+                            </div>
                         </div>
                     </div>
                     <div className='pilots-desktop-chart'>
@@ -339,6 +382,7 @@ class Pilots extends React.Component {
                         </div>
                     </div>
                     <div className='pilots-desktop-chart'>CHART TWO</div>
+                    <PilotsOverlay handle_change={this.handle_change} select_driver={this.select_driver} {...this.state}/>
                 </div>
             )
         }
