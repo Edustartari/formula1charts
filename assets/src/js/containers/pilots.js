@@ -7,9 +7,6 @@ import {
     Routes,
     Route
 } from "react-router-dom";
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
 import { ResponsiveRadar } from '@nivo/radar'
 import Switch from '@mui/material/Switch';
 import Backdrop from '@mui/material/Backdrop';
@@ -50,6 +47,7 @@ function PilotsOverlay(props){
             props.select_driver(props.open_dialog, filtered_driver)
         }
         props.handle_change('open_dialog', false);
+        set_driver_name('');
         set_filtered_driver('');
         set_filtered_list(props.drivers);
     }

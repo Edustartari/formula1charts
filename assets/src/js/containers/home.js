@@ -72,12 +72,14 @@ class Home extends React.Component {
                         image='f1_background_pilot_1'
                     />
                 </Link>
-                <CardContainer
-                    title='ALL TIME COMPARATIVE'
-                    subtitle='Check out all main conquests by year'
-                    slug='formula-1'
-                    image='f1_background_ferrari_2'
-                />
+                <Link to="/all-time">
+                    <CardContainer
+                        title='ALL TIME COMPARATIVE'
+                        subtitle='Check out all main conquests by year'
+                        slug='formula-1'
+                        image='f1_background_ferrari_2'
+                    />
+                </Link>
                 <CardContainer
                     title='CONSTRUCTOR STATISTICS'
                     subtitle='See all main achievements'

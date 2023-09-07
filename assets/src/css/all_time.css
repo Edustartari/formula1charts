@@ -1,0 +1,76 @@
+.all-time-background{
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+.all-time-main-container{
+    margin: 100px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+}
+.all-time-main-title{
+    font-size: 40px;
+}
+.all-time-options{
+    display: flex;
+    margin: 50px 0;
+    width: 100%;
+}
+.all-time-option-box{
+    margin: 0 100px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(100% / 4);
+}
+.all-time-option-box:nth-last-child(1){
+    margin-right: 0;
+}
+.all-time-option-box-text{
+    margin: 0 0 15px 0;
+}
+.all-time-option-box-component{
+    width: 100%;
+}
+.all-time-main-button{
+    background-color: lightsteelblue;
+    padding: 15px 30px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+.all-time-main-button:hover{
+    cursor: pointer;
+    background-color: rgb(187, 202, 222);
+}
+.all-time-charts{
+    margin: 50px 0 0 0;
+    display: flex;
+    width: 100%;
+}
+.all-time-chart-box{
+    margin: 0 70px 0 0;
+    width: calc(100% / 3);
+}
+.all-time-chart-box:nth-last-child(1){
+    margin-right: 0px;
+}
+.all-time-chart-box-info{
+
+}
+.all-time-chart-box-info-photo{
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 150px;
+    width: 100%;
+}
+.all-time-chart-box-info-text{
+    text-align: center;
+    margin: 10px 0 0 0;
+}
+.all-time-chart-details{
+    margin: 20px 0 0 0;
+}

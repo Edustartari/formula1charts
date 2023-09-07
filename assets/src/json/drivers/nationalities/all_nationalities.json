@@ -1,0 +1,248 @@
+{
+    "GBR": {
+        "nationality_acronym": "GBR",
+        "nationality_href": "/wiki/United_Kingdom",
+        "nationality_title": "United Kingdom",
+        "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/a/ae/Flag_of_the_United_Kingdom.svg/revision/latest?cb=20121012220726"
+    },
+    "USA": {
+        "nationality_acronym": "USA",
+        "nationality_href": "/wiki/United_States",
+        "nationality_title": "United States",
+        "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/a/a4/Flag_of_the_United_States.svg/revision/latest?cb=20081117192736"
+    },
+    "AUT": {
+        "nationality_acronym": "AUT",
+        "nationality_href": "/wiki/Austria",
+        "nationality_title": "Austria",
+        "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/4/41/Flag_of_Austria.svg/revision/latest?cb=20081106193346"
+    },
+    "ITA": {
+        "nationality_acronym": "ITA",
+        "nationality_href": "/wiki/Italy",
+        "nationality_title": "Italy",
+        "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/0/03/Flag_of_Italy.svg/revision/latest?cb=20081106192030"
+    },
+    "BRA": {
+        "nationality_acronym": "BRA",
+        "nationality_href": "/wiki/Brazil",
+        "nationality_title": "Brazil",
+        "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/0/05/Flag_of_Brazil.svg/revision/latest?cb=20081106192246"
+    },
+    "BEL": {
+        "nationality_acronym": "BEL",
+        "nationality_href": "/wiki/Belgium",
+        "nationality_title": "Belgium",
+        "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/6/65/Flag_of_Belgium.svg/revision/latest?cb=20211030054815"
+    },
+    "FRA": {
+        "nationality_acronym": "FRA",
+        "nationality_href": "/wiki/France",
+        "nationality_title": "France",
+        "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/c/c3/Flag_of_France.svg/revision/latest?cb=20140529170026"
+    },
+    "POR": {
+        "nationality_acronym": "POR",
+        "nationality_href": "/wiki/Portugal",
+        "nationality_title": "Portugal",
+        "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/5/5c/Flag_of_Portugal.svg/revision/latest?cb=20081127000704"
+    },
+    "SWE": {
+        "nationality_acronym": "SWE",
+        "nationality_href": "/wiki/Sweden",
+        "nationality_title": "Sweden",
+        "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/4/4c/Flag_of_Sweden.svg/revision/latest?cb=20081127001006"
+    },
+    "IRE": {
+        "nationality_acronym": "IRE",
+        "nationality_href": "/wiki/Ireland",
+        "nationality_title": "Ireland",
+        "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/4/45/Flag_of_Ireland.svg/revision/latest?cb=20120204152638"
+    },
+    "CAN": {
+        "nationality_acronym": "CAN",
+        "nationality_href": "/wiki/Canada",
+        "nationality_title": "Canada",
+        "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/c/cf/Flag_of_Canada.svg/revision/latest?cb=20081117192230"
+    },
+    "MEX": {
+        "nationality_acronym": "MEX",
+        "nationality_href": "/wiki/Mexico",
+        "nationality_title": "Mexico",
+        "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/f/fc/Flag_of_Mexico.svg/revision/latest?cb=20081127000438"
+    },
+    "SUI": {
+        "nationality_acronym": "SUI",
+        "nationality_href": "/wiki/Switzerland",
+        "nationality_title": "Switzerland",
+        "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/f/f3/Flag_of_Switzerland.svg/revision/latest?cb=20211208100405"
+    },
+    "NED": {
+        "nationality_acronym": "NED",
+        "nationality_href": "/wiki/Netherlands",
+        "nationality_title": "Netherlands",
+        "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/2/20/Flag_of_the_Netherlands.svg/revision/latest?cb=20081126224530"
+    },
+    "MAR": {
+        "nationality_acronym": "MAR",
+        "nationality_href": "/wiki/Morocco",
+        "nationality_title": "Morocco",
+        "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/2/2c/Flag_of_Morocco.svg/revision/latest?cb=20081127000602"
+    },
+    "GER": {
+        "nationality_acronym": "GER",
+        "nationality_href": "/wiki/Germany",
+        "nationality_title": "Germany",
+        "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/b/ba/Flag_of_Germany.svg/revision/latest?cb=20081106192532"
+    },
+    "JPN": {
+        "nationality_acronym": "JPN",
+        "nationality_href": "/wiki/Japan",
+        "nationality_title": "Japan",
+        "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/9/9e/Flag_of_Japan.svg/revision/latest?cb=20081106193823"
+    },
+    "DEN": {
+        "nationality_acronym": "DEN",
+        "nationality_href": "/wiki/Denmark",
+        "nationality_title": "Denmark",
+        "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/9/9c/Flag_of_Denmark.svg/revision/latest?cb=20120212204647"
+    },
+    "ESP": {
+        "nationality_acronym": "ESP",
+        "nationality_href": "/wiki/Spain",
+        "nationality_title": "Spain",
+        "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/9/9a/Flag_of_Spain.svg/revision/latest?cb=20140529173440"
+    },
+    "MON": {
+        "nationality_acronym": "MON",
+        "nationality_href": "/wiki/Monaco",
+        "nationality_title": "Monaco",
+        "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/e/ea/Flag_of_Monaco.svg/revision/latest?cb=20220328051541"
+    },
+    "FIN": {
+        "nationality_acronym": "FIN",
+        "nationality_href": "/wiki/Finland",
+        "nationality_title": "Finland",
+        "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/b/bc/Flag_of_Finland.svg/revision/latest?cb=20140529173947"
+    },
+    "NZL": {
+        "nationality_acronym": "NZL",
+        "nationality_href": "/wiki/New_Zealand",
+        "nationality_title": "New Zealand",
+        "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/3/3e/Flag_of_New_Zealand.svg/revision/latest?cb=20081201184315"
+    },
+    "AUS": {
+        "nationality_acronym": "AUS",
+        "nationality_href": "/wiki/Australia",
+        "nationality_title": "Australia",
+        "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/b/b9/Flag_of_Australia.svg/revision/latest?cb=20170411013449"
+    },
+    "ARG": {
+        "nationality_acronym": "ARG",
+        "nationality_href": "/wiki/Argentina",
+        "nationality_title": "Argentina",
+        "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/1/1a/Flag_of_Argentina.svg/revision/latest?cb=20081117192211"
+    },
+    "RSA": {
+        "nationality_acronym": "RSA",
+        "nationality_href": "/wiki/South_Africa",
+        "nationality_title": "South Africa",
+        "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/a/af/Flag_of_South_Africa.svg/revision/latest?cb=20120129180558"
+    },
+    "RUS": {
+        "nationality_acronym": "RUS",
+        "nationality_href": "/wiki/Russia",
+        "nationality_title": "Russia",
+        "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/f/f3/Flag_of_Russia.svg/revision/latest?cb=20120124165927"
+    },
+    "VEN": {
+        "nationality_acronym": "VEN",
+        "nationality_href": "/wiki/Venezuela",
+        "nationality_title": "Venezuela",
+        "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/0/06/Flag_of_Venezuela.svg/revision/latest?cb=20120124165441"
+    },
+    "CHN": {
+        "nationality_acronym": "CHN",
+        "nationality_href": "/wiki/China",
+        "nationality_title": "China",
+        "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/9/96/Flag_of_China.svg/revision/latest?cb=20120319220150"
+    },
+    "FRN": {
+        "nationality_acronym": "FRN",
+        "nationality_href": "/wiki/Federation_of_Rhodesia_and_Nyasaland",
+        "nationality_title": "Federation of Rhodesia and Nyasaland",
+        "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/4/42/Flag_of_the_Federation_of_Rhodesia_and_Nyasaland.svg/revision/latest?cb=20120213220829"
+    },
+    "CZE": {
+        "nationality_acronym": "CZE",
+        "nationality_href": "/wiki/Czech_Republic",
+        "nationality_title": "Czech Republic",
+        "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/c/cb/Flag_of_the_Czech_Republic.svg/revision/latest?cb=20120129174748"
+    },
+    "THA": {
+        "nationality_acronym": "THA",
+        "nationality_href": "/wiki/Thailand",
+        "nationality_title": "Thailand",
+        "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/a/a9/Flag_of_Thailand.svg/revision/latest?cb=20120213170407"
+    },
+    "MAS": {
+        "nationality_acronym": "MAS",
+        "nationality_href": "/wiki/Malaysia",
+        "nationality_title": "Malaysia",
+        "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/6/66/Flag_of_Malaysia.svg/revision/latest?cb=20081106194545"
+    },
+    "ISR": {
+        "nationality_acronym": "ISR",
+        "nationality_href": "/wiki/Israel",
+        "nationality_title": "Israel",
+        "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/d/d4/Flag_of_Israel.svg/revision/latest?cb=20120213213351"
+    },
+    "CHL": {
+        "nationality_acronym": "CHL",
+        "nationality_href": "/wiki/Chile",
+        "nationality_title": "Chile",
+        "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/7/78/Flag_of_Chile.svg/revision/latest?cb=20120213170818"
+    },
+    "POL": {
+        "nationality_acronym": "POL",
+        "nationality_href": "/wiki/Poland",
+        "nationality_title": "Poland",
+        "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/1/12/Flag_of_Poland.svg/revision/latest?cb=20081106193134"
+    },
+    "HUN": {
+        "nationality_acronym": "HUN",
+        "nationality_href": "/wiki/Hungary",
+        "nationality_title": "Hungary",
+        "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/d/d3/Flag_of_Hungary_1867-1918.svg/revision/latest?cb=20140525214959"
+    },
+    "IND": {
+        "nationality_acronym": "IND",
+        "nationality_href": "/wiki/India",
+        "nationality_title": "India",
+        "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/4/41/Flag_of_India.svg/revision/latest?cb=20081106194308"
+    },
+    "HKG": {
+        "nationality_acronym": "HKG",
+        "nationality_href": "/wiki/Hong_Kong",
+        "nationality_title": "Hong Kong",
+        "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/5/5b/Flag_of_Hong_Kong.svg/revision/latest?cb=20120213171810"
+    },
+    "INA": {
+        "nationality_acronym": "INA",
+        "nationality_href": "/wiki/Indonesia",
+        "nationality_title": "Indonesia",
+        "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/9/9f/Flag_of_Indonesia.svg/revision/latest?cb=20130108193043"
+    },
+    "URU": {
+        "nationality_acronym": "URU",
+        "nationality_href": "/wiki/Uruguay",
+        "nationality_title": "Uruguay",
+        "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/f/fe/Flag_of_Uruguay.svg/revision/latest?cb=20120204152833"
+    },
+    "COL": {
+        "nationality_acronym": "COL",
+        "nationality_href": "/wiki/Colombia",
+        "nationality_title": "Colombia",
+        "nationality_flag": "/wiki/Colombia"
+    }
+}

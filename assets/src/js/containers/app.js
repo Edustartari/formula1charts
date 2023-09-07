@@ -12,6 +12,7 @@ import Home from './home.js';
 import AllSeasons from './all_seasons.js';
 import Season from './season.js';
 import Pilots from './pilots.js';
+import AllTime from './all_time.js';
 
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
@@ -65,6 +66,13 @@ function Menu() {
                     <ListItem key={'Pilots'} disablePadding>
                         <ListItemButton>
                             <ListItemText primary={'Pilots'} />
+                        </ListItemButton>
+                    </ListItem>
+                </Link>
+                <Link to="/all-time">
+                    <ListItem key={'All Time'} disablePadding>
+                        <ListItemButton>
+                            <ListItemText primary={'All Time'} />
                         </ListItemButton>
                     </ListItem>
                 </Link>
@@ -160,8 +168,8 @@ class AppDesktop extends React.Component {
             <div className='app-desktop-container' id='app-desktop-container'>
                 <Router>
                     <div className='home-desktop-menu' id='home-desktop-menu'>
-                        <div className='home-desktop-menu-item' id='home-desktop-menu-item'>
-                            <div className='home-desktop-menu-item-button' id='home-desktop-menu-item-button' onClick={() => this.handle_change('open_menu', true)}>
+                        <div className='home-desktop-menu-item' id='home-desktop-menu-item' onClick={() => this.handle_change('open_menu', true)}>
+                            <div className='home-desktop-menu-item-button' id='home-desktop-menu-item-button'>
                                 <Menu/>
                             </div>
                         </div>
@@ -175,6 +183,9 @@ class AppDesktop extends React.Component {
                         </Route>
                         <Route path="/pilots" >
                             <Pilots />
+                        </Route>
+                        <Route path="/all-time" >
+                            <AllTime />
                         </Route>
                         <Route path="/:slug" >
                             <Season />

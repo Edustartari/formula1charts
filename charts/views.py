@@ -503,6 +503,23 @@ def pilots(request):
 	context = {}
 	return render(request, 'front-end/pilots.html', context)
 
+def all_time(request):
+
+	print('')
+	main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+	print('main_path: ' + main_path)
+	nationalities_path = os.path.join(main_path, 'assets/src/json/drivers/nationalities')
+	print('nationalities_path: ' + str(nationalities_path))
+
+	nationalities = os.listdir(nationalities_path)
+	with open(nationalities_path + '/all_nationalities.json') as json_file:
+		data = json.load(json_file)
+		print('data: ' + str(data))
+
+	context = {}
+	return render(request, 'front-end/all-time.html', context)
+
+
 def pilots_list(request):
 
 	# Get all files inside assets/src/json/drivers
