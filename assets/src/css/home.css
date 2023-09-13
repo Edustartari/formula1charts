@@ -62,8 +62,7 @@
     font-style: normal;
     text-align: center;
 }
-.home-desktop-card:hover,
-.home-desktop-menu:hover {
+.home-desktop-card:hover{
     cursor: pointer;
 }
 .home-desktop-first-card {

@@ -18,7 +18,7 @@
     content.year = {{ year|safe }};
     content.champion_name = {{ champion_name|safe }};
     content.season_title = {{ season_title|safe }};
-    console.log(content)
+    console.log('after all: ', content)
 </script>
 <script src="{% static 'season_bundle.js' %}"></script>
 {% endblock %}

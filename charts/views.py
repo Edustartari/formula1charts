@@ -18,6 +18,44 @@ from django.http import JsonResponse
 # =================================================================================================
 # Create your procedures here.
 
+def update_drivers_info():
+	# get path to src/json folder
+	main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+	print('main_path: ' + main_path)
+
+	standings_path = os.path.join(main_path, 'assets/src/json/standings/driver_standings_after_a_race')
+	print('standings_path: ' + standings_path)
+
+	circuit_path = os.path.join(main_path, 'assets/src/json/circuits/list_of_all_circuits_within_a_year')
+	print('circuit_path: ' + circuit_path)
+
+	drivers_path = os.path.join(main_path, 'assets/src/json/drivers/statistics')
+	drivers = os.listdir(drivers_path)
+	
+	# Enter each file and rename the key name with the file name.
+	for driver in tqdm(drivers):
+		with open(drivers_path + '/' + driver) as driver_file:
+			driver_data = json.load(driver_file)
+
+			for year in driver_data['seasons_years']:
+				# Go after folder circuits/list_of_all_circuits_within_a_year, find the year and open the json
+				with open(circuit_path + '/' + year + '_circuits.json') as circuit_file:
+					circuit_data = json.load(circuit_file)
+					
+				total_races = circuit_data['MRData']['total']
+				print('total_races: ' + str(total_races))
+
+				for race in range(1, int(total_races) + 1):
+					race_dict = {}
+					with open(standings_path + '/' + year + '/' + year + '_race_' + str(race) + '.json', 'r') as race_file:
+						race_data = json.load(race_file)
+
+			with open(drivers_path + '/' + driver, 'w', encoding='utf-8') as outfile:
+				json.dump(data, outfile)
+
+	return
+
+
 def get_drivers_standings():
 
 	# get path to src/json folder
@@ -505,20 +543,27 @@ def pilots(request):
 
 def all_time(request):
 
+	update_drivers_info()
+
+	context = {}
+	return render(request, 'front-end/all-time.html', context)
+
+def load_nationalities(request):
 	print('')
 	main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 	print('main_path: ' + main_path)
 	nationalities_path = os.path.join(main_path, 'assets/src/json/drivers/nationalities')
 	print('nationalities_path: ' + str(nationalities_path))
 
-	nationalities = os.listdir(nationalities_path)
+	data = {}
 	with open(nationalities_path + '/all_nationalities.json') as json_file:
 		data = json.load(json_file)
 		print('data: ' + str(data))
 
-	context = {}
-	return render(request, 'front-end/all-time.html', context)
-
+	response_dict = {
+		'nationalities': data
+	}
+	return JsonResponse(response_dict, safe=False) 
 
 def pilots_list(request):
 
@@ -573,8 +618,8 @@ def pilots_list(request):
 	# Order drivers_list by name
 	drivers_list = pydash.sort_by(drivers_list, 'name')
 
-	context = {
+	response_dict = {
 		'drivers': drivers_list
 	}
 
-	return JsonResponse(context, safe=False) 
+	return JsonResponse(response_dict, safe=False) 

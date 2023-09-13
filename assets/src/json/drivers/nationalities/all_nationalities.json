@@ -1,4 +1,10 @@
 {
+    "WORLD": {
+        "nationality_acronym": "all",
+        "nationality_href": "",
+        "nationality_title": "World",
+        "nationality_flag": ""
+    },
     "GBR": {
         "nationality_acronym": "GBR",
         "nationality_href": "/wiki/United_Kingdom",
@@ -243,6 +249,6 @@
         "nationality_acronym": "COL",
         "nationality_href": "/wiki/Colombia",
         "nationality_title": "Colombia",
-        "nationality_flag": "/wiki/Colombia"
+        "nationality_flag": "https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Colombia.svg"
     }
 }

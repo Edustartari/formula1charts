@@ -106,7 +106,7 @@ class Pilots extends React.Component {
         this.load_content = this.load_content.bind(this);
         this.handle_change = this.handle_change.bind(this);
 
-        this.load_content()
+        this.load_content();
     }
 
     handle_change(key, value){
