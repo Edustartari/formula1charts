@@ -11,12 +11,71 @@ import time
 from tqdm import tqdm
 import urllib.parse
 import base64
+import re
 from django.http import JsonResponse
 
 # ================================================================================================
 # =================================================================================================
 # =================================================================================================
 # Create your procedures here.
+
+def get_race_results():
+	
+	print('')
+	print('get_race_results')
+
+	# get path to src/json folder
+	main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+	print('main_path: ' + main_path)
+
+	circuit_path = os.path.join(main_path, 'assets/src/json/circuits/list_of_all_circuits_within_a_year')
+	print('circuit_path: ' + circuit_path)
+
+	current_year = datetime.now().year
+	years = [str(i) for i in range(1950, current_year + 1)]
+
+	max_limit = 0
+
+	for year in years[69:]:
+		print("year: " + str(year))
+
+		# Go after folder circuits/list_of_all_circuits_within_a_year, find the year and open the json
+		with open(circuit_path + '/' + year + '_circuits.json') as json_file:
+			data = json.load(json_file)
+			
+		total_races = data['MRData']['total']
+		print('total_races: ' + str(total_races))
+
+		race_results_path = os.path.join(main_path, 'assets/src/json/standings/race_results')
+		print('race_results_path: ' + race_results_path)
+
+		for race in range(1, int(total_races) + 1):
+			url = f"http://ergast.com/api/f1/{year}/{race}/results.json"
+			json_name = f"{year}_race_results_{race}.json"
+			
+			# print('url: ' + url)
+
+			results = requests.get(url)
+
+			results_json = json.loads(results.content)
+
+			# If folder does not exist inside race_results_path, create it.
+			if not os.path.exists(race_results_path + '/' + year):
+				os.makedirs(race_results_path + '/' + year)
+
+			# Save json_example to a file inside path
+			with open(race_results_path + '/' + year + '/' + json_name, 'w') as outfile:
+				json.dump(results_json, outfile)
+
+			max_limit += 1
+			print('max_limit: ' + str(max_limit))
+			time.sleep(5)
+
+			if max_limit == 150:
+				max_limit = 0
+				time.sleep(3600)
+
+	return
 
 def update_drivers_info():
 	# get path to src/json folder
@@ -34,13 +93,50 @@ def update_drivers_info():
 	
 	# Enter each file and rename the key name with the file name.
 	for driver in tqdm(drivers):
+		print('')
 		with open(drivers_path + '/' + driver) as driver_file:
 			driver_data = json.load(driver_file)
+			driver_data['seasons_results'] = {}
+
+			if not driver_data['seasons_years']:
+				continue
+
+			driver_name = driver.split('.')[0]
+			# print('driver: ' + str(driver_name))
+
+			print('')
+			print('====================================')
+			print('====================================')
+			print('====================================')
+			print(driver_name)
+			print(re.sub(r'[^\x00-\x7f]',r'', driver_name))
+			edited_name = re.sub(r'[^\x00-\x7f]',r'', driver_name)
+			first_name = edited_name.split('_')[:-1]
+			first_name = ' '.join(first_name)
+			last_name = edited_name.split('_')[-1]
+			print('first_name: ' + str(first_name))
+			print('last_name: ' + str(last_name))
 
 			for year in driver_data['seasons_years']:
-				# Go after folder circuits/list_of_all_circuits_within_a_year, find the year and open the json
-				with open(circuit_path + '/' + year + '_circuits.json') as circuit_file:
-					circuit_data = json.load(circuit_file)
+				if year == 2023:
+					continue
+
+				year = str(year)
+				print('year: ' + year)
+				driver_data['seasons_results'][year] = {}
+				driver_data['seasons_results'][year]['title'] = 0
+				driver_data['seasons_results'][year]['races'] = 0
+				driver_data['seasons_results'][year]['wins'] = 0
+				driver_data['seasons_results'][year]['points'] = 0
+				driver_data['seasons_results'][year]['poles'] = 0
+				driver_data['seasons_results'][year]['podiums'] = 0
+
+				try:
+					# Go after folder circuits/list_of_all_circuits_within_a_year, find the year and open the json
+					with open(circuit_path + '/' + year + '_circuits.json') as circuit_file:
+						circuit_data = json.load(circuit_file)
+				except:
+					continue
 					
 				total_races = circuit_data['MRData']['total']
 				print('total_races: ' + str(total_races))
@@ -49,9 +145,20 @@ def update_drivers_info():
 					race_dict = {}
 					with open(standings_path + '/' + year + '/' + year + '_race_' + str(race) + '.json', 'r') as race_file:
 						race_data = json.load(race_file)
+						DriverStandings = race_data['MRData']['StandingsTable']['StandingsLists'][0]['DriverStandings']
+						for pilot in DriverStandings:
+							givenName = re.sub(r'[^\x00-\x7f]',r'', pilot['Driver']['givenName'])
+							familyName = re.sub(r'[^\x00-\x7f]',r'', pilot['Driver']['familyName'])
+							if givenName == first_name and familyName == last_name:
+								driver_data['seasons_results'][year]['races'] += 1
 
-			with open(drivers_path + '/' + driver, 'w', encoding='utf-8') as outfile:
-				json.dump(data, outfile)
+								if race == int(total_races):
+									driver_data['seasons_results'][year]['wins'] = int(pilot['wins'])
+									driver_data['seasons_results'][year]['points'] = float(pilot['points'])
+									driver_data['seasons_results'][year]['title'] = 1 if pilot['position'] == '1' else 0
+
+				with open(drivers_path + '/' + driver, 'w', encoding='utf-8') as outfile:
+					json.dump(driver_data, outfile)
 
 	return
 
@@ -457,6 +564,7 @@ def save_images():
 def index(request):
 	print("")
 	print("")
+	# update_drivers_info()
 	context = {}
 
 	return render(request, 'front-end/index.html', context)
@@ -543,7 +651,7 @@ def pilots(request):
 
 def all_time(request):
 
-	update_drivers_info()
+	get_race_results()
 
 	context = {}
 	return render(request, 'front-end/all-time.html', context)
@@ -551,14 +659,11 @@ def all_time(request):
 def load_nationalities(request):
 	print('')
 	main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-	print('main_path: ' + main_path)
 	nationalities_path = os.path.join(main_path, 'assets/src/json/drivers/nationalities')
-	print('nationalities_path: ' + str(nationalities_path))
 
 	data = {}
 	with open(nationalities_path + '/all_nationalities.json') as json_file:
 		data = json.load(json_file)
-		print('data: ' + str(data))
 
 	response_dict = {
 		'nationalities': data

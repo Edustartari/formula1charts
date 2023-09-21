@@ -36,5 +36,95 @@
     "titles_percentage": 27.27,
     "poles_percentage": 40.12,
     "wins_percentage": 25.31,
-    "podiums_percentage": 49.38
+    "podiums_percentage": 49.38,
+    "seasons_results": {
+        "1984": {
+            "title": 0,
+            "races": 16,
+            "wins": 0,
+            "points": 13.0,
+            "poles": 0,
+            "podiums": 0
+        },
+        "1985": {
+            "title": 0,
+            "races": 16,
+            "wins": 2,
+            "points": 38.0,
+            "poles": 0,
+            "podiums": 0
+        },
+        "1986": {
+            "title": 0,
+            "races": 16,
+            "wins": 2,
+            "points": 55.0,
+            "poles": 0,
+            "podiums": 0
+        },
+        "1987": {
+            "title": 0,
+            "races": 16,
+            "wins": 2,
+            "points": 57.0,
+            "poles": 0,
+            "podiums": 0
+        },
+        "1988": {
+            "title": 1,
+            "races": 15,
+            "wins": 8,
+            "points": 90.0,
+            "poles": 0,
+            "podiums": 0
+        },
+        "1989": {
+            "title": 0,
+            "races": 16,
+            "wins": 6,
+            "points": 60.0,
+            "poles": 0,
+            "podiums": 0
+        },
+        "1990": {
+            "title": 1,
+            "races": 16,
+            "wins": 6,
+            "points": 78.0,
+            "poles": 0,
+            "podiums": 0
+        },
+        "1991": {
+            "title": 1,
+            "races": 16,
+            "wins": 7,
+            "points": 96.0,
+            "poles": 0,
+            "podiums": 0
+        },
+        "1992": {
+            "title": 0,
+            "races": 16,
+            "wins": 3,
+            "points": 50.0,
+            "poles": 0,
+            "podiums": 0
+        },
+        "1993": {
+            "title": 0,
+            "races": 16,
+            "wins": 5,
+            "points": 73.0,
+            "poles": 0,
+            "podiums": 0
+        },
+        "1994": {
+            "title": 0,
+            "races": 6,
+            "wins": 0,
+            "points": 0,
+            "poles": 0,
+            "podiums": 0
+        }
+    }
 }
