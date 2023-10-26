@@ -7,10 +7,12 @@ Django==3.2.16
 django-webpack-loader==1.6.0
 djangorestframework==3.14.0
 idna==3.4
+pydash==7.0.6
 pytz==2022.2.1
 requests==2.27.1
 soupsieve==2.3.2.post1
 sqlparse==0.4.3
+tqdm==4.66.1
 typing-extensions==4.1.1
 tzdata==2022.4
 urllib3==1.26.14

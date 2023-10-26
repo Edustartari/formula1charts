@@ -650,9 +650,6 @@ def pilots(request):
 	return render(request, 'front-end/pilots.html', context)
 
 def all_time(request):
-
-	get_race_results()
-
 	context = {}
 	return render(request, 'front-end/all-time.html', context)
 
@@ -674,7 +671,8 @@ def pilots_list(request):
 
 	# Get all files inside assets/src/json/drivers
 	main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-	drivers_path = "/Users/magroove/coding/edu_projects/formula1charts/assets/src/json/drivers/statistics"
+	# drivers_path = "/Users/magroove/coding/edu_projects/formula1charts/assets/src/json/drivers/statistics"
+	drivers_path = main_path + "/assets/src/json/drivers/statistics"
 	drivers = os.listdir(drivers_path)
 
 	drivers_list = []
