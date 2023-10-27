@@ -9,3 +9,4 @@ formula1charts/__pycache__/wsgi.cpython-39.pyc
 formula1charts/__pycache__/
 bundles/
 static/
+env/

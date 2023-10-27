@@ -233,6 +233,9 @@ def update_poles_and_podiums():
 		with open(drivers_path + '/' + driver) as driver_file:
 			driver_data = json.load(driver_file)
 
+		if 'seasons_results' not in driver_data:
+			continue
+
 		driver_name = driver.split('.')[0]
 		edited_name = re.sub(r'[^\x00-\x7f]',r'', driver_name)
 		first_name = edited_name.split('_')[:-1]
@@ -257,7 +260,7 @@ def update_poles_and_podiums():
 		with open(drivers_path + '/' + driver, 'w', encoding='utf-8') as outfile:
 			json.dump(driver_data, outfile)
 
-	print('all_drivers: ' + str(all_drivers))
+	# print('all_drivers: ' + str(all_drivers))
 
 
 def get_drivers_standings():
