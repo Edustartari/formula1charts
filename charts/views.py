@@ -19,8 +19,7 @@ from django.http import JsonResponse
 # =================================================================================================
 # Create your procedures here.
 
-def get_race_results():
-	
+def get_race_results():	
 	print('')
 	print('get_race_results')
 
@@ -36,7 +35,7 @@ def get_race_results():
 
 	max_limit = 0
 
-	for year in years[69:]:
+	for year in years:
 		print("year: " + str(year))
 
 		# Go after folder circuits/list_of_all_circuits_within_a_year, find the year and open the json
@@ -161,6 +160,104 @@ def update_drivers_info():
 					json.dump(driver_data, outfile)
 
 	return
+
+
+def update_poles_and_podiums():
+	print("")
+	print("update_poles_and_podiums")
+
+	# get path to src/json folder
+	main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+	print('main_path: ' + main_path)
+
+	standings_path = os.path.join(main_path, 'assets/src/json/standings/driver_standings_after_a_race')
+	print('standings_path: ' + standings_path)
+
+	circuit_path = os.path.join(main_path, 'assets/src/json/circuits/list_of_all_circuits_within_a_year')
+	print('circuit_path: ' + circuit_path)
+
+	drivers_path = os.path.join(main_path, 'assets/src/json/drivers/statistics')
+	drivers = os.listdir(drivers_path)
+
+	race_results_path = os.path.join(main_path, 'assets/src/json/standings/race_results')
+	print('race_results_path: ' + race_results_path)
+
+	current_year = datetime.now().year
+	years = [str(i) for i in range(1950, current_year + 1)]
+
+	all_drivers = {}
+	for year in years:
+		# print("year: " + str(year))
+
+		# Go after folder circuits/list_of_all_circuits_within_a_year, find the year and open the json
+		with open(circuit_path + '/' + year + '_circuits.json') as json_file:
+			data = json.load(json_file)
+			
+		total_races = data['MRData']['total']
+		# print('total_races: ' + str(total_races))
+
+		for race in range(1, int(total_races) + 1):
+			with open(race_results_path + '/' + year + '/' + year + '_race_results_' + str(race) + '.json', 'r') as race_file:
+				race_data = json.load(race_file)
+				# print(race_data)
+				try:
+					for driver in race_data['MRData']['RaceTable']['Races'][0]['Results']:
+						givenName = re.sub(r'[^\x00-\x7f]',r'', driver['Driver']['givenName'])
+						familyName = re.sub(r'[^\x00-\x7f]',r'', driver['Driver']['familyName'])
+						driver_id = givenName + '_' + familyName
+
+						if driver_id not in all_drivers:
+							all_drivers[driver_id] = {
+								year: {
+									'poles': 0,
+									'podiums': 0
+								}
+							}
+
+						if year not in all_drivers[driver_id]:
+							all_drivers[driver_id][year] = {
+								'poles': 0,
+								'podiums': 0
+							}
+
+						if driver['grid'] == '1':
+							all_drivers[driver_id][year]['poles'] += 1
+
+						if driver['position'] in ['1', '2', '3']:
+							all_drivers[driver_id][year]['podiums'] += 1
+				except:
+					continue
+
+	for driver in tqdm(drivers):
+
+		with open(drivers_path + '/' + driver) as driver_file:
+			driver_data = json.load(driver_file)
+
+		driver_name = driver.split('.')[0]
+		edited_name = re.sub(r'[^\x00-\x7f]',r'', driver_name)
+		first_name = edited_name.split('_')[:-1]
+		first_name = ' '.join(first_name)
+		last_name = edited_name.split('_')[-1]
+
+		print('')
+		print('first_name: ' + str(first_name))
+		print('last_name: ' + str(last_name))
+
+		driver_id = first_name + '_' + last_name
+
+		if driver_id in all_drivers:
+			for year,v in all_drivers[driver_id].items():
+				if year in driver_data['seasons_results']:
+					poles = v['poles']
+					podiums = v['podiums']
+
+					driver_data['seasons_results'][year]['poles'] = poles
+					driver_data['seasons_results'][year]['podiums'] = podiums
+
+		with open(drivers_path + '/' + driver, 'w', encoding='utf-8') as outfile:
+			json.dump(driver_data, outfile)
+
+	print('all_drivers: ' + str(all_drivers))
 
 
 def get_drivers_standings():
@@ -650,6 +747,7 @@ def pilots(request):
 	return render(request, 'front-end/pilots.html', context)
 
 def all_time(request):
+	update_poles_and_podiums()
 	context = {}
 	return render(request, 'front-end/all-time.html', context)
 
