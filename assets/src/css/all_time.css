@@ -50,6 +50,17 @@
     flex-direction: column;
     align-items: center;
 }
+.all-time-option-box-component .css-4jnixx-MuiStack-root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.all-time-option-box-component .css-4jnixx-MuiStack-root>:not(style)~:not(style) {
+    margin-left: 0;
+}
+.all-time-option-box-component .css-z3c6am-MuiFormControl-root-MuiTextField-root:nth-child(1) {
+    margin-bottom: 20px;
+}
 .all-time-main-button{
     background-color: lightsteelblue;
     padding: 15px 30px;
@@ -73,10 +84,10 @@
     margin: 50px 0 0 0;
     display: flex;
     width: 100%;
+    padding: 0 0 50px 0;
 }
 .all-time-chart-box{
     margin: 0 70px 0 0;
-    width: calc(100% / 3);
 }
 .all-time-chart-box:nth-last-child(1){
     margin-right: 0px;
@@ -89,13 +100,17 @@
     background-size: cover;
     height: 150px;
     width: 100%;
+    background-position: center;
 }
 .all-time-chart-box-info-text{
     text-align: center;
     margin: 10px 0 0 0;
+    height: 35px;
 }
 .all-time-chart-details{
     margin: 20px 0 0 0;
+    height: 200px;
+    width: 100%;
 }
 .all-time-option-box-component-nationality-item {
     display: flex;
@@ -103,10 +118,105 @@
 .all-time-option-box-component-nationality-item img{
     width: 30px;
     object-fit: contain;
+    height: 24px;
 }
 .all-time-option-box-component-nationality-item-text {
     margin: 0 0 0 8px;
 }
 .all-time-option-box-component .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
     margin: 0 0 15px 0;
+}
+.barchart-background{
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.barchart-bars{
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 85%;
+}
+.barchart-bar-details{
+    margin: 0 5px 0 0;
+    width: 100%;
+}
+.barchart-bar-details:nth-child(1){
+    background-color: rgb(244, 117, 96);
+}
+.barchart-bar-details:nth-child(2){
+    background-color: rgb(232, 168, 56);
+}
+.barchart-bar-details:nth-child(3){
+    background-color: rgb(97, 205, 187);
+}
+.barchart-bar-details:nth-child(4){
+    background-color: rgb(232, 193, 160);
+    margin-right: 0;
+}
+.barchart-bar-details:hover, .all-time-chart-label-details:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
+.all-time-chart-labels{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 50px 0;
+}
+.all-time-chart-label-details{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 60px 0 0;
+}
+.all-time-chart-label-details:nth-child(1) .all-time-chart-label-details-box{
+    background-color: rgb(244, 117, 96);
+}
+.all-time-chart-label-details:nth-child(2) .all-time-chart-label-details-box{
+    background-color: rgb(232, 168, 56);
+}
+.all-time-chart-label-details:nth-child(3) .all-time-chart-label-details-box{
+    background-color: rgb(97, 205, 187);
+}
+.all-time-chart-label-details:nth-child(4) .all-time-chart-label-details-box{
+    background-color: rgb(232, 193, 160);
+}
+.all-time-chart-label-details-box{
+    width: 30px;
+    height: 30px;
+    margin: 0 10px 0 0;
+}
+.all-time-chart-label-details-text{
+    font-size: 17px;
+    font-size: 19px;
+}
+.barchart-lines-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.barchart-line-details{
+    height: 1px;
+    background-color: rgba(0,0,0,0.3);
+}
+.barchart-line {
+    position: relative;
+}
+.barchart-line-number {
+    position: absolute;
+    top: -5px;
+    left: -25px;
+    font-size: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
 }

@@ -260,8 +260,6 @@ def update_poles_and_podiums():
 		with open(drivers_path + '/' + driver, 'w', encoding='utf-8') as outfile:
 			json.dump(driver_data, outfile)
 
-	# print('all_drivers: ' + str(all_drivers))
-
 
 def get_drivers_standings():
 
@@ -750,7 +748,6 @@ def pilots(request):
 	return render(request, 'front-end/pilots.html', context)
 
 def all_time(request):
-	update_poles_and_podiums()
 	context = {}
 	return render(request, 'front-end/all-time.html', context)
 
@@ -805,6 +802,49 @@ def pilots_list(request):
 				driver_dict['poles_percentage'] = data['poles_percentage']
 				driver_dict['wins_percentage'] = data['wins_percentage']
 				driver_dict['podiums_percentage'] = data['podiums_percentage']
+				if data['image']:
+					# Get image path from folder assets/src/img/drivers_images
+					img_name = driver.replace('.json', '.jpg')
+					img_path = 'drivers_images' + '/' + img_name
+					driver_dict['image'] = img_path
+
+				else:
+					driver_dict['image'] = False
+				drivers_list.append(driver_dict)
+
+				pass
+			except Exception as e:
+				pass
+
+	# Order drivers_list by name
+	drivers_list = pydash.sort_by(drivers_list, 'name')
+
+	response_dict = {
+		'drivers': drivers_list
+	}
+
+	return JsonResponse(response_dict, safe=False) 
+
+
+def pilots_complete_info(request):
+
+	# Get all files inside assets/src/json/drivers
+	main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+	# drivers_path = "/Users/magroove/coding/edu_projects/formula1charts/assets/src/json/drivers/statistics"
+	drivers_path = main_path + "/assets/src/json/drivers/statistics"
+	drivers = os.listdir(drivers_path)
+
+	drivers_list = []
+	for driver in drivers:
+		# print(driver)
+		with open(drivers_path + '/' + driver) as json_file:
+			data = json.load(json_file)
+			try:
+				driver_dict = data
+
+				if not data['seasons_results']:
+					continue
+
 				if data['image']:
 					# Get image path from folder assets/src/img/drivers_images
 					img_name = driver.replace('.json', '.jpg')

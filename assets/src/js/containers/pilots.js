@@ -253,6 +253,7 @@ class Pilots extends React.Component {
         const theme = {
             fontSize: '16px'
         };
+        console.log('driver_1_image: ', driver_1_image)
 
         if (this.state.loading) {
             return (

@@ -1,1 +1,33 @@
-{"nationality": false, "name": "Ant\u00f4nio Pizzonia", "id": "Ant\u00f4nio_Pizzonia", "image": "https://static.wikia.nocookie.net/f1wikia/images/7/77/Pizzonia-04-6.jpg/revision/latest/scale-to-width-down/350?cb=20200812144935", "birth_date": "1980-09-11", "death_date": false, "status": "Driving in Stock Car Brasil", "total_seasons": 3, "seasons_years": [2003, 2004, 2005], "titles": "0", "races": "20 (20 starts)", "poles": "0", "wins": "0", "podiums": "0", "fastestlaps": "0", "points": "8", "introduction": "Antnio Pizzonia (born September 11, 1980) is a former Formula One driver from Brazil. He competed in 20 GP's from 2003 to 2005.", "titles_percentage": 0.0, "poles_percentage": 0.0, "wins_percentage": 0.0, "podiums_percentage": 0.0, "seasons_results": {"2003": {"title": 0, "races": 13, "wins": 0, "points": 0.0, "poles": 0, "podiums": 0}, "2004": {"title": 0, "races": 7, "wins": 0, "points": 6.0, "poles": 0, "podiums": 0}, "2005": {"title": 0, "races": 5, "wins": 0, "points": 2.0, "poles": 0, "podiums": 0}}}
+{
+	"nationality": {
+		"nationality_acronym": "BRA",
+		"nationality_href": "/wiki/Brazil",
+		"nationality_title": "Brazil",
+		"nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/0/05/Flag_of_Brazil.svg/revision/latest?cb=20081106192246"
+	},
+	"name": "Ant\u00f4nio Pizzonia",
+	"id": "Ant\u00f4nio_Pizzonia",
+	"image": "https://static.wikia.nocookie.net/f1wikia/images/7/77/Pizzonia-04-6.jpg/revision/latest/scale-to-width-down/350?cb=20200812144935",
+	"birth_date": "1980-09-11",
+	"death_date": false,
+	"status": "Driving in Stock Car Brasil",
+	"total_seasons": 3,
+	"seasons_years": [2003, 2004, 2005],
+	"titles": "0",
+	"races": "20 (20 starts)",
+	"poles": "0",
+	"wins": "0",
+	"podiums": "0",
+	"fastestlaps": "0",
+	"points": "8",
+	"introduction": "Antnio Pizzonia (born September 11, 1980) is a former Formula One driver from Brazil. He competed in 20 GP's from 2003 to 2005.",
+	"titles_percentage": 0.0,
+	"poles_percentage": 0.0,
+	"wins_percentage": 0.0,
+	"podiums_percentage": 0.0,
+	"seasons_results": {
+		"2003": { "title": 0, "races": 13, "wins": 0, "points": 0.0, "poles": 0, "podiums": 0 },
+		"2004": { "title": 0, "races": 7, "wins": 0, "points": 6.0, "poles": 0, "podiums": 0 },
+		"2005": { "title": 0, "races": 5, "wins": 0, "points": 2.0, "poles": 0, "podiums": 0 }
+	}
+}
