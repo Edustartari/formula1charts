@@ -27,7 +27,7 @@ def get_race_results():
 	main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 	print('main_path: ' + main_path)
 
-	circuit_path = os.path.join(main_path, 'assets/src/json/circuits/list_of_all_circuits_within_a_year')
+	circuit_path = os.path.join(main_path, 'src/json/circuits/list_of_all_circuits_within_a_year')
 	print('circuit_path: ' + circuit_path)
 
 	current_year = datetime.now().year
@@ -45,7 +45,7 @@ def get_race_results():
 		total_races = data['MRData']['total']
 		print('total_races: ' + str(total_races))
 
-		race_results_path = os.path.join(main_path, 'assets/src/json/standings/race_results')
+		race_results_path = os.path.join(main_path, 'src/json/standings/race_results')
 		print('race_results_path: ' + race_results_path)
 
 		for race in range(1, int(total_races) + 1):
@@ -81,13 +81,13 @@ def update_drivers_info():
 	main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 	print('main_path: ' + main_path)
 
-	standings_path = os.path.join(main_path, 'assets/src/json/standings/driver_standings_after_a_race')
+	standings_path = os.path.join(main_path, 'src/json/standings/driver_standings_after_a_race')
 	print('standings_path: ' + standings_path)
 
-	circuit_path = os.path.join(main_path, 'assets/src/json/circuits/list_of_all_circuits_within_a_year')
+	circuit_path = os.path.join(main_path, 'src/json/circuits/list_of_all_circuits_within_a_year')
 	print('circuit_path: ' + circuit_path)
 
-	drivers_path = os.path.join(main_path, 'assets/src/json/drivers/statistics')
+	drivers_path = os.path.join(main_path, 'src/json/drivers/statistics')
 	drivers = os.listdir(drivers_path)
 	
 	# Enter each file and rename the key name with the file name.
@@ -170,16 +170,16 @@ def update_poles_and_podiums():
 	main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 	print('main_path: ' + main_path)
 
-	standings_path = os.path.join(main_path, 'assets/src/json/standings/driver_standings_after_a_race')
+	standings_path = os.path.join(main_path, 'src/json/standings/driver_standings_after_a_race')
 	print('standings_path: ' + standings_path)
 
-	circuit_path = os.path.join(main_path, 'assets/src/json/circuits/list_of_all_circuits_within_a_year')
+	circuit_path = os.path.join(main_path, 'src/json/circuits/list_of_all_circuits_within_a_year')
 	print('circuit_path: ' + circuit_path)
 
-	drivers_path = os.path.join(main_path, 'assets/src/json/drivers/statistics')
+	drivers_path = os.path.join(main_path, 'src/json/drivers/statistics')
 	drivers = os.listdir(drivers_path)
 
-	race_results_path = os.path.join(main_path, 'assets/src/json/standings/race_results')
+	race_results_path = os.path.join(main_path, 'src/json/standings/race_results')
 	print('race_results_path: ' + race_results_path)
 
 	current_year = datetime.now().year
@@ -267,7 +267,7 @@ def get_drivers_standings():
 	main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 	print('main_path: ' + main_path)
 
-	circuit_path = os.path.join(main_path, 'assets/src/json/circuits/list_of_all_circuits_within_a_year')
+	circuit_path = os.path.join(main_path, 'src/json/circuits/list_of_all_circuits_within_a_year')
 	print('circuit_path: ' + circuit_path)
 
 	current_year = datetime.now().year
@@ -296,7 +296,7 @@ def get_drivers_standings():
 		total_races = data['MRData']['total']
 		print('total_races: ' + str(total_races))
 
-		standings_path = os.path.join(main_path, 'assets/src/json/standings/driver_standings_after_a_race')
+		standings_path = os.path.join(main_path, 'src/json/standings/driver_standings_after_a_race')
 		print('standings_path: ' + standings_path)
 
 		for race in range(1, int(total_races) + 1):
@@ -569,15 +569,15 @@ def get_driver_info():
 				new_driver['introduction'] = False
 
 			# Save json_example to a file inside path
-			with open('assets/src/json/drivers/' + driver_id + '.json', 'w') as outfile:
+			with open('src/json/drivers/' + driver_id + '.json', 'w') as outfile:
 				json.dump(new_driver, outfile)
 
 	return
 
 def add_percentage_info():
-	# Get all files inside assets/src/json/drivers
+	# Get all files inside src/json/drivers
 	main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-	drivers_path = os.path.join(main_path, 'assets/src/json/drivers')
+	drivers_path = os.path.join(main_path, 'src/json/drivers')
 	drivers = os.listdir(drivers_path)
 	
 	# Enter each file and rename the key name with the file name.
@@ -627,14 +627,14 @@ def add_percentage_info():
 	return True
 
 def save_images():
-	# Get all files inside assets/src/json/drivers
+	# Get all files inside src/json/drivers
 	main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 	print('main_path: ' + str(main_path))
-	drivers_path = "/Users/magroove/coding/edu_projects/formula1charts/assets/src/json/drivers/statistics"
+	drivers_path = "/Users/magroove/coding/edu_projects/formula1charts/src/json/drivers/statistics"
 	print('drivers_path: ' + str(drivers_path))
 	drivers = os.listdir(drivers_path)
 
-	# Upload each image from each driver to the folder assets/src/img/drivers_imgages
+	# Upload each image from each driver to the folder src/img/drivers_imgages
 	for driver in tqdm(drivers[:1]):
 	# for driver in tqdm(drivers):
 		time.sleep(5)
@@ -646,7 +646,7 @@ def save_images():
 				img_link = data['image']
 				if img_link:
 					img_name = driver.replace('.json', '.jpg')
-					img_path = os.path.join(main_path, 'assets/src/img/drivers_images')
+					img_path = os.path.join(main_path, 'src/img/drivers_images')
 					img_path = img_path + '/' + img_name
 					img_data = requests.get(img_link).content
 					with open(img_path, 'wb') as handler:
@@ -685,7 +685,7 @@ def season_view(request, year):
 	main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 	# Go after folder circuits/list_of_all_circuits_within_a_year, find the year and open the json
-	circuit_path = os.path.join(main_path, 'assets/src/json/circuits/list_of_all_circuits_within_a_year')
+	circuit_path = os.path.join(main_path, 'src/json/circuits/list_of_all_circuits_within_a_year')
 	with open(circuit_path + '/' + year + '_circuits.json') as json_file:
 		circuits = json.load(json_file)
 
@@ -694,7 +694,7 @@ def season_view(request, year):
 	total_races = circuits['MRData']['total']
 	print('total_races: ' + str(total_races))
 
-	standings_path = os.path.join(main_path, 'assets/src/json/standings/driver_standings_after_a_race')
+	standings_path = os.path.join(main_path, 'src/json/standings/driver_standings_after_a_race')
 
 	final_result_test = []
 	already_added = []
@@ -754,7 +754,7 @@ def all_time(request):
 def load_nationalities(request):
 	print('')
 	main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-	nationalities_path = os.path.join(main_path, 'assets/src/json/drivers/nationalities')
+	nationalities_path = os.path.join(main_path, 'src/json/drivers/nationalities')
 
 	data = {}
 	with open(nationalities_path + '/all_nationalities.json') as json_file:
@@ -767,10 +767,10 @@ def load_nationalities(request):
 
 def pilots_list(request):
 
-	# Get all files inside assets/src/json/drivers
+	# Get all files inside src/json/drivers
 	main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-	# drivers_path = "/Users/magroove/coding/edu_projects/formula1charts/assets/src/json/drivers/statistics"
-	drivers_path = main_path + "/assets/src/json/drivers/statistics"
+	# drivers_path = "/Users/magroove/coding/edu_projects/formula1charts/src/json/drivers/statistics"
+	drivers_path = main_path + "/src/json/drivers/statistics"
 	drivers = os.listdir(drivers_path)
 
 	drivers_list = []
@@ -803,7 +803,7 @@ def pilots_list(request):
 				driver_dict['wins_percentage'] = data['wins_percentage']
 				driver_dict['podiums_percentage'] = data['podiums_percentage']
 				if data['image']:
-					# Get image path from folder assets/src/img/drivers_images
+					# Get image path from folder src/img/drivers_images
 					img_name = driver.replace('.json', '.jpg')
 					img_path = 'drivers_images' + '/' + img_name
 					driver_dict['image'] = img_path
@@ -828,10 +828,10 @@ def pilots_list(request):
 
 def pilots_complete_info(request):
 
-	# Get all files inside assets/src/json/drivers
+	# Get all files inside src/json/drivers
 	main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-	# drivers_path = "/Users/magroove/coding/edu_projects/formula1charts/assets/src/json/drivers/statistics"
-	drivers_path = main_path + "/assets/src/json/drivers/statistics"
+	# drivers_path = "/Users/magroove/coding/edu_projects/formula1charts/src/json/drivers/statistics"
+	drivers_path = main_path + "/src/json/drivers/statistics"
 	drivers = os.listdir(drivers_path)
 
 	drivers_list = []
@@ -846,7 +846,7 @@ def pilots_complete_info(request):
 					continue
 
 				if data['image']:
-					# Get image path from folder assets/src/img/drivers_images
+					# Get image path from folder src/img/drivers_images
 					img_name = driver.replace('.json', '.jpg')
 					img_path = 'drivers_images' + '/' + img_name
 					driver_dict['image'] = img_path

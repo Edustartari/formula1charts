@@ -8,9 +8,9 @@ var entries = {}
 
 // JSX entrypoints
 var folder_pool = [
-	path.join(__dirname, 'assets/src', 'js'),
+	path.join(__dirname, 'src', 'js'),
 ]
-// folder_pool = [ '/Users/magroove/coding/edu_projects/formula1charts/assets/src/js' ]
+// folder_pool = [ '/Users/magroove/coding/edu_projects/formula1charts/src/js' ]
 
 for (var i = folder_pool.length - 1; i >= 0; i--) {
 	var current_folder = folder_pool[i];
@@ -36,14 +36,14 @@ for (var i = folder_pool.length - 1; i >= 0; i--) {
 }
 
 // entries = {
-// 	'index.js': '/Users/magroove/coding/edu_projects/formula1charts/assets/src/js/index.js',
-// 	'season.js': '/Users/magroove/coding/edu_projects/formula1charts/assets/src/js/containers/season.js',
-// 	'pilots.js': '/Users/magroove/coding/edu_projects/formula1charts/assets/src/js/containers/pilots.js',
-// 	'home.js': '/Users/magroove/coding/edu_projects/formula1charts/assets/src/js/containers/home.js',
-// 	'final_result_test.js': '/Users/magroove/coding/edu_projects/formula1charts/assets/src/js/containers/final_result_test.js',
-// 	'app.js': '/Users/magroove/coding/edu_projects/formula1charts/assets/src/js/containers/app.js',
-// 	'all_seasons.js': '/Users/magroove/coding/edu_projects/formula1charts/assets/src/js/containers/all_seasons.js',
-// 	'image.js': '/Users/magroove/coding/edu_projects/formula1charts/assets/src/js/components/image.js'
+// 	'index.js': '/Users/magroove/coding/edu_projects/formula1charts/src/js/index.js',
+// 	'season.js': '/Users/magroove/coding/edu_projects/formula1charts/src/js/containers/season.js',
+// 	'pilots.js': '/Users/magroove/coding/edu_projects/formula1charts/src/js/containers/pilots.js',
+// 	'home.js': '/Users/magroove/coding/edu_projects/formula1charts/src/js/containers/home.js',
+// 	'final_result_test.js': '/Users/magroove/coding/edu_projects/formula1charts/src/js/containers/final_result_test.js',
+// 	'app.js': '/Users/magroove/coding/edu_projects/formula1charts/src/js/containers/app.js',
+// 	'all_seasons.js': '/Users/magroove/coding/edu_projects/formula1charts/src/js/containers/all_seasons.js',
+// 	'image.js': '/Users/magroove/coding/edu_projects/formula1charts/src/js/components/image.js'
 // }
 
 module.exports = {

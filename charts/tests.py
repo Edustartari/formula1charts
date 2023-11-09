@@ -24,13 +24,13 @@ def get_poles():
 	main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 	print('main_path: ' + main_path)
 
-	html_path = os.path.join(main_path, 'assets/src/html')
+	html_path = os.path.join(main_path, 'src/html')
 	print('html_path: ' + html_path)
 
-	circuit_path = os.path.join(main_path, 'assets/src/json/circuits/list_of_all_circuits_within_a_year')
+	circuit_path = os.path.join(main_path, 'src/json/circuits/list_of_all_circuits_within_a_year')
 	print('circuit_path: ' + circuit_path)
 
-	drivers_path = os.path.join(main_path, 'assets/src/json/drivers/statistics')
+	drivers_path = os.path.join(main_path, 'src/json/drivers/statistics')
 	print('drivers_path: ' + drivers_path)
 	drivers = os.listdir(drivers_path)
 
@@ -212,7 +212,7 @@ get_poles()
 # main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # print('main_path: ' + main_path)
 
-# drivers_path = os.path.join(main_path, 'assets/src/json/drivers/statistics')
+# drivers_path = os.path.join(main_path, 'src/json/drivers/statistics')
 # print('drivers_path: ' + drivers_path)
 # drivers = os.listdir(drivers_path)
 
