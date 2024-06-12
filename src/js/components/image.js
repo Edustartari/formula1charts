@@ -3,7 +3,7 @@ import React from "react";
 const Image = ({ name }) => {
     try {
         // Import image on demand
-        const image = require(`../../img/${name}.jpg`);
+        const image = require(`../../img/${name}.webp`);
 
         // If the image doesn't exist. return null
         if (!image) return null;

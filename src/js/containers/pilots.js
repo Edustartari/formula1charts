@@ -218,7 +218,7 @@ class Pilots extends React.Component {
     // For example: select all pilots from specific country
 
     render(){
-        let image_test = require(`../../img/f1_background_ferrari_2.jpg`);
+        let image_test = require(`../../img/f1_background_ferrari_2.webp`);
         let driver_1_image = ''
         let driver_2_image = ''
         let driver_3_image = ''
@@ -227,27 +227,27 @@ class Pilots extends React.Component {
         try {
             driver_1_image = require(`../../img/${this.state.driver_1.image}`);
         } catch (error) {
-            driver_1_image = require(`../../img/default_image.jpg`);
+            driver_1_image = require(`../../img/default_image.webp`);
         }
         try {
             driver_2_image = require(`../../img/${this.state.driver_2.image}`);
         } catch (error) {
-            driver_2_image = require(`../../img/default_image.jpg`);
+            driver_2_image = require(`../../img/default_image.webp`);
         }
         try {
             driver_3_image = require(`../../img/${this.state.driver_3.image}`);
         } catch (error) {
-            driver_3_image = require(`../../img/default_image.jpg`);
+            driver_3_image = require(`../../img/default_image.webp`);
         }
         try {
             driver_4_image = require(`../../img/${this.state.driver_4.image}`);
         } catch (error) {
-            driver_4_image = require(`../../img/default_image.jpg`);
+            driver_4_image = require(`../../img/default_image.webp`);
         }
         try {
             driver_5_image = require(`../../img/${this.state.driver_5.image}`);
         } catch (error) {
-            driver_5_image = require(`../../img/default_image.jpg`);
+            driver_5_image = require(`../../img/default_image.webp`);
         }
 
         const theme = {

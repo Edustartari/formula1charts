@@ -46,7 +46,7 @@ class Home extends React.Component {
     }
     
     render(){
-        const image = require(`../../img/f1_background_ferrari_2.jpg`);
+        const image = require(`../../img/f1_background_ferrari_2.webp`);
         return(
             <div className='home-desktop-container' id='home-desktop-container'>
                 <div className='home-desktop-card home-desktop-first-card' style={{backgroundImage: "url('" + image.default + "')"}}>

@@ -270,7 +270,7 @@ class AllTime extends React.Component {
             )
         } else {
 
-            let image_test = require(`../../img/f1_background_ferrari_2.jpg`);
+            let image_test = require(`../../img/f1_background_ferrari_2.webp`);
 
             return(
                 <div className='all-time-background'>

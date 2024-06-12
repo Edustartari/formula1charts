@@ -12,9 +12,9 @@ import {
 function SeasonCard (props) {
 	let image;
 	try {
-		image = require(`../../img/season_` + props.year + `.jpg`);
+		image = require(`../../img/season_` + props.year + `.webp`);
 	} catch (error) {
-		image = require(`../../img/f1_background_ferrari_2.jpg`);
+		image = require(`../../img/f1_background_ferrari_2.webp`);
 	}
 	return(
 		<a href={"/season/" + props.year.toString()} style={{height: props.card_height + 'vh', width: 'calc(100% / ' + props.total_columns + ')'}}>
