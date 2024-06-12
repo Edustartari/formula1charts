@@ -13,11 +13,19 @@ import urllib.parse
 import base64
 import re
 from django.http import JsonResponse
+import redis
 
 # ================================================================================================
 # =================================================================================================
 # =================================================================================================
 # Create your procedures here.
+
+
+redis_client = redis.Redis(
+	host='redis-14287.c308.sa-east-1-1.ec2.redns.redis-cloud.com',
+	port=14287,
+	password='D2sbxecxOwzIbH2rbNqmtAM4Ksuyj1IY'
+)
 
 def get_race_results():	
 	print('')
@@ -675,6 +683,12 @@ def season_view(request, year):
 	# Redirect user to homepage if year is not in the list.
 	if year not in years:
 		return HttpResponseRedirect('/')
+	
+	redis_response = redis_client.get('season_view_' + str(year))
+	
+	if redis_response is not None:
+		context = json.loads(redis_response)
+		return render(request, 'front-end/season.html', context)	
 
 	# Return a list with 80 positive adjetives.
 	adjetives = ['Amazing','Awesome','Beautiful','satisfying','super','amusing','entertaining','Brilliant','memorable','Cool','Creative','Delicious','Elegant','Excellent','Fabulous','Fantastic','Fun','Gorgeous','Great','Impressive','Incredible','Interesting','Magnificent','Marvelous','Outstanding','Perfect','Powerful','Smart','Spectacular','Splendid','Stunning','Superb','Superior','Supreme','Terrific','Wonderful','Wondrous','Alluring','Appealing','Dazzling','Divine','Enchanting','Engaging','Enticing','Excellent','Exquisite','Fair','Fascinating','Glorious','Gorgeous','Grand','Heavenly','Magnetic','Marvelous','Mesmerizing','Miraculous','Mythical','Pleasant','Ravishing','Sublime','Amazing','Astonishing','Awe-inspiring','Breathtaking','Captivating','Delightful','remarkable']
@@ -739,6 +753,7 @@ def season_view(request, year):
 		'champion_name': json.dumps(champion_name),
 		'season_title': json.dumps(season_adjetive)
 	}
+	redis_client.set('season_view_' + str(year), json.dumps(context))
 
 	return render(request, 'front-end/season.html', context)
 
