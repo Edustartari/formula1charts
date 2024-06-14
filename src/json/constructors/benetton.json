@@ -1,0 +1,76 @@
+{
+	"constructorId": "benetton",
+	"url": "http://en.wikipedia.org/wiki/Benetton_Formula",
+	"name": "Benetton",
+	"nationality": "Italian",
+	"titles": 1,
+	"wins": 27,
+	"podiums": 102,
+	"image": "",
+	"seasons_results": {
+		"1986": { "title": 0, "wins": 1, "podiums": 2, "pilots_wins": { "Gerhard_Berger": 1 }, "pilots_podiums": { "Gerhard_Berger": 2 } },
+		"1987": { "title": 0, "wins": 0, "podiums": 2, "pilots_wins": {}, "pilots_podiums": { "Teo_Fabi": 1, "Thierry_Boutsen": 1 } },
+		"1988": {
+			"title": 0,
+			"wins": 0,
+			"podiums": 7,
+			"pilots_wins": {},
+			"pilots_podiums": { "Thierry_Boutsen": 5, "Alessandro_Nannini": 2 }
+		},
+		"1989": {
+			"title": 0,
+			"wins": 1,
+			"podiums": 4,
+			"pilots_wins": { "Alessandro_Nannini": 1 },
+			"pilots_podiums": { "Alessandro_Nannini": 4 }
+		},
+		"1990": {
+			"title": 0,
+			"wins": 2,
+			"podiums": 8,
+			"pilots_wins": { "Nelson_Piquet": 2 },
+			"pilots_podiums": { "Alessandro_Nannini": 3, "Nelson_Piquet": 4, "Roberto_Moreno": 1 }
+		},
+		"1991": { "title": 0, "wins": 1, "podiums": 3, "pilots_wins": { "Nelson_Piquet": 1 }, "pilots_podiums": { "Nelson_Piquet": 3 } },
+		"1992": {
+			"title": 0,
+			"wins": 1,
+			"podiums": 13,
+			"pilots_wins": { "Michael_Schumacher": 1 },
+			"pilots_podiums": { "Michael_Schumacher": 8, "Martin_Brundle": 5 }
+		},
+		"1993": {
+			"title": 0,
+			"wins": 1,
+			"podiums": 11,
+			"pilots_wins": { "Michael_Schumacher": 1 },
+			"pilots_podiums": { "Michael_Schumacher": 9, "Riccardo_Patrese": 2 }
+		},
+		"1994": {
+			"title": 0,
+			"wins": 8,
+			"podiums": 12,
+			"pilots_wins": { "Michael_Schumacher": 8 },
+			"pilots_podiums": { "Michael_Schumacher": 10, "Jos_Verstappen": 2 }
+		},
+		"1995": {
+			"title": 1,
+			"wins": 11,
+			"podiums": 15,
+			"pilots_wins": { "Michael_Schumacher": 9, "Johnny_Herbert": 2 },
+			"pilots_podiums": { "Michael_Schumacher": 11, "Johnny_Herbert": 4 }
+		},
+		"1996": { "title": 0, "wins": 0, "podiums": 10, "pilots_wins": {}, "pilots_podiums": { "Jean_Alesi": 8, "Gerhard_Berger": 2 } },
+		"1997": {
+			"title": 0,
+			"wins": 1,
+			"podiums": 8,
+			"pilots_wins": { "Gerhard_Berger": 1 },
+			"pilots_podiums": { "Gerhard_Berger": 2, "Jean_Alesi": 5, "Alexander_Wurz": 1 }
+		},
+		"1998": { "title": 0, "wins": 0, "podiums": 2, "pilots_wins": {}, "pilots_podiums": { "Giancarlo_Fisichella": 2 } },
+		"1999": { "title": 0, "wins": 0, "podiums": 1, "pilots_wins": {}, "pilots_podiums": { "Giancarlo_Fisichella": 1 } },
+		"2000": { "title": 0, "wins": 0, "podiums": 3, "pilots_wins": {}, "pilots_podiums": { "Giancarlo_Fisichella": 3 } },
+		"2001": { "title": 0, "wins": 0, "podiums": 1, "pilots_wins": {}, "pilots_podiums": { "Giancarlo_Fisichella": 1 } }
+	}
+}

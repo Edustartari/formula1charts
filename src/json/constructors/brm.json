@@ -1,0 +1,83 @@
+{
+	"constructorId": "brm",
+	"url": "http://en.wikipedia.org/wiki/BRM",
+	"name": "BRM",
+	"nationality": "British",
+	"titles": 1,
+	"wins": 17,
+	"podiums": 61,
+	"image": "",
+	"seasons_results": {
+		"1951": { "title": 0, "wins": 0, "podiums": 0, "pilots_wins": {}, "pilots_podiums": {} },
+		"1956": { "title": 0, "wins": 0, "podiums": 0, "pilots_wins": {}, "pilots_podiums": {} },
+		"1957": { "title": 0, "wins": 0, "podiums": 0, "pilots_wins": {}, "pilots_podiums": {} },
+		"1958": { "title": 0, "wins": 0, "podiums": 2, "pilots_wins": {}, "pilots_podiums": { "Harry_Schell": 1, "Jean_Behra": 1 } },
+		"1959": {
+			"title": 0,
+			"wins": 1,
+			"podiums": 2,
+			"pilots_wins": { "Jo_Bonnier": 1 },
+			"pilots_podiums": { "Jo_Bonnier": 1, "Stirling_Moss": 1 }
+		},
+		"1960": { "title": 0, "wins": 0, "podiums": 1, "pilots_wins": {}, "pilots_podiums": { "Graham_Hill": 1 } },
+		"1961": { "title": 0, "wins": 0, "podiums": 1, "pilots_wins": {}, "pilots_podiums": { "Tony_Brooks": 1 } },
+		"1962": {
+			"title": 1,
+			"wins": 4,
+			"podiums": 8,
+			"pilots_wins": { "Graham_Hill": 4 },
+			"pilots_podiums": { "Graham_Hill": 6, "Richie_Ginther": 2 }
+		},
+		"1963": {
+			"title": 0,
+			"wins": 2,
+			"podiums": 10,
+			"pilots_wins": { "Graham_Hill": 2 },
+			"pilots_podiums": { "Graham_Hill": 5, "Richie_Ginther": 5 }
+		},
+		"1964": {
+			"title": 0,
+			"wins": 2,
+			"podiums": 7,
+			"pilots_wins": { "Graham_Hill": 2 },
+			"pilots_podiums": { "Graham_Hill": 5, "Richie_Ginther": 2 }
+		},
+		"1965": {
+			"title": 0,
+			"wins": 3,
+			"podiums": 11,
+			"pilots_wins": { "Graham_Hill": 2, "Jackie_Stewart": 1 },
+			"pilots_podiums": { "Graham_Hill": 6, "Jackie_Stewart": 5 }
+		},
+		"1966": {
+			"title": 0,
+			"wins": 1,
+			"podiums": 4,
+			"pilots_wins": { "Jackie_Stewart": 1 },
+			"pilots_podiums": { "Jackie_Stewart": 1, "Graham_Hill": 3 }
+		},
+		"1967": { "title": 0, "wins": 0, "podiums": 2, "pilots_wins": {}, "pilots_podiums": { "Jackie_Stewart": 2 } },
+		"1968": { "title": 0, "wins": 0, "podiums": 4, "pilots_wins": {}, "pilots_podiums": { "Richard_Attwood": 1, "Pedro_Rodrguez": 3 } },
+		"1969": { "title": 0, "wins": 0, "podiums": 1, "pilots_wins": {}, "pilots_podiums": { "John_Surtees": 1 } },
+		"1970": { "title": 0, "wins": 1, "podiums": 2, "pilots_wins": { "Pedro_Rodrguez": 1 }, "pilots_podiums": { "Pedro_Rodrguez": 2 } },
+		"1971": {
+			"title": 0,
+			"wins": 2,
+			"podiums": 4,
+			"pilots_wins": { "Jo_Siffert": 1, "Peter_Gethin": 1 },
+			"pilots_podiums": { "Pedro_Rodrguez": 1, "Jo_Siffert": 2, "Peter_Gethin": 1 }
+		},
+		"1972": {
+			"title": 0,
+			"wins": 1,
+			"podiums": 1,
+			"pilots_wins": { "Jean-Pierre_Beltoise": 1 },
+			"pilots_podiums": { "Jean-Pierre_Beltoise": 1 }
+		},
+		"1973": { "title": 0, "wins": 0, "podiums": 0, "pilots_wins": {}, "pilots_podiums": {} },
+		"1974": { "title": 0, "wins": 0, "podiums": 1, "pilots_wins": {}, "pilots_podiums": { "Jean-Pierre_Beltoise": 1 } },
+		"1975": { "title": 0, "wins": 0, "podiums": 0, "pilots_wins": {}, "pilots_podiums": {} },
+		"1976": { "title": 0, "wins": 0, "podiums": 0, "pilots_wins": {}, "pilots_podiums": {} },
+		"1977": { "title": 0, "wins": 0, "podiums": 0, "pilots_wins": {}, "pilots_podiums": {} }
+	}
+}

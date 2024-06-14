@@ -1,0 +1,28 @@
+{
+	"constructorId": "brabham-repco",
+	"url": "http://en.wikipedia.org/wiki/Brabham",
+	"name": "Brabham-Repco",
+	"nationality": "British",
+	"titles": 2,
+	"wins": 8,
+	"podiums": 25,
+	"image": "",
+	"seasons_results": {
+		"1966": {
+			"title": 1,
+			"wins": 4,
+			"podiums": 9,
+			"pilots_wins": { "Jack_Brabham": 4 },
+			"pilots_podiums": { "Jack_Brabham": 5, "Denny_Hulme": 4 }
+		},
+		"1967": {
+			"title": 1,
+			"wins": 4,
+			"podiums": 14,
+			"pilots_wins": { "Denny_Hulme": 2, "Jack_Brabham": 2 },
+			"pilots_podiums": { "Denny_Hulme": 8, "Jack_Brabham": 6 }
+		},
+		"1968": { "title": 0, "wins": 0, "podiums": 2, "pilots_wins": {}, "pilots_podiums": { "Jochen_Rindt": 2 } },
+		"1969": { "title": 0, "wins": 0, "podiums": 0, "pilots_wins": {}, "pilots_podiums": {} }
+	}
+}

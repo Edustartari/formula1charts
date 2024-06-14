@@ -1,0 +1,88 @@
+{
+	"constructorId": "brabham",
+	"url": "http://en.wikipedia.org/wiki/Brabham",
+	"name": "Brabham",
+	"nationality": "British",
+	"titles": 0,
+	"wins": 23,
+	"podiums": 78,
+	"image": "",
+	"seasons_results": {
+		"1962": { "title": 0, "wins": 0, "podiums": 0, "pilots_wins": {}, "pilots_podiums": {} },
+		"1963": { "title": 0, "wins": 0, "podiums": 4, "pilots_wins": {}, "pilots_podiums": { "Dan_Gurney": 3, "Jack_Brabham": 1 } },
+		"1970": {
+			"title": 0,
+			"wins": 1,
+			"podiums": 5,
+			"pilots_wins": { "Jack_Brabham": 1 },
+			"pilots_podiums": { "Jack_Brabham": 4, "Rolf_Stommelen": 1 }
+		},
+		"1971": { "title": 0, "wins": 0, "podiums": 1, "pilots_wins": {}, "pilots_podiums": { "Tim_Schenken": 1 } },
+		"1972": { "title": 0, "wins": 0, "podiums": 0, "pilots_wins": {}, "pilots_podiums": {} },
+		"1973": { "title": 0, "wins": 0, "podiums": 2, "pilots_wins": {}, "pilots_podiums": { "Carlos_Reutemann": 2 } },
+		"1974": {
+			"title": 0,
+			"wins": 3,
+			"podiums": 5,
+			"pilots_wins": { "Carlos_Reutemann": 3 },
+			"pilots_podiums": { "Carlos_Reutemann": 4, "Carlos_Pace": 1 }
+		},
+		"1975": {
+			"title": 0,
+			"wins": 2,
+			"podiums": 9,
+			"pilots_wins": { "Carlos_Pace": 1, "Carlos_Reutemann": 1 },
+			"pilots_podiums": { "Carlos_Reutemann": 6, "Carlos_Pace": 3 }
+		},
+		"1977": {
+			"title": 0,
+			"wins": 0,
+			"podiums": 4,
+			"pilots_wins": {},
+			"pilots_podiums": { "Carlos_Pace": 1, "John_Watson": 1, "Hans-Joachim_Stuck": 2 }
+		},
+		"1978": {
+			"title": 0,
+			"wins": 2,
+			"podiums": 10,
+			"pilots_wins": { "Niki_Lauda": 2 },
+			"pilots_podiums": { "Niki_Lauda": 7, "John_Watson": 3 }
+		},
+		"1980": { "title": 0, "wins": 3, "podiums": 6, "pilots_wins": { "Nelson_Piquet": 3 }, "pilots_podiums": { "Nelson_Piquet": 6 } },
+		"1981": { "title": 0, "wins": 3, "podiums": 7, "pilots_wins": { "Nelson_Piquet": 3 }, "pilots_podiums": { "Nelson_Piquet": 7 } },
+		"1982": {
+			"title": 0,
+			"wins": 2,
+			"podiums": 5,
+			"pilots_wins": { "Riccardo_Patrese": 1, "Nelson_Piquet": 1 },
+			"pilots_podiums": { "Riccardo_Patrese": 3, "Nelson_Piquet": 2 }
+		},
+		"1983": {
+			"title": 0,
+			"wins": 4,
+			"podiums": 10,
+			"pilots_wins": { "Nelson_Piquet": 3, "Riccardo_Patrese": 1 },
+			"pilots_podiums": { "Nelson_Piquet": 8, "Riccardo_Patrese": 2 }
+		},
+		"1984": {
+			"title": 0,
+			"wins": 2,
+			"podiums": 5,
+			"pilots_wins": { "Nelson_Piquet": 2 },
+			"pilots_podiums": { "Nelson_Piquet": 4, "Teo_Fabi": 1 }
+		},
+		"1985": { "title": 0, "wins": 1, "podiums": 2, "pilots_wins": { "Nelson_Piquet": 1 }, "pilots_podiums": { "Nelson_Piquet": 2 } },
+		"1986": { "title": 0, "wins": 0, "podiums": 0, "pilots_wins": {}, "pilots_podiums": {} },
+		"1987": {
+			"title": 0,
+			"wins": 0,
+			"podiums": 2,
+			"pilots_wins": {},
+			"pilots_podiums": { "Andrea_de Cesaris": 1, "Riccardo_Patrese": 1 }
+		},
+		"1989": { "title": 0, "wins": 0, "podiums": 1, "pilots_wins": {}, "pilots_podiums": { "Stefano_Modena": 1 } },
+		"1990": { "title": 0, "wins": 0, "podiums": 0, "pilots_wins": {}, "pilots_podiums": {} },
+		"1991": { "title": 0, "wins": 0, "podiums": 0, "pilots_wins": {}, "pilots_podiums": {} },
+		"1992": { "title": 0, "wins": 0, "podiums": 0, "pilots_wins": {}, "pilots_podiums": {} }
+	}
+}

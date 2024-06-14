@@ -663,6 +663,132 @@ def save_images():
 				print("***********************************")
 				print(e)
 
+
+def update_constructors_info():
+	# get path to src/json folder
+	main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+	print('main_path: ' + main_path)
+
+	circuit_path = os.path.join(main_path, 'src/json/circuits/list_of_all_circuits_within_a_year')
+	print('circuit_path: ' + circuit_path)
+
+	drivers_path = os.path.join(main_path, 'src/json/drivers/statistics')
+	drivers = os.listdir(drivers_path)
+
+	race_results_path = os.path.join(main_path, 'src/json/standings/race_results')
+	print('race_results_path: ' + race_results_path)
+
+	current_year = datetime.now().year
+	years = [str(i) for i in range(1950, current_year)]
+	years = [str(i) for i in range(1984, 1994)]
+
+	all_constructors = {}
+	for year in years:
+		# print("year: " + str(year))
+
+		# Go after folder circuits/list_of_all_circuits_within_a_year, find the year and open the json
+		with open(circuit_path + '/' + year + '_circuits.json') as json_file:
+			data = json.load(json_file)
+			
+		total_races = data['MRData']['total']
+		# print('total_races: ' + str(total_races))
+
+		for race in range(1, int(total_races) + 1):
+			with open(race_results_path + '/' + year + '/' + year + '_race_results_' + str(race) + '.json', 'r') as race_file:
+				race_data = json.load(race_file)
+				# print(race_data)
+				try:
+					for driver in race_data['MRData']['RaceTable']['Races'][0]['Results']:
+						givenName = re.sub(r'[^\x00-\x7f]',r'', driver['Driver']['givenName'])
+						familyName = re.sub(r'[^\x00-\x7f]',r'', driver['Driver']['familyName'])
+						driver_id = givenName + '_' + familyName
+
+						constructorId = driver['Constructor']['constructorId']
+						url = driver['Constructor']['url']
+						name = driver['Constructor']['name']
+						nationality = driver['Constructor']['nationality']
+
+						if constructorId not in all_constructors:
+							all_constructors[constructorId] = {
+								"constructorId": constructorId,
+								"url": url,
+								"name": name,
+								"nationality": nationality,
+								"titles": 0,
+								"wins": 0,
+								"podiums": 0,
+								"image": "",
+								"seasons_results": {}
+							}
+
+						if year not in all_constructors[constructorId]['seasons_results']:
+							all_constructors[constructorId]['seasons_results'][year] = {
+								"title": 0,
+								"wins": 0,
+								"podiums": 0,
+								"pilots_wins": {},
+								"pilots_podiums": {}
+							}
+
+						if driver['position'] == '1':
+							all_constructors[constructorId]['seasons_results'][year]['wins'] += 1
+							all_constructors[constructorId]['wins'] += 1
+							if driver_id not in all_constructors[constructorId]['seasons_results'][year]['pilots_wins']:
+								all_constructors[constructorId]['seasons_results'][year]['pilots_wins'][driver_id] = 0
+							all_constructors[constructorId]['seasons_results'][year]['pilots_wins'][driver_id] += 1
+
+						if driver['position'] in ['1', '2', '3']:
+							all_constructors[constructorId]['seasons_results'][year]['podiums'] += 1
+							all_constructors[constructorId]['podiums'] += 1
+							if driver_id not in all_constructors[constructorId]['seasons_results'][year]['pilots_podiums']:
+								all_constructors[constructorId]['seasons_results'][year]['pilots_podiums'][driver_id] = 0
+							all_constructors[constructorId]['seasons_results'][year]['pilots_podiums'][driver_id] += 1
+
+				except:
+					continue
+	
+	for constructor in all_constructors:
+		print(all_constructors[constructor])
+
+		# Save json_example to a file inside path
+		with open(main_path + '/src/json/constructors/' + constructor + '.json', 'w') as outfile:
+			json.dump(all_constructors[constructor], outfile)
+
+	response = requests.get('http://ergast.com/api/f1/constructorStandings/1/constructors.json')
+	json_data = json.loads(response.content)
+	constructor_champions = [e['constructorId'] for e in json_data['MRData']['ConstructorTable']['Constructors']]
+
+	max_limit = 0
+	for constructor_id in constructor_champions[1:]:
+		response = requests.get('https://ergast.com/api/f1/constructors/%s/constructorStandings/1/seasons.json'%constructor_id)
+		json_data = json.loads(response.content)
+
+		data = {}
+		with open(main_path + '/src/json/constructors/' + constructor_id + '.json', 'r') as outfile:
+			data = json.load(outfile)
+
+		for season in json_data['MRData']['SeasonTable']['Seasons']:
+			year = season['season']
+			data['seasons_results'][year]['title'] = 1
+			data['titles'] += 1
+
+		with open(main_path + '/src/json/constructors/' + constructor_id + '.json', 'w') as outfile:
+			json.dump(data, outfile)
+
+		max_limit += 1
+		print('max_limit: ' + str(max_limit))
+		time.sleep(5)
+
+		if max_limit == 150:
+			max_limit = 0
+			time.sleep(3600)
+
+def get_constructors_stats():
+	print('')
+	print('get_constructors_stats')
+	print('')
+	return True
+
 # =================================================================================================
 # =================================================================================================
 # =================================================================================================
@@ -882,3 +1008,14 @@ def pilots_complete_info(request):
 	}
 
 	return JsonResponse(response_dict, safe=False) 
+
+
+def constructors(request):
+	print("")
+	print("constructors view")
+
+	# update_constructors_info()
+
+	context = {}
+
+	return render(request, 'front-end/constructors.html', context)

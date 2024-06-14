@@ -13,6 +13,7 @@ import AllSeasons from './all_seasons.js';
 import Season from './season.js';
 import Pilots from './pilots.js';
 import AllTime from './all_time.js';
+import Constructors from './constructors.js';
 
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
@@ -73,6 +74,13 @@ function Menu() {
                     <ListItem key={'All Time'} disablePadding>
                         <ListItemButton>
                             <ListItemText primary={'All Time'} />
+                        </ListItemButton>
+                    </ListItem>
+                </Link>
+                <Link to="/constructors">
+                    <ListItem key={'Constructors'} disablePadding>
+                        <ListItemButton>
+                            <ListItemText primary={'Constructors'} />
                         </ListItemButton>
                     </ListItem>
                 </Link>
@@ -186,6 +194,9 @@ class AppDesktop extends React.Component {
                         </Route>
                         <Route path="/all-time" >
                             <AllTime />
+                        </Route>
+                        <Route path="/constructors" >
+                            <Constructors />
                         </Route>
                         <Route path="/:slug" >
                             <Season />

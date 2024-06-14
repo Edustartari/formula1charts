@@ -1,0 +1,472 @@
+{
+	"constructorId": "ferrari",
+	"url": "http://en.wikipedia.org/wiki/Scuderia_Ferrari",
+	"name": "Ferrari",
+	"nationality": "Italian",
+	"titles": 16,
+	"wins": 244,
+	"podiums": 816,
+	"image": "",
+	"seasons_results": {
+		"1950": {
+			"title": 0,
+			"wins": 0,
+			"podiums": 4,
+			"pilots_wins": {},
+			"pilots_podiums": { "Alberto_Ascari": 2, "Peter_Whitehead": 1, "Dorino_Serafini": 1 }
+		},
+		"1951": {
+			"title": 0,
+			"wins": 3,
+			"podiums": 13,
+			"pilots_wins": { "Jos Froiln_Gonzlez": 1, "Alberto_Ascari": 2 },
+			"pilots_podiums": { "Piero_Taruffi": 1, "Alberto_Ascari": 4, "Luigi_Villoresi": 3, "Jos Froiln_Gonzlez": 5 }
+		},
+		"1952": {
+			"title": 0,
+			"wins": 7,
+			"podiums": 17,
+			"pilots_wins": { "Piero_Taruffi": 1, "Alberto_Ascari": 6 },
+			"pilots_podiums": { "Piero_Taruffi": 3, "Rudi_Fischer": 2, "Alberto_Ascari": 6, "Nino_Farina": 4, "Luigi_Villoresi": 2 }
+		},
+		"1953": {
+			"title": 0,
+			"wins": 7,
+			"podiums": 16,
+			"pilots_wins": { "Alberto_Ascari": 5, "Mike_Hawthorn": 1, "Nino_Farina": 1 },
+			"pilots_podiums": { "Alberto_Ascari": 5, "Luigi_Villoresi": 3, "Nino_Farina": 5, "Mike_Hawthorn": 3 }
+		},
+		"1954": {
+			"title": 0,
+			"wins": 2,
+			"podiums": 14,
+			"pilots_wins": { "Jos Froiln_Gonzlez": 1, "Mike_Hawthorn": 1 },
+			"pilots_podiums": {
+				"Nino_Farina": 1,
+				"Jos Froiln_Gonzlez": 5,
+				"Maurice_Trintignant": 2,
+				"Robert_Manzon": 1,
+				"Mike_Hawthorn": 4,
+				"Umberto_Maglioli": 1
+			}
+		},
+		"1955": {
+			"title": 0,
+			"wins": 1,
+			"podiums": 9,
+			"pilots_wins": { "Maurice_Trintignant": 1 },
+			"pilots_podiums": {
+				"Jos Froiln_Gonzlez": 1,
+				"Maurice_Trintignant": 3,
+				"Nino_Farina": 3,
+				"Umberto_Maglioli": 1,
+				"Eugenio_Castellotti": 1
+			}
+		},
+		"1956": {
+			"title": 0,
+			"wins": 6,
+			"podiums": 14,
+			"pilots_wins": { "Luigi_Musso": 1, "Juan_Fangio": 3, "Peter_Collins": 2 },
+			"pilots_podiums": {
+				"Luigi_Musso": 1,
+				"Juan_Fangio": 5,
+				"Peter_Collins": 5,
+				"Paul_Frre": 1,
+				"Eugenio_Castellotti": 1,
+				"Alfonso_de Portago": 1
+			}
+		},
+		"1957": {
+			"title": 0,
+			"wins": 0,
+			"podiums": 7,
+			"pilots_wins": {},
+			"pilots_podiums": { "Luigi_Musso": 2, "Peter_Collins": 2, "Mike_Hawthorn": 2, "Wolfgang_von Trips": 1 }
+		},
+		"1958": {
+			"title": 0,
+			"wins": 2,
+			"podiums": 14,
+			"pilots_wins": { "Mike_Hawthorn": 1, "Peter_Collins": 1 },
+			"pilots_podiums": { "Luigi_Musso": 2, "Mike_Hawthorn": 7, "Peter_Collins": 2, "Wolfgang_von Trips": 1, "Phil_Hill": 2 }
+		},
+		"1959": {
+			"title": 0,
+			"wins": 2,
+			"podiums": 9,
+			"pilots_wins": { "Tony_Brooks": 2 },
+			"pilots_podiums": { "Tony_Brooks": 4, "Phil_Hill": 3, "Dan_Gurney": 2 }
+		},
+		"1960": {
+			"title": 0,
+			"wins": 1,
+			"podiums": 5,
+			"pilots_wins": { "Phil_Hill": 1 },
+			"pilots_podiums": { "Cliff_Allison": 1, "Phil_Hill": 2, "Richie_Ginther": 1, "Willy_Mairesse": 1 }
+		},
+		"1961": {
+			"title": 1,
+			"wins": 5,
+			"podiums": 14,
+			"pilots_wins": { "Wolfgang_von Trips": 2, "Phil_Hill": 2, "Giancarlo_Baghetti": 1 },
+			"pilots_podiums": { "Richie_Ginther": 3, "Phil_Hill": 6, "Wolfgang_von Trips": 4, "Giancarlo_Baghetti": 1 }
+		},
+		"1962": { "title": 0, "wins": 0, "podiums": 4, "pilots_wins": {}, "pilots_podiums": { "Phil_Hill": 3, "Lorenzo_Bandini": 1 } },
+		"1963": { "title": 0, "wins": 1, "podiums": 3, "pilots_wins": { "John_Surtees": 1 }, "pilots_podiums": { "John_Surtees": 3 } },
+		"1964": {
+			"title": 1,
+			"wins": 3,
+			"podiums": 10,
+			"pilots_wins": { "John_Surtees": 2, "Lorenzo_Bandini": 1 },
+			"pilots_podiums": { "John_Surtees": 6, "Lorenzo_Bandini": 4 }
+		},
+		"1965": { "title": 0, "wins": 0, "podiums": 4, "pilots_wins": {}, "pilots_podiums": { "John_Surtees": 3, "Lorenzo_Bandini": 1 } },
+		"1966": {
+			"title": 0,
+			"wins": 2,
+			"podiums": 6,
+			"pilots_wins": { "John_Surtees": 1, "Ludovico_Scarfiotti": 1 },
+			"pilots_podiums": { "Lorenzo_Bandini": 2, "John_Surtees": 1, "Mike_Parkes": 2, "Ludovico_Scarfiotti": 1 }
+		},
+		"1967": { "title": 0, "wins": 0, "podiums": 4, "pilots_wins": {}, "pilots_podiums": { "Chris_Amon": 4 } },
+		"1968": {
+			"title": 0,
+			"wins": 1,
+			"podiums": 5,
+			"pilots_wins": { "Jacky_Ickx": 1 },
+			"pilots_podiums": { "Jacky_Ickx": 4, "Chris_Amon": 1 }
+		},
+		"1969": { "title": 0, "wins": 0, "podiums": 1, "pilots_wins": {}, "pilots_podiums": { "Chris_Amon": 1 } },
+		"1970": {
+			"title": 0,
+			"wins": 4,
+			"podiums": 9,
+			"pilots_wins": { "Jacky_Ickx": 3, "Clay_Regazzoni": 1 },
+			"pilots_podiums": { "Jacky_Ickx": 5, "Clay_Regazzoni": 4 }
+		},
+		"1971": {
+			"title": 0,
+			"wins": 2,
+			"podiums": 7,
+			"pilots_wins": { "Mario_Andretti": 1, "Jacky_Ickx": 1 },
+			"pilots_podiums": { "Mario_Andretti": 1, "Clay_Regazzoni": 3, "Jacky_Ickx": 3 }
+		},
+		"1972": {
+			"title": 0,
+			"wins": 1,
+			"podiums": 6,
+			"pilots_wins": { "Jacky_Ickx": 1 },
+			"pilots_podiums": { "Jacky_Ickx": 4, "Clay_Regazzoni": 2 }
+		},
+		"1973": { "title": 0, "wins": 0, "podiums": 0, "pilots_wins": {}, "pilots_podiums": {} },
+		"1974": {
+			"title": 0,
+			"wins": 3,
+			"podiums": 12,
+			"pilots_wins": { "Niki_Lauda": 2, "Clay_Regazzoni": 1 },
+			"pilots_podiums": { "Niki_Lauda": 5, "Clay_Regazzoni": 7 }
+		},
+		"1975": {
+			"title": 1,
+			"wins": 6,
+			"podiums": 11,
+			"pilots_wins": { "Niki_Lauda": 5, "Clay_Regazzoni": 1 },
+			"pilots_podiums": { "Niki_Lauda": 8, "Clay_Regazzoni": 3 }
+		},
+		"1976": {
+			"title": 1,
+			"wins": 6,
+			"podiums": 13,
+			"pilots_wins": { "Niki_Lauda": 5, "Clay_Regazzoni": 1 },
+			"pilots_podiums": { "Niki_Lauda": 9, "Clay_Regazzoni": 4 }
+		},
+		"1977": {
+			"title": 1,
+			"wins": 4,
+			"podiums": 16,
+			"pilots_wins": { "Carlos_Reutemann": 1, "Niki_Lauda": 3 },
+			"pilots_podiums": { "Carlos_Reutemann": 6, "Niki_Lauda": 10 }
+		},
+		"1978": {
+			"title": 0,
+			"wins": 5,
+			"podiums": 9,
+			"pilots_wins": { "Carlos_Reutemann": 4, "Gilles_Villeneuve": 1 },
+			"pilots_podiums": { "Carlos_Reutemann": 7, "Gilles_Villeneuve": 2 }
+		},
+		"1979": {
+			"title": 1,
+			"wins": 6,
+			"podiums": 13,
+			"pilots_wins": { "Gilles_Villeneuve": 3, "Jody_Scheckter": 3 },
+			"pilots_podiums": { "Gilles_Villeneuve": 7, "Jody_Scheckter": 6 }
+		},
+		"1980": { "title": 0, "wins": 0, "podiums": 0, "pilots_wins": {}, "pilots_podiums": {} },
+		"1981": {
+			"title": 0,
+			"wins": 2,
+			"podiums": 3,
+			"pilots_wins": { "Gilles_Villeneuve": 2 },
+			"pilots_podiums": { "Gilles_Villeneuve": 3 }
+		},
+		"1982": {
+			"title": 1,
+			"wins": 3,
+			"podiums": 11,
+			"pilots_wins": { "Didier_Pironi": 2, "Patrick_Tambay": 1 },
+			"pilots_podiums": { "Didier_Pironi": 6, "Gilles_Villeneuve": 1, "Patrick_Tambay": 3, "Mario_Andretti": 1 }
+		},
+		"1983": {
+			"title": 1,
+			"wins": 4,
+			"podiums": 12,
+			"pilots_wins": { "Patrick_Tambay": 1, "Ren_Arnoux": 3 },
+			"pilots_podiums": { "Ren_Arnoux": 7, "Patrick_Tambay": 5 }
+		},
+		"1984": {
+			"title": 0,
+			"wins": 1,
+			"podiums": 8,
+			"pilots_wins": { "Michele_Alboreto": 1 },
+			"pilots_podiums": { "Michele_Alboreto": 4, "Ren_Arnoux": 4 }
+		},
+		"1985": {
+			"title": 0,
+			"wins": 2,
+			"podiums": 10,
+			"pilots_wins": { "Michele_Alboreto": 2 },
+			"pilots_podiums": { "Michele_Alboreto": 8, "Stefan_Johansson": 2 }
+		},
+		"1986": {
+			"title": 0,
+			"wins": 0,
+			"podiums": 5,
+			"pilots_wins": {},
+			"pilots_podiums": { "Stefan_Johansson": 4, "Michele_Alboreto": 1 }
+		},
+		"1987": {
+			"title": 0,
+			"wins": 2,
+			"podiums": 6,
+			"pilots_wins": { "Gerhard_Berger": 2 },
+			"pilots_podiums": { "Michele_Alboreto": 3, "Gerhard_Berger": 3 }
+		},
+		"1988": {
+			"title": 0,
+			"wins": 1,
+			"podiums": 8,
+			"pilots_wins": { "Gerhard_Berger": 1 },
+			"pilots_podiums": { "Gerhard_Berger": 5, "Michele_Alboreto": 3 }
+		},
+		"1989": {
+			"title": 0,
+			"wins": 3,
+			"podiums": 9,
+			"pilots_wins": { "Nigel_Mansell": 2, "Gerhard_Berger": 1 },
+			"pilots_podiums": { "Nigel_Mansell": 6, "Gerhard_Berger": 3 }
+		},
+		"1990": {
+			"title": 0,
+			"wins": 6,
+			"podiums": 14,
+			"pilots_wins": { "Alain_Prost": 5, "Nigel_Mansell": 1 },
+			"pilots_podiums": { "Alain_Prost": 9, "Nigel_Mansell": 5 }
+		},
+		"1991": { "title": 0, "wins": 0, "podiums": 8, "pilots_wins": {}, "pilots_podiums": { "Alain_Prost": 5, "Jean_Alesi": 3 } },
+		"1992": { "title": 0, "wins": 0, "podiums": 2, "pilots_wins": {}, "pilots_podiums": { "Jean_Alesi": 2 } },
+		"1993": { "title": 0, "wins": 0, "podiums": 3, "pilots_wins": {}, "pilots_podiums": { "Jean_Alesi": 2, "Gerhard_Berger": 1 } },
+		"1994": {
+			"title": 0,
+			"wins": 1,
+			"podiums": 11,
+			"pilots_wins": { "Gerhard_Berger": 1 },
+			"pilots_podiums": { "Jean_Alesi": 4, "Gerhard_Berger": 6, "Nicola_Larini": 1 }
+		},
+		"1995": {
+			"title": 0,
+			"wins": 1,
+			"podiums": 11,
+			"pilots_wins": { "Jean_Alesi": 1 },
+			"pilots_podiums": { "Gerhard_Berger": 6, "Jean_Alesi": 5 }
+		},
+		"1996": {
+			"title": 0,
+			"wins": 3,
+			"podiums": 9,
+			"pilots_wins": { "Michael_Schumacher": 3 },
+			"pilots_podiums": { "Eddie_Irvine": 1, "Michael_Schumacher": 8 }
+		},
+		"1997": {
+			"title": 0,
+			"wins": 5,
+			"podiums": 13,
+			"pilots_wins": { "Michael_Schumacher": 5 },
+			"pilots_podiums": { "Michael_Schumacher": 8, "Eddie_Irvine": 5 }
+		},
+		"1998": {
+			"title": 0,
+			"wins": 6,
+			"podiums": 19,
+			"pilots_wins": { "Michael_Schumacher": 6 },
+			"pilots_podiums": { "Michael_Schumacher": 11, "Eddie_Irvine": 8 }
+		},
+		"1999": {
+			"title": 1,
+			"wins": 6,
+			"podiums": 17,
+			"pilots_wins": { "Eddie_Irvine": 4, "Michael_Schumacher": 2 },
+			"pilots_podiums": { "Eddie_Irvine": 9, "Michael_Schumacher": 6, "Mika_Salo": 2 }
+		},
+		"2000": {
+			"title": 1,
+			"wins": 10,
+			"podiums": 21,
+			"pilots_wins": { "Michael_Schumacher": 9, "Rubens_Barrichello": 1 },
+			"pilots_podiums": { "Michael_Schumacher": 12, "Rubens_Barrichello": 9 }
+		},
+		"2001": {
+			"title": 1,
+			"wins": 9,
+			"podiums": 24,
+			"pilots_wins": { "Michael_Schumacher": 9 },
+			"pilots_podiums": { "Michael_Schumacher": 14, "Rubens_Barrichello": 10 }
+		},
+		"2002": {
+			"title": 1,
+			"wins": 15,
+			"podiums": 27,
+			"pilots_wins": { "Michael_Schumacher": 11, "Rubens_Barrichello": 4 },
+			"pilots_podiums": { "Michael_Schumacher": 17, "Rubens_Barrichello": 10 }
+		},
+		"2003": {
+			"title": 1,
+			"wins": 8,
+			"podiums": 16,
+			"pilots_wins": { "Michael_Schumacher": 6, "Rubens_Barrichello": 2 },
+			"pilots_podiums": { "Rubens_Barrichello": 8, "Michael_Schumacher": 8 }
+		},
+		"2004": {
+			"title": 1,
+			"wins": 15,
+			"podiums": 29,
+			"pilots_wins": { "Michael_Schumacher": 13, "Rubens_Barrichello": 2 },
+			"pilots_podiums": { "Michael_Schumacher": 15, "Rubens_Barrichello": 14 }
+		},
+		"2005": {
+			"title": 0,
+			"wins": 1,
+			"podiums": 9,
+			"pilots_wins": { "Michael_Schumacher": 1 },
+			"pilots_podiums": { "Rubens_Barrichello": 4, "Michael_Schumacher": 5 }
+		},
+		"2006": {
+			"title": 0,
+			"wins": 9,
+			"podiums": 19,
+			"pilots_wins": { "Michael_Schumacher": 7, "Felipe_Massa": 2 },
+			"pilots_podiums": { "Michael_Schumacher": 12, "Felipe_Massa": 7 }
+		},
+		"2007": {
+			"title": 1,
+			"wins": 9,
+			"podiums": 22,
+			"pilots_wins": { "Kimi_Rikknen": 6, "Felipe_Massa": 3 },
+			"pilots_podiums": { "Kimi_Rikknen": 12, "Felipe_Massa": 10 }
+		},
+		"2008": {
+			"title": 1,
+			"wins": 8,
+			"podiums": 19,
+			"pilots_wins": { "Kimi_Rikknen": 2, "Felipe_Massa": 6 },
+			"pilots_podiums": { "Kimi_Rikknen": 9, "Felipe_Massa": 10 }
+		},
+		"2009": {
+			"title": 0,
+			"wins": 1,
+			"podiums": 6,
+			"pilots_wins": { "Kimi_Rikknen": 1 },
+			"pilots_podiums": { "Kimi_Rikknen": 5, "Felipe_Massa": 1 }
+		},
+		"2010": {
+			"title": 0,
+			"wins": 5,
+			"podiums": 15,
+			"pilots_wins": { "Fernando_Alonso": 5 },
+			"pilots_podiums": { "Fernando_Alonso": 10, "Felipe_Massa": 5 }
+		},
+		"2011": {
+			"title": 0,
+			"wins": 1,
+			"podiums": 10,
+			"pilots_wins": { "Fernando_Alonso": 1 },
+			"pilots_podiums": { "Fernando_Alonso": 10 }
+		},
+		"2012": {
+			"title": 0,
+			"wins": 3,
+			"podiums": 15,
+			"pilots_wins": { "Fernando_Alonso": 3 },
+			"pilots_podiums": { "Fernando_Alonso": 13, "Felipe_Massa": 2 }
+		},
+		"2013": {
+			"title": 0,
+			"wins": 2,
+			"podiums": 10,
+			"pilots_wins": { "Fernando_Alonso": 2 },
+			"pilots_podiums": { "Fernando_Alonso": 9, "Felipe_Massa": 1 }
+		},
+		"2014": { "title": 0, "wins": 0, "podiums": 2, "pilots_wins": {}, "pilots_podiums": { "Fernando_Alonso": 2 } },
+		"2015": {
+			"title": 0,
+			"wins": 3,
+			"podiums": 16,
+			"pilots_wins": { "Sebastian_Vettel": 3 },
+			"pilots_podiums": { "Sebastian_Vettel": 13, "Kimi_Rikknen": 3 }
+		},
+		"2016": { "title": 0, "wins": 0, "podiums": 11, "pilots_wins": {}, "pilots_podiums": { "Sebastian_Vettel": 7, "Kimi_Rikknen": 4 } },
+		"2017": {
+			"title": 0,
+			"wins": 5,
+			"podiums": 20,
+			"pilots_wins": { "Sebastian_Vettel": 5 },
+			"pilots_podiums": { "Sebastian_Vettel": 13, "Kimi_Rikknen": 7 }
+		},
+		"2018": {
+			"title": 0,
+			"wins": 6,
+			"podiums": 24,
+			"pilots_wins": { "Sebastian_Vettel": 5, "Kimi_Rikknen": 1 },
+			"pilots_podiums": { "Sebastian_Vettel": 12, "Kimi_Rikknen": 12 }
+		},
+		"2019": {
+			"title": 0,
+			"wins": 3,
+			"podiums": 19,
+			"pilots_wins": { "Charles_Leclerc": 2, "Sebastian_Vettel": 1 },
+			"pilots_podiums": { "Charles_Leclerc": 10, "Sebastian_Vettel": 9 }
+		},
+		"2020": {
+			"title": 0,
+			"wins": 0,
+			"podiums": 3,
+			"pilots_wins": {},
+			"pilots_podiums": { "Charles_Leclerc": 2, "Sebastian_Vettel": 1 }
+		},
+		"2021": { "title": 0, "wins": 0, "podiums": 5, "pilots_wins": {}, "pilots_podiums": { "Carlos_Sainz": 4, "Charles_Leclerc": 1 } },
+		"2022": {
+			"title": 0,
+			"wins": 4,
+			"podiums": 20,
+			"pilots_wins": { "Charles_Leclerc": 3, "Carlos_Sainz": 1 },
+			"pilots_podiums": { "Charles_Leclerc": 11, "Carlos_Sainz": 9 }
+		},
+		"2023": {
+			"title": 0,
+			"wins": 1,
+			"podiums": 6,
+			"pilots_wins": { "Carlos_Sainz": 1 },
+			"pilots_podiums": { "Charles_Leclerc": 3, "Carlos_Sainz": 3 }
+		}
+	}
+}

@@ -80,12 +80,14 @@ class Home extends React.Component {
                         image='f1_background_ferrari_2'
                     />
                 </Link>
-                <CardContainer
-                    title='CONSTRUCTOR STATISTICS'
-                    subtitle='See all main achievements'
-                    slug='formula-1'
-                    image='f1_background_ferrari_3'
-                />
+                <Link to="/constructors">
+                    <CardContainer
+                        title='CONSTRUCTOR STATISTICS'
+                        subtitle='See all main achievements'
+                        slug='formula-1'
+                        image='f1_background_ferrari_3'
+                    />
+                </Link>
                 <CardContainer
                     title='OTHERS COOL STATS'
                     subtitle='Interesting numbers from races and pilots'
