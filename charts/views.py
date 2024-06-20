@@ -783,12 +783,33 @@ def update_constructors_info():
 			max_limit = 0
 			time.sleep(3600)
 
-def get_constructors_stats():
-	print('')
-	print('get_constructors_stats')
-	print('')
-	return True
+def get_constructors_stats(request):
+	# Get all files inside src/json/constructors
+	main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+	constructors_path = main_path + "/src/json/constructors"
+	constructors = os.listdir(constructors_path)
+
+	constructors_list = []
+	for constructor in constructors:
+		# print(constructor)
+		with open(constructors_path + '/' + constructor) as json_file:
+			data = json.load(json_file)
+			try:
+				constructor_dict = data
+				constructors_list.append(constructor_dict)
+
+			except Exception as e:
+				pass
+
+	# Order constructors_list by name
+	constructors_list = pydash.sort_by(constructors_list, 'name')
+
+	response_dict = {
+		'constructors': constructors_list
+	}
+
+	return JsonResponse(response_dict, safe=False) 
 # =================================================================================================
 # =================================================================================================
 # =================================================================================================

@@ -46,6 +46,9 @@
     width: 90%;
     position: relative;
 }
+.pilots-desktop-chart-details>*:nth-child(1)>*:nth-child(1) svg{
+    overflow: visible;
+}
 .pilots-desktop-menu {
     position: fixed;
     top: 80px;

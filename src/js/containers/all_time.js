@@ -1,16 +1,12 @@
 import React from 'react';
 import '../../css/all_time.css';
 import Image from '../components/image.js';
-import _ from "lodash";
-import {
-    BrowserRouter as Router,
-    Routes,
-    Route
-} from "react-router-dom";
+import _ from 'lodash';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import { ResponsiveRadar } from '@nivo/radar'
+import { ResponsiveRadar } from '@nivo/radar';
 import Switch from '@mui/material/Switch';
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
@@ -22,11 +18,11 @@ import TextField from '@mui/material/TextField';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { YearCalendar } from '@mui/x-date-pickers/YearCalendar';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
-import { ResponsiveBar } from '@nivo/bar'
+import { ResponsiveBar } from '@nivo/bar';
 import Tooltip from '@mui/material/Tooltip';
 
 import { LocalizationProvider } from '@mui/x-date-pickers';
-import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment'
+import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
 import moment from 'moment';
 
 // ******************************************************
@@ -45,374 +41,386 @@ import moment from 'moment';
 // ******************************************************
 // ******************************************************
 
-
-function fix_filter_names(filter){
-    if (filter === 'title') return 'Titles';
-    if (filter === 'wins') return 'Wins';
-    if (filter === 'poles') return 'Poles';
-    if (filter === 'podiums') return 'Podiums';
+function fix_filter_names(filter) {
+	if (filter === 'title') return 'Titles';
+	if (filter === 'wins') return 'Wins';
+	if (filter === 'poles') return 'Poles';
+	if (filter === 'podiums') return 'Podiums';
 }
 
-function BarChart(props){
-    let filters_list = ['title', 'wins', 'poles', 'podiums'];
-    let lines_number = props.chart_max_value / 10;
-    lines_number = props.chart_max_value < 40 ? 5 : props.chart_max_value > 100 ? 10 : lines_number;
-    let lines_list = [];
-    let count = 0;
-    
-    while(count < props.chart_max_value){
-        let lines_gap = props.chart_max_value / lines_number
-        let number = 0;
-        if (lines_list.length > 0){
-            number = count
-        }
-        lines_list.push(number);
-        count += lines_gap;
-    }
-    lines_list.push(props.chart_max_value);
-    lines_list = lines_list.sort((a, b) => b - a);
+function BarChart(props) {
+	let filters_list = ['title', 'wins', 'poles', 'podiums'];
+	let lines_number = props.chart_max_value / 10;
+	lines_number = props.chart_max_value < 40 ? 5 : props.chart_max_value > 100 ? 10 : lines_number;
+	let lines_list = [];
+	let count = 0;
 
-    return (
-        <div className='barchart-background'>
-            <div className='barchart-lines-bg'>
-                {/* The division of props.chart_max_value should return the number of divs */}
-                {lines_list.map(line => {
-                    return(
-                        <div className='barchart-line'>
-                            <div className='barchart-line-number'>{line}</div>
-                            <div className='barchart-line-details'></div>
-                        </div>
-                    )
-                })}
-                {/* <div className='barchart-line-details'></div>
+	while (count < props.chart_max_value) {
+		let lines_gap = props.chart_max_value / lines_number;
+		let number = 0;
+		if (lines_list.length > 0) {
+			number = count;
+		}
+		lines_list.push(number);
+		count += lines_gap;
+	}
+	lines_list.push(props.chart_max_value);
+	lines_list = lines_list.sort((a, b) => b - a);
+
+	return (
+		<div className='barchart-background'>
+			<div className='barchart-lines-bg'>
+				{/* The division of props.chart_max_value should return the number of divs */}
+				{lines_list.map(line => {
+					return (
+						<div className='barchart-line'>
+							<div className='barchart-line-number'>{line}</div>
+							<div className='barchart-line-details'></div>
+						</div>
+					);
+				})}
+				{/* <div className='barchart-line-details'></div>
                 <div className='barchart-line-details'></div>
                 <div className='barchart-line-details'></div>
                 <div className='barchart-line-details'></div> */}
-            </div>
-            <div className='barchart-bars'>
-                {filters_list.map(filter => {
-                    let seasons_results = props.data.seasons_results;
-                    let sum = 0;
-                    Object.keys(seasons_results).forEach(year => {
-                        sum += seasons_results[year][filter];
-                    })
-                    let bar_height = sum * 100 / props.chart_max_value;
-                    return(
-                        <Tooltip key={filter} title={sum + ' - ' + fix_filter_names(filter)} arrow>
-                            <div className='barchart-bar-details' style={{height: bar_height + '%'}}></div>
-                        </Tooltip>
-                    )
-                })}
-            </div>
-        </div>
-    )
+			</div>
+			<div className='barchart-bars'>
+				{filters_list.map(filter => {
+					let seasons_results = props.data.seasons_results;
+					let sum = 0;
+					Object.keys(seasons_results).forEach(year => {
+						sum += seasons_results[year][filter];
+					});
+					let bar_height = (sum * 100) / props.chart_max_value;
+					return (
+						<Tooltip key={filter} title={sum + ' - ' + fix_filter_names(filter)} arrow>
+							<div className='barchart-bar-details' style={{ height: bar_height + '%' }}></div>
+						</Tooltip>
+					);
+				})}
+			</div>
+		</div>
+	);
 }
 
 class AllTime extends React.Component {
-    constructor(props){
-        super(props)
-        this.state = {
-            loading: false,
-            range: 5,
-            nationality: 'World',
-            filter_type: 'title',
-            first_date:  moment(new Date(1950, 1, 1)),
-            second_date:  moment(new Date(2022, 1, 1)),
-            drivers: [],
-            drivers_filtered: [],
-            nationalities: {},
-            chart_max_value: 100,
-        }
+	constructor(props) {
+		super(props);
+		this.state = {
+			loading: false,
+			range: 5,
+			nationality: 'World',
+			filter_type: 'title',
+			first_date: moment(new Date(1950, 1, 1)),
+			second_date: moment(new Date(2022, 1, 1)),
+			drivers: [],
+			drivers_filtered: [],
+			nationalities: {},
+			chart_max_value: 100
+		};
 
-        this.load_drivers = this.load_drivers.bind(this);
-        this.load_nationalities = this.load_nationalities.bind(this);
-        this.search_drivers = this.search_drivers.bind(this);
+		this.load_drivers = this.load_drivers.bind(this);
+		this.load_nationalities = this.load_nationalities.bind(this);
+		this.search_drivers = this.search_drivers.bind(this);
 
-        this.load_nationalities();
-        this.load_drivers();
-    }
+		this.load_nationalities();
+		this.load_drivers();
+	}
 
-    load_nationalities(){
-        fetch('/load-nationalities')
-        .then(response => response.json())
-        .then(data => {
-            console.log(data)
-            this.setState({nationalities: data.nationalities});
-            console.log('finish fetch...')
-            console.log(this.state.nationalities)
-            console.log(Object.keys(this.state.nationalities).length)
-            this.setState({loading: false});
-        })
-    }
+	load_nationalities() {
+		fetch('/load-nationalities')
+			.then(response => response.json())
+			.then(data => {
+				console.log(data);
+				this.setState({ nationalities: data.nationalities });
+				console.log('finish fetch...');
+				console.log(this.state.nationalities);
+				console.log(Object.keys(this.state.nationalities).length);
+				this.setState({ loading: false });
+			});
+	}
 
-    load_drivers(){
-        fetch('/pilots-complete-info')
-        .then(response => response.json())
-        .then(data => {
-            console.log(data)
-            this.setState({drivers_filtered: data.drivers});
-            this.setState({drivers: data.drivers});
-            console.log('finish fetch pilots-complete-info...')
-            console.log(this.state.drivers)
-            console.log(this.state.drivers.length)
-            this.search_drivers()
-            this.setState({loading: false});
-        })
-    }
+	load_drivers() {
+		fetch('/pilots-complete-info')
+			.then(response => response.json())
+			.then(data => {
+				console.log(data);
+				this.setState({ drivers_filtered: data.drivers });
+				this.setState({ drivers: data.drivers });
+				console.log('finish fetch pilots-complete-info...');
+				console.log(this.state.drivers);
+				console.log(this.state.drivers.length);
+				this.search_drivers();
+				this.setState({ loading: false });
+			});
+	}
 
-    search_drivers(){
-        // console.log('')
-        // console.log('searching drivers...')
-        // console.log('this.state.nationality: ', this.state.nationality)
-        let drivers_list = JSON.parse(JSON.stringify([...this.state.drivers]));
-        let new_list = [];
-        if (this.state.nationality === 'World'){
-            new_list = drivers_list;
-        } else {
-            for(let i = 0; i < drivers_list.length; i++){
-                let driver = drivers_list[i];
-                let has_nationality = driver['nationality'] && driver['nationality']['nationality_title'] === this.state.nationality;
-                if (has_nationality) new_list.push(driver);
-            }
-        }
-        // console.log('new_list: ', new_list)
-        
-        let first_year = this.state.first_date._d.getFullYear();
-        let second_year = this.state.second_date._d.getFullYear();
-        // Create a range of years between first_year and second_year
-        let selected_years = [];
-        for (let i = first_year; i <= second_year; i++) {
-            selected_years.push(i);
-        }
-        // console.log('selected_years: ', selected_years)
-        
-        let range_date_list = [];
-        for(let i = 0; i < new_list.length; i++){
-            let driver = new_list[i];
+	search_drivers() {
+		// console.log('')
+		// console.log('searching drivers...')
+		// console.log('this.state.nationality: ', this.state.nationality)
+		let drivers_list = JSON.parse(JSON.stringify([...this.state.drivers]));
+		let new_list = [];
+		if (this.state.nationality === 'World') {
+			new_list = drivers_list;
+		} else {
+			for (let i = 0; i < drivers_list.length; i++) {
+				let driver = drivers_list[i];
+				let has_nationality = driver['nationality'] && driver['nationality']['nationality_title'] === this.state.nationality;
+				if (has_nationality) new_list.push(driver);
+			}
+		}
+		// console.log('new_list: ', new_list)
 
-            // console.log('')
-            // console.log('driver: ', driver['name'])
-            if('seasons_results' in driver && driver['seasons_results']){
-                let seasons_list = Object.keys(driver['seasons_results']);
-                seasons_list = seasons_list.map(season => parseInt(season));
-                // console.log('seasons_list: ', seasons_list)
-                
-                let intersection = _.intersectionWith(selected_years,seasons_list, _.isEqual);
-                // console.log('intersection: ', intersection)
-                
-                let new_seasons_results = {};
-                intersection.forEach(year => {
-                    new_seasons_results[year] = driver['seasons_results'][year];
-                })
-                // console.log('new_seasons_results: ', new_seasons_results)
-                driver['seasons_results'] = new_seasons_results;
-                
-                if (intersection.length > 0) range_date_list.push(driver);
-            }
-        }
+		let first_year = this.state.first_date._d.getFullYear();
+		let second_year = this.state.second_date._d.getFullYear();
+		// Create a range of years between first_year and second_year
+		let selected_years = [];
+		for (let i = first_year; i <= second_year; i++) {
+			selected_years.push(i);
+		}
+		// console.log('selected_years: ', selected_years)
 
-        range_date_list = range_date_list.filter(driver => Object.keys(driver['seasons_results']).length > 0);
-        // If the sum inside each year from driver['seasons_results'] equals zero, then remove driver from list
-        let max_value = 0;
-        let filters_list = ['title', 'wins', 'poles', 'podiums'];
-        range_date_list = range_date_list.filter(driver => {
-            let seasons_results = driver['seasons_results'];
-            let sum = 0;
-            Object.keys(seasons_results).forEach(year => {
-                sum += seasons_results[year][this.state.filter_type];
-            })
-            max_value = Math.max(max_value, sum);
-            for(let filter of filters_list){
-                if (!(this.state.filter_type === filter)){
-                    let sum_temp = 0;
-                    Object.keys(seasons_results).forEach(year => {
-                        sum_temp += seasons_results[year][filter];
-                    })
-                    max_value = Math.max(max_value, sum_temp);
+		let range_date_list = [];
+		for (let i = 0; i < new_list.length; i++) {
+			let driver = new_list[i];
 
-                }
-            }
-            return sum > 0;
-        })
-        console.log('max_value: ', max_value)
-        // Round the chart_max_value to the nearest 10
-        max_value = Math.ceil(max_value / 10) * 10;
+			// console.log('')
+			// console.log('driver: ', driver['name'])
+			if ('seasons_results' in driver && driver['seasons_results']) {
+				let seasons_list = Object.keys(driver['seasons_results']);
+				seasons_list = seasons_list.map(season => parseInt(season));
+				// console.log('seasons_list: ', seasons_list)
 
-        // Order drivers by the sum of the filter_type
-        range_date_list = range_date_list.sort((a, b) => {
-            let a_sum = 0;
-            let b_sum = 0;
-            Object.keys(a['seasons_results']).forEach(year => {
-                a_sum += a['seasons_results'][year][this.state.filter_type];
-            })
-            Object.keys(b['seasons_results']).forEach(year => {
-                b_sum += b['seasons_results'][year][this.state.filter_type];
-            })
-            return b_sum - a_sum;
-        })
+				let intersection = _.intersectionWith(selected_years, seasons_list, _.isEqual);
+				// console.log('intersection: ', intersection)
 
-        // console.log('new_list: ', new_list);
-        // console.log('range_date_list: ', range_date_list);
-        // console.log('drivers_list: ', drivers_list);
-        this.setState({
-            drivers_filtered: range_date_list,
-            chart_max_value: max_value,
-        });
-    }
+				let new_seasons_results = {};
+				intersection.forEach(year => {
+					new_seasons_results[year] = driver['seasons_results'][year];
+				});
+				// console.log('new_seasons_results: ', new_seasons_results)
+				driver['seasons_results'] = new_seasons_results;
 
-    render(){
+				if (intersection.length > 0) range_date_list.push(driver);
+			}
+		}
 
-        if (this.state.drivers.length === 0 || Object.keys(this.state.nationalities).length === 0) {
-            return (
-                <Backdrop open={this.state.loading}>
-                    <CircularProgress color="inherit" />
-                </Backdrop>
-            )
-        } else {
+		range_date_list = range_date_list.filter(driver => Object.keys(driver['seasons_results']).length > 0);
+		// If the sum inside each year from driver['seasons_results'] equals zero, then remove driver from list
+		let max_value = 0;
+		let filters_list = ['title', 'wins', 'poles', 'podiums'];
+		range_date_list = range_date_list.filter(driver => {
+			let seasons_results = driver['seasons_results'];
+			let sum = 0;
+			Object.keys(seasons_results).forEach(year => {
+				sum += seasons_results[year][this.state.filter_type];
+			});
+			max_value = Math.max(max_value, sum);
+			for (let filter of filters_list) {
+				if (!(this.state.filter_type === filter)) {
+					let sum_temp = 0;
+					Object.keys(seasons_results).forEach(year => {
+						sum_temp += seasons_results[year][filter];
+					});
+					max_value = Math.max(max_value, sum_temp);
+				}
+			}
+			return sum > 0;
+		});
+		console.log('max_value: ', max_value);
+		// Round the chart_max_value to the nearest 10
+		max_value = Math.ceil(max_value / 10) * 10;
 
-            let image_test = require(`../../img/f1_background_ferrari_2.webp`);
+		// Order drivers by the sum of the filter_type
+		range_date_list = range_date_list.sort((a, b) => {
+			let a_sum = 0;
+			let b_sum = 0;
+			Object.keys(a['seasons_results']).forEach(year => {
+				a_sum += a['seasons_results'][year][this.state.filter_type];
+			});
+			Object.keys(b['seasons_results']).forEach(year => {
+				b_sum += b['seasons_results'][year][this.state.filter_type];
+			});
+			return b_sum - a_sum;
+		});
 
-            return(
-                <div className='all-time-background'>
-                    <div className='all-time-main-container'>
-                        <div className='all-time-main-title'>All Time Comparison</div>
-                        <div className='all-time-options'>
-                            <div className='all-time-options-column-1'>
-                                <div className='all-time-option-box'>
-                                    <div className='all-time-option-box-text'>Nationality: {this.state.nationality}</div>
-                                    <div className='all-time-option-box-component'>
-                                        <FormControl fullWidth>
-                                            <Select
-                                                id="demo-simple-select"
-                                                value={this.state.nationality}
-                                                onChange={(e) => this.setState({nationality: e.target.value})}
-                                            >
-                                                {Object.entries(this.state.nationalities).map(([key, value]) => {
-                                                    return(
-                                                    <MenuItem key={key} value={value.nationality_title}>
-                                                            <div className='all-time-option-box-component-nationality-item'>
-                                                                <img src={value.nationality_flag} />
-                                                                <div className='all-time-option-box-component-nationality-item-text'>{value.nationality_title}</div>
-                                                            </div>
-                                                    </MenuItem>
-                                                    )
-                                                })}
-                                            </Select>
-                                        </FormControl>
-                                    </div>
-                                </div>
-                                <div className='all-time-option-box'>
-                                    <div className='all-time-option-box-text'>Number of drivers: {this.state.range}</div>
-                                    <div className='all-time-option-box-component'>
-                                        <FormControl fullWidth>
-                                            <Select
-                                                id="demo-simple-select"
-                                                value={this.state.range}
-                                                onChange={(e) => this.setState({range: e.target.value})}
-                                            >
-                                                <MenuItem value={1}>1</MenuItem>
-                                                <MenuItem value={2}>2</MenuItem>
-                                                <MenuItem value={3}>3</MenuItem>
-                                                <MenuItem value={4}>4</MenuItem>
-                                                <MenuItem value={5}>5</MenuItem>
-                                            </Select>
-                                        </FormControl>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='all-time-option-box'>
-                                <div className='all-time-option-box-text'>Range Date</div>
-                                <div className='all-time-option-box-component'>
-                                    <LocalizationProvider dateAdapter={AdapterMoment}>
-                                        <DemoContainer components={['DatePicker']}>
-                                            <DatePicker 
-                                                disableFuture={true}
-                                                label="From" 
-                                                views={['year']}
-                                                minDate={moment(new Date(1950, 1, 1))}
-                                                maxDate={moment(new Date(2022, 1, 1))}
-                                                value={this.state.first_date}
-                                                onChange={(newValue) => this.setState({first_date: newValue})}
-                                            />
-                                            <DatePicker 
-                                                disableFuture={true}
-                                                label="To" 
-                                                views={['year']}
-                                                minDate={moment(new Date(1950, 1, 1))}
-                                                maxDate={moment(new Date(2022, 1, 1))}
-                                                value={this.state.second_date}
-                                                onChange={(newValue) => this.setState({second_date: newValue})}
-                                            />
-                                        </DemoContainer>
-                                    </LocalizationProvider>
-                                </div>
-                            </div>
-                            <div className='all-time-option-box'>
-                                <div className='all-time-option-box-text'>Filter: {this.state.filter_type.charAt(0).toUpperCase() + this.state.filter_type.slice(1)}</div>
-                                <div className='all-time-option-box-component'>
-                                    <FormControl fullWidth>
-                                        <Select
-                                            id="demo-simple-select"
-                                            value={this.state.filter_type}
-                                            onChange={(e) => this.setState({filter_type: e.target.value})}
-                                        >
-                                            <MenuItem value={'title'}>Titles</MenuItem>
-                                            <MenuItem value={'wins'}>Wins</MenuItem>
-                                            <MenuItem value={'poles'}>Poles</MenuItem>
-                                            <MenuItem value={'podiums'}>Podiums</MenuItem>
-                                        </Select>
-                                    </FormControl>
-                                </div>
-                            </div>
-                            <div className='all-time-option-box'>
-                                <div className='all-time-option-box-text'>Absolute</div>
-                                <div className='all-time-option-box-component'>option component</div>
-                            </div>
-                        </div>
-                        <div className='all-time-main-button' onClick={this.search_drivers}>SEARCH</div>
-                        <div className='all-time-charts'>
-                            {this.state.drivers_filtered.slice(0, this.state.range).map((driver, index) => {
-                                return(
-                                    <div key={driver.id} className='all-time-chart-box' style={{width: "calc(100% / " + this.state.range + ")"}}>
-                                        <div className='all-time-chart-box-info'>
-                                            {driver.image &&
-                                                <div className='all-time-chart-box-info-photo' style={{backgroundImage: "url(" + require(`../../img/${driver.image}`).default + ")"}}></div>
-                                            }
-                                            {!driver.image &&
-                                                <div className='all-time-chart-box-info-photo' style={{backgroundImage: "url(" + image_test.default + ")"}}></div>
-                                            }
-                                            <div className='all-time-chart-box-info-text'>{driver.name}</div>
-                                        </div>
-                                        <div className='all-time-chart-details'>
-                                            <BarChart data={driver} {...this.state}/>
-                                        </div>
-                                    </div>
-                                )
-                            })}
-                        </div>
-                        <div className='all-time-chart-labels'>
-                            <div className='all-time-chart-label-details'>
-                                <div className='all-time-chart-label-details-box'></div>
-                                <div className='all-time-chart-label-details-text'>Titles</div>
-                            </div>
-                            <div className='all-time-chart-label-details'>
-                                <div className='all-time-chart-label-details-box'></div>
-                                <div className='all-time-chart-label-details-text'>Wins</div>
-                            </div>
-                            <div className='all-time-chart-label-details'>
-                                <div className='all-time-chart-label-details-box'></div>
-                                <div className='all-time-chart-label-details-text'>Poles</div>
-                            </div>
-                            <div className='all-time-chart-label-details'>
-                                <div className='all-time-chart-label-details-box'></div>
-                                <div className='all-time-chart-label-details-text'>Podiums</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            )
-        }
-    }
+		// console.log('new_list: ', new_list);
+		console.log('range_date_list: ', range_date_list);
+		// console.log('drivers_list: ', drivers_list);
+		this.setState({
+			drivers_filtered: range_date_list,
+			chart_max_value: max_value
+		});
+	}
+
+	render() {
+		if (this.state.drivers.length === 0 || Object.keys(this.state.nationalities).length === 0) {
+			return (
+				<Backdrop open={this.state.loading}>
+					<CircularProgress color='inherit' />
+				</Backdrop>
+			);
+		} else {
+			let image_test = require(`../../img/f1_background_ferrari_2.webp`);
+
+			return (
+				<div className='all-time-background'>
+					<div className='all-time-main-container'>
+						<div className='all-time-main-title'>All Time Comparison</div>
+						<div className='all-time-options'>
+							<div className='all-time-options-column-1'>
+								<div className='all-time-option-box'>
+									<div className='all-time-option-box-text'>Nationality: {this.state.nationality}</div>
+									<div className='all-time-option-box-component'>
+										<FormControl fullWidth>
+											<Select
+												id='demo-simple-select'
+												value={this.state.nationality}
+												onChange={e => this.setState({ nationality: e.target.value })}
+											>
+												{Object.entries(this.state.nationalities).map(([key, value]) => {
+													return (
+														<MenuItem key={key} value={value.nationality_title}>
+															<div className='all-time-option-box-component-nationality-item'>
+																<img src={value.nationality_flag} />
+																<div className='all-time-option-box-component-nationality-item-text'>
+																	{value.nationality_title}
+																</div>
+															</div>
+														</MenuItem>
+													);
+												})}
+											</Select>
+										</FormControl>
+									</div>
+								</div>
+								<div className='all-time-option-box'>
+									<div className='all-time-option-box-text'>Number of drivers: {this.state.range}</div>
+									<div className='all-time-option-box-component'>
+										<FormControl fullWidth>
+											<Select
+												id='demo-simple-select'
+												value={this.state.range}
+												onChange={e => this.setState({ range: e.target.value })}
+											>
+												<MenuItem value={1}>1</MenuItem>
+												<MenuItem value={2}>2</MenuItem>
+												<MenuItem value={3}>3</MenuItem>
+												<MenuItem value={4}>4</MenuItem>
+												<MenuItem value={5}>5</MenuItem>
+											</Select>
+										</FormControl>
+									</div>
+								</div>
+							</div>
+							<div className='all-time-option-box'>
+								<div className='all-time-option-box-text'>Range Date</div>
+								<div className='all-time-option-box-component'>
+									<LocalizationProvider dateAdapter={AdapterMoment}>
+										<DemoContainer components={['DatePicker']}>
+											<DatePicker
+												disableFuture={true}
+												label='From'
+												views={['year']}
+												minDate={moment(new Date(1950, 1, 1))}
+												maxDate={moment(new Date(2022, 1, 1))}
+												value={this.state.first_date}
+												onChange={newValue => this.setState({ first_date: newValue })}
+											/>
+											<DatePicker
+												disableFuture={true}
+												label='To'
+												views={['year']}
+												minDate={moment(new Date(1950, 1, 1))}
+												maxDate={moment(new Date(2022, 1, 1))}
+												value={this.state.second_date}
+												onChange={newValue => this.setState({ second_date: newValue })}
+											/>
+										</DemoContainer>
+									</LocalizationProvider>
+								</div>
+							</div>
+							<div className='all-time-option-box'>
+								<div className='all-time-option-box-text'>
+									Filter: {this.state.filter_type.charAt(0).toUpperCase() + this.state.filter_type.slice(1)}
+								</div>
+								<div className='all-time-option-box-component'>
+									<FormControl fullWidth>
+										<Select
+											id='demo-simple-select'
+											value={this.state.filter_type}
+											onChange={e => this.setState({ filter_type: e.target.value })}
+										>
+											<MenuItem value={'title'}>Titles</MenuItem>
+											<MenuItem value={'wins'}>Wins</MenuItem>
+											<MenuItem value={'poles'}>Poles</MenuItem>
+											<MenuItem value={'podiums'}>Podiums</MenuItem>
+										</Select>
+									</FormControl>
+								</div>
+							</div>
+							<div className='all-time-option-box'>
+								<div className='all-time-option-box-text'>Absolute</div>
+								<div className='all-time-option-box-component'>option component</div>
+							</div>
+						</div>
+						<div className='all-time-main-button' onClick={this.search_drivers}>
+							SEARCH
+						</div>
+						<div className='all-time-charts'>
+							{this.state.drivers_filtered.slice(0, this.state.range).map((driver, index) => {
+								return (
+									<div
+										key={driver.id}
+										className='all-time-chart-box'
+										style={{ width: 'calc(100% / ' + this.state.range + ')' }}
+									>
+										<div className='all-time-chart-box-info'>
+											{driver.image && (
+												<div
+													className='all-time-chart-box-info-photo'
+													style={{ backgroundImage: 'url(' + require(`../../img/${driver.image}`).default + ')' }}
+												></div>
+											)}
+											{!driver.image && (
+												<div
+													className='all-time-chart-box-info-photo'
+													style={{ backgroundImage: 'url(' + image_test.default + ')' }}
+												></div>
+											)}
+											<div className='all-time-chart-box-info-text'>{driver.name}</div>
+										</div>
+										<div className='all-time-chart-details'>
+											<BarChart data={driver} {...this.state} />
+										</div>
+									</div>
+								);
+							})}
+						</div>
+						<div className='all-time-chart-labels'>
+							<div className='all-time-chart-label-details'>
+								<div className='all-time-chart-label-details-box'></div>
+								<div className='all-time-chart-label-details-text'>Titles</div>
+							</div>
+							<div className='all-time-chart-label-details'>
+								<div className='all-time-chart-label-details-box'></div>
+								<div className='all-time-chart-label-details-text'>Wins</div>
+							</div>
+							<div className='all-time-chart-label-details'>
+								<div className='all-time-chart-label-details-box'></div>
+								<div className='all-time-chart-label-details-text'>Poles</div>
+							</div>
+							<div className='all-time-chart-label-details'>
+								<div className='all-time-chart-label-details-box'></div>
+								<div className='all-time-chart-label-details-text'>Podiums</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			);
+		}
+	}
 }
 
 export default AllTime;

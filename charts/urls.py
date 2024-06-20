@@ -7,6 +7,7 @@ urlpatterns = [
     path('pilots', views.pilots, name='pilots'),
     path('pilots-list', views.pilots_list, name='pilots_list'),
     path('pilots-complete-info', views.pilots_complete_info, name='pilots_complete_info'),
+    path('get-constructors-stats', views.get_constructors_stats, name='get_constructors_stats'),
     path('load-nationalities', views.load_nationalities, name='load_nationalities'),
     path('all-time', views.all_time, name='all_time'),
     path('constructors', views.constructors, name='constructors'),
