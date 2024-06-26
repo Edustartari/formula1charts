@@ -85,12 +85,14 @@ class Home extends React.Component {
 						image='f1_background_ferrari_3'
 					/>
 				</Link>
-				<CardContainer
-					title='OTHERS COOL STATS'
-					subtitle='Interesting numbers from races and pilots'
-					slug='formula-1'
-					image='f1_background_mercedes_4'
-				/>
+				<Link to='/others'>
+					<CardContainer
+						title='OTHERS COOL STATS'
+						subtitle='Interesting numbers from races and pilots'
+						slug='formula-1'
+						image='f1_background_mercedes_4'
+					/>
+				</Link>
 			</div>
 		);
 	}

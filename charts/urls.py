@@ -11,5 +11,6 @@ urlpatterns = [
     path('load-nationalities', views.load_nationalities, name='load_nationalities'),
     path('all-time', views.all_time, name='all_time'),
     path('constructors', views.constructors, name='constructors'),
+    path('others', views.others, name='others'),
     path('season/<slug:year>', views.season_view, name='season_view'),
 ]

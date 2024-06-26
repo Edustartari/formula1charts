@@ -1,0 +1,16 @@
+{% extends 'front-end/index.html' %}
+{% load static %}
+
+{% block links %}
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+    
+{% block javascript %}
+<script type="text/javascript">
+    var content = {}
+    console.log('others template')
+</script>
+<script src="{% static 'others_bundle.js' %}"></script>
+{% endblock %}

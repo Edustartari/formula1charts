@@ -38,6 +38,7 @@
     "@nivo/pie": "^0.80.0",
     "@nivo/radar": "^0.83.0",
     "@nivo/sunburst": "^0.87.0",
+    "@nivo/waffle": "^0.87.0",
     "babel-loader": "^7.1.5",
     "css-loader": "^6.7.1",
     "file-loader": "^6.2.0",

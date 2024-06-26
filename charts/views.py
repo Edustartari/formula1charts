@@ -377,7 +377,6 @@ def get_driver_info():
 	print('alfabet: ' + str(alfabet))
 
 	for letter in alfabet:
-	# for letter in alfabet[:1]:
 		print('letter: ' + letter)
 		# time.sleep(5)
 		# Use BeautifulSoup to get the html of each pilot, starting by letter A.
@@ -1043,3 +1042,12 @@ def constructors(request):
 	context = {}
 
 	return render(request, 'front-end/constructors.html', context)
+
+
+def others(request):
+	print("")
+	print("others view")
+
+	context = {}
+
+	return render(request, 'front-end/others.html', context)
