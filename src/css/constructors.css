@@ -17,7 +17,7 @@
 }
 .constructors-options{
     display: flex;
-    margin: 50px 0;
+    margin: 50px 0 40px 0;
     width: 100%;
 }
 .constructors-options-column-1 {
@@ -81,7 +81,7 @@
     box-shadow: 1px 1px 1px 1px #a9a9a9;
 }
 .constructors-charts-container{
-    margin: 50px 0 0 0;
+    margin: 30px 0 0 0;
     display: flex;
     /* justify-content: space-between; */
     justify-content: space-around;
@@ -130,4 +130,9 @@
 }
 .constructors-charts-container text {
     font-size: 15px !important;
+}
+.constructors-chart-footer-note {
+    font-size: 12px;
+    color: black;
+    text-align: center;
 }

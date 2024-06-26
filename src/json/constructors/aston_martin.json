@@ -1,17 +1,1 @@
-{
-	"constructorId": "aston_martin",
-	"url": "http://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One",
-	"name": "Aston Martin",
-	"nationality": "British",
-	"titles": 0,
-	"wins": 0,
-	"podiums": 8,
-	"image": "",
-	"seasons_results": {
-		"1959": { "title": 0, "wins": 0, "podiums": 0, "pilots_wins": {}, "pilots_podiums": {} },
-		"1960": { "title": 0, "wins": 0, "podiums": 0, "pilots_wins": {}, "pilots_podiums": {} },
-		"2021": { "title": 0, "wins": 0, "podiums": 1, "pilots_wins": {}, "pilots_podiums": { "Sebastian_Vettel": 1 } },
-		"2022": { "title": 0, "wins": 0, "podiums": 0, "pilots_wins": {}, "pilots_podiums": {} },
-		"2023": { "title": 0, "wins": 0, "podiums": 7, "pilots_wins": {}, "pilots_podiums": { "Fernando_Alonso": 7 } }
-	}
-}
+{"constructorId": "aston_martin", "url": "http://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One", "name": "Aston Martin", "nationality": "British", "titles": 0, "wins": 0, "podiums": 8, "image": "", "seasons_results": {"1959": {"title": 0, "wins": 0, "podiums": 0, "pilots_wins": {"Carroll_Shelby": 0, "Roy_Salvadori": 0}, "pilots_podiums": {"Carroll_Shelby": 0, "Roy_Salvadori": 0}}, "1960": {"title": 0, "wins": 0, "podiums": 0, "pilots_wins": {"Roy_Salvadori": 0, "Maurice_Trintignant": 0}, "pilots_podiums": {"Roy_Salvadori": 0, "Maurice_Trintignant": 0}}, "2021": {"title": 0, "wins": 0, "podiums": 1, "pilots_wins": {"Lance_Stroll": 0, "Sebastian_Vettel": 0}, "pilots_podiums": {"Lance_Stroll": 0, "Sebastian_Vettel": 1}}, "2022": {"title": 0, "wins": 0, "podiums": 0, "pilots_wins": {"Lance_Stroll": 0, "Nico_H\u00fclkenberg": 0, "Sebastian_Vettel": 0}, "pilots_podiums": {"Lance_Stroll": 0, "Nico_H\u00fclkenberg": 0, "Sebastian_Vettel": 0}}, "2023": {"title": 0, "wins": 0, "podiums": 7, "pilots_wins": {"Fernando_Alonso": 0, "Lance_Stroll": 0}, "pilots_podiums": {"Fernando_Alonso": 7, "Lance_Stroll": 0}}}}

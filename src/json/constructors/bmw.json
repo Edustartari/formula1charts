@@ -1,14 +1,1 @@
-{
-	"constructorId": "bmw",
-	"url": "http://en.wikipedia.org/wiki/BMW",
-	"name": "BMW",
-	"nationality": "German",
-	"titles": 0,
-	"wins": 0,
-	"podiums": 0,
-	"image": "",
-	"seasons_results": {
-		"1952": { "title": 0, "wins": 0, "podiums": 0, "pilots_wins": {}, "pilots_podiums": {} },
-		"1953": { "title": 0, "wins": 0, "podiums": 0, "pilots_wins": {}, "pilots_podiums": {} }
-	}
-}
+{"constructorId": "bmw", "url": "http://en.wikipedia.org/wiki/BMW", "name": "BMW", "nationality": "German", "titles": 0, "wins": 0, "podiums": 0, "image": "", "seasons_results": {"1952": {"title": 0, "wins": 0, "podiums": 0, "pilots_wins": {"Ernst_Klodwig": 0, "Marcel_Balsa": 0, "G\u00fcnther_Bechem": 0, "Rudolf_Krause": 0}, "pilots_podiums": {"Ernst_Klodwig": 0, "Marcel_Balsa": 0, "G\u00fcnther_Bechem": 0, "Rudolf_Krause": 0}}, "1953": {"title": 0, "wins": 0, "podiums": 0, "pilots_wins": {"Rudolf_Krause": 0, "Ernst_Klodwig": 0}, "pilots_podiums": {"Rudolf_Krause": 0, "Ernst_Klodwig": 0}}}}

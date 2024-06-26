@@ -51,6 +51,10 @@ function create_random_color() {
 	return color;
 }
 
+function replace_underscore(text) {
+	return text.replace(/_/g, ' ');
+}
+
 class Constructors extends React.Component {
 	constructor(props) {
 		super(props);
@@ -62,7 +66,8 @@ class Constructors extends React.Component {
 			selected_years: [],
 			constructors: [],
 			constructors_filtered: [],
-			chart_max_value: 100
+			chart_max_value: 100,
+			on_hover_value: 'ferrari'
 		};
 
 		this.load_constructors = this.load_constructors.bind(this);
@@ -75,20 +80,14 @@ class Constructors extends React.Component {
 		fetch('/get-constructors-stats')
 			.then(response => response.json())
 			.then(data => {
-				console.log(data);
 				this.setState({ constructors_filtered: data.constructors });
 				this.setState({ constructors: data.constructors });
-				console.log('finish fetch get-constructors-stats...');
-				console.log(this.state.constructors);
-				console.log(this.state.constructors.length);
 				this.search_constructors();
 				this.setState({ loading: false });
 			});
 	}
 
 	search_constructors() {
-		// console.log('')
-		// console.log('searching constructors...')
 		let constructors_list = JSON.parse(JSON.stringify([...this.state.constructors]));
 
 		let first_year = this.state.first_date._d.getFullYear();
@@ -98,28 +97,22 @@ class Constructors extends React.Component {
 		for (let i = first_year; i <= second_year; i++) {
 			selected_years.push(i);
 		}
-		// console.log('selected_years: ', selected_years)
 
 		let max_value = 0;
 		let range_date_list = [];
 		for (let i = 0; i < constructors_list.length; i++) {
 			let constructor = constructors_list[i];
 
-			// console.log('')
-			// console.log('constructor: ', constructor['name'])
 			if ('seasons_results' in constructor && constructor['seasons_results']) {
 				let seasons_list = Object.keys(constructor['seasons_results']);
 				seasons_list = seasons_list.map(season => parseInt(season));
-				// console.log('seasons_list: ', seasons_list)
 
 				let intersection = _.intersectionWith(selected_years, seasons_list, _.isEqual);
-				// console.log('intersection: ', intersection)
 
 				let new_seasons_results = {};
 				intersection.forEach(year => {
 					new_seasons_results[year] = constructor['seasons_results'][year];
 				});
-				// console.log('new_seasons_results: ', new_seasons_results)
 				constructor['seasons_results'] = new_seasons_results;
 
 				if (intersection.length > 0) range_date_list.push(constructor);
@@ -129,11 +122,34 @@ class Constructors extends React.Component {
 		range_date_list = range_date_list.filter(constructor => Object.keys(constructor['seasons_results']).length > 0);
 		// If the sum inside each year from constructor['seasons_results'] equals zero, then remove constructor from list
 
+		let max_pilots_value = 0;
 		range_date_list = range_date_list.filter(constructor => {
 			let seasons_results = constructor['seasons_results'];
 			let sum = 0;
+			let pilots_stats = {};
 			Object.keys(seasons_results).forEach(year => {
 				sum += seasons_results[year][this.state.filter_type];
+				
+				if(!(this.state.filter_type === 'title')){
+					let pilots_dict = seasons_results[year]['pilots_' + this.state.filter_type]
+					Object.keys(pilots_dict).forEach(pilot => {
+						if(pilot in pilots_stats){
+							pilots_stats[pilot] += pilots_dict[pilot];
+						}else if(pilots_dict[pilot] > 0){
+							pilots_stats[pilot] = pilots_dict[pilot];
+						}
+					});
+				} else {
+					let pilots_dict = seasons_results[year]['pilots_wins']
+					Object.keys(pilots_dict).forEach(pilot => {
+						if(pilot in pilots_stats && seasons_results[year]['title'] === 1){
+							pilots_stats[pilot] += 1;
+						}else if(seasons_results[year]['title'] === 1){
+							pilots_stats[pilot] = 1;
+						}
+					});
+				}
+				
 			});
 			max_value = Math.max(max_value, sum);
 
@@ -141,6 +157,28 @@ class Constructors extends React.Component {
 			constructor['label'] = constructor['name'];
 			constructor['value'] = sum;
 			constructor['color'] = constructor['id'] in colors_dict ? colors_dict[constructor['id']] : create_random_color();
+			constructor['children'] = [];
+			let children_temporary = [];
+
+			Object.keys(pilots_stats).forEach(pilot => {
+				children_temporary.push({
+					'id': pilot,
+					'label': pilot,
+					'value': pilots_stats[pilot],
+					'color': constructor['color'],
+					'constructorId': constructor['constructorId']
+				});
+			});
+
+			// Get only the 5 pilots with the highest values
+			children_temporary = children_temporary.sort((a, b) => b['value'] - a['value']);
+			children_temporary = children_temporary.slice(0, 5);
+			constructor['children'] = children_temporary;
+
+			if (sum > 0) {
+				max_pilots_value = Math.max(max_pilots_value, constructor['children'].length);
+			}
+
 			return sum > 0;
 		});
 		// Round the chart_max_value to the nearest 10
@@ -159,9 +197,6 @@ class Constructors extends React.Component {
 			return b_sum - a_sum;
 		});
 
-		// console.log('new_list: ', new_list);
-		// console.log('range_date_list: ', range_date_list);
-		// console.log('constructors_list: ', constructors_list);
 		this.setState({
 			constructors_filtered: range_date_list,
 			chart_max_value: max_value,
@@ -180,6 +215,32 @@ class Constructors extends React.Component {
 			let image_test = require(`../../img/f1_background_ferrari_2.webp`);
 
 			let colors_list = this.state.constructors_filtered.map(constructor => constructor['color']);
+			let pilots_colors_list = [];
+			let pilots_list = [];
+			try {
+				let filter_by = this.state.constructors_filtered.filter(item => item['constructorId'] === this.state.on_hover_value)
+
+				pilots_list = filter_by[0]['children'];
+
+				let pilots_color = filter_by[0]['color'];
+				
+				// Make a list with different tinalities from pilots_colors_list
+				for (let i = 0; i < 5; i++) {
+					let color = pilots_color;
+					color = color.replace('#', '');
+					let r = parseInt(color.substring(0, 2), 16);
+					let g = parseInt(color.substring(2, 4), 16);
+					let b = parseInt(color.substring(4, 6), 16);
+					r = Math.min(255, r + 20 * i);
+					g = Math.min(255, g + 20 * i);
+					b = Math.min(255, b + 20 * i);
+					let new_color = '#' + r.toString(16) + g.toString(16) + b.toString(16);
+					pilots_colors_list.push(new_color);
+				}
+				// Replace the first color with the original color
+				pilots_colors_list[0] = pilots_color;
+
+			} catch (error) {}
 
 			return (
 				<div className='constructors-background'>
@@ -291,12 +352,15 @@ class Constructors extends React.Component {
 											</div>
 										);
 									}}
+									onMouseEnter={(e) => {
+										this.setState({ on_hover_value: e.id });
+									}}
 								/>
 							</div>
 							<div className='constructors-chart'>
 								<ResponsivePie
-									data={this.state.constructors_filtered}
-									colors={colors_list}
+									data={pilots_list}
+									colors={pilots_colors_list}
 									margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
 									sortByValue={true}
 									innerRadius={0.4}
@@ -309,7 +373,7 @@ class Constructors extends React.Component {
 										from: 'color',
 										modifiers: [['darker', '0.2']]
 									}}
-									arcLinkLabel={e => e.label}
+									arcLinkLabel={e => replace_underscore(e.label)}
 									arcLinkLabelsSkipAngle={10}
 									arcLinkLabelsTextColor='#333333'
 									arcLinkLabelsThickness={4}
@@ -341,12 +405,15 @@ class Constructors extends React.Component {
 										let { datum: t } = e;
 										return (
 											<div className='constructors-chart-tooltip'>
-												<div className='constructors-chart-tooltip-name'>{t.label}:</div>
+												<div className='constructors-chart-tooltip-name'>{replace_underscore(t.label)}:</div>
 												<div className='constructors-chart-tooltip-value'>{t.value}</div>
 											</div>
 										);
 									}}
 								/>
+								{this.state.filter_type === 'title' &&
+									<div className='constructors-chart-footer-note'>Drivers' that won the Constructors' Championship</div>
+								}
 							</div>
 						</div>
 					</div>

@@ -680,7 +680,7 @@ def update_constructors_info():
 
 	current_year = datetime.now().year
 	years = [str(i) for i in range(1950, current_year)]
-	years = [str(i) for i in range(1984, 1994)]
+	# years = [str(i) for i in range(1984, 1994)]
 
 	all_constructors = {}
 	for year in years:
@@ -699,8 +699,9 @@ def update_constructors_info():
 				# print(race_data)
 				try:
 					for driver in race_data['MRData']['RaceTable']['Races'][0]['Results']:
-						givenName = re.sub(r'[^\x00-\x7f]',r'', driver['Driver']['givenName'])
-						familyName = re.sub(r'[^\x00-\x7f]',r'', driver['Driver']['familyName'])
+						givenName = driver['Driver']['givenName']
+						familyName = driver['Driver']['familyName']
+
 						driver_id = givenName + '_' + familyName
 
 						constructorId = driver['Constructor']['constructorId']
@@ -730,18 +731,20 @@ def update_constructors_info():
 								"pilots_podiums": {}
 							}
 
+						if driver_id not in all_constructors[constructorId]['seasons_results'][year]['pilots_wins']:
+							all_constructors[constructorId]['seasons_results'][year]['pilots_wins'][driver_id] = 0
+
+						if driver_id not in all_constructors[constructorId]['seasons_results'][year]['pilots_podiums']:
+							all_constructors[constructorId]['seasons_results'][year]['pilots_podiums'][driver_id] = 0
+
 						if driver['position'] == '1':
 							all_constructors[constructorId]['seasons_results'][year]['wins'] += 1
 							all_constructors[constructorId]['wins'] += 1
-							if driver_id not in all_constructors[constructorId]['seasons_results'][year]['pilots_wins']:
-								all_constructors[constructorId]['seasons_results'][year]['pilots_wins'][driver_id] = 0
 							all_constructors[constructorId]['seasons_results'][year]['pilots_wins'][driver_id] += 1
 
 						if driver['position'] in ['1', '2', '3']:
 							all_constructors[constructorId]['seasons_results'][year]['podiums'] += 1
 							all_constructors[constructorId]['podiums'] += 1
-							if driver_id not in all_constructors[constructorId]['seasons_results'][year]['pilots_podiums']:
-								all_constructors[constructorId]['seasons_results'][year]['pilots_podiums'][driver_id] = 0
 							all_constructors[constructorId]['seasons_results'][year]['pilots_podiums'][driver_id] += 1
 
 				except:
@@ -759,7 +762,7 @@ def update_constructors_info():
 	constructor_champions = [e['constructorId'] for e in json_data['MRData']['ConstructorTable']['Constructors']]
 
 	max_limit = 0
-	for constructor_id in constructor_champions[1:]:
+	for constructor_id in constructor_champions:
 		response = requests.get('https://ergast.com/api/f1/constructors/%s/constructorStandings/1/seasons.json'%constructor_id)
 		json_data = json.loads(response.content)
 

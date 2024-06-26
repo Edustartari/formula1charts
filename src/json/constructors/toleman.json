@@ -1,17 +1,1 @@
-{
-	"constructorId": "toleman",
-	"url": "http://en.wikipedia.org/wiki/Toleman",
-	"name": "Toleman",
-	"nationality": "British",
-	"titles": 0,
-	"wins": 0,
-	"podiums": 3,
-	"image": "",
-	"seasons_results": {
-		"1981": { "title": 0, "wins": 0, "podiums": 0, "pilots_wins": {}, "pilots_podiums": {} },
-		"1982": { "title": 0, "wins": 0, "podiums": 0, "pilots_wins": {}, "pilots_podiums": {} },
-		"1983": { "title": 0, "wins": 0, "podiums": 0, "pilots_wins": {}, "pilots_podiums": {} },
-		"1984": { "title": 0, "wins": 0, "podiums": 3, "pilots_wins": {}, "pilots_podiums": { "Ayrton_Senna": 3 } },
-		"1985": { "title": 0, "wins": 0, "podiums": 0, "pilots_wins": {}, "pilots_podiums": {} }
-	}
-}
+{"constructorId": "toleman", "url": "http://en.wikipedia.org/wiki/Toleman", "name": "Toleman", "nationality": "British", "titles": 0, "wins": 0, "podiums": 3, "image": "", "seasons_results": {"1981": {"title": 0, "wins": 0, "podiums": 0, "pilots_wins": {"Derek_Warwick": 0, "Brian_Henton": 0}, "pilots_podiums": {"Derek_Warwick": 0, "Brian_Henton": 0}}, "1982": {"title": 0, "wins": 0, "podiums": 0, "pilots_wins": {"Derek_Warwick": 0, "Teo_Fabi": 0}, "pilots_podiums": {"Derek_Warwick": 0, "Teo_Fabi": 0}}, "1983": {"title": 0, "wins": 0, "podiums": 0, "pilots_wins": {"Derek_Warwick": 0, "Bruno_Giacomelli": 0}, "pilots_podiums": {"Derek_Warwick": 0, "Bruno_Giacomelli": 0}}, "1984": {"title": 0, "wins": 0, "podiums": 3, "pilots_wins": {"Johnny_Cecotto": 0, "Ayrton_Senna": 0, "Stefan_Johansson": 0, "Pierluigi_Martini": 0}, "pilots_podiums": {"Johnny_Cecotto": 0, "Ayrton_Senna": 3, "Stefan_Johansson": 0, "Pierluigi_Martini": 0}}, "1985": {"title": 0, "wins": 0, "podiums": 0, "pilots_wins": {"Teo_Fabi": 0, "Piercarlo_Ghinzani": 0}, "pilots_podiums": {"Teo_Fabi": 0, "Piercarlo_Ghinzani": 0}}}}
