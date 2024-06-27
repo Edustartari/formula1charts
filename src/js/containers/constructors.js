@@ -300,6 +300,7 @@ class Constructors extends React.Component {
 						</div>
 						<div className='constructors-charts-container'>
 							<div className='constructors-chart'>
+								<div></div>
 								<ResponsivePie
 									data={this.state.constructors_filtered}
 									colors={colors_list}
@@ -358,6 +359,7 @@ class Constructors extends React.Component {
 								/>
 							</div>
 							<div className='constructors-chart'>
+								<div className='constructors-chart-footer-note'>{this.state.filter_type === 'title' ? "Drivers' that won the Constructors' Championship" : ""}</div>
 								<ResponsivePie
 									data={pilots_list}
 									colors={pilots_colors_list}
@@ -411,9 +413,6 @@ class Constructors extends React.Component {
 										);
 									}}
 								/>
-								{this.state.filter_type === 'title' &&
-									<div className='constructors-chart-footer-note'>Drivers' that won the Constructors' Championship</div>
-								}
 							</div>
 						</div>
 					</div>

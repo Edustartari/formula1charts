@@ -91,7 +91,7 @@
 .constructors-chart{
     width: 43%;
 }
-.constructors-chart>*:nth-child(1)>*:nth-child(1) svg{
+.constructors-chart>*:nth-child(2)>*:nth-child(1) svg{
     overflow: visible;
 }
 .constructors-option-box-component-nationality-item {

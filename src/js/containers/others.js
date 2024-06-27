@@ -16,6 +16,8 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { YearCalendar } from '@mui/x-date-pickers/YearCalendar';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import Tooltip from '@mui/material/Tooltip';
+import countries_colors from '../components/countries_colors.js';
+
 
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
@@ -38,13 +40,6 @@ let data = [
 	  "value": 5.900944133628169
 	}
   ]
-
-function fix_filter_names(filter) {
-	if (filter === 'title') return 'Titles';
-	if (filter === 'wins') return 'Wins';
-	if (filter === 'poles') return 'Poles';
-	if (filter === 'podiums') return 'Podiums';
-}
 
 class Others extends React.Component {
 	constructor(props) {
@@ -75,11 +70,7 @@ class Others extends React.Component {
 		fetch('/load-nationalities')
 			.then(response => response.json())
 			.then(data => {
-				console.log(data);
 				this.setState({ nationalities: data.nationalities });
-				console.log('finish fetch...');
-				console.log(this.state.nationalities);
-				console.log(Object.keys(this.state.nationalities).length);
 				this.setState({ loading: false });
 			});
 	}
@@ -88,21 +79,14 @@ class Others extends React.Component {
 		fetch('/pilots-complete-info')
 			.then(response => response.json())
 			.then(data => {
-				console.log(data);
 				this.setState({ drivers_filtered: data.drivers });
 				this.setState({ drivers: data.drivers });
-				console.log('finish fetch pilots-complete-info...');
-				console.log(this.state.drivers);
-				console.log(this.state.drivers.length);
 				this.search_drivers();
 				this.setState({ loading: false });
 			});
 	}
 
 	search_drivers() {
-		// console.log('')
-		// console.log('searching drivers...')
-		// console.log('this.state.nationality: ', this.state.nationality)
 		let drivers_list = JSON.parse(JSON.stringify([...this.state.drivers]));
 		let new_list = [];
 		if (this.state.nationality === 'World') {
@@ -114,7 +98,6 @@ class Others extends React.Component {
 				if (has_nationality) new_list.push(driver);
 			}
 		}
-		// console.log('new_list: ', new_list)
 
 		let first_year = this.state.first_date._d.getFullYear();
 		let second_year = this.state.second_date._d.getFullYear();
@@ -123,27 +106,21 @@ class Others extends React.Component {
 		for (let i = first_year; i <= second_year; i++) {
 			selected_years.push(i);
 		}
-		// console.log('selected_years: ', selected_years)
 
 		let range_date_list_all = [];
 		for (let i = 0; i < new_list.length; i++) {
 			let driver = new_list[i];
 
-			// console.log('')
-			// console.log('driver: ', driver['name'])
 			if ('seasons_results' in driver && driver['seasons_results']) {
 				let seasons_list = Object.keys(driver['seasons_results']);
 				seasons_list = seasons_list.map(season => parseInt(season));
-				// console.log('seasons_list: ', seasons_list)
 
 				let intersection = _.intersectionWith(selected_years, seasons_list, _.isEqual);
-				// console.log('intersection: ', intersection)
 
 				let new_seasons_results = {};
 				intersection.forEach(year => {
 					new_seasons_results[year] = driver['seasons_results'][year];
 				});
-				// console.log('new_seasons_results: ', new_seasons_results)
 				driver['seasons_results'] = new_seasons_results;
 
 				if (intersection.length > 0) range_date_list_all.push(driver);
@@ -172,16 +149,11 @@ class Others extends React.Component {
 			}
 			return sum > 0;
 		});
-		console.log('max_value: ', max_value);
 		// Round the chart_max_value to the nearest 10
 		max_value = Math.ceil(max_value / 10) * 10;
 
-		// console.log('new_list: ', new_list);
-		console.log('range_date_list_all: ', range_date_list_all);
-		console.log('range_date_list_by_filter: ', range_date_list_by_filter);
 		
 		let nationality_temp_all = {};
-		let nationality_temp_by_filter = {};
 		for (let i = 0; i < range_date_list_all.length; i++) {
 			let nationality = range_date_list_all[i]['nationality']['nationality_acronym'];
 			if (nationality === 'GDR' || nationality === 'FRG'){
@@ -194,13 +166,24 @@ class Others extends React.Component {
 				nationality_temp_all[nationality] = 1;
 			}
 		}
-		console.log('nationality_temp_all: ', nationality_temp_all);
+		
+		let nationality_temp_by_filter = {};
+		for (let i = 0; i < range_date_list_by_filter.length; i++) {
+			let nationality = range_date_list_by_filter[i]['nationality']['nationality_acronym'];
+			if (nationality === 'GDR' || nationality === 'FRG'){
+				nationality = 'GER'
+			}
+			if (!nationality) continue;
+			if (nationality in nationality_temp_by_filter){
+				nationality_temp_by_filter[nationality] += 1;
+			} else {
+				nationality_temp_by_filter[nationality] = 1;
+			}
+		}
 		
 		// Put all the keys in an array and sort it by the values
 		let nationality_all = [];
-		let nationality_by_filter = [];
 		Object.keys(nationality_temp_all).forEach(item => {
-			console.log('item: ', item)
 			nationality_all.push({
 				id: item,
 				label: this.state.nationalities[item]['nationality_title'],
@@ -208,23 +191,39 @@ class Others extends React.Component {
 			})
 		});
 
-		console.log('nationality_all: ', nationality_all);
+		let nationality_by_filter = [];
+		Object.keys(nationality_temp_by_filter).forEach(item => {
+			nationality_by_filter.push({
+				id: item,
+				label: this.state.nationalities[item]['nationality_title'],
+				value: nationality_temp_by_filter[item]
+			})
+		});
+
 		// Sort the array by the values
 		nationality_all = nationality_all.sort((a, b) => {
 			if ( a.value < b.value ){
-				return -1;
+				return 1;
 			}
 			if ( a.value > b.value ){
-				return 1;
+				return -1;
 			}
 			return 0;
 		});
-		console.log('nationality_all: ', nationality_all);
 
+		nationality_by_filter = nationality_by_filter.sort((a, b) => {
+			if ( a.value < b.value ){
+				return 1;
+			}
+			if ( a.value > b.value ){
+				return -1;
+			}
+			return 0;
+		});
 
 		this.setState({
 			drivers_filtered: nationality_all,
-			drivers_filtered_by_type: range_date_list_by_filter,
+			drivers_filtered_by_type: nationality_by_filter,
 			chart_max_value: max_value
 		});
 	}
@@ -296,16 +295,18 @@ class Others extends React.Component {
 						</div>
 						<div className='others-charts-container'>
 							<div className='others-chart'>
+								<div className='others-chart-text'>Total drivers between period {this.state.first_date._d.getFullYear()} - {this.state.second_date._d.getFullYear()}</div>
 								<ResponsiveWaffle
 									data={this.state.drivers_filtered}
-									total={100}
-									rows={55}
-									columns={40}
+									total={this.state.drivers_filtered.reduce((acc, item) => acc + item.value, 0)}
+									colors={{ scheme: 'paired' }}
+									// colors={colors_list}
+									rows={35}
+									columns={20}
 									padding={1}
 									fillDirection="bottom"
 									valueFormat=".2f"
 									margin={{ top: 10, right: 10, bottom: 10, left: 120 }}
-									colors={{ scheme: 'nivo' }}
 									borderRadius={3}
 									borderColor={{
 										from: 'color',
@@ -322,7 +323,7 @@ class Others extends React.Component {
 											anchor: 'top-left',
 											direction: 'column',
 											justify: false,
-											translateX: -30,
+											translateX: -60,
 											translateY: 0,
 											itemsSpacing: 4,
 											itemWidth: 100,
@@ -345,16 +346,17 @@ class Others extends React.Component {
 								/>
 							</div>
 							<div className='others-chart'>
+								<div className='others-chart-text'>Total drivers with {this.state.filter_type} for each country</div>
 								<ResponsiveWaffle
-									data={data}
-									total={100}
-									rows={25}
-									columns={14}
+									data={this.state.drivers_filtered_by_type}
+									total={this.state.drivers_filtered_by_type.reduce((acc, item) => acc + item.value, 0)}
+									colors={{ scheme: 'paired' }}
+									rows={35}
+									columns={20}
 									padding={1}
 									fillDirection="bottom"
 									valueFormat=".2f"
 									margin={{ top: 10, right: 10, bottom: 10, left: 120 }}
-									colors={{ scheme: 'nivo' }}
 									borderRadius={3}
 									borderColor={{
 										from: 'color',
@@ -371,7 +373,7 @@ class Others extends React.Component {
 											anchor: 'top-left',
 											direction: 'column',
 											justify: false,
-											translateX: -30,
+											translateX: -60,
 											translateY: 0,
 											itemsSpacing: 4,
 											itemWidth: 100,
