@@ -59,7 +59,6 @@ class Constructors extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			loading: false,
 			filter_type: 'title',
 			first_date: moment(new Date(1950, 1, 1)),
 			second_date: moment(new Date(2022, 1, 1)),
@@ -83,7 +82,6 @@ class Constructors extends React.Component {
 				this.setState({ constructors_filtered: data.constructors });
 				this.setState({ constructors: data.constructors });
 				this.search_constructors();
-				this.setState({ loading: false });
 			});
 	}
 
@@ -207,7 +205,7 @@ class Constructors extends React.Component {
 	render() {
 		if (this.state.constructors.length === 0) {
 			return (
-				<Backdrop open={this.state.loading}>
+				<Backdrop open={true}>
 					<CircularProgress color='inherit' />
 				</Backdrop>
 			);

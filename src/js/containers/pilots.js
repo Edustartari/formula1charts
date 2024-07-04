@@ -2,7 +2,6 @@ import React from 'react';
 import '../../css/pilots.css';
 import Image from '../components/image.js';
 import _ from 'lodash';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ResponsiveRadar } from '@nivo/radar';
 import Switch from '@mui/material/Switch';
 import Backdrop from '@mui/material/Backdrop';
@@ -11,7 +10,12 @@ import Dialog from '@mui/material/Dialog';
 import TextField from '@mui/material/TextField';
 import FuzzySearch from 'fuzzy-search';
 
-// const drivers = content.drivers;
+// *************************************************************
+// Add several filters to help usrs interact with charts???
+// For example: select all pilots with 2 titles
+// For example: select all pilots from the 1980s
+// For example: select all pilots from specific country
+// *************************************************************
 
 function PilotsOverlay(props) {
 	const [driver_name, set_driver_name] = React.useState('');
@@ -19,8 +23,6 @@ function PilotsOverlay(props) {
 	const [filtered_list, set_filtered_list] = React.useState(props.drivers);
 
 	function filter_driver(value) {
-		console.log('');
-		console.log('value: ', value);
 
 		let drivers_list = props.drivers;
 
@@ -30,13 +32,9 @@ function PilotsOverlay(props) {
 		}
 		set_filtered_list(drivers_list);
 		set_driver_name(value);
-		console.log('drivers_list: ', drivers_list);
 	}
 
 	function close_dialog(confirm) {
-		console.log('');
-		console.log('close_dialog');
-		console.log('confirm: ', confirm);
 		if (confirm) {
 			props.select_driver(props.open_dialog, filtered_driver);
 		}
@@ -46,7 +44,6 @@ function PilotsOverlay(props) {
 		set_filtered_list(props.drivers);
 	}
 
-	console.log('filtered_driver: ', filtered_driver);
 
 	return (
 		<Dialog className='pilots-dialog' onClose={() => close_dialog(false)} open={props.open_dialog.length > 0 ? true : false}>
@@ -126,10 +123,7 @@ class Pilots extends React.Component {
 		fetch('/pilots-list')
 			.then(response => response.json())
 			.then(data => {
-				console.log(data);
 				this.setState({ drivers: data.drivers });
-				console.log('finish fetch...');
-				console.log(this.state.drivers);
 
 				let drivers_list = _.filter(this.state.drivers, function (o) {
 					return o.wins > 0;
@@ -138,20 +132,16 @@ class Pilots extends React.Component {
 				for (let i = 0; i < random_drivers.length; i++) {
 					this.select_driver('driver_' + (i + 1), random_drivers[i]);
 				}
-				this.setState({ loading: false });
+				setTimeout(() => {
+					this.setState({ loading: false });
+				}, 1000);
 			});
 	}
 
 	select_driver(key, value) {
-		console.log('');
-		console.log('select_driver');
-		console.log('key: ', key);
-		console.log('value: ', value);
 		let driver_id = value.id;
 		let current_driver = this.state[key];
-		console.log('this.state.drivers: ', this.state.drivers);
 		let selected_driver = _.find(this.state.drivers, { id: driver_id });
-		console.log('selected_driver: ', selected_driver);
 		this.setState({ [key]: selected_driver });
 
 		let temporary_radar_list_absolute = this.state.radar_list_absolute;
@@ -218,11 +208,6 @@ class Pilots extends React.Component {
 		});
 	}
 
-	// Add several filters to help usrs interact with charts???
-	// For example: select all pilots with 2 titles
-	// For example: select all pilots from the 1980s
-	// For example: select all pilots from specific country
-
 	render() {
 		let image_test = require(`../../img/f1_background_ferrari_2.webp`);
 		let driver_1_image = '';
@@ -259,7 +244,6 @@ class Pilots extends React.Component {
 		const theme = {
 			fontSize: '16px'
 		};
-		console.log('driver_1_image: ', driver_1_image);
 
 		if (this.state.loading) {
 			return (

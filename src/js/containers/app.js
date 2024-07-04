@@ -83,13 +83,13 @@ function Menu() {
 				</Link>
 			</List>
 			<Divider />
-			<List>
+			{/* <List>
 				<ListItem key={'About'} disablePadding>
 					<ListItemButton>
 						<ListItemText primary={'About'} />
 					</ListItemButton>
 				</ListItem>
-			</List>
+			</List> */}
 		</Box>
 	);
 

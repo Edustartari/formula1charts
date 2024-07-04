@@ -2,7 +2,6 @@ import React from 'react';
 import '../../css/all_seasons.css';
 import Image from '../components/image.js';
 import _ from 'lodash';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 function SeasonCard(props) {
 	let image;

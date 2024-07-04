@@ -7,7 +7,7 @@ const Image = ({ name }) => {
 
         // If the image doesn't exist. return null
         if (!image) return null;
-        return <img className="image-component-container" src={image.default} />;
+        return <img className="image-component-container" src={image.default} loading="lazy"/>;
     } catch (error) {
         return null;
     }

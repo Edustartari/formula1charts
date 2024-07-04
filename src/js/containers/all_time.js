@@ -2,7 +2,6 @@ import React from 'react';
 import '../../css/all_time.css';
 import Image from '../components/image.js';
 import _ from 'lodash';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
@@ -12,9 +11,6 @@ import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
 import Dialog from '@mui/material/Dialog';
 import TextField from '@mui/material/TextField';
-// import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
-// import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-// import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { YearCalendar } from '@mui/x-date-pickers/YearCalendar';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
@@ -71,18 +67,14 @@ function BarChart(props) {
 		<div className='barchart-background'>
 			<div className='barchart-lines-bg'>
 				{/* The division of props.chart_max_value should return the number of divs */}
-				{lines_list.map(line => {
+				{lines_list.map((line, index) => {
 					return (
-						<div className='barchart-line'>
+						<div className='barchart-line' key={index}>
 							<div className='barchart-line-number'>{line}</div>
 							<div className='barchart-line-details'></div>
 						</div>
 					);
 				})}
-				{/* <div className='barchart-line-details'></div>
-                <div className='barchart-line-details'></div>
-                <div className='barchart-line-details'></div>
-                <div className='barchart-line-details'></div> */}
 			</div>
 			<div className='barchart-bars'>
 				{filters_list.map(filter => {
@@ -107,7 +99,6 @@ class AllTime extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			loading: false,
 			range: 5,
 			nationality: 'World',
 			filter_type: 'title',
@@ -131,12 +122,7 @@ class AllTime extends React.Component {
 		fetch('/load-nationalities')
 			.then(response => response.json())
 			.then(data => {
-				console.log(data);
 				this.setState({ nationalities: data.nationalities });
-				console.log('finish fetch...');
-				console.log(this.state.nationalities);
-				console.log(Object.keys(this.state.nationalities).length);
-				this.setState({ loading: false });
 			});
 	}
 
@@ -144,21 +130,13 @@ class AllTime extends React.Component {
 		fetch('/pilots-complete-info')
 			.then(response => response.json())
 			.then(data => {
-				console.log(data);
 				this.setState({ drivers_filtered: data.drivers });
 				this.setState({ drivers: data.drivers });
-				console.log('finish fetch pilots-complete-info...');
-				console.log(this.state.drivers);
-				console.log(this.state.drivers.length);
 				this.search_drivers();
-				this.setState({ loading: false });
 			});
 	}
 
 	search_drivers() {
-		// console.log('')
-		// console.log('searching drivers...')
-		// console.log('this.state.nationality: ', this.state.nationality)
 		let drivers_list = JSON.parse(JSON.stringify([...this.state.drivers]));
 		let new_list = [];
 		if (this.state.nationality === 'World') {
@@ -170,7 +148,6 @@ class AllTime extends React.Component {
 				if (has_nationality) new_list.push(driver);
 			}
 		}
-		// console.log('new_list: ', new_list)
 
 		let first_year = this.state.first_date._d.getFullYear();
 		let second_year = this.state.second_date._d.getFullYear();
@@ -179,27 +156,21 @@ class AllTime extends React.Component {
 		for (let i = first_year; i <= second_year; i++) {
 			selected_years.push(i);
 		}
-		// console.log('selected_years: ', selected_years)
 
 		let range_date_list = [];
 		for (let i = 0; i < new_list.length; i++) {
 			let driver = new_list[i];
 
-			// console.log('')
-			// console.log('driver: ', driver['name'])
 			if ('seasons_results' in driver && driver['seasons_results']) {
 				let seasons_list = Object.keys(driver['seasons_results']);
 				seasons_list = seasons_list.map(season => parseInt(season));
-				// console.log('seasons_list: ', seasons_list)
 
 				let intersection = _.intersectionWith(selected_years, seasons_list, _.isEqual);
-				// console.log('intersection: ', intersection)
 
 				let new_seasons_results = {};
 				intersection.forEach(year => {
 					new_seasons_results[year] = driver['seasons_results'][year];
 				});
-				// console.log('new_seasons_results: ', new_seasons_results)
 				driver['seasons_results'] = new_seasons_results;
 
 				if (intersection.length > 0) range_date_list.push(driver);
@@ -228,7 +199,6 @@ class AllTime extends React.Component {
 			}
 			return sum > 0;
 		});
-		console.log('max_value: ', max_value);
 		// Round the chart_max_value to the nearest 10
 		max_value = Math.ceil(max_value / 10) * 10;
 
@@ -245,9 +215,6 @@ class AllTime extends React.Component {
 			return b_sum - a_sum;
 		});
 
-		// console.log('new_list: ', new_list);
-		console.log('range_date_list: ', range_date_list);
-		// console.log('drivers_list: ', drivers_list);
 		this.setState({
 			drivers_filtered: range_date_list,
 			chart_max_value: max_value
@@ -257,7 +224,7 @@ class AllTime extends React.Component {
 	render() {
 		if (this.state.drivers.length === 0 || Object.keys(this.state.nationalities).length === 0) {
 			return (
-				<Backdrop open={this.state.loading}>
+				<Backdrop open={true}>
 					<CircularProgress color='inherit' />
 				</Backdrop>
 			);

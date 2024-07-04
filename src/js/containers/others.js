@@ -2,7 +2,6 @@ import React from 'react';
 import '../../css/others.css';
 import Image from '../components/image.js';
 import _ from 'lodash';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
@@ -13,7 +12,6 @@ import CircularProgress from '@mui/material/CircularProgress';
 import Dialog from '@mui/material/Dialog';
 import TextField from '@mui/material/TextField';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import { YearCalendar } from '@mui/x-date-pickers/YearCalendar';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import Tooltip from '@mui/material/Tooltip';
 import countries_colors from '../components/countries_colors.js';
@@ -45,7 +43,6 @@ class Others extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			loading: false,
 			range: 5,
 			nationality: 'World',
 			filter_type: 'title',
@@ -71,7 +68,6 @@ class Others extends React.Component {
 			.then(response => response.json())
 			.then(data => {
 				this.setState({ nationalities: data.nationalities });
-				this.setState({ loading: false });
 			});
 	}
 
@@ -82,7 +78,6 @@ class Others extends React.Component {
 				this.setState({ drivers_filtered: data.drivers });
 				this.setState({ drivers: data.drivers });
 				this.search_drivers();
-				this.setState({ loading: false });
 			});
 	}
 
@@ -231,7 +226,7 @@ class Others extends React.Component {
 	render() {
 		if (this.state.drivers.length === 0 || Object.keys(this.state.nationalities).length === 0) {
 			return (
-				<Backdrop open={this.state.loading}>
+				<Backdrop open={true}>
 					<CircularProgress color='inherit' />
 				</Backdrop>
 			);
