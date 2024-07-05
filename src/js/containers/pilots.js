@@ -9,7 +9,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import Dialog from '@mui/material/Dialog';
 import TextField from '@mui/material/TextField';
 import FuzzySearch from 'fuzzy-search';
-import { ThemeProvider } from '@nivo/core'
+// import { ThemeProvider } from '@nivo/core';
 
 // *************************************************************
 // Add several filters to help usrs interact with charts???
@@ -324,7 +324,7 @@ class Pilots extends React.Component {
 					</div>
 					<div className='pilots-desktop-chart'>
 						<div className='pilots-desktop-chart-details'>
-							<ThemeProvider theme={theme}>
+							{/* <ThemeProvider theme={theme}> */}
 								<ResponsiveRadar
 									data={
 										this.state.toggle_option === 'absolute'
@@ -380,7 +380,7 @@ class Pilots extends React.Component {
 									]}
 									// theme={theme}
 								/>
-							</ThemeProvider>
+							{/* </ThemeProvider> */}
 
 							{this.state.toggle_option === 'percentage' && (
 								<div className='pilots-desktop-chart-details-note'>
