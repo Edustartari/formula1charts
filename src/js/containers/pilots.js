@@ -333,7 +333,6 @@ class Pilots extends React.Component {
 					</div>
 					<div className='pilots-desktop-chart'>
 						<div className='pilots-desktop-chart-details'>
-							<ThemeProvider theme={theme}>
 								<ResponsiveRadar
 									data={
 										this.state.toggle_option === 'absolute'
@@ -359,38 +358,37 @@ class Pilots extends React.Component {
 									colors={{ scheme: 'category10' }}
 									blendMode='multiply'
 									animate={false}
-									// motionConfig={{
-									// 	mass: 1,
-									// 	tension: 171,
-									// 	friction: 26,
-									// 	clamp: false,
-									// 	precision: 0.01,
-									// 	velocity: 0
-									// }}
-									// legends={[
-									// 	{
-									// 		anchor: 'top-left',
-									// 		direction: 'column',
-									// 		translateX: -50,
-									// 		translateY: -40,
-									// 		itemWidth: 80,
-									// 		itemHeight: 20,
-									// 		itemTextColor: '#999',
-									// 		symbolSize: 12,
-									// 		symbolShape: 'circle',
-									// 		effects: [
-									// 			{
-									// 				on: 'hover',
-									// 				style: {
-									// 					itemTextColor: '#000'
-									// 				}
-									// 			}
-									// 		]
-									// 	}
-									// ]}
-									// theme={theme}
+									motionConfig={{
+										mass: 1,
+										tension: 171,
+										friction: 26,
+										clamp: false,
+										precision: 0.01,
+										velocity: 0
+									}}
+									legends={[
+										{
+											anchor: 'top-left',
+											direction: 'column',
+											translateX: -50,
+											translateY: -40,
+											itemWidth: 80,
+											itemHeight: 20,
+											itemTextColor: '#999',
+											symbolSize: 12,
+											symbolShape: 'circle',
+											effects: [
+												{
+													on: 'hover',
+													style: {
+														itemTextColor: '#000'
+													}
+												}
+											]
+										}
+									]}
+									theme={theme}
 								/>
-							</ThemeProvider>
 
 							{this.state.toggle_option === 'percentage' && (
 								<div className='pilots-desktop-chart-details-note'>
