@@ -9,7 +9,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import Dialog from '@mui/material/Dialog';
 import TextField from '@mui/material/TextField';
 import FuzzySearch from 'fuzzy-search';
-// import { ThemeProvider } from '@nivo/core'
+import { ThemeProvider } from '@nivo/core'
 
 // *************************************************************
 // Add several filters to help usrs interact with charts???
@@ -243,7 +243,24 @@ class Pilots extends React.Component {
 		}
 
 		const theme = {
-			fontSize: '16px'
+			// fontSize: '16px',
+			"legends": {
+				"text": {
+					"fontSize": 17,
+					"fill": "#333333",
+					"outlineWidth": 0,
+					"outlineColor": "transparent"
+				},
+				"ticks": {
+					"line": {},
+					"text": {
+						"fontSize": 17,
+						"fill": "#333333",
+						"outlineWidth": 0,
+						"outlineColor": "transparent"
+					}
+				}
+			}
 		};
 
 		if (this.state.loading) {
@@ -307,61 +324,64 @@ class Pilots extends React.Component {
 					</div>
 					<div className='pilots-desktop-chart'>
 						<div className='pilots-desktop-chart-details'>
-							<ResponsiveRadar
-								data={
-									this.state.toggle_option === 'absolute'
-										? this.state.radar_list_absolute
-										: this.state.radar_list_percentage
-								}
-								keys={[
-									this.state.driver_1['name'],
-									this.state.driver_2['name'],
-									this.state.driver_3['name'],
-									this.state.driver_4['name'],
-									this.state.driver_5['name']
-								]}
-								indexBy={this.state.toggle_option === 'absolute' ? 'absolute' : 'percentage'}
-								valueFormat='>-.0f'
-								margin={{ top: 70, right: 80, bottom: 40, left: 80 }}
-								borderColor={{ from: 'color', modifiers: [] }}
-								gridLevels={6}
-								gridLabelOffset={36}
-								dotColor={{ from: 'color', modifiers: [] }}
-								dotBorderWidth={2}
-								dotBorderColor={{ from: 'color', modifiers: [] }}
-								colors={{ scheme: 'category10' }}
-								blendMode='multiply'
-								motionConfig={{
-									mass: 1,
-									tension: 171,
-									friction: 26,
-									clamp: false,
-									precision: 0.01,
-									velocity: 0
-								}}
-								legends={[
-									{
-										anchor: 'top-left',
-										direction: 'column',
-										translateX: -50,
-										translateY: -40,
-										itemWidth: 80,
-										itemHeight: 20,
-										itemTextColor: '#999',
-										symbolSize: 12,
-										symbolShape: 'circle',
-										effects: [
-											{
-												on: 'hover',
-												style: {
-													itemTextColor: '#000'
-												}
-											}
-										]
+							<ThemeProvider theme={theme}>
+								<ResponsiveRadar
+									data={
+										this.state.toggle_option === 'absolute'
+											? this.state.radar_list_absolute
+											: this.state.radar_list_percentage
 									}
-								]}
-								// theme={theme}
-							/>
+									keys={[
+										this.state.driver_1['name'],
+										this.state.driver_2['name'],
+										this.state.driver_3['name'],
+										this.state.driver_4['name'],
+										this.state.driver_5['name']
+									]}
+									indexBy={this.state.toggle_option === 'absolute' ? 'absolute' : 'percentage'}
+									valueFormat='>-.0f'
+									margin={{ top: 70, right: 80, bottom: 40, left: 80 }}
+									borderColor={{ from: 'color', modifiers: [] }}
+									gridLevels={6}
+									gridLabelOffset={36}
+									dotColor={{ from: 'color', modifiers: [] }}
+									dotBorderWidth={2}
+									dotBorderColor={{ from: 'color', modifiers: [] }}
+									colors={{ scheme: 'category10' }}
+									blendMode='multiply'
+									motionConfig={{
+										mass: 1,
+										tension: 171,
+										friction: 26,
+										clamp: false,
+										precision: 0.01,
+										velocity: 0
+									}}
+									legends={[
+										{
+											anchor: 'top-left',
+											direction: 'column',
+											translateX: -50,
+											translateY: -40,
+											itemWidth: 80,
+											itemHeight: 20,
+											itemTextColor: '#999',
+											symbolSize: 12,
+											symbolShape: 'circle',
+											effects: [
+												{
+													on: 'hover',
+													style: {
+														itemTextColor: '#000'
+													}
+												}
+											]
+										}
+									]}
+									// theme={theme}
+								/>
+							</ThemeProvider>
+
 							{this.state.toggle_option === 'percentage' && (
 								<div className='pilots-desktop-chart-details-note'>
 									Titles: according to total seasons disputed
