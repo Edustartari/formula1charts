@@ -20,7 +20,7 @@ ENV NODE_OPTIONS=--max-old-space-size=8192
 
 COPY . .
 RUN npm install
-RUN BACKGROUND npm build
+RUN BACKGROUND npm start
 
 # Install python 3 & postgresql
 RUN apt-get update && \
