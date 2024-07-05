@@ -359,14 +359,14 @@ class Pilots extends React.Component {
 									colors={{ scheme: 'category10' }}
 									blendMode='multiply'
 									animate={false}
-									motionConfig={{
-										mass: 1,
-										tension: 171,
-										friction: 26,
-										clamp: false,
-										precision: 0.01,
-										velocity: 0
-									}}
+									// motionConfig={{
+									// 	mass: 1,
+									// 	tension: 171,
+									// 	friction: 26,
+									// 	clamp: false,
+									// 	precision: 0.01,
+									// 	velocity: 0
+									// }}
 									// legends={[
 									// 	{
 									// 		anchor: 'top-left',
