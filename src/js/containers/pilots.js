@@ -9,6 +9,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import Dialog from '@mui/material/Dialog';
 import TextField from '@mui/material/TextField';
 import FuzzySearch from 'fuzzy-search';
+// import { ThemeProvider } from '@nivo/core'
 
 // *************************************************************
 // Add several filters to help usrs interact with charts???
@@ -338,28 +339,28 @@ class Pilots extends React.Component {
 									precision: 0.01,
 									velocity: 0
 								}}
-								// legends={[
-								// 	{
-								// 		anchor: 'top-left',
-								// 		direction: 'column',
-								// 		translateX: -50,
-								// 		translateY: -40,
-								// 		itemWidth: 80,
-								// 		itemHeight: 20,
-								// 		itemTextColor: '#999',
-								// 		symbolSize: 12,
-								// 		symbolShape: 'circle',
-								// 		effects: [
-								// 			{
-								// 				on: 'hover',
-								// 				style: {
-								// 					itemTextColor: '#000'
-								// 				}
-								// 			}
-								// 		]
-								// 	}
-								// ]}
-								theme={theme}
+								legends={[
+									{
+										anchor: 'top-left',
+										direction: 'column',
+										translateX: -50,
+										translateY: -40,
+										itemWidth: 80,
+										itemHeight: 20,
+										itemTextColor: '#999',
+										symbolSize: 12,
+										symbolShape: 'circle',
+										effects: [
+											{
+												on: 'hover',
+												style: {
+													itemTextColor: '#000'
+												}
+											}
+										]
+									}
+								]}
+								// theme={theme}
 							/>
 							{this.state.toggle_option === 'percentage' && (
 								<div className='pilots-desktop-chart-details-note'>
