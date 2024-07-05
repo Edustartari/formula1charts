@@ -244,9 +244,10 @@ class Pilots extends React.Component {
 
 		const theme = {
 			// fontSize: '16px',
+			"background": "#ff0000",
 			"legends": {
 				"text": {
-					"fontSize": 17,
+					"fontSize": 40,
 					"fill": "#333333",
 					"outlineWidth": 0,
 					"outlineColor": "transparent"
@@ -254,7 +255,7 @@ class Pilots extends React.Component {
 				"ticks": {
 					"line": {},
 					"text": {
-						"fontSize": 17,
+						"fontSize": 40,
 						"fill": "#333333",
 						"outlineWidth": 0,
 						"outlineColor": "transparent"
@@ -262,6 +263,14 @@ class Pilots extends React.Component {
 				}
 			}
 		};
+
+		// const theme = {
+		// 	tooltip: {
+		// 	  tableCell: {
+		// 		background: 'red',
+		// 	  }
+		// 	}
+		//   }
 
 		if (this.state.loading) {
 			return (
@@ -349,6 +358,7 @@ class Pilots extends React.Component {
 									dotBorderColor={{ from: 'color', modifiers: [] }}
 									colors={{ scheme: 'category10' }}
 									blendMode='multiply'
+									animate={false}
 									motionConfig={{
 										mass: 1,
 										tension: 171,
