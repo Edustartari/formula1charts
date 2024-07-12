@@ -1,1 +1,32 @@
-{"nationality": {"nationality_acronym": "BEL", "nationality_href": "/wiki/Belgium", "nationality_title": "Belgium", "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/6/65/Flag_of_Belgium.svg/revision/latest?cb=20211030054815"}, "name": "Bernard de Dryver", "id": "Bernard_de_Dryver", "image": false, "birth_date": "1952-09-12", "death_date": false, "status": "Inactive", "total_seasons": 2, "seasons_years": [1977, 1978], "titles": "0", "races": "2 (0 starts)", "poles": "0", "wins": "0", "podiums": "0", "fastestlaps": "0", "points": "0", "introduction": "", "titles_percentage": 0.0, "poles_percentage": 0.0, "wins_percentage": 0.0, "podiums_percentage": 0.0, "seasons_results": {"1977": {"title": 0, "races": 0, "wins": 0, "points": 0, "poles": 0, "podiums": 0}, "1978": {"title": 0, "races": 0, "wins": 0, "points": 0, "poles": 0, "podiums": 0}}}
+{
+	"nationality": {
+		"nationality_acronym": "BEL",
+		"nationality_href": "/wiki/Belgium",
+		"nationality_title": "Belgium",
+		"nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/6/65/Flag_of_Belgium.svg/revision/latest?cb=20211030054815"
+	},
+	"name": "Bernard de Dryver",
+	"id": "Bernard_de_Dryver",
+	"image": false,
+	"birth_date": "1952-09-12",
+	"death_date": false,
+	"status": "Inactive",
+	"total_seasons": 2,
+	"seasons_years": [1977, 1978],
+	"titles": "0",
+	"races": "2 (0 starts)",
+	"poles": "0",
+	"wins": "0",
+	"podiums": "0",
+	"fastestlaps": "0",
+	"points": "0",
+	"introduction": "",
+	"titles_percentage": 0.0,
+	"poles_percentage": 0.0,
+	"wins_percentage": 0.0,
+	"podiums_percentage": 0.0,
+	"seasons_results": {
+		"1977": { "title": 0, "races": 0, "wins": 0, "points": 0, "poles": 0, "podiums": 0 },
+		"1978": { "title": 0, "races": 0, "wins": 0, "points": 0, "poles": 0, "podiums": 0 }
+	}
+}

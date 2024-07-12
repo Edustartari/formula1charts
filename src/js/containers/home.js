@@ -11,13 +11,35 @@ class CardContainer extends React.Component {
 		this.state = {
 			subtitle: this.props.subtitle
 		};
+		this.change_css = this.change_css.bind(this);
 	}
+
+	change_css(action, id){
+		let card = document.getElementById(id);
+		let image_card = card.getElementsByClassName('image-component-container')[0];
+
+		if (action === 'active') {
+			card.style.padding = '40px';
+			card.style.transition = 'all 0.5s ease-in-out';
+			image_card.style.borderRadius = '50px';
+			image_card.style.transition = 'all 0.5s ease-in-out';
+			image_card.style.boxShadow = '-5px 5px 70px 40px rgba(0, 0, 0, 0.5)';
+		} else {
+			card.style.padding = '0px';
+			card.style.transition = 'all 0.5s ease-in-out';
+			image_card.style.borderRadius = '0px';
+			image_card.style.transition = 'all 0.5s ease-in-out';
+			image_card.style.boxShadow = '0px 0px 0px 0px rgba(0, 0, 0, 0)';
+		}
+	}
+
 	render() {
 		return (
 			<div
+				id={this.props.image + '_1'}
 				className='home-desktop-card'
-				// onMouseEnter={() => this.setState({subtitle: this.props.subtitle})}
-				// onMouseLeave={() => this.setState({subtitle: ''})}
+				onMouseEnter={() => this.change_css('active', this.props.image + '_1')}
+				onMouseLeave={() => this.change_css('deactive', this.props.image + '_1')}
 			>
 				<div className='home-desktop-card-text'>
 					<div className='home-desktop-card-title'>{this.props.title}</div>

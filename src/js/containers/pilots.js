@@ -333,6 +333,7 @@ class Pilots extends React.Component {
 					</div>
 					<div className='pilots-desktop-chart'>
 						<div className='pilots-desktop-chart-details'>
+							<ThemeProvider theme={theme}>
 								<ResponsiveRadar
 									data={
 										this.state.toggle_option === 'absolute'
@@ -357,7 +358,6 @@ class Pilots extends React.Component {
 									dotBorderColor={{ from: 'color', modifiers: [] }}
 									colors={{ scheme: 'category10' }}
 									blendMode='multiply'
-									animate={false}
 									motionConfig={{
 										mass: 1,
 										tension: 171,
@@ -387,9 +387,9 @@ class Pilots extends React.Component {
 											]
 										}
 									]}
-									theme={theme}
+									// theme={theme}
 								/>
-
+							</ThemeProvider>
 							{this.state.toggle_option === 'percentage' && (
 								<div className='pilots-desktop-chart-details-note'>
 									Titles: according to total seasons disputed

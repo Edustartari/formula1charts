@@ -12,8 +12,15 @@
     height: 70vh;
 }
 .home-desktop-card:hover {
-    padding: 40px;
+    /* padding: 40px;
+    transition: all 0.5s ease-in-out; */
+    cursor: pointer;
+}
+.home-desktop-card:hover .image-component-container{
+    box-sizing: border-box;
+    /* border-radius: 50px;
     transition: all 0.5s ease-in-out;
+    box-shadow: -5px 5px 70px 40px rgba(0, 0, 0, 0.5); */
 }
 .home-desktop-card:nth-child(3){
     margin-top: 0px;
@@ -22,15 +29,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-.home-desktop-card:hover .image-component-container{
-    box-sizing: border-box;
-    border-radius: 50px;
-    transition: all 0.5s ease-in-out;
-    box-shadow: -5px 5px 70px 40px rgba(0, 0, 0, 0.5);
-}
-.home-desktop-card:hover {
-
 }
 .home-desktop-card-opacity {
     background: radial-gradient(ellipse at center, rgba(0,0,0,0.8) 10%,rgba(0,0,0,0) 76%);
@@ -61,9 +59,6 @@
     font-weight: 600;
     font-style: normal;
     text-align: center;
-}
-.home-desktop-card:hover{
-    cursor: pointer;
 }
 .home-desktop-first-card {
     height: calc(100vh - 40px);
