@@ -5,7 +5,8 @@
             "src": "formula1charts/wsgi.py",
             "use": "@vercel/python",
             "config": {
-                "runtime": "Python3.8.10"
+                "maxLambdaSize": "15mb",
+                "runtime": "python3.8"
             }
         },
         {
