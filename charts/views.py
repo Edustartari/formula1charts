@@ -833,11 +833,14 @@ def season_view(request, year):
 	if year not in years:
 		return HttpResponseRedirect('/')
 	
-	redis_response = redis_client.get('season_view_' + str(year))
+	try:
+		redis_response = redis_client.get('season_view_' + str(year))
 	
-	if redis_response is not None:
-		context = json.loads(redis_response)
-		return render(request, 'front-end/season.html', context)	
+		if redis_response is not None:
+			context = json.loads(redis_response)
+			return render(request, 'front-end/season.html', context)
+	except:
+		pass
 
 	# Return a list with 80 positive adjetives.
 	adjetives = ['Amazing','Awesome','Beautiful','satisfying','super','amusing','entertaining','Brilliant','memorable','Cool','Creative','Delicious','Elegant','Excellent','Fabulous','Fantastic','Fun','Gorgeous','Great','Impressive','Incredible','Interesting','Magnificent','Marvelous','Outstanding','Perfect','Powerful','Smart','Spectacular','Splendid','Stunning','Superb','Superior','Supreme','Terrific','Wonderful','Wondrous','Alluring','Appealing','Dazzling','Divine','Enchanting','Engaging','Enticing','Excellent','Exquisite','Fair','Fascinating','Glorious','Gorgeous','Grand','Heavenly','Magnetic','Marvelous','Mesmerizing','Miraculous','Mythical','Pleasant','Ravishing','Sublime','Amazing','Astonishing','Awe-inspiring','Breathtaking','Captivating','Delightful','remarkable']
@@ -902,7 +905,10 @@ def season_view(request, year):
 		'champion_name': json.dumps(champion_name),
 		'season_title': json.dumps(season_adjetive)
 	}
-	redis_client.set('season_view_' + str(year), json.dumps(context))
+	try:
+		redis_client.set('season_view_' + str(year), json.dumps(context))
+	except:
+		pass
 
 	return render(request, 'front-end/season.html', context)
 
