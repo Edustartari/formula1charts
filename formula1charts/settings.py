@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-^f!obxl*7lq^$*kcbjcpfw$3^ihck0h*h7m03a*quhn3lky)d*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['formula1charts.herokuapp.com', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.vercel.app']
 
 FILE_CHARSET = 'utf-16'
 
@@ -71,8 +71,8 @@ TEMPLATES = [
     },
 ]
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATIC_URL = "/staticfiles/" STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles_build", "static")
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 STATICFILES_DIRS = [
