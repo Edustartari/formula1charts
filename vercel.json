@@ -3,7 +3,10 @@
 	"builds": [
         {
             "src": "formula1charts/wsgi.py",
-            "use": "@vercel/python"
+            "use": "@vercel/python",
+            "config": {
+                "runtime": "Python3.8.10"
+            }
         },
         {
             "src": "build_files.sh",
