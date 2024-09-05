@@ -15,7 +15,6 @@ RUN npm --version
 # To note: Layerfiles create entire VMs, *not* containers!
 
 # node is a memory hog
-MEMORY 2G
 ENV NODE_OPTIONS=--max-old-space-size=8192
 
 COPY . .
