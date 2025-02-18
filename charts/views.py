@@ -27,6 +27,9 @@ redis_client = redis.Redis(
 	password='D2sbxecxOwzIbH2rbNqmtAM4Ksuyj1IY'
 )
 
+def edu_test():
+	return 'test'
+
 def get_race_results():	
 	print('')
 	print('get_race_results')
@@ -794,7 +797,6 @@ def get_constructors_stats(request):
 
 	constructors_list = []
 	for constructor in constructors:
-		# print(constructor)
 		with open(constructors_path + '/' + constructor) as json_file:
 			data = json.load(json_file)
 			try:
@@ -939,13 +941,11 @@ def pilots_list(request):
 
 	# Get all files inside src/json/drivers
 	main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-	# drivers_path = "/Users/magroove/coding/edu_projects/formula1charts/src/json/drivers/statistics"
 	drivers_path = main_path + "/src/json/drivers/statistics"
 	drivers = os.listdir(drivers_path)
 
 	drivers_list = []
 	for driver in drivers:
-		# print(driver)
 		with open(drivers_path + '/' + driver) as json_file:
 			data = json.load(json_file)
 			try:
@@ -1000,7 +1000,6 @@ def pilots_complete_info(request):
 
 	# Get all files inside src/json/drivers
 	main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-	# drivers_path = "/Users/magroove/coding/edu_projects/formula1charts/src/json/drivers/statistics"
 	drivers_path = main_path + "/src/json/drivers/statistics"
 	drivers = os.listdir(drivers_path)
 
