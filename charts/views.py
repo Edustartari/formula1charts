@@ -636,14 +636,34 @@ def add_percentage_info():
 			data = json.load(json_file)
 			print('')
 			print(driver)
+
+			total_seasons = 0
+			titles = 0
+			races = 0
+			poles = 0
+			wins = 0
+			podiums = 0
+			points = 0
+			if 'seasons_results' in data:
+				for key, value in data['seasons_results'].items():
+					total_seasons += 1
+
+					titles += value['title']
+					races += value['races']
+					poles += value['poles']
+					wins += value['wins']
+					podiums += value['podiums']
+					points += value['points']
+
 			try:
-				races = data['races'].split('(')[0]
-				races = int(races)
-				titles = int(data['titles'])
-				poles = int(data['poles'])
-				wins = int(data['wins'])
-				podiums = int(data['podiums'])
-				total_seasons = int(data['total_seasons'])
+
+				data['total_seasons'] = total_seasons
+				data['titles'] = titles
+				data['races'] = races
+				data['poles'] = poles
+				data['wins'] = wins
+				data['podiums'] = podiums
+				data['points'] = points
 
 				try:
 					titles_percentage = round(((titles*100) / total_seasons), 2)
@@ -998,9 +1018,7 @@ def pilots_list(request):
 				driver_dict['total_seasons'] = data['total_seasons']
 				driver_dict['seasons_years'] = data['seasons_years']
 				driver_dict['titles'] = int(data['titles'])
-				races = data['races'].split('(')[0]
-				races = int(races)
-				driver_dict['races'] = races
+				driver_dict['races'] = int(data['races'])
 				driver_dict['poles'] = int(data['poles'])
 				driver_dict['wins'] = int(data['wins'])
 				driver_dict['podiums'] = int(data['podiums'])

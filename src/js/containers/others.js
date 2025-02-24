@@ -47,7 +47,7 @@ class Others extends React.Component {
 			nationality: 'World',
 			filter_type: 'title',
 			first_date: moment(new Date(1950, 1, 1)),
-			second_date: moment(new Date(2022, 1, 1)),
+			second_date: moment(new Date(2024, 1, 1)),
 			drivers: [],
 			drivers_filtered: [],
 			drivers_filtered_by_type: [],
@@ -248,7 +248,7 @@ class Others extends React.Component {
 												label='From'
 												views={['year']}
 												minDate={moment(new Date(1950, 1, 1))}
-												maxDate={moment(new Date(2022, 1, 1))}
+												maxDate={moment(new Date(2024, 1, 1))}
 												value={this.state.first_date}
 												onChange={newValue => this.setState({ first_date: newValue })}
 											/>
@@ -257,7 +257,7 @@ class Others extends React.Component {
 												label='To'
 												views={['year']}
 												minDate={moment(new Date(1950, 1, 1))}
-												maxDate={moment(new Date(2022, 1, 1))}
+												maxDate={moment(new Date(2024, 1, 1))}
 												value={this.state.second_date}
 												onChange={newValue => this.setState({ second_date: newValue })}
 											/>
