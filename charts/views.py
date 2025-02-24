@@ -105,90 +105,73 @@ def get_race_results():
 
 	return
 
-def update_drivers_info():
+
+def get_drivers_standings():
+
 	# get path to src/json folder
 	main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 	print('main_path: ' + main_path)
 
-	standings_path = os.path.join(main_path, 'src/json/standings/driver_standings_after_a_race')
-	print('standings_path: ' + standings_path)
-
 	circuit_path = os.path.join(main_path, 'src/json/circuits/list_of_all_circuits_within_a_year')
 	print('circuit_path: ' + circuit_path)
 
-	drivers_path = os.path.join(main_path, 'src/json/drivers/statistics')
-	drivers = os.listdir(drivers_path)
+	current_year = datetime.now().year
+	years = [str(i) for i in range(1950, current_year + 1)]
+
+	max_limit = 0
+
+	# url = f"http://ergast.com/api/f1/2008/0/driverStandings.json"
+	# results = requests.get(url)
 	
-	# Enter each file and rename the key name with the file name.
-	for driver in tqdm(drivers):
-		print('')
-		with open(drivers_path + '/' + driver) as driver_file:
-			driver_data = json.load(driver_file)
-			driver_data['seasons_results'] = {}
+	# print('url: ' + url)
 
-			if not driver_data['seasons_years']:
-				continue
+	# results = requests.get(url)
 
-			driver_name = driver.split('.')[0]
-			# print('driver: ' + str(driver_name))
+	# print('results')
+	# print(results.content)
+	# print(type(results.content))
+	# results_json = json.loads(results.content)
 
-			print('')
-			print('====================================')
-			print('====================================')
-			print('====================================')
-			print(driver_name)
-			print(re.sub(r'[^\x00-\x7f]',r'', driver_name))
-			edited_name = re.sub(r'[^\x00-\x7f]',r'', driver_name)
-			first_name = edited_name.split('_')[:-1]
-			first_name = ' '.join(first_name)
-			last_name = edited_name.split('_')[-1]
-			print('first_name: ' + str(first_name))
-			print('last_name: ' + str(last_name))
+	for year in years:
 
-			for year in driver_data['seasons_years']:
-				if year == 2023:
-					continue
+		# Go after folder circuits/list_of_all_circuits_within_a_year, find the year and open the json
+		with open(circuit_path + '/' + year + '_circuits.json') as json_file:
+			data = json.load(json_file)
+			
+		total_races = data['MRData']['total']
+		print('total_races: ' + str(total_races))
 
-				year = str(year)
-				print('year: ' + year)
-				driver_data['seasons_results'][year] = {}
-				driver_data['seasons_results'][year]['title'] = 0
-				driver_data['seasons_results'][year]['races'] = 0
-				driver_data['seasons_results'][year]['wins'] = 0
-				driver_data['seasons_results'][year]['points'] = 0
-				driver_data['seasons_results'][year]['poles'] = 0
-				driver_data['seasons_results'][year]['podiums'] = 0
+		standings_path = os.path.join(main_path, 'src/json/standings/driver_standings_after_a_race')
+		print('standings_path: ' + standings_path)
 
-				try:
-					# Go after folder circuits/list_of_all_circuits_within_a_year, find the year and open the json
-					with open(circuit_path + '/' + year + '_circuits.json') as circuit_file:
-						circuit_data = json.load(circuit_file)
-				except:
-					continue
-					
-				total_races = circuit_data['MRData']['total']
-				print('total_races: ' + str(total_races))
+		for race in range(1, int(total_races) + 1):
+			# url = f"http://ergast.com/api/f1/{year}/{race}/driverStandings.json"
+			url = f"https://api.jolpi.ca/ergast/f1/{year}/{race}/driverStandings.json"
+			json_name = f"{year}_race_{race}.json"
+			
+			# print('url: ' + url)
 
-				for race in range(1, int(total_races) + 1):
-					race_dict = {}
-					with open(standings_path + '/' + year + '/' + year + '_race_' + str(race) + '.json', 'r') as race_file:
-						race_data = json.load(race_file)
-						DriverStandings = race_data['MRData']['StandingsTable']['StandingsLists'][0]['DriverStandings']
-						for pilot in DriverStandings:
-							givenName = re.sub(r'[^\x00-\x7f]',r'', pilot['Driver']['givenName'])
-							familyName = re.sub(r'[^\x00-\x7f]',r'', pilot['Driver']['familyName'])
-							if givenName == first_name and familyName == last_name:
-								driver_data['seasons_results'][year]['races'] += 1
+			results = requests.get(url)
 
-								if race == int(total_races):
-									driver_data['seasons_results'][year]['wins'] = int(pilot['wins'])
-									driver_data['seasons_results'][year]['points'] = float(pilot['points'])
-									driver_data['seasons_results'][year]['title'] = 1 if pilot['position'] == '1' else 0
+			results_json = json.loads(results.content)
 
-				with open(drivers_path + '/' + driver, 'w', encoding='utf-8') as outfile:
-					json.dump(driver_data, outfile)
+			# If folder does not exist inside standings_path, create it.
+			if not os.path.exists(standings_path + '/' + year):
+				os.makedirs(standings_path + '/' + year)
 
-	return
+			# Save json_example to a file inside path
+			with open(standings_path + '/' + year + '/' + json_name, 'w') as outfile:
+				json.dump(results_json, outfile)
+
+			max_limit += 1
+			print('max_limit: ' + str(max_limit))
+			time.sleep(5)
+
+			if max_limit == 150:
+				max_limit = 0
+				time.sleep(3600)
+
+	return True
 
 
 def update_poles_and_podiums():
@@ -212,7 +195,7 @@ def update_poles_and_podiums():
 	print('race_results_path: ' + race_results_path)
 
 	current_year = datetime.now().year
-	years = [str(i) for i in range(1950, current_year + 1)]
+	years = [str(i) for i in range(1950, current_year)]
 
 	all_drivers = {}
 	for year in years:
@@ -285,77 +268,112 @@ def update_poles_and_podiums():
 
 					driver_data['seasons_results'][year]['poles'] = poles
 					driver_data['seasons_results'][year]['podiums'] = podiums
+				else:
+					driver_data['seasons_years'].append(int(year))
+					driver_data['seasons_results'][year] = {
+						'poles': v['poles'],
+						'podiums': v['podiums'],
+						'title': 0,
+						'races': 0,
+						'wins': 0,
+						'points': 0
+					}
 
 		with open(drivers_path + '/' + driver, 'w', encoding='utf-8') as outfile:
 			json.dump(driver_data, outfile)
 
 
-def get_drivers_standings():
-
+def update_drivers_info():
 	# get path to src/json folder
 	main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 	print('main_path: ' + main_path)
 
+	standings_path = os.path.join(main_path, 'src/json/standings/driver_standings_after_a_race')
+	print('standings_path: ' + standings_path)
+
 	circuit_path = os.path.join(main_path, 'src/json/circuits/list_of_all_circuits_within_a_year')
 	print('circuit_path: ' + circuit_path)
 
-	current_year = datetime.now().year
-	years = [str(i) for i in range(1950, current_year + 1)]
-
-	max_limit = 0
-
-	# url = f"http://ergast.com/api/f1/2008/0/driverStandings.json"
-	# results = requests.get(url)
+	drivers_path = os.path.join(main_path, 'src/json/drivers/statistics')
+	drivers = os.listdir(drivers_path)
 	
-	# print('url: ' + url)
+	# Enter each file and rename the key name with the file name.
+	for driver in tqdm(drivers):
+		print('')
+		with open(drivers_path + '/' + driver) as driver_file:
+			driver_data = json.load(driver_file)
+			if 'seasons_results' not in driver_data:
+				driver_data['seasons_results'] = {}
 
-	# results = requests.get(url)
+			if not driver_data['seasons_years']:
+				continue
 
-	# print('results')
-	# print(results.content)
-	# print(type(results.content))
-	# results_json = json.loads(results.content)
+			driver_name = driver.split('.')[0]
+			# print('driver: ' + str(driver_name))
 
-	for year in years:
+			print('')
+			print('====================================')
+			print('====================================')
+			print('====================================')
+			print(driver_name)
+			print(re.sub(r'[^\x00-\x7f]',r'', driver_name))
+			edited_name = re.sub(r'[^\x00-\x7f]',r'', driver_name)
+			first_name = edited_name.split('_')[:-1]
+			first_name = ' '.join(first_name)
+			last_name = edited_name.split('_')[-1]
+			print('first_name: ' + str(first_name))
+			print('last_name: ' + str(last_name))
 
-		# Go after folder circuits/list_of_all_circuits_within_a_year, find the year and open the json
-		with open(circuit_path + '/' + year + '_circuits.json') as json_file:
-			data = json.load(json_file)
-			
-		total_races = data['MRData']['total']
-		print('total_races: ' + str(total_races))
+			for year in driver_data['seasons_years']:
 
-		standings_path = os.path.join(main_path, 'src/json/standings/driver_standings_after_a_race')
-		print('standings_path: ' + standings_path)
+				year = str(year)
+				print('year: ' + year)
 
-		for race in range(1, int(total_races) + 1):
-			# url = f"http://ergast.com/api/f1/{year}/{race}/driverStandings.json"
-			url = f"https://api.jolpi.ca/ergast/f1/{year}/{race}/driverStandings.json"
-			json_name = f"{year}_race_{race}.json"
-			
-			# print('url: ' + url)
+				poles = 0
+				podiums = 0
+				if year in driver_data['seasons_results'] and 'poles' in driver_data['seasons_results'][year]:
+					poles = driver_data['seasons_results'][year]['poles']
+					podiums = driver_data['seasons_results'][year]['podiums']
 
-			results = requests.get(url)
+				driver_data['seasons_results'][year] = {}
+				driver_data['seasons_results'][year]['title'] = 0
+				driver_data['seasons_results'][year]['races'] = 0
+				driver_data['seasons_results'][year]['wins'] = 0
+				driver_data['seasons_results'][year]['points'] = 0
+				driver_data['seasons_results'][year]['poles'] = poles 
+				driver_data['seasons_results'][year]['podiums'] = podiums 
 
-			results_json = json.loads(results.content)
+				try:
+					# Go after folder circuits/list_of_all_circuits_within_a_year, find the year and open the json
+					with open(circuit_path + '/' + year + '_circuits.json') as circuit_file:
+						circuit_data = json.load(circuit_file)
+				except:
+					continue
+					
+				total_races = circuit_data['MRData']['total']
+				print('total_races: ' + str(total_races))
 
-			# If folder does not exist inside standings_path, create it.
-			if not os.path.exists(standings_path + '/' + year):
-				os.makedirs(standings_path + '/' + year)
+				for race in range(1, int(total_races) + 1):
+					race_dict = {}
+					with open(standings_path + '/' + year + '/' + year + '_race_' + str(race) + '.json', 'r') as race_file:
+						race_data = json.load(race_file)
+						DriverStandings = race_data['MRData']['StandingsTable']['StandingsLists'][0]['DriverStandings']
+						for pilot in DriverStandings:
+							givenName = re.sub(r'[^\x00-\x7f]',r'', pilot['Driver']['givenName'])
+							familyName = re.sub(r'[^\x00-\x7f]',r'', pilot['Driver']['familyName'])
+							if givenName == first_name and familyName == last_name:
+								driver_data['seasons_results'][year]['races'] += 1
 
-			# Save json_example to a file inside path
-			with open(standings_path + '/' + year + '/' + json_name, 'w') as outfile:
-				json.dump(results_json, outfile)
+								if race == int(total_races):
+									driver_data['seasons_results'][year]['wins'] = int(pilot['wins'])
+									driver_data['seasons_results'][year]['points'] = float(pilot['points'])
+									driver_data['seasons_results'][year]['title'] = 1 if pilot['position'] == '1' else 0
 
-			max_limit += 1
-			print('max_limit: ' + str(max_limit))
-			time.sleep(5)
+				with open(drivers_path + '/' + driver, 'w', encoding='utf-8') as outfile:
+					json.dump(driver_data, outfile)
 
-			if max_limit == 150:
-				max_limit = 0
-				time.sleep(3600)
+	return
 
-	return True
 
 def get_years(years_tag):
 	season_years = []
@@ -604,9 +622,12 @@ def get_driver_info():
 	return
 
 def add_percentage_info():
+
+	# IMPORTANT: I must update the total titles, races, wins, etc from driver json files.
+
 	# Get all files inside src/json/drivers
 	main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-	drivers_path = os.path.join(main_path, 'src/json/drivers')
+	drivers_path = os.path.join(main_path, 'src/json/drivers/statistics')
 	drivers = os.listdir(drivers_path)
 	
 	# Enter each file and rename the key name with the file name.
@@ -1070,8 +1091,6 @@ def constructors(request):
 def others(request):
 	print("")
 	print("others view")
-
-	# get_drivers_standings()
 
 	context = {}
 
