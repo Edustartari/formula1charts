@@ -49,6 +49,23 @@ def get_race_results():
 	for year in years:
 		print("year: " + str(year))
 
+		# Check first if json from all circuits in a season exists
+		if not os.path.exists(circuit_path + '/' + year + '_circuits.json'):
+
+			# url = f"http://ergast.com/api/f1/{year}/{race}/results.json"
+			url = f"https://api.jolpi.ca/ergast/f1/{year}/circuits.json"
+			json_name = f"{year}_circuits.json"
+			
+			# print('url: ' + url)
+
+			results = requests.get(url)
+
+			results_json = json.loads(results.content)
+
+			# Save json_example to a file inside path
+			with open(circuit_path + '/' + json_name, 'w') as outfile:
+				json.dump(results_json, outfile)
+
 		# Go after folder circuits/list_of_all_circuits_within_a_year, find the year and open the json
 		with open(circuit_path + '/' + year + '_circuits.json') as json_file:
 			data = json.load(json_file)
@@ -60,7 +77,8 @@ def get_race_results():
 		print('race_results_path: ' + race_results_path)
 
 		for race in range(1, int(total_races) + 1):
-			url = f"http://ergast.com/api/f1/{year}/{race}/results.json"
+			# url = f"http://ergast.com/api/f1/{year}/{race}/results.json"
+			url = f"https://api.jolpi.ca/ergast/f1/{year}/{race}/results.json"
 			json_name = f"{year}_race_results_{race}.json"
 			
 			# print('url: ' + url)
@@ -311,7 +329,8 @@ def get_drivers_standings():
 		print('standings_path: ' + standings_path)
 
 		for race in range(1, int(total_races) + 1):
-			url = f"http://ergast.com/api/f1/{year}/{race}/driverStandings.json"
+			# url = f"http://ergast.com/api/f1/{year}/{race}/driverStandings.json"
+			url = f"https://api.jolpi.ca/ergast/f1/{year}/{race}/driverStandings.json"
 			json_name = f"{year}_race_{race}.json"
 			
 			# print('url: ' + url)
@@ -821,7 +840,6 @@ def get_constructors_stats(request):
 def index(request):
 	print("")
 	print("")
-	# update_drivers_info()
 	context = {}
 
 	return render(request, 'front-end/index.html', context)
@@ -1052,6 +1070,8 @@ def constructors(request):
 def others(request):
 	print("")
 	print("others view")
+
+	# get_drivers_standings()
 
 	context = {}
 
