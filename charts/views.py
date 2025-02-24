@@ -899,17 +899,17 @@ def season_view(request, year):
 		driver_standings = data['MRData']['StandingsTable']['StandingsLists'][0]['DriverStandings']
 		for driver in driver_standings:
 			driver_name = driver['Driver']['givenName'] + ' ' + driver['Driver']['familyName']
-			position = driver['position'] + 'º'
+			position = driver['position'] if 'position' in driver else str(len(driver_standings))
 			points = driver['points'] + ' pts' if driver['points'] != '1' else driver['points'] + ' pt'
-			formated_text = position + ' ' + driver_name + ': ' + points
-			if int(race) == int(total_races) and driver['position'] == '1':
+			formated_text = position + 'º' + ' ' + driver_name + ': ' + points
+			if int(race) == int(total_races) and position == '1':
 				champion_name = driver_name
 
 			if driver_name not in already_added:
 				final_result_test.append(
 					{
 						'id': driver_name,
-						'data': [{'x': circuit_name, 'y':  driver['position'], 'z': formated_text}]
+						'data': [{'x': circuit_name, 'y': position, 'z': formated_text}]
 
 					}
 				)
@@ -917,7 +917,7 @@ def season_view(request, year):
 			else:
 				for i in final_result_test:
 					if i['id'] == driver_name:
-						i['data'].append({'x': circuit_name, 'y':  driver['position'], 'z': formated_text})
+						i['data'].append({'x': circuit_name, 'y':  position, 'z': formated_text})
 
 	context = {
 		'final_result': json.dumps(final_result_test),
