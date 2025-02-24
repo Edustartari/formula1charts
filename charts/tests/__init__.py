@@ -41,4 +41,5 @@ pytest charts/tests/unit/test_views.py::test_true (execute a specific function)
 USEFUL RESOURCES:
 - fixtures (useful to provide data for tests)
 - Skip decorator: @pytest.mark.skip(reason=None)
+- Use os.environ.setdefault('PYTHONOPTIMIZE', '2') to run on production mode (this will ignore any assert and docstring that exists inside code)
 '''

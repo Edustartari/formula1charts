@@ -36,5 +36,9 @@ def test_4(input, expected):
 def test_view():
     response = client.get('/pilots-complete-info')
     json_data = json.loads(response.content)
-    # assert response.status_code == 200
-    assert 'drivers' in json_data
+    # Check if response was successful
+    assert response.status_code == 200
+    # Include a comment after a comma (optional)
+    assert 'drivers' in json_data, f"json_data don't possess drivers key"
+
+
