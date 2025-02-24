@@ -372,7 +372,7 @@ def update_drivers_info():
 				with open(drivers_path + '/' + driver, 'w', encoding='utf-8') as outfile:
 					json.dump(driver_data, outfile)
 
-	return
+	return True
 
 
 def get_years(years_tag):
@@ -623,8 +623,6 @@ def get_driver_info():
 
 def add_percentage_info():
 
-	# IMPORTANT: I must update the total titles, races, wins, etc from driver json files.
-
 	# Get all files inside src/json/drivers
 	main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 	drivers_path = os.path.join(main_path, 'src/json/drivers/statistics')
@@ -655,45 +653,41 @@ def add_percentage_info():
 					podiums += value['podiums']
 					points += value['points']
 
+			data['total_seasons'] = total_seasons
+			data['titles'] = titles
+			data['races'] = races
+			data['poles'] = poles
+			data['wins'] = wins
+			data['podiums'] = podiums
+			data['points'] = points
+
 			try:
+				titles_percentage = round(((titles*100) / total_seasons), 2)
+				data['titles_percentage'] = titles_percentage
+			except:
+				data['titles_percentage'] = 0
 
-				data['total_seasons'] = total_seasons
-				data['titles'] = titles
-				data['races'] = races
-				data['poles'] = poles
-				data['wins'] = wins
-				data['podiums'] = podiums
-				data['points'] = points
+			try:
+				poles_percentage = round(((poles*100) / races), 2)
+				data['poles_percentage'] = poles_percentage
+			except:
+				data['poles_percentage'] = 0
 
-				try:
-					titles_percentage = round(((titles*100) / total_seasons), 2)
-					data['titles_percentage'] = titles_percentage
-				except:
-					data['titles_percentage'] = 0
+			try:
+				wins_percentage = round(((wins*100) / races), 2)
+				data['wins_percentage'] = wins_percentage
+			except:
+				data['wins_percentage'] = 0
 
-				try:
-					poles_percentage = round(((poles*100) / races), 2)
-					data['poles_percentage'] = poles_percentage
-				except:
-					data['poles_percentage'] = 0
+			try:
+				podiums_percentage = round(((podiums*100) / races), 2)
+				data['podiums_percentage'] = podiums_percentage
+			except:
+				data['podiums_percentage'] = 0
 
-				try:
-					wins_percentage = round(((wins*100) / races), 2)
-					data['wins_percentage'] = wins_percentage
-				except:
-					data['wins_percentage'] = 0
-
-				try:
-					podiums_percentage = round(((podiums*100) / races), 2)
-					data['podiums_percentage'] = podiums_percentage
-				except:
-					data['podiums_percentage'] = 0
-
-				with open(drivers_path + '/' + driver, 'w', encoding='utf-8') as outfile:
-					json.dump(data, outfile)
-			except Exception as e:
-				print("***********************************")
-				print(e)
+			with open(drivers_path + '/' + driver, 'w', encoding='utf-8') as outfile:
+				json.dump(data, outfile)
+	
 	return True
 
 def save_images():
@@ -704,7 +698,7 @@ def save_images():
 	print('drivers_path: ' + str(drivers_path))
 	drivers = os.listdir(drivers_path)
 
-	# Upload each image from each driver to the folder src/img/drivers_imgages
+	# Upload each image from each driver to the folder src/img/drivers_images
 	for driver in tqdm(drivers[:1]):
 	# for driver in tqdm(drivers):
 		time.sleep(5)
@@ -879,10 +873,7 @@ def get_constructors_stats(request):
 # =================================================================================================
 # Create your views here.
 def index(request):
-	print("")
-	print("")
 	context = {}
-
 	return render(request, 'front-end/index.html', context)
 
 def season_view(request, year):
@@ -1039,7 +1030,6 @@ def pilots_list(request):
 					driver_dict['image'] = False
 				drivers_list.append(driver_dict)
 
-				pass
 			except Exception as e:
 				pass
 
@@ -1096,20 +1086,10 @@ def pilots_complete_info(request):
 
 
 def constructors(request):
-	print("")
-	print("constructors view")
-
-	# update_constructors_info()
-
 	context = {}
-
 	return render(request, 'front-end/constructors.html', context)
 
 
 def others(request):
-	print("")
-	print("others view")
-
 	context = {}
-
 	return render(request, 'front-end/others.html', context)
