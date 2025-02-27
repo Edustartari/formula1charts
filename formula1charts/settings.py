@@ -96,6 +96,9 @@ WEBPACK_LOADER = {
 
 WSGI_APPLICATION = 'formula1charts.wsgi.application'
 
+CORS_ALLOW_ALL_ORIGINS = [
+    
+]
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
