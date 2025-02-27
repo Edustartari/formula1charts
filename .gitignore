@@ -8,7 +8,6 @@ formula1charts/__pycache__/urls.cpython-39.pyc
 formula1charts/__pycache__/wsgi.cpython-39.pyc
 formula1charts/__pycache__/
 charts/tests/__pycache__/
-bundles/
 static/
 env/
 *.pyc
