@@ -13,8 +13,10 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 import os
 from pathlib import Path
 
+DEBUG = True
 if not __debug__:
     os.environ.setdefault('PYTHONOPTIMIZE', '1')
+    DEBUG = False
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +29,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-^f!obxl*7lq^$*kcbjcpfw$3^ihck0h*h7m03a*quhn3lky)d*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'formula1charts.onrender.com']
 
