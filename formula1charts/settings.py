@@ -30,7 +30,8 @@ SECRET_KEY = 'django-insecure-^f!obxl*7lq^$*kcbjcpfw$3^ihck0h*h7m03a*quhn3lky)d*
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'formula1charts.onrender.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'formula1charts.onrender.com', os.environ.get('RENDER_EXTERNAL_HOSTNAME')]
+# CSRF_TRUSTED_ORIGINS = ['https://' + os.environ.get('RENDER_EXTERNAL_HOSTNAME')]
 
 FILE_CHARSET = 'utf-16'
 
@@ -77,7 +78,8 @@ TEMPLATES = [
 ]
 
 STATIC_URL = "/staticfiles/"
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+# STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 WHITENOISE_USE_FINDERS = True
 WHITENOISE_MANIFEST_STRICT = False
@@ -97,9 +99,9 @@ WEBPACK_LOADER = {
 
 WSGI_APPLICATION = 'formula1charts.wsgi.application'
 
-CORS_ALLOWED_ORIGINS = True
-CORS_ORIGIN_ALLOW_ALL = True
-CORS_ALLOW_CREDENTIALS = True
+# CORS_ALLOWED_ORIGINS = []
+# CORS_ORIGIN_ALLOW_ALL = True
+# CORS_ALLOW_CREDENTIALS = True
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
