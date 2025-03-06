@@ -874,7 +874,7 @@ def get_constructors_stats(request):
 # Create your views here.
 def index(request):
 	context = {}
-	return render(request, 'front-end/index.html', context)
+	return render(request, 'index.html', context)
 
 def season_view(request, year):
 
@@ -890,7 +890,7 @@ def season_view(request, year):
 	
 		if redis_response is not None:
 			context = json.loads(redis_response)
-			return render(request, 'front-end/season.html', context)
+			return render(request, 'season.html', context)
 	except:
 		pass
 
@@ -962,16 +962,16 @@ def season_view(request, year):
 	except:
 		pass
 
-	return render(request, 'front-end/season.html', context)
+	return render(request, 'season.html', context)
 
 
 def pilots(request):
 	context = {}
-	return render(request, 'front-end/pilots.html', context)
+	return render(request, 'pilots.html', context)
 
 def all_time(request):
 	context = {}
-	return render(request, 'front-end/all-time.html', context)
+	return render(request, 'all-time.html', context)
 
 def load_nationalities(request):
 	print('')
@@ -1087,9 +1087,9 @@ def pilots_complete_info(request):
 
 def constructors(request):
 	context = {}
-	return render(request, 'front-end/constructors.html', context)
+	return render(request, 'constructors.html', context)
 
 
 def others(request):
 	context = {}
-	return render(request, 'front-end/others.html', context)
+	return render(request, 'others.html', context)

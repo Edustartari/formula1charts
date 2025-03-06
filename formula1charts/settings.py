@@ -64,7 +64,7 @@ ROOT_URLCONF = 'formula1charts.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'src/templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -77,17 +77,17 @@ TEMPLATES = [
     },
 ]
 
-STATIC_URL = "/staticfiles/"
-# STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-STATIC_ROOT = BASE_DIR / "static"
+STATIC_URL = "/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 WHITENOISE_USE_FINDERS = True
 WHITENOISE_MANIFEST_STRICT = False
 WHITENOISE_ALLOW_ALL_ORIGINS = True
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "bundles"),
-    os.path.join(BASE_DIR, "src/css")
+    # os.path.join(BASE_DIR, "bundles"),
+    # os.path.join(BASE_DIR, "src/css"),
+    os.path.join(BASE_DIR, 'static')
 ]
 
 WEBPACK_LOADER = {

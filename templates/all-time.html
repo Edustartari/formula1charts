@@ -1,4 +1,4 @@
-{% extends 'front-end/index.html' %}
+{% extends 'index.html' %}
 {% load static %}
 
 {% block links %}
@@ -10,7 +10,6 @@
 {% block javascript %}
 <script type="text/javascript">
     var content = {}
-    console.log('constructors template')
 </script>
-<script src="{% static 'constructors_bundle.js' %}"></script>
+<script src="{% static 'all_time_bundle.js' %}"></script>
 {% endblock %}

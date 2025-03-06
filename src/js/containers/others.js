@@ -236,7 +236,7 @@ class Others extends React.Component {
 			return (
 				<div className='others-background'>
 					<div className='others-main-container'>
-						<div className='others-main-title'>Others</div>
+						<div className='others-main-title'>Others 4</div>
 						<div className='others-options'>
 							<div className='others-option-box'>
 								<div className='others-option-box-text'>Range Date</div>
