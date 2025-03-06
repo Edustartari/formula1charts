@@ -49,7 +49,7 @@ for (var i = folder_pool.length - 1; i >= 0; i--) {
 module.exports = {
 	entry: entries,  
 	output: {
-		path: path.join(__dirname, 'bundles'),
+		path: path.join(__dirname, 'staticfiles'),
 		filename: (pathData) => {
 			var extension = pathData.chunk.name.split('.').pop();
 			var name = pathData.chunk.name.replace('.' + extension, '');
