@@ -86,7 +86,7 @@ WHITENOISE_MANIFEST_STRICT = False
 WHITENOISE_ALLOW_ALL_ORIGINS = True
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "staticfiles"),
+    os.path.join(BASE_DIR, "bundles"),
     os.path.join(BASE_DIR, "src/css")
 ]
 
