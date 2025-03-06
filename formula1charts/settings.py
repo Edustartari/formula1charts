@@ -86,13 +86,13 @@ WHITENOISE_MANIFEST_STRICT = False
 WHITENOISE_ALLOW_ALL_ORIGINS = True
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "bundles"),
+    os.path.join(BASE_DIR, "static"),
     os.path.join(BASE_DIR, "src/css")
 ]
 
 WEBPACK_LOADER = {
     'DEFAULT': {
-        'BUNDLE_DIR_NAME': 'staticfiles/',
+        'BUNDLE_DIR_NAME': 'static/',
         'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json'),
     }
 }
