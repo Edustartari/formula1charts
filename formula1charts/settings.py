@@ -30,8 +30,7 @@ SECRET_KEY = 'django-insecure-^f!obxl*7lq^$*kcbjcpfw$3^ihck0h*h7m03a*quhn3lky)d*
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'formula1charts.onrender.com', os.environ.get('RENDER_EXTERNAL_HOSTNAME')]
-# CSRF_TRUSTED_ORIGINS = ['https://' + os.environ.get('RENDER_EXTERNAL_HOSTNAME')]
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', ".vercel.app"]
 
 FILE_CHARSET = 'utf-8'
 
