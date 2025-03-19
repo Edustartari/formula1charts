@@ -1085,16 +1085,4 @@ def constructors(request):
 
 def others(request):
 	context = {}
-
-	main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-	print('main_path: ' + main_path) # /home/eduardo/coding/edu_projects/formula1charts
-
-	# Remove all jpg files inside main_path + '/src/img folder
-	img_path = os.path.join(main_path, 'src/img')
-	img_files = os.listdir(img_path)
-	for img_file in img_files:
-		if '.JPG' in img_file:
-			os.remove(img_path + '/' + img_file)
-
-
 	return render(request, 'others.html', context)
