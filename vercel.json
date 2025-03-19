@@ -19,5 +19,13 @@
 			"src": "/(.*)",
 			"dest": "formula1charts/wsgi.py"
 		}
-	]
+	],
+	"functions": {
+	  "src/**": {
+		"excludeFiles": "{.next,*.cache,img}/**"
+	  },
+	  "/**": {
+		"excludeFiles": "{node_modules,env}/**"
+	  }
+	}
 }
