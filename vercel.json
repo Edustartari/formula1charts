@@ -26,6 +26,9 @@
 	  },
 	  "/**": {
 		"excludeFiles": "{node_modules,env}/**"
+	  },
+	  "**": {
+		"excludeFiles": "{node_modules,env}/**"
 	  }
 	}
 }
