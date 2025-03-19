@@ -1,6 +1,5 @@
 import React from 'react';
 import '../../css/all_seasons.css';
-import Image from '../components/image.js';
 import _ from 'lodash';
 
 function SeasonCard(props) {

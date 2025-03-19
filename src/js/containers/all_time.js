@@ -1,20 +1,13 @@
 import React from 'react';
 import '../../css/all_time.css';
-import Image from '../components/image.js';
 import _ from 'lodash';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import { ResponsiveRadar } from '@nivo/radar';
-import Switch from '@mui/material/Switch';
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
-import Dialog from '@mui/material/Dialog';
-import TextField from '@mui/material/TextField';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import { YearCalendar } from '@mui/x-date-pickers/YearCalendar';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
-import { ResponsiveBar } from '@nivo/bar';
 import Tooltip from '@mui/material/Tooltip';
 
 import { LocalizationProvider } from '@mui/x-date-pickers';

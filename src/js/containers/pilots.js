@@ -1,6 +1,5 @@
 import React from 'react';
 import '../../css/pilots.css';
-import Image from '../components/image.js';
 import _ from 'lodash';
 import { ResponsiveRadar } from '@nivo/radar';
 import Switch from '@mui/material/Switch';

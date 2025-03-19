@@ -1,8 +1,7 @@
 import React from 'react';
 import '../../css/home.css';
 import Image from '../components/image.js';
-import TextTransition, { presets } from 'react-text-transition';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 // Create class component to home-desktop-card
 class CardContainer extends React.Component {

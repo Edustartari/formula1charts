@@ -1,8 +1,5 @@
 import React from 'react';
 import '../../css/season.css';
-import Image from '../components/image.js';
-import _ from 'lodash';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ResponsiveBump } from '@nivo/bump';
 
 class Season extends React.Component {

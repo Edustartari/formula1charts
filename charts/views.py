@@ -1,7 +1,6 @@
 import os
 from datetime import datetime
 from django.shortcuts import HttpResponseRedirect, render
-from bs4 import BeautifulSoup
 import requests
 import copy
 import pydash
@@ -13,7 +12,6 @@ import urllib.parse
 import base64
 import re
 from django.http import JsonResponse
-import redis
 from PIL import Image
 
 # ================================================================================================
@@ -21,12 +19,6 @@ from PIL import Image
 # =================================================================================================
 # Create your procedures here.
 
-
-redis_client = redis.Redis(
-	host='redis-14287.c308.sa-east-1-1.ec2.redns.redis-cloud.com',
-	port=14287,
-	password='D2sbxecxOwzIbH2rbNqmtAM4Ksuyj1IY'
-)
 
 def edu_test():
 	return 'test'
@@ -1101,7 +1093,7 @@ def others(request):
 	img_path = os.path.join(main_path, 'src/img')
 	img_files = os.listdir(img_path)
 	for img_file in img_files:
-		if '.jpg' in img_file:
+		if '.JPG' in img_file:
 			os.remove(img_path + '/' + img_file)
 
 

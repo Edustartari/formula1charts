@@ -1,21 +1,14 @@
 import React from 'react';
 import '../../css/others.css';
-import Image from '../components/image.js';
 import _ from 'lodash';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { ResponsiveWaffle } from '@nivo/waffle'
-import Switch from '@mui/material/Switch';
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
-import Dialog from '@mui/material/Dialog';
-import TextField from '@mui/material/TextField';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
-import Tooltip from '@mui/material/Tooltip';
-import countries_colors from '../components/countries_colors.js';
-
 
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
