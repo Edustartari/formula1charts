@@ -1,5 +1,5 @@
 # formula1charts
-A different way to compare formula 1 statistics.
+A different way to compare formula 1 statistics. [https://formula1charts.vercel.app/](https://formula1charts.vercel.app/)
 
 In this project I used Python scripts with BeautifulSoup to scrap over F1 pages, and also with specific F1 APIs that were very helpful, to gather several info about races wins, podiums and others numbers. Then I created this Django app to display pages with an variety of cool interactive charts (from NIVO lib).
 
