@@ -119,27 +119,23 @@
 .pilots-overlay-input{
     margin: 140px 0;
 }
-.pilots-overlay .css-1u3bzj6-MuiFormControl-root-MuiTextField-root{
+.pilots-overlay .MuiFormControl-root{
     background-color: white;
     width: -webkit-fill-available;
     padding: 15px;
     position: absolute;
     top: 48px;
 }
-.pilots-overlay .css-1c2i806-MuiFormLabel-root-MuiInputLabel-root{
+/* .pilots-overlay .css-1c2i806-MuiFormLabel-root-MuiInputLabel-root{
     left: 12px;
     top: 10px;
-}
-.pilots-overlay .css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root{
+} */
+.pilots-overlay .MuiFormLabel-root{
     left: 12px;
     top: 10px;
 }
 .pilots-overlay-subtitle{
     margin: 30px 0 0 0;
-}
-.pilots-overlay-list .css-1869usk-MuiFormControl-root{
-    margin: 8px 0 0 0;
-    width: 100%;
 }
 .pilots-overlay-button-container {
     display: flex;
