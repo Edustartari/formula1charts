@@ -1,6 +1,5 @@
 import React from 'react';
 import '../../css/pilots.css';
-import _ from 'lodash';
 import { ResponsiveRadar } from '@nivo/radar';
 import Switch from '@mui/material/Switch';
 import Backdrop from '@mui/material/Backdrop';
@@ -125,10 +124,10 @@ class Pilots extends React.Component {
 			.then(data => {
 				this.setState({ drivers: data.drivers });
 
-				let drivers_list = _.filter(this.state.drivers, function (o) {
+				let drivers_list = this.state.drivers.filter(function (o) {
 					return o.wins > 0;
 				});
-				let random_drivers = _.sampleSize(drivers_list, 5);
+				let random_drivers = drivers_list.sort(() => Math.random() - Math.random()).slice(0, 5);
 				for (let i = 0; i < random_drivers.length; i++) {
 					this.select_driver('driver_' + (i + 1), random_drivers[i]);
 				}

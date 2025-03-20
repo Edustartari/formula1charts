@@ -1,6 +1,5 @@
 import React from 'react';
 import '../../css/others.css';
-import _ from 'lodash';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
@@ -13,24 +12,6 @@ import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
 import moment from 'moment';
-
-let data = [
-	{
-	  "id": "cats",
-	  "label": "Cats",
-	  "value": 28.460355251565687
-	},
-	{
-	  "id": "dogs",
-	  "label": "Dogs",
-	  "value": 25.101893575150154
-	},
-	{
-	  "id": "rabbits",
-	  "label": "Rabits",
-	  "value": 5.900944133628169
-	}
-  ]
 
 class Others extends React.Component {
 	constructor(props) {
@@ -103,7 +84,7 @@ class Others extends React.Component {
 				let seasons_list = Object.keys(driver['seasons_results']);
 				seasons_list = seasons_list.map(season => parseInt(season));
 
-				let intersection = _.intersectionWith(selected_years, seasons_list, _.isEqual);
+				let intersection = selected_years.filter(year => seasons_list.includes(year));
 
 				let new_seasons_results = {};
 				intersection.forEach(year => {

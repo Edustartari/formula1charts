@@ -1,6 +1,5 @@
 import React from 'react';
 import '../../css/all_seasons.css';
-import _ from 'lodash';
 
 function SeasonCard(props) {
 	let image;
@@ -57,8 +56,12 @@ class AllSeasons extends React.Component {
 	}
 
 	render() {
-		// Create list of years since the year 1951 until 2024, and reverse it
-		let years = _.range(1950, 2025).reverse();
+		// Create list of years since the year 1950 until 2024, and reverse it
+		let years = [];
+		for (let i = 2024; i >= 1950; i--) {
+			years.push(i);
+		}
+
 		// Create list of season cards
 		let season_cards = years.map(year => {
 			return <SeasonCard key={year} year={year} {...this.state} />;

@@ -1,7 +1,5 @@
 import React from 'react';
 import '../../css/constructors.css';
-import _ from 'lodash';
-
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
@@ -92,7 +90,7 @@ class Constructors extends React.Component {
 				let seasons_list = Object.keys(constructor['seasons_results']);
 				seasons_list = seasons_list.map(season => parseInt(season));
 
-				let intersection = _.intersectionWith(selected_years, seasons_list, _.isEqual);
+				let intersection = selected_years.filter(year => seasons_list.includes(year));
 
 				let new_seasons_results = {};
 				intersection.forEach(year => {
