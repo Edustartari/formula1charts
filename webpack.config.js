@@ -2,7 +2,6 @@ var path = require('path');
 var webpack = require('webpack');
 var BundleTracker = require('webpack-bundle-tracker');
 var fs = require('fs');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 // Create and entry dict
 var entries = {}
@@ -72,7 +71,6 @@ module.exports = {
 			path: __dirname,
 			filename: 'webpack-stats.json'
 		}),
-		new BundleAnalyzerPlugin()
 	],
     module: {
 		rules: [
