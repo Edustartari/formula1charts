@@ -1,7 +1,6 @@
 import os
 from datetime import datetime
 from django.shortcuts import HttpResponseRedirect, render
-from bs4 import BeautifulSoup
 import requests
 import copy
 import pydash

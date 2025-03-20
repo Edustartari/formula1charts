@@ -140,7 +140,7 @@ class Pilots extends React.Component {
 	select_driver(key, value) {
 		let driver_id = value.id;
 		let current_driver = this.state[key];
-		let selected_driver = _.find(this.state.drivers, { id: driver_id });
+		let selected_driver = this.state.drivers.find(driver => driver.id === driver_id);
 		this.setState({ [key]: selected_driver });
 
 		let temporary_radar_list_absolute = this.state.radar_list_absolute;

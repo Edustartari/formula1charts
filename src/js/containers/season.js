@@ -77,7 +77,6 @@ class Season extends React.Component {
 						}}
 						margin={{ top: 70, right: 100, bottom: 70, left: 60 }}
 						// tooltip={(point) => {
-						//     console.log(point)
 						//     // return <div>{point['z']}</div>;
 						//     return <div>TESTING!</div>;
 						// }}
