@@ -429,7 +429,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("var map = {\n\t\"./default_image.webp\": \"./src/img/default_image.webp\",\n\t\"./f1_background_1.webp\": \"./src/img/f1_background_1.webp\",\n\t\"./f1_background_2.webp\": \"./src/img/f1_background_2.webp\",\n\t\"./f1_background_3.webp\": \"./src/img/f1_background_3.webp\",\n\t\"./f1_background_alonso_1.webp\": \"./src/img/f1_background_alonso_1.webp\",\n\t\"./f1_background_ferrari_1.webp\": \"./src/img/f1_background_ferrari_1.webp\",\n\t\"./f1_background_ferrari_2.webp\": \"./src/img/f1_background_ferrari_2.webp\",\n\t\"./f1_background_ferrari_3.webp\": \"./src/img/f1_background_ferrari_3.webp\",\n\t\"./f1_background_mclaren_1.webp\": \"./src/img/f1_background_mclaren_1.webp\",\n\t\"./f1_background_mercedes_1.webp\": \"./src/img/f1_background_mercedes_1.webp\",\n\t\"./f1_background_mercedes_2.webp\": \"./src/img/f1_background_mercedes_2.webp\",\n\t\"./f1_background_mercedes_3.webp\": \"./src/img/f1_background_mercedes_3.webp\",\n\t\"./f1_background_mercedes_4.webp\": \"./src/img/f1_background_mercedes_4.webp\",\n\t\"./f1_background_mercedes_5.webp\": \"./src/img/f1_background_mercedes_5.webp\",\n\t\"./f1_background_pilot_1.webp\": \"./src/img/f1_background_pilot_1.webp\",\n\t\"./f1_shumacher_1.webp\": \"./src/img/f1_shumacher_1.webp\",\n\t\"./season_1950_car.webp\": \"./src/img/season_1950_car.webp\",\n\t\"./season_1951.webp\": \"./src/img/season_1951.webp\",\n\t\"./season_1951_car.webp\": \"./src/img/season_1951_car.webp\",\n\t\"./season_1952_car.webp\": \"./src/img/season_1952_car.webp\",\n\t\"./season_1953_car.webp\": \"./src/img/season_1953_car.webp\",\n\t\"./season_1954_car.webp\": \"./src/img/season_1954_car.webp\",\n\t\"./season_1955_car.webp\": \"./src/img/season_1955_car.webp\",\n\t\"./season_1956_car.webp\": \"./src/img/season_1956_car.webp\",\n\t\"./season_1957_car.webp\": \"./src/img/season_1957_car.webp\",\n\t\"./season_1958.webp\": \"./src/img/season_1958.webp\",\n\t\"./season_1958_car.webp\": \"./src/img/season_1958_car.webp\",\n\t\"./season_1959.webp\": \"./src/img/season_1959.webp\",\n\t\"./season_1959_car.webp\": \"./src/img/season_1959_car.webp\",\n\t\"./season_1960.webp\": \"./src/img/season_1960.webp\",\n\t\"./season_1960_car.webp\": \"./src/img/season_1960_car.webp\",\n\t\"./season_1961_car.webp\": \"./src/img/season_1961_car.webp\",\n\t\"./season_1962.webp\": \"./src/img/season_1962.webp\",\n\t\"./season_1962_2.webp\": \"./src/img/season_1962_2.webp\",\n\t\"./season_1962_car.webp\": \"./src/img/season_1962_car.webp\",\n\t\"./season_1963_car.webp\": \"./src/img/season_1963_car.webp\",\n\t\"./season_1964.webp\": \"./src/img/season_1964.webp\",\n\t\"./season_1964_car.webp\": \"./src/img/season_1964_car.webp\",\n\t\"./season_1965_car.webp\": \"./src/img/season_1965_car.webp\",\n\t\"./season_1966.webp\": \"./src/img/season_1966.webp\",\n\t\"./season_1966_2.webp\": \"./src/img/season_1966_2.webp\",\n\t\"./season_1966_car.webp\": \"./src/img/season_1966_car.webp\",\n\t\"./season_1967.webp\": \"./src/img/season_1967.webp\",\n\t\"./season_1967_car.webp\": \"./src/img/season_1967_car.webp\",\n\t\"./season_1968.webp\": \"./src/img/season_1968.webp\",\n\t\"./season_1968_car.webp\": \"./src/img/season_1968_car.webp\",\n\t\"./season_1969.webp\": \"./src/img/season_1969.webp\",\n\t\"./season_1969_car.webp\": \"./src/img/season_1969_car.webp\",\n\t\"./season_1970.webp\": \"./src/img/season_1970.webp\",\n\t\"./season_1970_2.webp\": \"./src/img/season_1970_2.webp\",\n\t\"./season_1970_car.webp\": \"./src/img/season_1970_car.webp\",\n\t\"./season_1971.webp\": \"./src/img/season_1971.webp\",\n\t\"./season_1971_car.webp\": \"./src/img/season_1971_car.webp\",\n\t\"./season_1972.webp\": \"./src/img/season_1972.webp\",\n\t\"./season_1972_car.webp\": \"./src/img/season_1972_car.webp\",\n\t\"./season_1973.webp\": \"./src/img/season_1973.webp\",\n\t\"./season_1973_2.webp\": \"./src/img/season_1973_2.webp\",\n\t\"./season_1973_car.webp\": \"./src/img/season_1973_car.webp\",\n\t\"./season_1974.webp\": \"./src/img/season_1974.webp\",\n\t\"./season_1974_car.webp\": \"./src/img/season_1974_car.webp\",\n\t\"./season_1975.webp\": \"./src/img/season_1975.webp\",\n\t\"./season_1975_car.webp\": \"./src/img/season_1975_car.webp\",\n\t\"./season_1976.webp\": \"./src/img/season_1976.webp\",\n\t\"./season_1976_2.webp\": \"./src/img/season_1976_2.webp\",\n\t\"./season_1976_car.webp\": \"./src/img/season_1976_car.webp\",\n\t\"./season_1977.webp\": \"./src/img/season_1977.webp\",\n\t\"./season_1977_car.webp\": \"./src/img/season_1977_car.webp\",\n\t\"./season_1978.webp\": \"./src/img/season_1978.webp\",\n\t\"./season_1978_car.webp\": \"./src/img/season_1978_car.webp\",\n\t\"./season_1979.webp\": \"./src/img/season_1979.webp\",\n\t\"./season_1979_car.webp\": \"./src/img/season_1979_car.webp\",\n\t\"./season_1980.webp\": \"./src/img/season_1980.webp\",\n\t\"./season_1980_2.webp\": \"./src/img/season_1980_2.webp\",\n\t\"./season_1980_car.webp\": \"./src/img/season_1980_car.webp\",\n\t\"./season_1981.webp\": \"./src/img/season_1981.webp\",\n\t\"./season_1981_car.webp\": \"./src/img/season_1981_car.webp\",\n\t\"./season_1982.webp\": \"./src/img/season_1982.webp\",\n\t\"./season_1982_car.webp\": \"./src/img/season_1982_car.webp\",\n\t\"./season_1983.webp\": \"./src/img/season_1983.webp\",\n\t\"./season_1983_car.webp\": \"./src/img/season_1983_car.webp\",\n\t\"./season_1984.webp\": \"./src/img/season_1984.webp\",\n\t\"./season_1984_car.webp\": \"./src/img/season_1984_car.webp\",\n\t\"./season_1985.webp\": \"./src/img/season_1985.webp\",\n\t\"./season_1985_car.webp\": \"./src/img/season_1985_car.webp\",\n\t\"./season_1986.webp\": \"./src/img/season_1986.webp\",\n\t\"./season_1986_car.webp\": \"./src/img/season_1986_car.webp\",\n\t\"./season_1987.webp\": \"./src/img/season_1987.webp\",\n\t\"./season_1987_car.webp\": \"./src/img/season_1987_car.webp\",\n\t\"./season_1988.webp\": \"./src/img/season_1988.webp\",\n\t\"./season_1988_2.webp\": \"./src/img/season_1988_2.webp\",\n\t\"./season_1988_car.webp\": \"./src/img/season_1988_car.webp\",\n\t\"./season_1989.webp\": \"./src/img/season_1989.webp\",\n\t\"./season_1989_car.webp\": \"./src/img/season_1989_car.webp\",\n\t\"./season_1990.webp\": \"./src/img/season_1990.webp\",\n\t\"./season_1990_2.webp\": \"./src/img/season_1990_2.webp\",\n\t\"./season_1990_car.webp\": \"./src/img/season_1990_car.webp\",\n\t\"./season_1991.webp\": \"./src/img/season_1991.webp\",\n\t\"./season_1991_2.webp\": \"./src/img/season_1991_2.webp\",\n\t\"./season_1991_3.webp\": \"./src/img/season_1991_3.webp\",\n\t\"./season_1991_car.webp\": \"./src/img/season_1991_car.webp\",\n\t\"./season_1992.webp\": \"./src/img/season_1992.webp\",\n\t\"./season_1992_2.webp\": \"./src/img/season_1992_2.webp\",\n\t\"./season_1992_car.webp\": \"./src/img/season_1992_car.webp\",\n\t\"./season_1993.webp\": \"./src/img/season_1993.webp\",\n\t\"./season_1993_2.webp\": \"./src/img/season_1993_2.webp\",\n\t\"./season_1993_3.webp\": \"./src/img/season_1993_3.webp\",\n\t\"./season_1993_car.webp\": \"./src/img/season_1993_car.webp\",\n\t\"./season_1994.webp\": \"./src/img/season_1994.webp\",\n\t\"./season_1994_2.webp\": \"./src/img/season_1994_2.webp\",\n\t\"./season_1994_car.webp\": \"./src/img/season_1994_car.webp\",\n\t\"./season_1995.webp\": \"./src/img/season_1995.webp\",\n\t\"./season_1995_2.webp\": \"./src/img/season_1995_2.webp\",\n\t\"./season_1995_car.webp\": \"./src/img/season_1995_car.webp\",\n\t\"./season_1996.webp\": \"./src/img/season_1996.webp\",\n\t\"./season_1996_2.webp\": \"./src/img/season_1996_2.webp\",\n\t\"./season_1996_car.webp\": \"./src/img/season_1996_car.webp\",\n\t\"./season_1997.webp\": \"./src/img/season_1997.webp\",\n\t\"./season_1997_car.webp\": \"./src/img/season_1997_car.webp\",\n\t\"./season_1998.webp\": \"./src/img/season_1998.webp\",\n\t\"./season_1998_car.webp\": \"./src/img/season_1998_car.webp\",\n\t\"./season_1999.webp\": \"./src/img/season_1999.webp\",\n\t\"./season_1999_2.webp\": \"./src/img/season_1999_2.webp\",\n\t\"./season_1999_3.webp\": \"./src/img/season_1999_3.webp\",\n\t\"./season_1999_car.webp\": \"./src/img/season_1999_car.webp\",\n\t\"./season_2000.webp\": \"./src/img/season_2000.webp\",\n\t\"./season_2000_1.webp\": \"./src/img/season_2000_1.webp\",\n\t\"./season_2000_car.webp\": \"./src/img/season_2000_car.webp\",\n\t\"./season_2001.webp\": \"./src/img/season_2001.webp\",\n\t\"./season_2001_1.webp\": \"./src/img/season_2001_1.webp\",\n\t\"./season_2001_car.webp\": \"./src/img/season_2001_car.webp\",\n\t\"./season_2002.webp\": \"./src/img/season_2002.webp\",\n\t\"./season_2002_1.webp\": \"./src/img/season_2002_1.webp\",\n\t\"./season_2002_2.webp\": \"./src/img/season_2002_2.webp\",\n\t\"./season_2002_3.webp\": \"./src/img/season_2002_3.webp\",\n\t\"./season_2002_car.webp\": \"./src/img/season_2002_car.webp\",\n\t\"./season_2003.webp\": \"./src/img/season_2003.webp\",\n\t\"./season_2003_1.webp\": \"./src/img/season_2003_1.webp\",\n\t\"./season_2003_2.webp\": \"./src/img/season_2003_2.webp\",\n\t\"./season_2003_car.webp\": \"./src/img/season_2003_car.webp\",\n\t\"./season_2004.webp\": \"./src/img/season_2004.webp\",\n\t\"./season_2004_1.webp\": \"./src/img/season_2004_1.webp\",\n\t\"./season_2004_2.webp\": \"./src/img/season_2004_2.webp\",\n\t\"./season_2004_car.webp\": \"./src/img/season_2004_car.webp\",\n\t\"./season_2005.webp\": \"./src/img/season_2005.webp\",\n\t\"./season_2005_1.webp\": \"./src/img/season_2005_1.webp\",\n\t\"./season_2005_car.webp\": \"./src/img/season_2005_car.webp\",\n\t\"./season_2006.webp\": \"./src/img/season_2006.webp\",\n\t\"./season_2006_1.webp\": \"./src/img/season_2006_1.webp\",\n\t\"./season_2006_2.webp\": \"./src/img/season_2006_2.webp\",\n\t\"./season_2006_5.webp\": \"./src/img/season_2006_5.webp\",\n\t\"./season_2006_6.webp\": \"./src/img/season_2006_6.webp\",\n\t\"./season_2006_car.webp\": \"./src/img/season_2006_car.webp\",\n\t\"./season_2007.webp\": \"./src/img/season_2007.webp\",\n\t\"./season_2007_2.webp\": \"./src/img/season_2007_2.webp\",\n\t\"./season_2007_3.webp\": \"./src/img/season_2007_3.webp\",\n\t\"./season_2007_4.webp\": \"./src/img/season_2007_4.webp\",\n\t\"./season_2007_5.webp\": \"./src/img/season_2007_5.webp\",\n\t\"./season_2007_6.webp\": \"./src/img/season_2007_6.webp\",\n\t\"./season_2007_7.webp\": \"./src/img/season_2007_7.webp\",\n\t\"./season_2007_car.webp\": \"./src/img/season_2007_car.webp\",\n\t\"./season_2008.webp\": \"./src/img/season_2008.webp\",\n\t\"./season_2008_3.webp\": \"./src/img/season_2008_3.webp\",\n\t\"./season_2008_4.webp\": \"./src/img/season_2008_4.webp\",\n\t\"./season_2008_5.webp\": \"./src/img/season_2008_5.webp\",\n\t\"./season_2008_car.webp\": \"./src/img/season_2008_car.webp\",\n\t\"./season_2009.webp\": \"./src/img/season_2009.webp\",\n\t\"./season_2009_3.webp\": \"./src/img/season_2009_3.webp\",\n\t\"./season_2009_4.webp\": \"./src/img/season_2009_4.webp\",\n\t\"./season_2009_5.webp\": \"./src/img/season_2009_5.webp\",\n\t\"./season_2009_car.webp\": \"./src/img/season_2009_car.webp\",\n\t\"./season_2010.webp\": \"./src/img/season_2010.webp\",\n\t\"./season_2010_car.webp\": \"./src/img/season_2010_car.webp\",\n\t\"./season_2011.webp\": \"./src/img/season_2011.webp\",\n\t\"./season_2011_2.webp\": \"./src/img/season_2011_2.webp\",\n\t\"./season_2011_car.webp\": \"./src/img/season_2011_car.webp\",\n\t\"./season_2012.webp\": \"./src/img/season_2012.webp\",\n\t\"./season_2012_2.webp\": \"./src/img/season_2012_2.webp\",\n\t\"./season_2012_car.webp\": \"./src/img/season_2012_car.webp\",\n\t\"./season_2013.webp\": \"./src/img/season_2013.webp\",\n\t\"./season_2013_2.webp\": \"./src/img/season_2013_2.webp\",\n\t\"./season_2013_3.webp\": \"./src/img/season_2013_3.webp\",\n\t\"./season_2013_car.webp\": \"./src/img/season_2013_car.webp\",\n\t\"./season_2014.webp\": \"./src/img/season_2014.webp\",\n\t\"./season_2014_2.webp\": \"./src/img/season_2014_2.webp\",\n\t\"./season_2014_3.webp\": \"./src/img/season_2014_3.webp\",\n\t\"./season_2014_4.webp\": \"./src/img/season_2014_4.webp\",\n\t\"./season_2014_car.webp\": \"./src/img/season_2014_car.webp\",\n\t\"./season_2015.webp\": \"./src/img/season_2015.webp\",\n\t\"./season_2015_car.webp\": \"./src/img/season_2015_car.webp\",\n\t\"./season_2016.webp\": \"./src/img/season_2016.webp\",\n\t\"./season_2016_1.webp\": \"./src/img/season_2016_1.webp\",\n\t\"./season_2016_car.webp\": \"./src/img/season_2016_car.webp\",\n\t\"./season_2017.webp\": \"./src/img/season_2017.webp\",\n\t\"./season_2017_2.webp\": \"./src/img/season_2017_2.webp\",\n\t\"./season_2017_3.webp\": \"./src/img/season_2017_3.webp\",\n\t\"./season_2017_4.webp\": \"./src/img/season_2017_4.webp\",\n\t\"./season_2017_5.webp\": \"./src/img/season_2017_5.webp\",\n\t\"./season_2017_car.webp\": \"./src/img/season_2017_car.webp\",\n\t\"./season_2018.webp\": \"./src/img/season_2018.webp\",\n\t\"./season_2018_car.webp\": \"./src/img/season_2018_car.webp\",\n\t\"./season_2019.webp\": \"./src/img/season_2019.webp\",\n\t\"./season_2019_car.webp\": \"./src/img/season_2019_car.webp\",\n\t\"./season_2020.webp\": \"./src/img/season_2020.webp\",\n\t\"./season_2020_1.webp\": \"./src/img/season_2020_1.webp\",\n\t\"./season_2020_car.webp\": \"./src/img/season_2020_car.webp\",\n\t\"./season_2021.webp\": \"./src/img/season_2021.webp\",\n\t\"./season_2021_2.webp\": \"./src/img/season_2021_2.webp\",\n\t\"./season_2021_3.webp\": \"./src/img/season_2021_3.webp\",\n\t\"./season_2021_car.webp\": \"./src/img/season_2021_car.webp\",\n\t\"./season_2022.webp\": \"./src/img/season_2022.webp\",\n\t\"./season_2022_car.webp\": \"./src/img/season_2022_car.webp\",\n\t\"./season_2023.webp\": \"./src/img/season_2023.webp\",\n\t\"./season_2024.webp\": \"./src/img/season_2024.webp\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./src/img sync recursive ^\\\\.\\\\/.*\\\\.webp$\";\n\n//# sourceURL=webpack://formula1charts/./src/img/_sync_^\\.\\/.*\\.webp$?");
+eval("var map = {\n\t\"./default_image.webp\": \"./src/img/default_image.webp\",\n\t\"./f1_background_ferrari_2.webp\": \"./src/img/f1_background_ferrari_2.webp\",\n\t\"./f1_background_ferrari_3.webp\": \"./src/img/f1_background_ferrari_3.webp\",\n\t\"./f1_background_mercedes_4.webp\": \"./src/img/f1_background_mercedes_4.webp\",\n\t\"./f1_background_mercedes_5.webp\": \"./src/img/f1_background_mercedes_5.webp\",\n\t\"./f1_background_pilot_1.webp\": \"./src/img/f1_background_pilot_1.webp\",\n\t\"./season_1950_car.webp\": \"./src/img/season_1950_car.webp\",\n\t\"./season_1951.webp\": \"./src/img/season_1951.webp\",\n\t\"./season_1951_car.webp\": \"./src/img/season_1951_car.webp\",\n\t\"./season_1952_car.webp\": \"./src/img/season_1952_car.webp\",\n\t\"./season_1953_car.webp\": \"./src/img/season_1953_car.webp\",\n\t\"./season_1954_car.webp\": \"./src/img/season_1954_car.webp\",\n\t\"./season_1955_car.webp\": \"./src/img/season_1955_car.webp\",\n\t\"./season_1956_car.webp\": \"./src/img/season_1956_car.webp\",\n\t\"./season_1957_car.webp\": \"./src/img/season_1957_car.webp\",\n\t\"./season_1958.webp\": \"./src/img/season_1958.webp\",\n\t\"./season_1958_car.webp\": \"./src/img/season_1958_car.webp\",\n\t\"./season_1959.webp\": \"./src/img/season_1959.webp\",\n\t\"./season_1959_car.webp\": \"./src/img/season_1959_car.webp\",\n\t\"./season_1960.webp\": \"./src/img/season_1960.webp\",\n\t\"./season_1960_car.webp\": \"./src/img/season_1960_car.webp\",\n\t\"./season_1961_car.webp\": \"./src/img/season_1961_car.webp\",\n\t\"./season_1962.webp\": \"./src/img/season_1962.webp\",\n\t\"./season_1962_car.webp\": \"./src/img/season_1962_car.webp\",\n\t\"./season_1963_car.webp\": \"./src/img/season_1963_car.webp\",\n\t\"./season_1964.webp\": \"./src/img/season_1964.webp\",\n\t\"./season_1964_car.webp\": \"./src/img/season_1964_car.webp\",\n\t\"./season_1965_car.webp\": \"./src/img/season_1965_car.webp\",\n\t\"./season_1966.webp\": \"./src/img/season_1966.webp\",\n\t\"./season_1966_car.webp\": \"./src/img/season_1966_car.webp\",\n\t\"./season_1967.webp\": \"./src/img/season_1967.webp\",\n\t\"./season_1967_car.webp\": \"./src/img/season_1967_car.webp\",\n\t\"./season_1968.webp\": \"./src/img/season_1968.webp\",\n\t\"./season_1968_car.webp\": \"./src/img/season_1968_car.webp\",\n\t\"./season_1969.webp\": \"./src/img/season_1969.webp\",\n\t\"./season_1969_car.webp\": \"./src/img/season_1969_car.webp\",\n\t\"./season_1970.webp\": \"./src/img/season_1970.webp\",\n\t\"./season_1970_car.webp\": \"./src/img/season_1970_car.webp\",\n\t\"./season_1971.webp\": \"./src/img/season_1971.webp\",\n\t\"./season_1971_car.webp\": \"./src/img/season_1971_car.webp\",\n\t\"./season_1972.webp\": \"./src/img/season_1972.webp\",\n\t\"./season_1972_car.webp\": \"./src/img/season_1972_car.webp\",\n\t\"./season_1973.webp\": \"./src/img/season_1973.webp\",\n\t\"./season_1973_car.webp\": \"./src/img/season_1973_car.webp\",\n\t\"./season_1974.webp\": \"./src/img/season_1974.webp\",\n\t\"./season_1974_car.webp\": \"./src/img/season_1974_car.webp\",\n\t\"./season_1975.webp\": \"./src/img/season_1975.webp\",\n\t\"./season_1975_car.webp\": \"./src/img/season_1975_car.webp\",\n\t\"./season_1976.webp\": \"./src/img/season_1976.webp\",\n\t\"./season_1976_car.webp\": \"./src/img/season_1976_car.webp\",\n\t\"./season_1977.webp\": \"./src/img/season_1977.webp\",\n\t\"./season_1977_car.webp\": \"./src/img/season_1977_car.webp\",\n\t\"./season_1978.webp\": \"./src/img/season_1978.webp\",\n\t\"./season_1978_car.webp\": \"./src/img/season_1978_car.webp\",\n\t\"./season_1979.webp\": \"./src/img/season_1979.webp\",\n\t\"./season_1979_car.webp\": \"./src/img/season_1979_car.webp\",\n\t\"./season_1980.webp\": \"./src/img/season_1980.webp\",\n\t\"./season_1980_car.webp\": \"./src/img/season_1980_car.webp\",\n\t\"./season_1981.webp\": \"./src/img/season_1981.webp\",\n\t\"./season_1981_car.webp\": \"./src/img/season_1981_car.webp\",\n\t\"./season_1982.webp\": \"./src/img/season_1982.webp\",\n\t\"./season_1982_car.webp\": \"./src/img/season_1982_car.webp\",\n\t\"./season_1983.webp\": \"./src/img/season_1983.webp\",\n\t\"./season_1983_car.webp\": \"./src/img/season_1983_car.webp\",\n\t\"./season_1984.webp\": \"./src/img/season_1984.webp\",\n\t\"./season_1984_car.webp\": \"./src/img/season_1984_car.webp\",\n\t\"./season_1985.webp\": \"./src/img/season_1985.webp\",\n\t\"./season_1985_car.webp\": \"./src/img/season_1985_car.webp\",\n\t\"./season_1986.webp\": \"./src/img/season_1986.webp\",\n\t\"./season_1986_car.webp\": \"./src/img/season_1986_car.webp\",\n\t\"./season_1987.webp\": \"./src/img/season_1987.webp\",\n\t\"./season_1987_car.webp\": \"./src/img/season_1987_car.webp\",\n\t\"./season_1988.webp\": \"./src/img/season_1988.webp\",\n\t\"./season_1988_car.webp\": \"./src/img/season_1988_car.webp\",\n\t\"./season_1989.webp\": \"./src/img/season_1989.webp\",\n\t\"./season_1989_car.webp\": \"./src/img/season_1989_car.webp\",\n\t\"./season_1990.webp\": \"./src/img/season_1990.webp\",\n\t\"./season_1990_car.webp\": \"./src/img/season_1990_car.webp\",\n\t\"./season_1991.webp\": \"./src/img/season_1991.webp\",\n\t\"./season_1991_car.webp\": \"./src/img/season_1991_car.webp\",\n\t\"./season_1992.webp\": \"./src/img/season_1992.webp\",\n\t\"./season_1992_car.webp\": \"./src/img/season_1992_car.webp\",\n\t\"./season_1993.webp\": \"./src/img/season_1993.webp\",\n\t\"./season_1993_car.webp\": \"./src/img/season_1993_car.webp\",\n\t\"./season_1994.webp\": \"./src/img/season_1994.webp\",\n\t\"./season_1994_car.webp\": \"./src/img/season_1994_car.webp\",\n\t\"./season_1995.webp\": \"./src/img/season_1995.webp\",\n\t\"./season_1995_car.webp\": \"./src/img/season_1995_car.webp\",\n\t\"./season_1996.webp\": \"./src/img/season_1996.webp\",\n\t\"./season_1996_car.webp\": \"./src/img/season_1996_car.webp\",\n\t\"./season_1997.webp\": \"./src/img/season_1997.webp\",\n\t\"./season_1997_car.webp\": \"./src/img/season_1997_car.webp\",\n\t\"./season_1998.webp\": \"./src/img/season_1998.webp\",\n\t\"./season_1998_car.webp\": \"./src/img/season_1998_car.webp\",\n\t\"./season_1999.webp\": \"./src/img/season_1999.webp\",\n\t\"./season_1999_car.webp\": \"./src/img/season_1999_car.webp\",\n\t\"./season_2000.webp\": \"./src/img/season_2000.webp\",\n\t\"./season_2000_car.webp\": \"./src/img/season_2000_car.webp\",\n\t\"./season_2001.webp\": \"./src/img/season_2001.webp\",\n\t\"./season_2001_car.webp\": \"./src/img/season_2001_car.webp\",\n\t\"./season_2002.webp\": \"./src/img/season_2002.webp\",\n\t\"./season_2002_car.webp\": \"./src/img/season_2002_car.webp\",\n\t\"./season_2003.webp\": \"./src/img/season_2003.webp\",\n\t\"./season_2003_car.webp\": \"./src/img/season_2003_car.webp\",\n\t\"./season_2004.webp\": \"./src/img/season_2004.webp\",\n\t\"./season_2004_car.webp\": \"./src/img/season_2004_car.webp\",\n\t\"./season_2005.webp\": \"./src/img/season_2005.webp\",\n\t\"./season_2005_car.webp\": \"./src/img/season_2005_car.webp\",\n\t\"./season_2006.webp\": \"./src/img/season_2006.webp\",\n\t\"./season_2006_car.webp\": \"./src/img/season_2006_car.webp\",\n\t\"./season_2007.webp\": \"./src/img/season_2007.webp\",\n\t\"./season_2007_car.webp\": \"./src/img/season_2007_car.webp\",\n\t\"./season_2008.webp\": \"./src/img/season_2008.webp\",\n\t\"./season_2008_car.webp\": \"./src/img/season_2008_car.webp\",\n\t\"./season_2009.webp\": \"./src/img/season_2009.webp\",\n\t\"./season_2009_car.webp\": \"./src/img/season_2009_car.webp\",\n\t\"./season_2010.webp\": \"./src/img/season_2010.webp\",\n\t\"./season_2010_car.webp\": \"./src/img/season_2010_car.webp\",\n\t\"./season_2011.webp\": \"./src/img/season_2011.webp\",\n\t\"./season_2011_car.webp\": \"./src/img/season_2011_car.webp\",\n\t\"./season_2012.webp\": \"./src/img/season_2012.webp\",\n\t\"./season_2012_car.webp\": \"./src/img/season_2012_car.webp\",\n\t\"./season_2013.webp\": \"./src/img/season_2013.webp\",\n\t\"./season_2013_car.webp\": \"./src/img/season_2013_car.webp\",\n\t\"./season_2014.webp\": \"./src/img/season_2014.webp\",\n\t\"./season_2014_car.webp\": \"./src/img/season_2014_car.webp\",\n\t\"./season_2015.webp\": \"./src/img/season_2015.webp\",\n\t\"./season_2015_car.webp\": \"./src/img/season_2015_car.webp\",\n\t\"./season_2016.webp\": \"./src/img/season_2016.webp\",\n\t\"./season_2016_car.webp\": \"./src/img/season_2016_car.webp\",\n\t\"./season_2017.webp\": \"./src/img/season_2017.webp\",\n\t\"./season_2017_car.webp\": \"./src/img/season_2017_car.webp\",\n\t\"./season_2018.webp\": \"./src/img/season_2018.webp\",\n\t\"./season_2018_car.webp\": \"./src/img/season_2018_car.webp\",\n\t\"./season_2019.webp\": \"./src/img/season_2019.webp\",\n\t\"./season_2019_car.webp\": \"./src/img/season_2019_car.webp\",\n\t\"./season_2020.webp\": \"./src/img/season_2020.webp\",\n\t\"./season_2020_car.webp\": \"./src/img/season_2020_car.webp\",\n\t\"./season_2021.webp\": \"./src/img/season_2021.webp\",\n\t\"./season_2021_car.webp\": \"./src/img/season_2021_car.webp\",\n\t\"./season_2022.webp\": \"./src/img/season_2022.webp\",\n\t\"./season_2022_car.webp\": \"./src/img/season_2022_car.webp\",\n\t\"./season_2023.webp\": \"./src/img/season_2023.webp\",\n\t\"./season_2024.webp\": \"./src/img/season_2024.webp\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./src/img sync recursive ^\\\\.\\\\/.*\\\\.webp$\";\n\n//# sourceURL=webpack://formula1charts/./src/img/_sync_^\\.\\/.*\\.webp$?");
 
 /***/ }),
 
@@ -440,62 +440,7 @@ eval("var map = {\n\t\"./default_image.webp\": \"./src/img/default_image.webp\",
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"3d3c515abd94667ee8cb35a43a0bab6d.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/default_image.webp?");
-
-/***/ }),
-
-/***/ "./src/img/f1_background_1.webp":
-/*!**************************************!*\
-  !*** ./src/img/f1_background_1.webp ***!
-  \**************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"48b4db4442ec87a4f7998a4dc62bdae4.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/f1_background_1.webp?");
-
-/***/ }),
-
-/***/ "./src/img/f1_background_2.webp":
-/*!**************************************!*\
-  !*** ./src/img/f1_background_2.webp ***!
-  \**************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"94bb290b5c71db4eb60a4276828a857c.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/f1_background_2.webp?");
-
-/***/ }),
-
-/***/ "./src/img/f1_background_3.webp":
-/*!**************************************!*\
-  !*** ./src/img/f1_background_3.webp ***!
-  \**************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"e9c9d85afc04657643218b6b562c1c4a.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/f1_background_3.webp?");
-
-/***/ }),
-
-/***/ "./src/img/f1_background_alonso_1.webp":
-/*!*********************************************!*\
-  !*** ./src/img/f1_background_alonso_1.webp ***!
-  \*********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"ba0fb6b9bc751bb3209fdf04fdb6e601.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/f1_background_alonso_1.webp?");
-
-/***/ }),
-
-/***/ "./src/img/f1_background_ferrari_1.webp":
-/*!**********************************************!*\
-  !*** ./src/img/f1_background_ferrari_1.webp ***!
-  \**********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"bb949e594fe81848caab710c9237a8ca.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/f1_background_ferrari_1.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"384092b71c77b67b33b5dadbedbe24f9.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/default_image.webp?");
 
 /***/ }),
 
@@ -506,7 +451,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"5e6fc0877d6975f823d01df73148633d.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/f1_background_ferrari_2.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"6ef5532f10aa05c0ab66bb1240fdc1be.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/f1_background_ferrari_2.webp?");
 
 /***/ }),
 
@@ -517,51 +462,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"52421fe566c132dc26a134ae1932da79.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/f1_background_ferrari_3.webp?");
-
-/***/ }),
-
-/***/ "./src/img/f1_background_mclaren_1.webp":
-/*!**********************************************!*\
-  !*** ./src/img/f1_background_mclaren_1.webp ***!
-  \**********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"b48d9db2689ea32bbc2c6b324e901532.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/f1_background_mclaren_1.webp?");
-
-/***/ }),
-
-/***/ "./src/img/f1_background_mercedes_1.webp":
-/*!***********************************************!*\
-  !*** ./src/img/f1_background_mercedes_1.webp ***!
-  \***********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"214af09c22056a2579db4bbb43e80e96.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/f1_background_mercedes_1.webp?");
-
-/***/ }),
-
-/***/ "./src/img/f1_background_mercedes_2.webp":
-/*!***********************************************!*\
-  !*** ./src/img/f1_background_mercedes_2.webp ***!
-  \***********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"aeb4ed16483e01ea097681564b6658d0.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/f1_background_mercedes_2.webp?");
-
-/***/ }),
-
-/***/ "./src/img/f1_background_mercedes_3.webp":
-/*!***********************************************!*\
-  !*** ./src/img/f1_background_mercedes_3.webp ***!
-  \***********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"b746d9e0bb44f5d7ecf34fc19b76064f.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/f1_background_mercedes_3.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"ab761d4498d474ae97e5a2b851172710.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/f1_background_ferrari_3.webp?");
 
 /***/ }),
 
@@ -572,7 +473,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"606a83ade5ab0f80dd1cae569635824b.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/f1_background_mercedes_4.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"4a8c5665f0931ab9dad73fe77c7b17cd.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/f1_background_mercedes_4.webp?");
 
 /***/ }),
 
@@ -583,7 +484,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"210940a09ca301656e2edb1676755c50.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/f1_background_mercedes_5.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"15ad8838eba9aa7091f8167e31a832d7.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/f1_background_mercedes_5.webp?");
 
 /***/ }),
 
@@ -594,18 +495,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"3412f10a3fe137ca2aa3a1c65bd82d53.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/f1_background_pilot_1.webp?");
-
-/***/ }),
-
-/***/ "./src/img/f1_shumacher_1.webp":
-/*!*************************************!*\
-  !*** ./src/img/f1_shumacher_1.webp ***!
-  \*************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"7d0aa3c765440222ff429cc5dedfb12c.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/f1_shumacher_1.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"7fd04e711803ee6b8c0bbed31529e18e.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/f1_background_pilot_1.webp?");
 
 /***/ }),
 
@@ -616,7 +506,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"76b91c0d1ead34004cdbfeb2b1cce94e.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1950_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"7e7880aeeb45b2d9f066ac90866bd3ca.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1950_car.webp?");
 
 /***/ }),
 
@@ -627,7 +517,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"dddf7f3e6143b730f91e25013f6ec1b5.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1951.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"6fd27e175c979a9a379c4f4636cfc41c.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1951.webp?");
 
 /***/ }),
 
@@ -638,7 +528,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"f0cae93c1c79b056c757a7ff5bfbc8f9.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1951_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"22bc09c3780df2c3cf114b801a32cf73.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1951_car.webp?");
 
 /***/ }),
 
@@ -649,7 +539,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"83e7fb0bcebe240a480348756d017b3b.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1952_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"77d451dc54c9fb9d5dd441d1ec5fb1d8.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1952_car.webp?");
 
 /***/ }),
 
@@ -660,7 +550,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"e614596a6783821ab5c594cb76d10ac9.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1953_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"521f6256a69cd1adeec3f230294f7fb0.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1953_car.webp?");
 
 /***/ }),
 
@@ -671,7 +561,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"70fecc1de971b54a62164d5f931a14e8.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1954_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"42778dd118aa56d27e887cc8efd625bd.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1954_car.webp?");
 
 /***/ }),
 
@@ -682,7 +572,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"e2b4532e50fd36688b0b345ec1adb262.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1955_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"3f4a7a7ff7ae62a546a997e669b06bab.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1955_car.webp?");
 
 /***/ }),
 
@@ -693,7 +583,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"0e1358f22a5070412a8dbb8057a05b12.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1956_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"0a41507055fd065fb896c05f1dd5970b.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1956_car.webp?");
 
 /***/ }),
 
@@ -704,7 +594,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"ab76006b9c7b429dee66e999553a1b1a.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1957_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"5b392d86ab15c5229993011f5a7e310e.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1957_car.webp?");
 
 /***/ }),
 
@@ -715,7 +605,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"6a1a8f5d74672a27e773798b8a2e5982.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1958.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"a574e002d5bc381052c4c709b9606110.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1958.webp?");
 
 /***/ }),
 
@@ -726,7 +616,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"f3b48627779552146b349ab5bc193b59.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1958_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"442becae5e8dfcf10ccbbf1f339ccb76.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1958_car.webp?");
 
 /***/ }),
 
@@ -737,7 +627,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"2264cf970721a7c60ae23d311e1a11e9.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1959.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"626c230c4c963ce1bb5ec7c7f4be3cde.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1959.webp?");
 
 /***/ }),
 
@@ -748,7 +638,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"27081d9e39c642390fb289faf3f8cd86.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1959_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"6af0fc8f8f22e76a109bc1ff4d1a2fb1.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1959_car.webp?");
 
 /***/ }),
 
@@ -759,7 +649,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"b99112da1089050e75a42d6aaaf069fc.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1960.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"353ed59962526ae0f25555cad9d18f8b.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1960.webp?");
 
 /***/ }),
 
@@ -770,7 +660,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"0a2fbeb64c8525a07a798f51ca657fa6.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1960_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"b3d5692799d340b274ea8df1a92af6a1.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1960_car.webp?");
 
 /***/ }),
 
@@ -781,7 +671,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"b18d213a67ba8df02d1b538bf92dabe4.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1961_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"2dc8ea07db48d2e961736eab10e724b4.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1961_car.webp?");
 
 /***/ }),
 
@@ -792,18 +682,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"76da3f342a697b964ea4cffea7a66121.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1962.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_1962_2.webp":
-/*!************************************!*\
-  !*** ./src/img/season_1962_2.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"c7a142804a4d065746f02b68de50ce79.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1962_2.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"fbf61ce7a9dee51ada94c7a21aeef316.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1962.webp?");
 
 /***/ }),
 
@@ -814,7 +693,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"ace6d9cd7e40e7625275642cb3d4d86f.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1962_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"8a2f0cafdaa908b95da49de7e2a83bbe.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1962_car.webp?");
 
 /***/ }),
 
@@ -825,7 +704,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"ee1893464a901b487fb850fc97d7e500.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1963_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"ac7e8cefbdc65c73909c6fd0a3abbdeb.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1963_car.webp?");
 
 /***/ }),
 
@@ -836,7 +715,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"2b3f47fc0a497469d1a509b8a5b0ba33.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1964.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"3e3aebaad1d022c4d352d632efc12322.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1964.webp?");
 
 /***/ }),
 
@@ -847,7 +726,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"a5ce0b90ee2b5ef3fd9adb7086f42e23.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1964_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"f8aace4a800eb0ecc581516d623deb9c.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1964_car.webp?");
 
 /***/ }),
 
@@ -858,7 +737,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"4a5297a640561e4f8b612e36e88f7311.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1965_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"53a7a883af14e3b0d9cc9512171c27fc.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1965_car.webp?");
 
 /***/ }),
 
@@ -869,18 +748,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"ee4c2b3ba1f4729dd78e26080f8c3e31.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1966.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_1966_2.webp":
-/*!************************************!*\
-  !*** ./src/img/season_1966_2.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"c66e1296c9e5ec646475416f051f9556.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1966_2.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"a2aef15134306110fbb4c321fa47409f.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1966.webp?");
 
 /***/ }),
 
@@ -891,7 +759,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"e4f8c7f60f5147a70001d5e95535316f.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1966_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"5f3c6e3519bdf3c70e958db1f42a7502.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1966_car.webp?");
 
 /***/ }),
 
@@ -902,7 +770,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"32a1cdae478126298468f9fd86d15f64.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1967.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"7ae8fbe89ed5013320a0373268378aee.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1967.webp?");
 
 /***/ }),
 
@@ -913,7 +781,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"0793ce9f3dfd88a35a3bc8d84caeee53.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1967_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"48050a4e9f689536e84f3a905f820824.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1967_car.webp?");
 
 /***/ }),
 
@@ -924,7 +792,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"1a28dd28442d498c6d8877a9fcbd4b0b.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1968.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"c83fe0b4cede282aa14040c5b7f43098.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1968.webp?");
 
 /***/ }),
 
@@ -935,7 +803,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"7bc044d4a12b911591a9cd1de758db53.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1968_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"b42c09600ef341ced765e1b07e1477a5.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1968_car.webp?");
 
 /***/ }),
 
@@ -946,7 +814,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"af6f544c51bc7c47c07fd8e866567e19.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1969.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"5f0345ff3918fb2e30d6c5395905ead4.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1969.webp?");
 
 /***/ }),
 
@@ -957,7 +825,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"e6d3659147f83d917f297005ddcec7f8.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1969_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"0efcdf03fb9fe33a916dcdc1bdd2548f.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1969_car.webp?");
 
 /***/ }),
 
@@ -968,18 +836,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"720e80574d1bbb110875526683ed909a.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1970.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_1970_2.webp":
-/*!************************************!*\
-  !*** ./src/img/season_1970_2.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"45b67c15f7d7c093c4a94009e60aa874.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1970_2.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"c86c6bda7716c545f4df319607e87532.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1970.webp?");
 
 /***/ }),
 
@@ -990,7 +847,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"b5e22c85e6919e8c0e7a55c09db553c5.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1970_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"caed82fd78cbeaecb25b6a565e3d882f.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1970_car.webp?");
 
 /***/ }),
 
@@ -1001,7 +858,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"82306f2369d15f65a09a01369b44e61c.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1971.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"778083fa514d1aff1f4fad811677357f.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1971.webp?");
 
 /***/ }),
 
@@ -1012,7 +869,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"f37864268f44000162d7b1fa80250fcd.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1971_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"dd6280f2ff363d1c20c7725a5500245c.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1971_car.webp?");
 
 /***/ }),
 
@@ -1023,7 +880,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"e98649708e4e5f017f47495fbd5c0573.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1972.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"e62a0e502debe914cae95a77a64bfe9d.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1972.webp?");
 
 /***/ }),
 
@@ -1034,7 +891,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"6268c5b31abcaa5239e523c1f38dc1c9.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1972_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"1a6d467391e0a6d01fdb1022f01f2b74.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1972_car.webp?");
 
 /***/ }),
 
@@ -1045,18 +902,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"d77e6f9fcea838eb297f812eb705a7b9.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1973.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_1973_2.webp":
-/*!************************************!*\
-  !*** ./src/img/season_1973_2.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"09a97fd1b6ad46cc5dc0ad8ecebab325.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1973_2.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"dc3ce422f545c84d89748092cf8f71f1.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1973.webp?");
 
 /***/ }),
 
@@ -1067,7 +913,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"9ea6dcbf7932a232db019320a637c060.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1973_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"0b2e96a8418f8af7d29949f92149bb31.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1973_car.webp?");
 
 /***/ }),
 
@@ -1078,7 +924,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"f23a9d9e23deb011e1d5d2ec62daa876.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1974.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"b0fb423159fe2ee9dba84ab892cee407.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1974.webp?");
 
 /***/ }),
 
@@ -1089,7 +935,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"b4031d1717508e863910b082401b2a8e.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1974_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"74e53565fdf58275d5f4193cd53afb63.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1974_car.webp?");
 
 /***/ }),
 
@@ -1100,7 +946,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"c0e322d5481041baa6d687feef3b0b5b.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1975.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"8efccb08f7611c201a6a0f6ac86a1f07.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1975.webp?");
 
 /***/ }),
 
@@ -1111,7 +957,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"c8b0607b2d54a590e8dd530ffe617309.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1975_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"be6b7f8d748ad53d23419c8d0a692221.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1975_car.webp?");
 
 /***/ }),
 
@@ -1122,18 +968,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"0664dcf0b41f9b8967efc72b311e0925.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1976.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_1976_2.webp":
-/*!************************************!*\
-  !*** ./src/img/season_1976_2.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"17c04752d54e204c25a933d6f6a35f7d.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1976_2.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"fa32ab40a1aa2b28790a27fed50bd2dc.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1976.webp?");
 
 /***/ }),
 
@@ -1144,7 +979,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"f68ab265cc90713d7c0c63dc4ccafd57.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1976_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"d461a3990417b6ec9564f13bac533a54.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1976_car.webp?");
 
 /***/ }),
 
@@ -1155,7 +990,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"27c4d9aad40748ff2e031565fd4afdff.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1977.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"f5a7e53617fcfdc24dc27e15efe9fe8d.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1977.webp?");
 
 /***/ }),
 
@@ -1166,7 +1001,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"0dad2a0fb03f15e12211c634399e3160.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1977_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"eb464204323cc7ec39f762c0ca6d23e0.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1977_car.webp?");
 
 /***/ }),
 
@@ -1177,7 +1012,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"6f888359d4732fdf21018ed127b74ac2.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1978.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"b4f7aa69b320d0cc555fffa460362573.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1978.webp?");
 
 /***/ }),
 
@@ -1188,7 +1023,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"a3b7bf363d43c6d2e311ca990a00ace0.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1978_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"f817274757b4665f8f59b98d9f2bd083.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1978_car.webp?");
 
 /***/ }),
 
@@ -1199,7 +1034,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"0c2ce5bef07449df11620f61b82508f6.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1979.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"00f43c38085816a45582634e101e4588.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1979.webp?");
 
 /***/ }),
 
@@ -1210,7 +1045,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"7117dd2ff79d84f11f4dd47c0453e2e7.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1979_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"0478eb6de8f36a5d79b5dc2a8ea1fb50.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1979_car.webp?");
 
 /***/ }),
 
@@ -1221,18 +1056,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"3dfa363cfc379ba6798ff739ec39f8ab.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1980.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_1980_2.webp":
-/*!************************************!*\
-  !*** ./src/img/season_1980_2.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"22a113d096cbb8abfdf5df67de6de778.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1980_2.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"796c3ebe3e691da4d05f7bbf69b58d99.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1980.webp?");
 
 /***/ }),
 
@@ -1243,7 +1067,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"a4c4b1f09d9d82b396120d975911d302.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1980_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"c9c0f279d96097d3cadc6106155535b6.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1980_car.webp?");
 
 /***/ }),
 
@@ -1254,7 +1078,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"1a9f8391ac4f79c84d60587fadcae50f.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1981.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"d520e0bec4394989bc459ce5f1ddb2a1.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1981.webp?");
 
 /***/ }),
 
@@ -1265,7 +1089,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"39e30eac0be01843f860b34624f91570.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1981_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"b11b0b3db96b6ad31769c6b255d934e5.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1981_car.webp?");
 
 /***/ }),
 
@@ -1276,7 +1100,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"a2d32345296cab293f4f351f52b56c32.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1982.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"87f5dc5b68f8763f04e0ce36b4a0f54b.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1982.webp?");
 
 /***/ }),
 
@@ -1287,7 +1111,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"96e2792309f5c0bcb42fd8b5a4a93759.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1982_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"f91f8163ea9591bca61a9ec74433feda.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1982_car.webp?");
 
 /***/ }),
 
@@ -1298,7 +1122,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"396b6c4af1278ac7738eb108942c0e91.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1983.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"44b01b72e46048831e973902a4c2149c.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1983.webp?");
 
 /***/ }),
 
@@ -1309,7 +1133,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"d56e904d502fcc29722c123ee400145f.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1983_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"509a5c7d3133269226351016dc5e42af.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1983_car.webp?");
 
 /***/ }),
 
@@ -1320,7 +1144,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"40516f0d133cbbe435844f75023f7b80.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1984.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"daa0e0c58e3c059e49fe15bbfc34d985.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1984.webp?");
 
 /***/ }),
 
@@ -1331,7 +1155,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"af83a92cb0e8bbfe1babe4a83a22bd79.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1984_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"7c0fa721219df1259bbbe853bb067db4.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1984_car.webp?");
 
 /***/ }),
 
@@ -1342,7 +1166,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"9a2c2ab9c9416f7e16e4ee636e842f98.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1985.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"933f5ea7cc6e83dd4c9f00bad0668791.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1985.webp?");
 
 /***/ }),
 
@@ -1353,7 +1177,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"83dbb01b4e8b6df77fa7429f3262823f.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1985_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"5cf6f34d1e1f9a5f20ea956a99702384.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1985_car.webp?");
 
 /***/ }),
 
@@ -1364,7 +1188,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"1e994003ccb476f1fc0618ec6e668982.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1986.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"d3af5f691edfda339137bd41f3f437dc.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1986.webp?");
 
 /***/ }),
 
@@ -1375,7 +1199,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"72fe7790dd7d77b42c1be7ac3826e9bf.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1986_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"5fc2b1e72ffcbb1f69592ea1cdd0c608.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1986_car.webp?");
 
 /***/ }),
 
@@ -1386,7 +1210,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"e9a05dd75304443b7b2e8cd2df7e907e.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1987.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"aa050b12dbd46a5746159d0b7284bf8f.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1987.webp?");
 
 /***/ }),
 
@@ -1397,7 +1221,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"99b1cd1abb98dec3967e764f214a1c41.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1987_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"46ad383039f2008a30e0c4f83d2a0c85.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1987_car.webp?");
 
 /***/ }),
 
@@ -1408,18 +1232,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"8f620f71d9fd313b06f8ed0fb22cdf12.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1988.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_1988_2.webp":
-/*!************************************!*\
-  !*** ./src/img/season_1988_2.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"e11ed3071db3d4b234a30e283a8dc923.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1988_2.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"acfb1e86ec255908dd84be748030c368.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1988.webp?");
 
 /***/ }),
 
@@ -1430,7 +1243,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"a213a50a6ad7bd89ccb3e63a19156f0c.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1988_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"6367844224e3968a2e5fa9327c72e597.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1988_car.webp?");
 
 /***/ }),
 
@@ -1441,7 +1254,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"2b2dc23f36d5f8bd09d0cb70a10c25e9.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1989.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"450961be7a36ba5ef07cd2a65d2baf82.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1989.webp?");
 
 /***/ }),
 
@@ -1452,7 +1265,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"12fe4e5c3bb062c751d31e8f20c06978.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1989_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"c83413247a7fea092d53a16508a2bebc.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1989_car.webp?");
 
 /***/ }),
 
@@ -1463,18 +1276,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"ba2f1d6239917f784ad1feab642d5c24.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1990.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_1990_2.webp":
-/*!************************************!*\
-  !*** ./src/img/season_1990_2.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"112fac9b2efc7fed8a4aff188f1ba521.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1990_2.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"e6f5afa09a5cbe50dbe3065ca1c9bbb0.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1990.webp?");
 
 /***/ }),
 
@@ -1485,7 +1287,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"7522f0b96d6c5a7377a384ddac41381d.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1990_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"aa63a707431af0d6e8d81c34eb4334de.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1990_car.webp?");
 
 /***/ }),
 
@@ -1496,29 +1298,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"f51ef4fd6bd89cd85186c8cfcba8cdf0.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1991.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_1991_2.webp":
-/*!************************************!*\
-  !*** ./src/img/season_1991_2.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"f09652f2ee3676551dcae7e14ce3cd55.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1991_2.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_1991_3.webp":
-/*!************************************!*\
-  !*** ./src/img/season_1991_3.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"ea3e9c8a20704543f5b54f150ed567e9.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1991_3.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"73a919859d29feae3487a50dbdf7f022.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1991.webp?");
 
 /***/ }),
 
@@ -1529,7 +1309,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"e7e5f7ad6996d826fc2fb82d5a81b911.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1991_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"cec26f35b61536e614de6f7631b1bc76.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1991_car.webp?");
 
 /***/ }),
 
@@ -1540,18 +1320,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"0c337d049b37907acc26d7d3405af237.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1992.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_1992_2.webp":
-/*!************************************!*\
-  !*** ./src/img/season_1992_2.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"bd42e661d5ea797608e21f328602b48f.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1992_2.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"6d2c5e11b9f5f595394c95d5610fac26.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1992.webp?");
 
 /***/ }),
 
@@ -1562,7 +1331,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"3524e21bf785576f0ff786b4c0d5f659.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1992_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"7a8a38e9349422bcbdda39dbddf8ba55.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1992_car.webp?");
 
 /***/ }),
 
@@ -1573,29 +1342,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"745def28ef930834c080fca5137ae24e.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1993.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_1993_2.webp":
-/*!************************************!*\
-  !*** ./src/img/season_1993_2.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"c201f225c9c78175f63f1b1dce504a47.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1993_2.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_1993_3.webp":
-/*!************************************!*\
-  !*** ./src/img/season_1993_3.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"276b57941769ce4f51b00f12b27d7ea2.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1993_3.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"57914da628d22999745ef9ab61eed0c0.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1993.webp?");
 
 /***/ }),
 
@@ -1606,7 +1353,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"a5fee6c0f44686c3770cff22cafefd0c.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1993_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"2dc38f263dcf6a5e3852087804a52b1d.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1993_car.webp?");
 
 /***/ }),
 
@@ -1617,18 +1364,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"319e2e349588fbdad0cfc4a6fadee574.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1994.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_1994_2.webp":
-/*!************************************!*\
-  !*** ./src/img/season_1994_2.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"657f8166677c0ca21c32b80a5db1d6bd.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1994_2.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"6e20350b15e7ada5ca3c0bb4a6a3e244.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1994.webp?");
 
 /***/ }),
 
@@ -1639,7 +1375,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"131719506b9ace67303d00f8f2d5d161.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1994_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"c799a9e8e68cd0ab13f376d197aa2247.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1994_car.webp?");
 
 /***/ }),
 
@@ -1650,18 +1386,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"c4670ed2feb71214d44fc32760f25d1e.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1995.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_1995_2.webp":
-/*!************************************!*\
-  !*** ./src/img/season_1995_2.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"630d0e3ce21c347f0874107f32849861.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1995_2.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"1a2518fa4ad22fa58dce7c58baef8b8e.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1995.webp?");
 
 /***/ }),
 
@@ -1672,7 +1397,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"36222f5d383e182529d2e8af6ca31ac5.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1995_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"43f0480baac0f6b2df07185311c89ffa.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1995_car.webp?");
 
 /***/ }),
 
@@ -1683,18 +1408,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"1924f1a10c675e99f85a1a3e55dac4c8.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1996.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_1996_2.webp":
-/*!************************************!*\
-  !*** ./src/img/season_1996_2.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"714e1ac83c67bf9625255fa75ecb72bc.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1996_2.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"1b0cd5713a5f123e82728db7b6b9be86.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1996.webp?");
 
 /***/ }),
 
@@ -1705,7 +1419,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"459a1dc98fc2d8d7affceb28824814c7.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1996_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"b0f64dc022b029377b4b910cdaf7482b.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1996_car.webp?");
 
 /***/ }),
 
@@ -1716,7 +1430,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"d8dee2e956b8f10fed77557910826b1c.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1997.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"fa0bd8d737a4947af04fb892239773e2.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1997.webp?");
 
 /***/ }),
 
@@ -1727,7 +1441,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"54b95596e3a06f7900ccdd95647d4087.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1997_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"13d2d867d0f79aaad87cecadd5586e67.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1997_car.webp?");
 
 /***/ }),
 
@@ -1738,7 +1452,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"df4637e76af5ccf20ebee41018d8b4be.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1998.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"4534a76326b875ad5421d4df4c0653ce.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1998.webp?");
 
 /***/ }),
 
@@ -1749,7 +1463,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"acdc8dbfd0a6c931eb570bb53d4911cd.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1998_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"0cbe069ccc4d351f0da285ca09dd543d.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1998_car.webp?");
 
 /***/ }),
 
@@ -1760,29 +1474,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"5a54a032bbcb4858f6d3c80a4d473b9e.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1999.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_1999_2.webp":
-/*!************************************!*\
-  !*** ./src/img/season_1999_2.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"07786057b3b46423c240a70ed037d13d.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1999_2.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_1999_3.webp":
-/*!************************************!*\
-  !*** ./src/img/season_1999_3.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"3ab6d45973a360c62d583acdee299850.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1999_3.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"80a1c032396da5c9f4548b73ee5b1df7.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1999.webp?");
 
 /***/ }),
 
@@ -1793,7 +1485,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"fdd66da1555583c0d99e69a02203fdd0.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1999_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"3a7212cfe27716636a00acc0f784898f.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_1999_car.webp?");
 
 /***/ }),
 
@@ -1804,18 +1496,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"7bbcd584273c6b3e88a0639414a1cb2c.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2000.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_2000_1.webp":
-/*!************************************!*\
-  !*** ./src/img/season_2000_1.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"f70a8ac12f54a2bdacde1592f24bbe2b.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2000_1.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"99947f70331832d07a9eea553d3d1030.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2000.webp?");
 
 /***/ }),
 
@@ -1826,7 +1507,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"343809c80d6348cda7d1d67e7531ec79.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2000_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"addd8c935f274bc11bb49685d8cef9a4.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2000_car.webp?");
 
 /***/ }),
 
@@ -1837,18 +1518,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"3488cc4d356aa45277335ec058893263.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2001.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_2001_1.webp":
-/*!************************************!*\
-  !*** ./src/img/season_2001_1.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"24ba613078d101ecbd1b595d02a7368d.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2001_1.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"813b5201f5b9ad59b8194b1b426d33d6.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2001.webp?");
 
 /***/ }),
 
@@ -1859,7 +1529,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"53aeca37305e85527302ba0b8e07a65a.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2001_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"6be26f373ced8eba5625e4ea494dfbdc.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2001_car.webp?");
 
 /***/ }),
 
@@ -1870,40 +1540,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"5287451583e34c1eb1fa503cb39b55ed.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2002.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_2002_1.webp":
-/*!************************************!*\
-  !*** ./src/img/season_2002_1.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"2b71f886b842512371a3eab3d2c90b47.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2002_1.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_2002_2.webp":
-/*!************************************!*\
-  !*** ./src/img/season_2002_2.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"122a663095f10959a700f9fa12b95a31.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2002_2.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_2002_3.webp":
-/*!************************************!*\
-  !*** ./src/img/season_2002_3.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"14589bd27d1e5da2b2964313b449ded6.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2002_3.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"c46c564dc2a23efa8fa1c1cb8ac84a1c.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2002.webp?");
 
 /***/ }),
 
@@ -1914,7 +1551,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"b47ca306d1363d7f5d4c094f1cdb8681.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2002_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"7b830911a23e4d1ff4002510f3e1f4d9.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2002_car.webp?");
 
 /***/ }),
 
@@ -1925,29 +1562,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"61515c43a5593a11b21697d4ca9d8c3b.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2003.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_2003_1.webp":
-/*!************************************!*\
-  !*** ./src/img/season_2003_1.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"aaf7ad7ad262cd36177b7e035e692edf.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2003_1.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_2003_2.webp":
-/*!************************************!*\
-  !*** ./src/img/season_2003_2.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"d44ea014b3c525238e10ee13197d5b94.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2003_2.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"8d1df3911d48f3f81223550b38b4a949.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2003.webp?");
 
 /***/ }),
 
@@ -1958,7 +1573,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"474bbbac1e88a2ee40609f15682eeff8.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2003_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"15d66b5b8e6900c974e5622b5a99f6e2.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2003_car.webp?");
 
 /***/ }),
 
@@ -1969,29 +1584,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"f0332de3f4e3417f7e5ba588a57ac4c8.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2004.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_2004_1.webp":
-/*!************************************!*\
-  !*** ./src/img/season_2004_1.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"b2b2dfff94ca9e8d2984bb44db319067.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2004_1.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_2004_2.webp":
-/*!************************************!*\
-  !*** ./src/img/season_2004_2.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"3136b6c6870900851adc872bc6c50e94.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2004_2.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"ed57dfb3b31a258c41c98504b813ce00.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2004.webp?");
 
 /***/ }),
 
@@ -2002,7 +1595,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"949b63e6fa77e770b854e8f4b2eaedae.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2004_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"03c3bacbad4ed6c4fd42ff27408901f2.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2004_car.webp?");
 
 /***/ }),
 
@@ -2013,18 +1606,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"19b14496b33c6f1b087dc77a66ca48c5.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2005.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_2005_1.webp":
-/*!************************************!*\
-  !*** ./src/img/season_2005_1.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"61fa729463742f8fd89f0d3a13f5723f.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2005_1.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"2019ea9d33b211df139e61c5912b4c82.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2005.webp?");
 
 /***/ }),
 
@@ -2035,7 +1617,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"79b443af7b87b56d4264f78c197f4808.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2005_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"6b6fc6a0fd1d7eb659c82e5f3cff816d.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2005_car.webp?");
 
 /***/ }),
 
@@ -2046,51 +1628,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"22b21a851c6fa1fd68dedef9a9c42a18.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2006.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_2006_1.webp":
-/*!************************************!*\
-  !*** ./src/img/season_2006_1.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"1fc1b28044cea334ce0f4bdb9bed39a0.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2006_1.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_2006_2.webp":
-/*!************************************!*\
-  !*** ./src/img/season_2006_2.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"07934ae553741e0214b1dde62e4e3a16.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2006_2.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_2006_5.webp":
-/*!************************************!*\
-  !*** ./src/img/season_2006_5.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"eebacfa47ec341597a872006bcbc507d.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2006_5.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_2006_6.webp":
-/*!************************************!*\
-  !*** ./src/img/season_2006_6.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"fca21a9bf82a64f4781afc89cf4e0330.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2006_6.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"19454499b4f8ebe2e39cb06ee81fd5f4.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2006.webp?");
 
 /***/ }),
 
@@ -2101,7 +1639,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"7910908f5d8324ca470de50af88ccff6.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2006_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"7e416f52a3c8b1f61c14cca2f1607ef3.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2006_car.webp?");
 
 /***/ }),
 
@@ -2112,73 +1650,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"9fa1ed5ee3d9df39a88a84929b520c20.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2007.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_2007_2.webp":
-/*!************************************!*\
-  !*** ./src/img/season_2007_2.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"1f761f5392e87cf376de0669db9e9e96.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2007_2.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_2007_3.webp":
-/*!************************************!*\
-  !*** ./src/img/season_2007_3.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"c9815b703f7bd5c671f298bbfeb833ce.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2007_3.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_2007_4.webp":
-/*!************************************!*\
-  !*** ./src/img/season_2007_4.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"8f855de2a9e79bba36cf1d10b5e327c8.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2007_4.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_2007_5.webp":
-/*!************************************!*\
-  !*** ./src/img/season_2007_5.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"7de46f009c92d2fc8fdcf48a4187ae7b.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2007_5.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_2007_6.webp":
-/*!************************************!*\
-  !*** ./src/img/season_2007_6.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"a5fe0e1874e73f666cddab156996b01d.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2007_6.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_2007_7.webp":
-/*!************************************!*\
-  !*** ./src/img/season_2007_7.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"180780997511f40e32a3369edd8cb1a5.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2007_7.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"6c8fd39551f2823cb29a0119dcd318a1.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2007.webp?");
 
 /***/ }),
 
@@ -2189,7 +1661,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"ff1f508bcbcede31f6da800e9f94faf5.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2007_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"896c9b542e3725f5d2102867d155afb0.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2007_car.webp?");
 
 /***/ }),
 
@@ -2200,40 +1672,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"3588808d4f22223568e449421051484d.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2008.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_2008_3.webp":
-/*!************************************!*\
-  !*** ./src/img/season_2008_3.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"3ba8d6f0003772a4756db4c196e95ece.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2008_3.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_2008_4.webp":
-/*!************************************!*\
-  !*** ./src/img/season_2008_4.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"ca9bfb2220bdeb22f9439529d75a35b8.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2008_4.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_2008_5.webp":
-/*!************************************!*\
-  !*** ./src/img/season_2008_5.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"f0b4b13d1e0e52669542802d9a2e3d3e.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2008_5.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"7411443da234f6c309b6abe43ac72bba.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2008.webp?");
 
 /***/ }),
 
@@ -2244,7 +1683,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"3b028407f2609e05ae17d05a5b65e3e5.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2008_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"a00e37d7a38006518b73aeadb3797a4b.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2008_car.webp?");
 
 /***/ }),
 
@@ -2255,40 +1694,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"9fe2b7ff748234b8853257f15fa1d829.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2009.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_2009_3.webp":
-/*!************************************!*\
-  !*** ./src/img/season_2009_3.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"3789eb1e5a73b0707b743ca2b18e0bd2.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2009_3.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_2009_4.webp":
-/*!************************************!*\
-  !*** ./src/img/season_2009_4.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"0ec79de0f54329b20e6dc74a70fd9fc5.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2009_4.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_2009_5.webp":
-/*!************************************!*\
-  !*** ./src/img/season_2009_5.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"995dc9ea3756735654a1d77ba7308581.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2009_5.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"c720b464dec2d645148e2eadcfbc511b.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2009.webp?");
 
 /***/ }),
 
@@ -2299,7 +1705,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"fea48e4223ccad9b22ea267de450f1c5.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2009_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"9b42ec6b06ed8289cd1e394e6f60ce9d.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2009_car.webp?");
 
 /***/ }),
 
@@ -2310,7 +1716,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"0d1bdb1a41096d08924817e174550fa4.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2010.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"82c57d887501ec248498499407c5bcf4.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2010.webp?");
 
 /***/ }),
 
@@ -2321,7 +1727,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"9a35e92a9728d687cba8abbae7324e95.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2010_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"ae721df92dbc882ca35db0be499d8d35.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2010_car.webp?");
 
 /***/ }),
 
@@ -2332,18 +1738,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"c655574949054c2702982278b8918d02.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2011.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_2011_2.webp":
-/*!************************************!*\
-  !*** ./src/img/season_2011_2.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"f1d896b024feb466da4ec6bab7cbf7a5.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2011_2.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"0c2bcb0e773c4fb9003d76b8e8171535.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2011.webp?");
 
 /***/ }),
 
@@ -2354,7 +1749,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"4743b9a8b31161a74ef38037aeb20764.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2011_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"04cb2951a3236a27c2ffa08ec49c6b4c.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2011_car.webp?");
 
 /***/ }),
 
@@ -2365,18 +1760,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"f5186b3e1ccf82dab5ef4c4bd9a22a4c.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2012.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_2012_2.webp":
-/*!************************************!*\
-  !*** ./src/img/season_2012_2.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"838fafc787261b2ef0e2820d312de31c.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2012_2.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"e2aeb156e1867f54394815da08aad23a.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2012.webp?");
 
 /***/ }),
 
@@ -2387,7 +1771,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"1481992589a77760bcc691689df0629b.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2012_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"db3163746c6e570cf2e39d53bf8b18cc.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2012_car.webp?");
 
 /***/ }),
 
@@ -2398,29 +1782,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"608e1f3861626e5773e6d4137174c67e.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2013.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_2013_2.webp":
-/*!************************************!*\
-  !*** ./src/img/season_2013_2.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"05d6771650489636a8ffc876b6631694.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2013_2.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_2013_3.webp":
-/*!************************************!*\
-  !*** ./src/img/season_2013_3.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"e25b589cfd84755d54bc498d3e60aa16.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2013_3.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"6d21c2006d2eb9c23192db7dad7e36a3.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2013.webp?");
 
 /***/ }),
 
@@ -2431,7 +1793,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"a2e92d14b48b64f5ef7e3a2174c238ea.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2013_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"f6b353a8702a639fefb85e50bc0c818f.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2013_car.webp?");
 
 /***/ }),
 
@@ -2442,40 +1804,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"0221cb9d4fbfb3380f535966dbbb31b5.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2014.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_2014_2.webp":
-/*!************************************!*\
-  !*** ./src/img/season_2014_2.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"ae85be360b643bf173424b5fca58f60e.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2014_2.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_2014_3.webp":
-/*!************************************!*\
-  !*** ./src/img/season_2014_3.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"422daf54c7a45471d66cbad9413dfb0d.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2014_3.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_2014_4.webp":
-/*!************************************!*\
-  !*** ./src/img/season_2014_4.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"d6428697b83327b531c64303240eebe6.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2014_4.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"e77a3b78d807c5ab2a95fa6e1bf99a74.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2014.webp?");
 
 /***/ }),
 
@@ -2486,7 +1815,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"a4e13b3e7d573996f1cd6059ca864125.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2014_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"80de15cd0a482b5218ef48bc281a2387.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2014_car.webp?");
 
 /***/ }),
 
@@ -2497,7 +1826,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"00fa508e1c33251a0685e5feddb82d41.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2015.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"9cbea4bd9b7bfc9b22edc5751e0acd80.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2015.webp?");
 
 /***/ }),
 
@@ -2508,7 +1837,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"1dd04e5f44d2c2258870e59a0e0c538d.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2015_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"3c48dc764c7c365c5e402f49fddbb46e.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2015_car.webp?");
 
 /***/ }),
 
@@ -2519,18 +1848,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"534f6af0eea3dd7355fef851fd71b6e8.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2016.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_2016_1.webp":
-/*!************************************!*\
-  !*** ./src/img/season_2016_1.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"db8e0cf7b7435e146993941fae0b6c4a.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2016_1.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"0ba692dc8d56492c8700f7aed14590ed.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2016.webp?");
 
 /***/ }),
 
@@ -2541,7 +1859,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"31ef4f2fc60c23287ee44575b4b614ea.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2016_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"d52ff4c9ec21fbf269052160e1fd5f8a.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2016_car.webp?");
 
 /***/ }),
 
@@ -2552,51 +1870,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"5d95b0364954825a8c338dc61906f6e4.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2017.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_2017_2.webp":
-/*!************************************!*\
-  !*** ./src/img/season_2017_2.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"bb34db0dd0247364814bf25b74e4d70c.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2017_2.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_2017_3.webp":
-/*!************************************!*\
-  !*** ./src/img/season_2017_3.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"8775b7b09e4d8562b22d1cfaeb164bd5.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2017_3.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_2017_4.webp":
-/*!************************************!*\
-  !*** ./src/img/season_2017_4.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"b5b92b94f3b7b6c1dcb70d6b49b527d9.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2017_4.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_2017_5.webp":
-/*!************************************!*\
-  !*** ./src/img/season_2017_5.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"b8b7f5dc296bb6d763344410a50a2c8b.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2017_5.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"eb2bfbfcf272e390be3e435e3e35bb9f.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2017.webp?");
 
 /***/ }),
 
@@ -2607,7 +1881,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"1ab3a99c0a1d7ceba4fa45921c285ba9.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2017_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"c29f4c9bffca7431a4fa1a77cac48c03.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2017_car.webp?");
 
 /***/ }),
 
@@ -2618,7 +1892,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"6b4c011c1dc40490a6c2db932785c3d5.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2018.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"23c0486e03c7a2c47128712c218bf043.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2018.webp?");
 
 /***/ }),
 
@@ -2629,7 +1903,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"afd5c623a894f3ceb4897530aa2d48dd.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2018_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"5edd7806349077fd526396881346d699.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2018_car.webp?");
 
 /***/ }),
 
@@ -2640,7 +1914,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"11e3a3992f02c5c15390140d43b86ad3.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2019.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"96e11593084bb6530cb24dacedd5d7a9.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2019.webp?");
 
 /***/ }),
 
@@ -2651,7 +1925,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"d8a829d48863189a6a3ccc32bcf2e235.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2019_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"dcbe78ca36c03c8723f5c5ee70f50754.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2019_car.webp?");
 
 /***/ }),
 
@@ -2662,18 +1936,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"41dc600a78f042dd9eecefd73f8b6b32.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2020.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_2020_1.webp":
-/*!************************************!*\
-  !*** ./src/img/season_2020_1.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"3325ae64523ada035188b152f66215b3.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2020_1.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"bac04b8b3e29c190103124de569c5e11.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2020.webp?");
 
 /***/ }),
 
@@ -2684,7 +1947,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"a6d9f7fbabd31f06e145356983c344e2.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2020_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"53b66a807fd1f22361e063d657fa874b.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2020_car.webp?");
 
 /***/ }),
 
@@ -2695,29 +1958,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"7a2a6f2703ffcf52dbff4ca0070bdf52.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2021.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_2021_2.webp":
-/*!************************************!*\
-  !*** ./src/img/season_2021_2.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"c037b7a01640aaf4ba61c9debc29b8d3.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2021_2.webp?");
-
-/***/ }),
-
-/***/ "./src/img/season_2021_3.webp":
-/*!************************************!*\
-  !*** ./src/img/season_2021_3.webp ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"39b386b7b64ebe35be6534f0f7204725.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2021_3.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"75f5720f1083efe0c0bb101d7053170b.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2021.webp?");
 
 /***/ }),
 
@@ -2728,7 +1969,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"fbf390ef29e80379fe09dc2362dbb1e2.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2021_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"0b178fc10952e89ee49fa7229e954e32.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2021_car.webp?");
 
 /***/ }),
 
@@ -2739,7 +1980,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"1363079e8847bf715e81cc4a2ad55f91.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2022.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"34b937acc1f9bcaf7a6f4f2327c1836e.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2022.webp?");
 
 /***/ }),
 
@@ -2750,7 +1991,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"66072a08d500ad9905c2b151d9d691a3.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2022_car.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"f11a5dce0dc1a936334d6518e03f9d39.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2022_car.webp?");
 
 /***/ }),
 
@@ -2761,7 +2002,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"07f66861147666cb3a383752e8f1561a.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2023.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"777834dabf161efdf7d712d8978e9acd.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2023.webp?");
 
 /***/ }),
 
@@ -2772,7 +2013,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"c108658e9d4c3f25cfcfe7746fe39bdb.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2024.webp?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"ac51572c4efa5834021b639ad802f23d.webp\");\n\n//# sourceURL=webpack://formula1charts/./src/img/season_2024.webp?");
 
 /***/ }),
 
