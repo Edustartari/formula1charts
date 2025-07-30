@@ -12,12 +12,12 @@ import urllib.parse
 import base64
 import re
 from django.http import JsonResponse
+from ratelimit import limits, sleep_and_retry
 
 # ================================================================================================
 # =================================================================================================
 # =================================================================================================
 # Create your procedures here.
-
 
 def edu_test():
 	return 'test'
@@ -834,6 +834,13 @@ def update_constructors_info():
 			max_limit = 0
 			time.sleep(3600)
 
+# =================================================================================================
+# =================================================================================================
+# =================================================================================================
+# Create your views here.
+
+@sleep_and_retry
+@limits(calls=15, period=600)
 def get_constructors_stats(request):
 	# Get all files inside src/json/constructors
 	main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -860,14 +867,15 @@ def get_constructors_stats(request):
 	}
 
 	return JsonResponse(response_dict, safe=False) 
-# =================================================================================================
-# =================================================================================================
-# =================================================================================================
-# Create your views here.
+
+@sleep_and_retry
+@limits(calls=60, period=900)
 def index(request):
 	context = {}
 	return render(request, 'index.html', context)
 
+@sleep_and_retry
+@limits(calls=50, period=900)
 def season_view(request, year):
 
 	# Make a list of year beginning with 1951 until the current year.
@@ -876,15 +884,6 @@ def season_view(request, year):
 	# Redirect user to homepage if year is not in the list.
 	if year not in years:
 		return HttpResponseRedirect('/')
-	
-	try:
-		redis_response = redis_client.get('season_view_' + str(year))
-	
-		if redis_response is not None:
-			context = json.loads(redis_response)
-			return render(request, 'season.html', context)
-	except:
-		pass
 
 	# Return a list with 80 positive adjetives.
 	adjetives = ['Amazing','Awesome','Beautiful','satisfying','super','amusing','entertaining','Brilliant','memorable','Cool','Creative','Delicious','Elegant','Excellent','Fabulous','Fantastic','Fun','Gorgeous','Great','Impressive','Incredible','Interesting','Magnificent','Marvelous','Outstanding','Perfect','Powerful','Smart','Spectacular','Splendid','Stunning','Superb','Superior','Supreme','Terrific','Wonderful','Wondrous','Alluring','Appealing','Dazzling','Divine','Enchanting','Engaging','Enticing','Excellent','Exquisite','Fair','Fascinating','Glorious','Gorgeous','Grand','Heavenly','Magnetic','Marvelous','Mesmerizing','Miraculous','Mythical','Pleasant','Ravishing','Sublime','Amazing','Astonishing','Awe-inspiring','Breathtaking','Captivating','Delightful','remarkable']
@@ -902,7 +901,6 @@ def season_view(request, year):
 	circuits_dict = {e['round']:e['circuitId'] for e in circuits['MRData']['CircuitTable']['Circuits']}
 
 	total_races = circuits['MRData']['total']
-	print('total_races: ' + str(total_races))
 
 	standings_path = os.path.join(main_path, 'src/json/standings/driver_standings_after_a_race')
 
@@ -949,24 +947,23 @@ def season_view(request, year):
 		'champion_name': json.dumps(champion_name),
 		'season_title': json.dumps(season_adjetive)
 	}
-	try:
-		redis_client.set('season_view_' + str(year), json.dumps(context))
-	except:
-		pass
-
 	return render(request, 'season.html', context)
 
-
+@sleep_and_retry
+@limits(calls=15, period=600)
 def pilots(request):
 	context = {}
 	return render(request, 'pilots.html', context)
 
+@sleep_and_retry
+@limits(calls=15, period=600)
 def all_time(request):
 	context = {}
 	return render(request, 'all-time.html', context)
 
+@sleep_and_retry
+@limits(calls=15, period=600)
 def load_nationalities(request):
-	print('')
 	main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 	nationalities_path = os.path.join(main_path, 'src/json/drivers/nationalities')
 
@@ -979,6 +976,8 @@ def load_nationalities(request):
 	}
 	return JsonResponse(response_dict, safe=False) 
 
+@sleep_and_retry
+@limits(calls=15, period=600)
 def pilots_list(request):
 
 	# Get all files inside src/json/drivers
@@ -1031,10 +1030,10 @@ def pilots_list(request):
 	response_dict = {
 		'drivers': drivers_list
 	}
-
 	return JsonResponse(response_dict, safe=False) 
 
-
+@sleep_and_retry
+@limits(calls=15, period=600)
 def pilots_complete_info(request):
 
 	# Get all files inside src/json/drivers
@@ -1044,7 +1043,6 @@ def pilots_complete_info(request):
 
 	drivers_list = []
 	for driver in drivers:
-		# print(driver)
 		with open(drivers_path + '/' + driver) as json_file:
 			data = json.load(json_file)
 			try:
@@ -1073,15 +1071,16 @@ def pilots_complete_info(request):
 	response_dict = {
 		'drivers': drivers_list
 	}
-
 	return JsonResponse(response_dict, safe=False) 
 
-
+@sleep_and_retry
+@limits(calls=15, period=600)
 def constructors(request):
 	context = {}
 	return render(request, 'constructors.html', context)
 
-
+@sleep_and_retry
+@limits(calls=15, period=600)
 def others(request):
 	context = {}
 	return render(request, 'others.html', context)

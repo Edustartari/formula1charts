@@ -14,10 +14,12 @@ h11==0.14.0
 idna==3.4
 iniconfig==2.0.0
 packaging==24.2
+pluggy==1.6.0
 pydash==7.0.6
 pytest==8.3.4
 pytest-django==4.10.0
 pytz==2022.2.1
+ratelimit==2.2.1
 requests==2.27.1
 soupsieve==2.3.2.post1
 sqlparse==0.4.3
