@@ -19,8 +19,14 @@ from ratelimit import limits, sleep_and_retry
 # =================================================================================================
 # Create your procedures here.
 
-def edu_test():
-	return 'test'
+""" 
+To update every year execute in this order:
+1. get_race_results()
+2. get_drivers_standings()
+3. update_poles_and_podiums()
+4. update_drivers_info()
+5. add_percentage_info()
+"""
 
 def get_race_results():	
 	print('')
@@ -229,6 +235,41 @@ def update_poles_and_podiums():
 
 						if driver['position'] in ['1', '2', '3']:
 							all_drivers[driver_id][year]['podiums'] += 1
+
+						# If driver does not exist in drivers_path, create a new json file with the driver_id
+						if driver_id + '.json' and driver['Driver']['givenName'] + '_' + driver['Driver']['familyName'] + '.json' not in drivers:
+							with open(drivers_path + '/' + driver_id + '.json', 'w') as new_driver_file:
+								new_driver = {
+									"nationality": {
+										"nationality_acronym": "", # Go after this info (maybe wikipedia?)
+										"nationality_href": "", # Go after this info (maybe wikipedia?)
+										"nationality_title": driver['Driver']['nationality'],
+										"nationality_flag": "" # Go after this info (maybe wikipedia?)
+									},
+									"name": givenName + ' ' + familyName,
+									"id": driver_id,
+									"image": "", # Go after this info (maybe wikipedia?)
+									"wiki": driver['Driver']['url'],
+									"birth_date": driver['Driver']['dateOfBirth'],
+									"death_date": False, # Go after this info (maybe wikipedia?)
+									"status": "", # Go after this info (maybe wikipedia?)
+									"total_seasons": 0,
+									"seasons_years": [],
+									"seasons_results": {},
+									"titles": 0,
+									"races": 0,
+									"poles": 0,
+									"wins": 0,
+									"podiums": 0,
+									"fastestlaps": 0,
+									"points": 0,
+									"introduction": "", # Go after this info (maybe wikipedia?)
+									"titles_percentage": 0,
+									"poles_percentage": 0,
+									"wins_percentage": 0,
+									"podiums_percentage": 0
+								}
+								json.dump(new_driver, new_driver_file)
 				except:
 					continue
 
@@ -238,17 +279,14 @@ def update_poles_and_podiums():
 			driver_data = json.load(driver_file)
 
 		if 'seasons_results' not in driver_data:
-			continue
+			driver_data['seasons_results'] = {}
+			driver_data['seasons_years'] = []
 
 		driver_name = driver.split('.')[0]
 		edited_name = re.sub(r'[^\x00-\x7f]',r'', driver_name)
 		first_name = edited_name.split('_')[:-1]
 		first_name = ' '.join(first_name)
 		last_name = edited_name.split('_')[-1]
-
-		print('')
-		print('first_name: ' + str(first_name))
-		print('last_name: ' + str(last_name))
 
 		driver_id = first_name + '_' + last_name
 
@@ -402,6 +440,7 @@ def get_years(years_tag):
 			temporary_value = current_year
 	return season_years, total_seasons
 
+# This functions need to be updated since we can't rely on https://f1.fandom.com
 def get_driver_info():
 
 	# Create a list of alfabetic letters from A to Z.

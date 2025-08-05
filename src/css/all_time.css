@@ -97,7 +97,7 @@
 }
 .all-time-chart-box-info-photo{
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     height: 150px;
     width: 100%;
     background-position: center;

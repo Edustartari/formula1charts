@@ -1,0 +1,121 @@
+{
+    "nationality": {
+        "nationality_acronym": "ESP",
+        "nationality_href": "/wiki/Spain",
+        "nationality_title": "Spain",
+        "nationality_flag": "https://static.wikia.nocookie.net/f1wikia/images/9/9a/Flag_of_Spain.svg/revision/latest?cb=20140529173440"
+    },
+    "name": "Carlos Sainz, Jr.",
+    "id": "Carlos_Sainz",
+    "image": "https://static.wikia.nocookie.net/f1wikia/images/6/68/CarlosSainz.png/revision/latest/scale-to-width-down/350?cb=20220310043500",
+    "birth_date": "1994-09-01",
+    "death_date": false,
+    "status": "Active",
+    "total_seasons": 10,
+    "seasons_years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+    ],
+    "titles": 0,
+    "races": 206,
+    "poles": 6,
+    "wins": 4,
+    "podiums": 27,
+    "fastestlaps": "3",
+    "points": 1242.5,
+    "introduction": "Carlos Sainz Vzquez de Castro (born 1 September 1994 in Madrid, Spain), commonly known as Carlos Sainz, Jr., is a racing driver who made his Formula One dbut for ToroRosso in 2015, alongside Max Verstappen, who also made his dbut. Starting from the 2017 United States Grand Prix, he raced for Renault.[1] He later moved to McLaren in 2019, and then Ferrari in 2021.",
+    "titles_percentage": 0.0,
+    "poles_percentage": 2.91,
+    "wins_percentage": 1.94,
+    "podiums_percentage": 13.11,
+    "seasons_results": {
+        "2015": {
+            "title": 0,
+            "races": 19,
+            "wins": 0,
+            "points": 18.0,
+            "poles": 0,
+            "podiums": 0
+        },
+        "2016": {
+            "title": 0,
+            "races": 21,
+            "wins": 0,
+            "points": 46.0,
+            "poles": 0,
+            "podiums": 0
+        },
+        "2017": {
+            "title": 0,
+            "races": 20,
+            "wins": 0,
+            "points": 54.0,
+            "poles": 0,
+            "podiums": 0
+        },
+        "2018": {
+            "title": 0,
+            "races": 21,
+            "wins": 0,
+            "points": 53.0,
+            "poles": 0,
+            "podiums": 0
+        },
+        "2019": {
+            "title": 0,
+            "races": 21,
+            "wins": 0,
+            "points": 96.0,
+            "poles": 0,
+            "podiums": 1
+        },
+        "2020": {
+            "title": 0,
+            "races": 14,
+            "wins": 0,
+            "points": 75.0,
+            "poles": 0,
+            "podiums": 1
+        },
+        "2021": {
+            "title": 0,
+            "races": 22,
+            "wins": 0,
+            "points": 164.5,
+            "poles": 0,
+            "podiums": 4
+        },
+        "2022": {
+            "title": 0,
+            "races": 22,
+            "wins": 1,
+            "points": 246.0,
+            "poles": 3,
+            "podiums": 9
+        },
+        "2023": {
+            "title": 0,
+            "races": 22,
+            "wins": 1,
+            "points": 200.0,
+            "poles": 2,
+            "podiums": 3
+        },
+        "2024": {
+            "title": 0,
+            "races": 24,
+            "wins": 2,
+            "points": 290.0,
+            "poles": 1,
+            "podiums": 9
+        }
+    }
+}
