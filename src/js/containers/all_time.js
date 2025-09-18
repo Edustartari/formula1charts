@@ -234,7 +234,6 @@ class AllTime extends React.Component {
 									<div className='all-time-option-box-component'>
 										<FormControl fullWidth>
 											<Select
-												id='demo-simple-select'
 												value={this.state.nationality}
 												onChange={e => this.setState({ nationality: e.target.value })}
 											>
@@ -259,7 +258,7 @@ class AllTime extends React.Component {
 									<div className='all-time-option-box-component'>
 										<FormControl fullWidth>
 											<Select
-												id='demo-simple-select'
+												id='number-of-drivers-select'
 												value={this.state.range}
 												onChange={e => this.setState({ range: e.target.value })}
 											>
@@ -279,6 +278,7 @@ class AllTime extends React.Component {
 									<LocalizationProvider dateAdapter={AdapterMoment}>
 										<DemoContainer components={['DatePicker']}>
 											<DatePicker
+												id='date-picker-from'
 												disableFuture={true}
 												label='From'
 												views={['year']}
@@ -288,6 +288,7 @@ class AllTime extends React.Component {
 												onChange={newValue => this.setState({ first_date: newValue })}
 											/>
 											<DatePicker
+												id='date-picker-to'
 												disableFuture={true}
 												label='To'
 												views={['year']}
@@ -307,7 +308,7 @@ class AllTime extends React.Component {
 								<div className='all-time-option-box-component'>
 									<FormControl fullWidth>
 										<Select
-											id='demo-simple-select'
+											id='accomplishments-select'
 											value={this.state.filter_type}
 											onChange={e => this.setState({ filter_type: e.target.value })}
 										>
@@ -324,7 +325,7 @@ class AllTime extends React.Component {
 								<div className='all-time-option-box-component'>option component</div>
 							</div>
 						</div>
-						<div className='all-time-main-button' onClick={this.search_drivers}>
+						<div className='all-time-main-button' id='search-button' onClick={this.search_drivers}>
 							SEARCH
 						</div>
 						<div className='all-time-charts'>

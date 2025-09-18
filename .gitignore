@@ -11,3 +11,6 @@ charts/tests/__pycache__/
 env/
 *.pyc
 */__pycache__
+cypress/downloads/
+cypress/screenshots/
+cypress/videos/
