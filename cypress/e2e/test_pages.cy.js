@@ -36,40 +36,41 @@
 // });
 
 
-// describe('All Time page', () => {
-//   it('Enters All Time page and interact with filters', function() {
-//       cy.visit('/')
-//       cy.get('[href="/all-time"]', { timeout: 5000 }).click();
-//       cy.get('#app-desktop-container div:nth-child(2) > .all-time-chart-details > .barchart-background > .barchart-bars > div:nth-child(4)').click();
-//       cy.get('body').click();
-//       cy.get('.all-time-option-box-component-nationality-item').click();
-//       cy.get('.MuiPaper-root').contains('Brazil').click();
-//       cy.get('body').click();
-//       cy.get('#number-of-drivers-select').click();
-//       cy.get('.MuiPaper-root').contains('3').click();
-//       cy.get('body').click();
-//       cy.get('#accomplishments-select [data-value="wins"]').click();
-//       cy.get('#app-desktop-container .all-time-main-button').click();
-//       cy.get('body').click();
-//       cy.get('#accomplishments-select [data-value="poles"]').click();
-//       cy.get('#app-desktop-container .all-time-main-button').click();
-//       cy.get('body').click();
-//       cy.get('#accomplishments-select [data-value="podiums"]').click();
-//       cy.get('#app-desktop-container .all-time-main-button').click();
-//       cy.get('[aria-label="Choose date, selected date is Feb 1, 2024"] [data-testid="CalendarIcon"]').click();
-//       cy.get('div:nth-child(43) button').click();
-//       cy.get('#app-desktop-container .all-time-main-button').click();
-//       cy.get('body').click();
-//       cy.get('#date-picker-from [data-value="5"]').click();
-//       cy.get('body').click();
-//       cy.get('#date-picker-to [data-value="World"]').click();
-//       cy.get('body').click();
-//       cy.get('#accomplishments-select [data-value="title"]').click();
-//       cy.get('#app-desktop-container .all-time-main-button').click();
-//       cy.get('#home-desktop-menu-item-button button').click();
-//       cy.get('[href="/"] [tabindex="0"] div span').click();
-//   });
-// });
+describe('All Time page', () => {
+  it('Enters All Time page and interact with filters', function() {
+    cy.visit('/')
+    cy.get('[href="/all-time"]', { timeout: 5000 }).click();
+    cy.get('#app-desktop-container div:nth-child(2) > .all-time-chart-details > .barchart-background > .barchart-bars > div:nth-child(4)').click();
+    cy.get('body').click();
+    cy.get('.all-time-option-box-component-nationality-item').click();
+    cy.get('.MuiPaper-root').contains('Brazil').click();
+    cy.get('body').click();
+    cy.get('#number-of-drivers-select').click();
+    cy.get('.MuiPaper-root').contains('3').click();
+    cy.get('body').click();
+    cy.get('#accomplishments-select').click();
+    cy.get('.MuiPaper-root').contains('Wins').click();
+    cy.get('#app-desktop-container .all-time-main-button').click();
+    cy.get('body').click();
+    cy.get('#accomplishments-select [data-value="poles"]').click();
+    cy.get('#app-desktop-container .all-time-main-button').click();
+    cy.get('body').click();
+    cy.get('#accomplishments-select [data-value="podiums"]').click();
+    cy.get('#app-desktop-container .all-time-main-button').click();
+    cy.get('[aria-label="Choose date, selected date is Feb 1, 2024"] [data-testid="CalendarIcon"]').click();
+    cy.get('div:nth-child(43) button').click();
+    cy.get('#app-desktop-container .all-time-main-button').click();
+    cy.get('body').click();
+    cy.get('#date-picker-from [data-value="5"]').click();
+    cy.get('body').click();
+    cy.get('#date-picker-to [data-value="World"]').click();
+    cy.get('body').click();
+    cy.get('#accomplishments-select [data-value="title"]').click();
+    cy.get('#app-desktop-container .all-time-main-button').click();
+    cy.get('#home-desktop-menu-item-button button').click();
+    cy.get('[href="/"] [tabindex="0"] div span').click();
+  });
+});
 
 // describe('Constructors page', () => {
 //     it('Enters Constructors page and interacts with filters', function() {

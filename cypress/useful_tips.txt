@@ -1,7 +1,11 @@
 https://docs.cypress.io/app/core-concepts/best-practices
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 npm run cy:open
 npx cypress open
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 // bet-app
 describe('The Home Page', () => {
@@ -31,6 +35,7 @@ describe('The Home Page', () => {
   })
 })
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 before(() => {
   // root-level hook
@@ -74,3 +79,10 @@ The order of hook and test execution is as follows:
 - Tests run
 - Any afterEach() hooks run
 - All after() hooks run (once)
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+{ force: true } skips the checks, and it will always fire the event at the desired element.
+for example:
+cy.get('button').click({ force: true })
+
