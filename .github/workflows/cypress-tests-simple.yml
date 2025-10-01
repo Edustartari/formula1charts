@@ -38,9 +38,9 @@ jobs:
       run: |
         python manage.py collectstatic --noinput
 
-    - name: Build frontend assets
-      run: |
-        npm run build
+    # - name: Build frontend assets
+    #   run: |
+    #     npm run build
 
     - name: Cypress run
       uses: cypress-io/github-action@v6
