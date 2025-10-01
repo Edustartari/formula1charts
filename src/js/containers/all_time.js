@@ -277,26 +277,30 @@ class AllTime extends React.Component {
 								<div className='all-time-option-box-component'>
 									<LocalizationProvider dateAdapter={AdapterMoment}>
 										<DemoContainer components={['DatePicker']}>
-											<DatePicker
-												id='date-picker-from'
-												disableFuture={true}
-												label='From'
-												views={['year']}
-												minDate={moment(new Date(1950, 1, 1))}
-												maxDate={moment(new Date(2024, 1, 1))}
-												value={this.state.first_date}
-												onChange={newValue => this.setState({ first_date: newValue })}
-											/>
-											<DatePicker
-												id='date-picker-to'
-												disableFuture={true}
-												label='To'
-												views={['year']}
-												minDate={moment(new Date(1950, 1, 1))}
-												maxDate={moment(new Date(2024, 1, 1))}
-												value={this.state.second_date}
-												onChange={newValue => this.setState({ second_date: newValue })}
-											/>
+											<div id='date-picker-from'>
+												<DatePicker
+													id='date-picker-from'
+													disableFuture={true}
+													label='From'
+													views={['year']}
+													minDate={moment(new Date(1950, 1, 1))}
+													maxDate={moment(new Date(2024, 1, 1))}
+													value={this.state.first_date}
+													onChange={newValue => this.setState({ first_date: newValue })}
+												/>
+											</div>
+											<div id='date-picker-to'>
+												<DatePicker
+													id='date-picker-to'
+													disableFuture={true}
+													label='To'
+													views={['year']}
+													minDate={moment(new Date(1950, 1, 1))}
+													maxDate={moment(new Date(2024, 1, 1))}
+													value={this.state.second_date}
+													onChange={newValue => this.setState({ second_date: newValue })}
+												/>
+											</div>
 										</DemoContainer>
 									</LocalizationProvider>
 								</div>
@@ -325,7 +329,7 @@ class AllTime extends React.Component {
 								<div className='all-time-option-box-component'>option component</div>
 							</div>
 						</div>
-						<div className='all-time-main-button' id='search-button' onClick={this.search_drivers}>
+						<div className='all-time-search-button' id='search-button' onClick={this.search_drivers}>
 							SEARCH
 						</div>
 						<div className='all-time-charts'>

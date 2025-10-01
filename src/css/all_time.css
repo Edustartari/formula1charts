@@ -61,7 +61,7 @@
 .all-time-option-box-component .css-z3c6am-MuiFormControl-root-MuiTextField-root:nth-child(1) {
     margin-bottom: 20px;
 }
-.all-time-main-button{
+.all-time-search-button{
     background-color: lightsteelblue;
     padding: 15px 30px;
     font-size: 20px;
@@ -70,11 +70,11 @@
     box-shadow: 2px 2px 2px 2px #484848;
     user-select: none;
 }
-.all-time-main-button:hover{
+.all-time-search-button:hover{
     cursor: pointer;
     background-color: rgb(187, 202, 222);
 }
-.all-time-main-button:active{
+.all-time-search-button:active{
     cursor: pointer;
     background-color: rgb(187, 202, 222);
     transform: translate(3px, 3px);
