@@ -38,15 +38,11 @@ jobs:
       run: |
         python manage.py collectstatic --noinput
 
-    # - name: Build frontend assets
-    #   run: |
-    #     npm run build
-
     - name: Cypress run
       uses: cypress-io/github-action@v6
       with:
         # Build the app
-        # build: npm run build
+        build: npm run build
         # Start the Django server and webpack dev server
         start: |
           python manage.py runserver 127.0.0.1:8000 &
