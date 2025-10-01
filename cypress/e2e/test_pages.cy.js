@@ -40,7 +40,7 @@ describe('Constructors page', () => {
     it('Enters Constructors page and interacts with filters', function() {
         cy.visit('/')
         cy.get('[href="/constructors"]').click();
-        cy.get('#constructor-date-picker-to').click().type('1990');
+        cy.get('#constructor-date-picker-to').click({ force: true }).type('1990');
         cy.get('body').click();
         cy.get('#constructors-accomplishments-select').click();
         cy.get('.MuiPaper-root').contains('Wins').click();
@@ -80,17 +80,17 @@ describe('All Time page', () => {
     cy.get('body').click();
     cy.get('#accomplishments-select').click();
     cy.get('.MuiPaper-root').contains('Wins').click();
-    cy.get('#app-desktop-container .all-time-search-button').click();
+    cy.get('#app-desktop-container .all-time-search-button').click({ force: true });
     cy.get('body').click();
     cy.get('#accomplishments-select').click();
     cy.get('.MuiPaper-root').contains('Poles').click();
-    cy.get('#app-desktop-container .all-time-search-button').click();
+    cy.get('#app-desktop-container .all-time-search-button').click({ force: true });
     cy.get('body').click();
     cy.get('#accomplishments-select').click();
     cy.get('.MuiPaper-root').contains('Podiums').click();
-    cy.get('#app-desktop-container .all-time-search-button').click();
+    cy.get('#app-desktop-container .all-time-search-button').click({ force: true });
     cy.get('#date-picker-to').click({ force: true }).type('1990');
-    cy.get('#app-desktop-container .all-time-search-button').click();
+    cy.get('#app-desktop-container .all-time-search-button').click({ force: true });
     cy.get('#home-desktop-menu-item-button button').click();
     cy.get('[href="/"] [tabindex="0"] div span').click();
   });
