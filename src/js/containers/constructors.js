@@ -235,24 +235,28 @@ class Constructors extends React.Component {
 								<div className='constructors-option-box-component'>
 									<LocalizationProvider dateAdapter={AdapterMoment}>
 										<DemoContainer components={['DatePicker']}>
-											<DatePicker
-												disableFuture={true}
-												label='From'
-												views={['year']}
-												minDate={moment(new Date(1950, 1, 1))}
-												maxDate={moment(new Date(2022, 1, 1))}
-												value={this.state.first_date}
-												onChange={newValue => this.setState({ first_date: newValue })}
-											/>
-											<DatePicker
-												disableFuture={true}
-												label='To'
-												views={['year']}
-												minDate={moment(new Date(1950, 1, 1))}
-												maxDate={moment(new Date(2022, 1, 1))}
-												value={this.state.second_date}
-												onChange={newValue => this.setState({ second_date: newValue })}
-											/>
+											<div id='constructor-date-picker-from'>
+												<DatePicker
+													disableFuture={true}
+													label='From'
+													views={['year']}
+													minDate={moment(new Date(1950, 1, 1))}
+													maxDate={moment(new Date(2022, 1, 1))}
+													value={this.state.first_date}
+													onChange={newValue => this.setState({ first_date: newValue })}
+												/>
+											</div>
+											<div id='constructor-date-picker-to'>
+												<DatePicker
+													disableFuture={true}
+													label='To'
+													views={['year']}
+													minDate={moment(new Date(1950, 1, 1))}
+													maxDate={moment(new Date(2022, 1, 1))}
+													value={this.state.second_date}
+													onChange={newValue => this.setState({ second_date: newValue })}
+												/>
+											</div>
 										</DemoContainer>
 									</LocalizationProvider>
 								</div>
@@ -265,7 +269,7 @@ class Constructors extends React.Component {
 									<div className='constructors-option-box-component'>
 										<FormControl fullWidth>
 											<Select
-												id='demo-simple-select'
+												id='constructors-accomplishments-select'
 												value={this.state.filter_type}
 												onChange={e => this.setState({ filter_type: e.target.value })}
 											>
@@ -278,7 +282,7 @@ class Constructors extends React.Component {
 								</div>
 							</div>
 						</div>
-						<div className='constructors-main-button' onClick={this.search_constructors}>
+						<div className='constructors-search-button' onClick={this.search_constructors}>
 							SEARCH
 						</div>
 						<div className='constructors-charts-container'>

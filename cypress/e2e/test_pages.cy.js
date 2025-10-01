@@ -40,12 +40,13 @@ describe('Constructors page', () => {
     it('Enters Constructors page and interacts with filters', function() {
         cy.visit('/')
         cy.get('[href="/constructors"]').click();
-        cy.get('[aria-label="Choose date, selected date is Feb 1, 2022"] [data-testid="CalendarIcon"]').click();
-        cy.get('div:nth-child(51) button').click();
-        cy.get('#app-desktop-container .constructors-main-button').click();
+        cy.get('#constructor-date-picker-to').click().type('1990');
+        cy.get('body').click();
+        cy.get('#constructors-accomplishments-select').click();
+        cy.get('.MuiPaper-root').contains('Wins').click();
+        cy.get('#app-desktop-container .constructors-search-button').click();
     });
 });
-
 
 describe('Menu component', () => {
     it('Try to enter to all options in menu', function() {
@@ -88,7 +89,7 @@ describe('All Time page', () => {
     cy.get('#accomplishments-select').click();
     cy.get('.MuiPaper-root').contains('Podiums').click();
     cy.get('#app-desktop-container .all-time-search-button').click();
-    cy.get('#date-picker-to').click().type('1990');
+    cy.get('#date-picker-to').click({ force: true }).type('1990');
     cy.get('#app-desktop-container .all-time-search-button').click();
     cy.get('#home-desktop-menu-item-button button').click();
     cy.get('[href="/"] [tabindex="0"] div span').click();

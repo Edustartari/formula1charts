@@ -61,7 +61,7 @@
 .constructors-option-box-component .css-z3c6am-MuiFormControl-root-MuiTextField-root:nth-child(1) {
     margin-bottom: 20px;
 }
-.constructors-main-button{
+.constructors-search-button{
     background-color: lightsteelblue;
     padding: 15px 30px;
     font-size: 20px;
@@ -70,11 +70,11 @@
     box-shadow: 2px 2px 2px 2px #484848;
     user-select: none;
 }
-.constructors-main-button:hover{
+.constructors-search-button:hover{
     cursor: pointer;
     background-color: rgb(187, 202, 222);
 }
-.constructors-main-button:active{
+.constructors-search-button:active{
     cursor: pointer;
     background-color: rgb(187, 202, 222);
     transform: translate(3px, 3px);
