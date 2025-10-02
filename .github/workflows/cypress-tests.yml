@@ -45,13 +45,13 @@ jobs:
       run: |
         python manage.py migrate --noinput
 
-    - name: Collect static files
-      run: |
-        python manage.py collectstatic --noinput
+    # - name: Collect static files
+    #   run: |
+    #     python manage.py collectstatic --noinput
 
-    - name: Build frontend assets
-      run: |
-        npm run build
+    # - name: Build frontend assets
+    #   run: |
+    #     npm run build
 
     - name: Start Django server
       run: |
