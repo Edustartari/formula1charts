@@ -48,7 +48,7 @@ describe('Constructors page', () => {
 
         // cy.get('body').click();
         // Click in div with class constructors-main-title
-        cy.get('.constructors-main-title').click();
+        cy.get('.constructors-main-title').click({force: true});
         // cy.get('#constructors-accomplishments-select-container').click();
         // cy.get('#constructors-accomplishments-select-container [data-testid="ArrowDropDownIcon"]').click();
         // cy.get('#constructors-accomplishments-select-container').get('data-testid="ArrowDropDownIcon"').click();
