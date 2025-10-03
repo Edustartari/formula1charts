@@ -45,8 +45,10 @@ describe('Constructors page', () => {
         cy.get('.MuiPickersYear-yearButton').contains('2006').click();
 
         cy.get('body').click();
-        cy.get('#constructors-accomplishments-select-container').click();
-        cy.get('.MuiPaper-root').contains('Wins').click();
+        // cy.get('#constructors-accomplishments-select-container').click();
+        // cy.get('#constructors-accomplishments-select-container [data-testid="ArrowDropDownIcon"]').click();
+        // cy.get('#constructors-accomplishments-select-container').get('data-testid="ArrowDropDownIcon"').click();
+        // cy.get('.MuiPaper-root').contains('Wins').click();
         cy.get('#app-desktop-container .constructors-search-button').click();
     });
 });
