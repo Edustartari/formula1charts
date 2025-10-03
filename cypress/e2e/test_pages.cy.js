@@ -44,7 +44,9 @@ describe('Constructors page', () => {
         cy.get('[aria-label="Choose date, selected date is Feb 1, 2022"]').click();
         cy.get('.MuiPickersYear-yearButton').contains('2006').click();
 
-        cy.get('body').click();
+        // cy.get('body').click();
+        // Click in div with class constructors-main-title
+        cy.get('.constructors-main-title').click();
         // cy.get('#constructors-accomplishments-select-container').click();
         // cy.get('#constructors-accomplishments-select-container [data-testid="ArrowDropDownIcon"]').click();
         // cy.get('#constructors-accomplishments-select-container').get('data-testid="ArrowDropDownIcon"').click();
