@@ -266,7 +266,7 @@ class Constructors extends React.Component {
 									<div className='constructors-option-box-text'>
 										Filter: {this.state.filter_type.charAt(0).toUpperCase() + this.state.filter_type.slice(1)}
 									</div>
-									<div className='constructors-option-box-component'>
+									<div className='constructors-option-box-component' id='constructors-accomplishments-select-container'>
 										<FormControl fullWidth>
 											<Select
 												id='constructors-accomplishments-select'

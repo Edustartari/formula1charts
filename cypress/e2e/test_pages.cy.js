@@ -45,7 +45,7 @@ describe('Constructors page', () => {
         cy.get('.MuiPickersYear-yearButton').contains('2006').click();
 
         cy.get('body').click();
-        cy.get('#constructors-accomplishments-select').click();
+        cy.get('#constructors-accomplishments-select-container').click();
         cy.get('.MuiPaper-root').contains('Wins').click();
         cy.get('#app-desktop-container .constructors-search-button').click();
     });
