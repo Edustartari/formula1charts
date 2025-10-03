@@ -43,6 +43,8 @@ describe('Constructors page', () => {
         // Click on the element that has data-testid="CalendarIcon" inside #constructor-date-picker-to
         cy.get('[aria-label="Choose date, selected date is Feb 1, 2022"]').click();
         cy.get('.MuiPickersYear-yearButton').contains('2006').click();
+        // Create a delay of 2 seconds
+        cy.wait(2000);
 
         // cy.get('body').click();
         // Click in div with class constructors-main-title
