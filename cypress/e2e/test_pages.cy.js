@@ -39,7 +39,9 @@ describe('Pilots Comparative page', () => {
 describe('Constructors page', () => {
     it('Enters Constructors page and interacts with filters', function() {
         cy.visit('/')
-        cy.get('[href="/constructors"]', { timeout: 5000 }).click();
+        // cy.get('[href="/constructors"]', { timeout: 5000 }).click();
+        cy.get('#home-desktop-menu-item-button button').click();
+        cy.get('[href="/constructors"] [tabindex="0"] div span').click();
         cy.get('#constructor-date-picker-to').click().type('1990');
         cy.get('body').click();
         cy.get('#constructors-accomplishments-select').click();
