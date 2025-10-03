@@ -41,10 +41,9 @@ describe('Constructors page', () => {
         cy.visit('/')
         cy.get('[href="/constructors"]', { timeout: 5000 }).click();
         // Click on the element that has data-testid="CalendarIcon" inside #constructor-date-picker-to
-        cy.get('#constructor-date-picker-to [data-testid="CalendarIcon"]').click();
-        // Click on the button that has class class="MuiPickersYear-yearButton and the text 2006
+        cy.get('[aria-label="Choose date, selected date is Feb 1, 2022"]').click();
         cy.get('.MuiPickersYear-yearButton').contains('2006').click();
-        // cy.get('#constructor-date-picker-to').click({force: true}).type('1990');
+
         cy.get('body').click();
         cy.get('#constructors-accomplishments-select').click();
         cy.get('.MuiPaper-root').contains('Wins').click();
