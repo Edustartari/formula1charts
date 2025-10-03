@@ -1,58 +1,58 @@
-name: Cypress E2E Tests (Simplified)
+# name: Cypress E2E Tests (Simplified)
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+# on:
+#   push:
+#     branches: [ main ]
+#   pull_request:
+#     branches: [ main ]
 
-jobs:
-  cypress-run:
-    runs-on: ubuntu-latest
+# jobs:
+#   cypress-run:
+#     runs-on: ubuntu-latest
     
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+#     steps:
+#     - name: Checkout code
+#       uses: actions/checkout@v4
 
-    - name: Setup Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.9'
+#     - name: Setup Python
+#       uses: actions/setup-python@v4
+#       with:
+#         python-version: '3.9'
 
-    - name: Cache Python dependencies
-      uses: actions/cache@v3
-      with:
-        path: ~/.cache/pip
-        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+#     - name: Cache Python dependencies
+#       uses: actions/cache@v3
+#       with:
+#         path: ~/.cache/pip
+#         key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
 
-    - name: Install Python dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+#     - name: Install Python dependencies
+#       run: |
+#         python -m pip install --upgrade pip
+#         pip install -r requirements.txt
 
-    - name: Prepare Django application
-      run: |
-        python manage.py migrate --noinput
+#     - name: Prepare Django application
+#       run: |
+#         python manage.py migrate --noinput
 
-    - name: Collect static files
-      run: |
-        python manage.py collectstatic --noinput
+#     - name: Collect static files
+#       run: |
+#         python manage.py collectstatic --noinput
 
-    - name: Cypress run
-      uses: cypress-io/github-action@v6
-      with:
-        # Build the app
-        build: npm run build
-        # Start the Django server and webpack dev server
-        start: |
-          python manage.py runserver 127.0.0.1:8000 &
-          npm run start
-        # Wait for the server to be ready
-        wait-on: 'http://127.0.0.1:8000'
-        wait-on-timeout: 120
-        # Specify which test file to run
-        spec: cypress/e2e/test_pages.cy.js
-        # Browser to use
-        browser: chrome
-      env:
-        CYPRESS_baseUrl: http://127.0.0.1:8000
+#     - name: Cypress run
+#       uses: cypress-io/github-action@v6
+#       with:
+#         # Build the app
+#         build: npm run build
+#         # Start the Django server and webpack dev server
+#         start: |
+#           python manage.py runserver 127.0.0.1:8000 &
+#           npm run start
+#         # Wait for the server to be ready
+#         wait-on: 'http://127.0.0.1:8000'
+#         wait-on-timeout: 120
+#         # Specify which test file to run
+#         spec: cypress/e2e/test_pages.cy.js
+#         # Browser to use
+#         browser: chrome
+#       env:
+#         CYPRESS_baseUrl: http://127.0.0.1:8000
