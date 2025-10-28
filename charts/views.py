@@ -943,11 +943,11 @@ def season_view(request, year):
 
 	standings_path = os.path.join(main_path, 'src/json/standings/driver_standings_after_a_race')
 
-	final_result_test = []
+	grid_by_position = []
+	grid_by_points = []
 	already_added = []
 	champion_name = ''
 	for race in range(1, int(total_races) + 1):
-
 		data = {}
 		with open(standings_path + '/' + year + '/' + year + '_race_' + str(race) + '.json', 'r') as outfile:
 			data = json.load(outfile)
@@ -962,26 +962,39 @@ def season_view(request, year):
 			driver_name = driver['Driver']['givenName'] + ' ' + driver['Driver']['familyName']
 			position = driver['position'] if 'position' in driver else str(len(driver_standings))
 			points = driver['points'] + ' pts' if driver['points'] != '1' else driver['points'] + ' pt'
+			total_points = driver['points']
 			formated_text = position + 'º' + ' ' + driver_name + ': ' + points
 			if int(race) == int(total_races) and position == '1':
 				champion_name = driver_name
 
 			if driver_name not in already_added:
-				final_result_test.append(
+				grid_by_position.append(
 					{
 						'id': driver_name,
 						'data': [{'x': circuit_name, 'y': position, 'z': formated_text}]
 
 					}
 				)
+				grid_by_points.append(
+					{
+						'id': driver_name,
+						'data': [{'x': circuit_name, 'y': (float(total_points) * -1), 'z': formated_text}]
+
+					}
+				)
+				
 				already_added.append(driver_name)
 			else:
-				for i in final_result_test:
+				for i in grid_by_position:
 					if i['id'] == driver_name:
 						i['data'].append({'x': circuit_name, 'y':  position, 'z': formated_text})
+				for i in grid_by_points:
+					if i['id'] == driver_name:
+						i['data'].append({'x': circuit_name, 'y':  (float(total_points) * -1), 'z': formated_text})
 
 	context = {
-		'final_result': json.dumps(final_result_test),
+		'grid_by_position': json.dumps(grid_by_position),
+		'grid_by_points': json.dumps(grid_by_points),
 		'year': year,
 		'champion_name': json.dumps(champion_name),
 		'season_title': json.dumps(season_adjetive)

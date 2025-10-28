@@ -1,12 +1,21 @@
 import React from 'react';
 import '../../css/season.css';
 import { ResponsiveBump } from '@nivo/bump';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
 
 class Season extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {};
+		this.state = {
+			tab: 0
+		};
 	}
+
+	handleChange = (event, newValue) => {
+		this.setState({ tab: newValue });
+	}
+
 	render() {
 		let image;
 		try {
@@ -14,6 +23,8 @@ class Season extends React.Component {
 		} catch (error) {
 			image = require(`../../img/f1_background_ferrari_2.webp`);
 		}
+
+		let counter = 0;
 
 		return (
 			<div className='season-desktop-container'>
@@ -35,52 +46,112 @@ class Season extends React.Component {
 						pellentesque eros et tortor ultrices sollicitudin.
 					</div>
 				</div>
-				<div className='season-desktop-filters'>CHART FILTERS</div>
+				<div className='season-desktop-filters'>
+					<Tabs value={this.state.tab} onChange={this.handleChange} aria-label="basic tabs example">
+						<Tab label={'Grid By Points'} value={0} />
+						<Tab label={'Grid By Position'} value={1} />
+					</Tabs>
+				</div>
 				<div className='season-desktop-chart'>
-					<ResponsiveBump
-						data={content.final_result}
-						colors={{ scheme: 'category10' }}
-						lineWidth={3}
-						activeLineWidth={6}
-						inactiveLineWidth={3}
-						inactiveOpacity={0.15}
-						pointSize={10}
-						activePointSize={16}
-						inactivePointSize={0}
-						pointColor={{ theme: 'background' }}
-						pointBorderWidth={3}
-						activePointBorderWidth={3}
-						pointBorderColor={{ from: 'serie.color' }}
-						axisTop={{
-							tickSize: 5,
-							tickPadding: 5,
-							tickRotation: -60,
-							legend: '',
-							legendPosition: 'middle',
-							legendOffset: -36
-						}}
-						axisBottom={{
-							tickSize: 5,
-							tickPadding: 5,
-							tickRotation: 50,
-							legend: '',
-							legendPosition: 'middle',
-							legendOffset: 32
-						}}
-						axisLeft={{
-							tickSize: 5,
-							tickPadding: 5,
-							tickRotation: 0,
-							legend: 'position',
-							legendPosition: 'middle',
-							legendOffset: -40
-						}}
-						margin={{ top: 70, right: 100, bottom: 70, left: 60 }}
-						// tooltip={(point) => {
-						//     // return <div>{point['z']}</div>;
-						//     return <div>TESTING!</div>;
-						// }}
-					/>
+					{this.state.tab === 0 &&
+						<ResponsiveBump
+							data={content.grid_by_points}
+							interpolation="linear"
+							xPadding={0}
+							colors={{ scheme: 'category10' }}
+							lineWidth={3}
+							activeLineWidth={7}
+							inactiveLineWidth={3}
+							inactiveOpacity={0.15}
+							pointSize={10}
+							activePointSize={16}
+							inactivePointSize={0}
+							pointColor={{ theme: 'background' }}
+							pointBorderWidth={3}
+							activePointBorderWidth={3}
+							pointBorderColor={{ from: 'serie.color' }}
+							axisTop={{
+								tickSize: 5,
+								tickPadding: 5,
+								tickRotation: -60,
+								legend: '',
+								legendPosition: 'middle',
+								legendOffset: -36
+							}}
+							axisBottom={{
+								tickSize: 5,
+								tickPadding: 5,
+								tickRotation: 50,
+								legend: '',
+								legendPosition: 'middle',
+								legendOffset: 32
+							}}
+							axisLeft={{
+								tickSize: 5,
+								tickPadding: 5,
+								tickRotation: 0,
+								legend: 'points',
+								legendPosition: 'middle',
+								legendOffset: -40,
+								format: (v) => {
+									counter += 1
+									let text = v * -1;
+									return counter % 2 === 0 ? '' : text;
+								},
+							}}
+							margin={{ top: 70, right: 100, bottom: 70, left: 60 }}
+							// tooltip={(point) => {
+							//     // return <div>{point['z']}</div>;
+							//     return <div>TESTING!</div>;
+							// }}
+						/>
+					}
+					{this.state.tab === 1 &&
+						<ResponsiveBump
+							data={content.grid_by_position}
+							colors={{ scheme: 'category10' }}
+							lineWidth={3}
+							activeLineWidth={6}
+							inactiveLineWidth={3}
+							inactiveOpacity={0.15}
+							pointSize={10}
+							activePointSize={16}
+							inactivePointSize={0}
+							pointColor={{ theme: 'background' }}
+							pointBorderWidth={3}
+							activePointBorderWidth={3}
+							pointBorderColor={{ from: 'serie.color' }}
+							axisTop={{
+								tickSize: 5,
+								tickPadding: 5,
+								tickRotation: -60,
+								legend: '',
+								legendPosition: 'middle',
+								legendOffset: -36
+							}}
+							axisBottom={{
+								tickSize: 5,
+								tickPadding: 5,
+								tickRotation: 50,
+								legend: '',
+								legendPosition: 'middle',
+								legendOffset: 32
+							}}
+							axisLeft={{
+								tickSize: 5,
+								tickPadding: 5,
+								tickRotation: 0,
+								legend: 'position',
+								legendPosition: 'middle',
+								legendOffset: -40
+							}}
+							margin={{ top: 70, right: 100, bottom: 70, left: 60 }}
+							// tooltip={(point) => {
+							//     // return <div>{point['z']}</div>;
+							//     return <div>TESTING!</div>;
+							// }}
+						/>
+					}
 				</div>
 			</div>
 		);

@@ -93,6 +93,8 @@
 }
 .season-desktop-filters {
     margin: 20px;
+    display: flex;
+    justify-content: center;
 }
 .season-desktop-chart {
     margin: 20px;
