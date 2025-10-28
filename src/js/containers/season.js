@@ -48,12 +48,58 @@ class Season extends React.Component {
 				</div>
 				<div className='season-desktop-filters'>
 					<Tabs value={this.state.tab} onChange={this.handleChange} aria-label="basic tabs example">
-						<Tab label={'Grid By Points'} value={0} />
-						<Tab label={'Grid By Position'} value={1} />
+						<Tab label={'Grid By Position'} value={0} />
+						<Tab label={'Grid By Points'} value={1} />
 					</Tabs>
 				</div>
 				<div className='season-desktop-chart'>
 					{this.state.tab === 0 &&
+						<ResponsiveBump
+							data={content.grid_by_position}
+							colors={{ scheme: 'category10' }}
+							lineWidth={3}
+							activeLineWidth={6}
+							inactiveLineWidth={3}
+							inactiveOpacity={0.15}
+							pointSize={10}
+							activePointSize={16}
+							inactivePointSize={0}
+							pointColor={{ theme: 'background' }}
+							pointBorderWidth={3}
+							activePointBorderWidth={3}
+							pointBorderColor={{ from: 'serie.color' }}
+							axisTop={{
+								tickSize: 5,
+								tickPadding: 5,
+								tickRotation: -60,
+								legend: '',
+								legendPosition: 'middle',
+								legendOffset: -36
+							}}
+							axisBottom={{
+								tickSize: 5,
+								tickPadding: 5,
+								tickRotation: 50,
+								legend: '',
+								legendPosition: 'middle',
+								legendOffset: 32
+							}}
+							axisLeft={{
+								tickSize: 5,
+								tickPadding: 5,
+								tickRotation: 0,
+								legend: 'position',
+								legendPosition: 'middle',
+								legendOffset: -40
+							}}
+							margin={{ top: 70, right: 100, bottom: 70, left: 60 }}
+							// tooltip={(point) => {
+							//     // return <div>{point['z']}</div>;
+							//     return <div>TESTING!</div>;
+							// }}
+						/>
+					}
+					{this.state.tab === 1 &&
 						<ResponsiveBump
 							data={content.grid_by_points}
 							interpolation="linear"
@@ -98,52 +144,6 @@ class Season extends React.Component {
 									let text = v * -1;
 									return counter % 2 === 0 ? '' : text;
 								},
-							}}
-							margin={{ top: 70, right: 100, bottom: 70, left: 60 }}
-							// tooltip={(point) => {
-							//     // return <div>{point['z']}</div>;
-							//     return <div>TESTING!</div>;
-							// }}
-						/>
-					}
-					{this.state.tab === 1 &&
-						<ResponsiveBump
-							data={content.grid_by_position}
-							colors={{ scheme: 'category10' }}
-							lineWidth={3}
-							activeLineWidth={6}
-							inactiveLineWidth={3}
-							inactiveOpacity={0.15}
-							pointSize={10}
-							activePointSize={16}
-							inactivePointSize={0}
-							pointColor={{ theme: 'background' }}
-							pointBorderWidth={3}
-							activePointBorderWidth={3}
-							pointBorderColor={{ from: 'serie.color' }}
-							axisTop={{
-								tickSize: 5,
-								tickPadding: 5,
-								tickRotation: -60,
-								legend: '',
-								legendPosition: 'middle',
-								legendOffset: -36
-							}}
-							axisBottom={{
-								tickSize: 5,
-								tickPadding: 5,
-								tickRotation: 50,
-								legend: '',
-								legendPosition: 'middle',
-								legendOffset: 32
-							}}
-							axisLeft={{
-								tickSize: 5,
-								tickPadding: 5,
-								tickRotation: 0,
-								legend: 'position',
-								legendPosition: 'middle',
-								legendOffset: -40
 							}}
 							margin={{ top: 70, right: 100, bottom: 70, left: 60 }}
 							// tooltip={(point) => {
