@@ -1,61 +1,61 @@
 /// <reference types="cypress" />
 
-// describe('Season page', () => {
-//   it('Enters Season page', function() {
-//       cy.visit('/')
-//       cy.get('[href="/all-seasons"]').click();
-//       cy.get('#app-desktop-container .all-seasons-desktop-buttons div:nth-child(2)').click();
-//       cy.get('#app-desktop-container .all-seasons-desktop-buttons div:nth-child(2)').click();
-//       cy.get('#app-desktop-container [href="/season/2017"]').click();
-//       cy.get('#home-desktop-menu-item-button button').click();
-//       cy.get('[href="/"] [tabindex="0"] div span').click();    
-//   });
-// });
-
-// describe('Pilots Comparative page', () => {
-//   it('Enters Pilots page and pick drivers', function() {
-//       cy.visit('/')
-//       cy.get('[href="/pilots"]', { timeout: 5000 }).click();
-//       cy.get('#app-desktop-container .PrivateSwitchBase-input').uncheck();
-//       cy.get('#app-desktop-container .pilots-desktop-menu-button').click();
-//       cy.get('#app-desktop-container div:nth-child(2) > .pilots-desktop-photo-card-title > .material-icons').click();
-//       cy.get('#standard-basic').click();
-//       cy.get('#standard-basic').clear();
-//       cy.get('#standard-basic').type('hamil');
-//       cy.get('.pilots-overlay-input-filter div:nth-child(4)').click();
-//       cy.get('.pilots-overlay-button').as('confirm_button').click();
-//       cy.get('#app-desktop-container div:nth-child(3) .material-icons').click();
-//       cy.get('#standard-basic').click();
-//       cy.get('#standard-basic').clear();
-//       cy.get('#standard-basic').type('prost');
-//       cy.get('.pilots-overlay-input-filter div:nth-child(1)').click();
-//       cy.get('@confirm_button').click();
-//       cy.get('#home-desktop-menu-item-button button').click();
-//       cy.get('[href="/"] [tabindex="0"] div span').click();    
-//   });
-// });
-
-
-describe('Constructors page', () => {
-    it('Enters Constructors page and interacts with filters', function() {
-        cy.visit('/')
-        cy.get('[href="/constructors"]', { timeout: 5000 }).click();
-        // Click on the element that has data-testid="CalendarIcon" inside #constructor-date-picker-to
-        cy.get('[aria-label="Choose date, selected date is Feb 1, 2022"]').click();
-        cy.get('.MuiPickersYear-yearButton').contains('2006').click();
-        // Create a delay of 2 seconds
-        cy.wait(2000);
-
-        // cy.get('body').click();
-        // Click in div with class constructors-main-title
-        cy.get('.constructors-main-title').click({force: true});
-        // cy.get('#constructors-accomplishments-select-container').click();
-        // cy.get('#constructors-accomplishments-select-container [data-testid="ArrowDropDownIcon"]').click();
-        // cy.get('#constructors-accomplishments-select-container').get('data-testid="ArrowDropDownIcon"').click();
-        // cy.get('.MuiPaper-root').contains('Wins').click();
-        cy.get('#app-desktop-container .constructors-search-button').click();
-    });
+describe('Season page', () => {
+  it('Enters Season page', function() {
+      cy.visit('/')
+      cy.get('[href="/all-seasons"]').click();
+      cy.get('#app-desktop-container .all-seasons-desktop-buttons div:nth-child(2)').click();
+      cy.get('#app-desktop-container .all-seasons-desktop-buttons div:nth-child(2)').click();
+      cy.get('#app-desktop-container [href="/season/2017"]').click();
+      cy.get('#home-desktop-menu-item-button button').click();
+      cy.get('[href="/"] [tabindex="0"] div span').click();    
+  });
 });
+
+describe('Pilots Comparative page', () => {
+  it('Enters Pilots page and pick drivers', function() {
+      cy.visit('/')
+      cy.get('[href="/pilots"]', { timeout: 5000 }).click();
+      cy.get('#app-desktop-container .PrivateSwitchBase-input').uncheck();
+      cy.get('#app-desktop-container .pilots-desktop-menu-button').click();
+      cy.get('#app-desktop-container div:nth-child(2) > .pilots-desktop-photo-card-title > .material-icons').click();
+      cy.get('#standard-basic').click();
+      cy.get('#standard-basic').clear();
+      cy.get('#standard-basic').type('hamil');
+      cy.get('.pilots-overlay-input-filter div:nth-child(4)').click();
+      cy.get('.pilots-overlay-button').as('confirm_button').click();
+      cy.get('#app-desktop-container div:nth-child(3) .material-icons').click();
+      cy.get('#standard-basic').click();
+      cy.get('#standard-basic').clear();
+      cy.get('#standard-basic').type('prost');
+      cy.get('.pilots-overlay-input-filter div:nth-child(1)').click();
+      cy.get('@confirm_button').click();
+      cy.get('#home-desktop-menu-item-button button').click();
+      cy.get('[href="/"] [tabindex="0"] div span').click();    
+  });
+});
+
+
+// describe('Constructors page', () => {
+//     it('Enters Constructors page and interacts with filters', function() {
+//         cy.visit('/')
+//         cy.get('[href="/constructors"]', { timeout: 5000 }).click();
+//         // Click on the element that has data-testid="CalendarIcon" inside #constructor-date-picker-to
+//         cy.get('[aria-label="Choose date, selected date is Feb 1, 2022"]').click();
+//         cy.get('.MuiPickersYear-yearButton').contains('2006').click();
+//         // Create a delay of 2 seconds
+//         cy.wait(2000);
+
+//         // cy.get('body').click();
+//         // Click in div with class constructors-main-title
+//         cy.get('.constructors-main-title').click({force: true});
+//         // cy.get('#constructors-accomplishments-select-container').click();
+//         // cy.get('#constructors-accomplishments-select-container [data-testid="ArrowDropDownIcon"]').click();
+//         // cy.get('#constructors-accomplishments-select-container').get('data-testid="ArrowDropDownIcon"').click();
+//         // cy.get('.MuiPaper-root').contains('Wins').click();
+//         cy.get('#app-desktop-container .constructors-search-button').click();
+//     });
+// });
 
 // describe('Menu component', () => {
 //     it('Try to enter to all options in menu', function() {
