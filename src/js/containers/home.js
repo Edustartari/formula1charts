@@ -69,7 +69,7 @@ class Home extends React.Component {
 			<div className='home-desktop-container' id='home-desktop-container'>
 				<div className='home-desktop-card home-desktop-first-card' style={{ backgroundImage: "url('" + image.default + "')" }}>
 					<div className='home-desktop-card-text'>
-						<div className='home-desktop-card-title-formula-2-and-3'>FORMULA 2 and 3</div>
+						<div className='home-desktop-card-title'>FORMULA 1</div>
 						<div className='home-desktop-card-subtitle'>CHARTS</div>
 					</div>
 					<div className='home-desktop-card-opacity'></div>
