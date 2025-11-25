@@ -12,28 +12,28 @@ describe('Season page', () => {
   });
 });
 
-// describe('Pilots Comparative page', () => {
-//   it('Enters Pilots page and pick drivers', function() {
-//       cy.visit('/')
-//       cy.get('[href="/pilots"]', { timeout: 5000 }).click();
-//       cy.get('#app-desktop-container .PrivateSwitchBase-input').uncheck();
-//       cy.get('#app-desktop-container .pilots-desktop-menu-button').click();
-//       cy.get('#app-desktop-container div:nth-child(2) > .pilots-desktop-photo-card-title > .material-icons').click();
-//       cy.get('#standard-basic').click();
-//       cy.get('#standard-basic').clear();
-//       cy.get('#standard-basic').type('hamil');
-//       cy.get('.pilots-overlay-input-filter div:nth-child(4)').click();
-//       cy.get('.pilots-overlay-button').as('confirm_button').click();
-//       cy.get('#app-desktop-container div:nth-child(3) .material-icons').click();
-//       cy.get('#standard-basic').click();
-//       cy.get('#standard-basic').clear();
-//       cy.get('#standard-basic').type('prost');
-//       cy.get('.pilots-overlay-input-filter div:nth-child(1)').click();
-//       cy.get('@confirm_button').click();
-//       cy.get('#home-desktop-menu-item-button button').click();
-//       cy.get('[href="/"] [tabindex="0"] div span').click();    
-//   });
-// });
+describe('Pilots Comparative page', () => {
+  it('Enters Pilots page and pick drivers', function() {
+      cy.visit('/')
+      cy.get('[href="/pilots"]', { timeout: 5000 }).click();
+      cy.get('#app-desktop-container .PrivateSwitchBase-input').uncheck();
+      cy.get('#app-desktop-container .pilots-desktop-menu-button').click();
+      cy.get('#app-desktop-container div:nth-child(2) > .pilots-desktop-photo-card-title > .material-icons').click();
+      cy.get('#standard-basic').click();
+      cy.get('#standard-basic').clear();
+      cy.get('#standard-basic').type('hamil');
+      cy.get('.pilots-overlay-input-filter div:nth-child(4)').click();
+      cy.get('.pilots-overlay-button').as('confirm_button').click();
+      cy.get('#app-desktop-container div:nth-child(3) .material-icons').click();
+      cy.get('#standard-basic').click();
+      cy.get('#standard-basic').clear();
+      cy.get('#standard-basic').type('prost');
+      cy.get('.pilots-overlay-input-filter div:nth-child(1)').click();
+      cy.get('@confirm_button').click();
+      cy.get('#home-desktop-menu-item-button button').click();
+      cy.get('[href="/"] [tabindex="0"] div span').click();    
+  });
+});
 
 
 // describe('Constructors page', () => {
@@ -57,23 +57,23 @@ describe('Season page', () => {
 //     });
 // });
 
-// describe('Menu component', () => {
-//     it('Try to enter to all options in menu', function() {
-//         cy.visit('/')
-//         cy.get('#home-desktop-menu-item-button button').click();
-//         cy.get('[href="/all-seasons"] [tabindex="0"] div span').click();
-//         cy.get('#home-desktop-menu-item-button button').click();
-//         cy.get('[href="/pilots"] [tabindex="0"] div span').click();
-//         cy.get('#home-desktop-menu-item-button button').click();
-//         cy.get('[href="/all-time"] [tabindex="0"] div span').click();
-//         cy.get('#home-desktop-menu-item-button button').click();
-//         cy.get('[href="/constructors"] [tabindex="0"] div span').click();
-//         cy.get('#home-desktop-menu-item-button button').click();
-//         cy.get('[href="/others"] [tabindex="0"] div span').click();
-//         cy.get('#home-desktop-menu-item-button button').click();
-//         cy.get('[href="/"] [tabindex="0"] div span').click();
-//     });
-// });
+describe('Menu component', () => {
+    it('Try to enter to all options in menu', function() {
+        cy.visit('/')
+        cy.get('#home-desktop-menu-item-button button').click();
+        cy.get('[href="/all-seasons"] [tabindex="0"] div span').click();
+        cy.get('#home-desktop-menu-item-button button').click();
+        cy.get('[href="/pilots"] [tabindex="0"] div span').click();
+        cy.get('#home-desktop-menu-item-button button').click();
+        cy.get('[href="/all-time"] [tabindex="0"] div span').click();
+        cy.get('#home-desktop-menu-item-button button').click();
+        cy.get('[href="/constructors"] [tabindex="0"] div span').click();
+        cy.get('#home-desktop-menu-item-button button').click();
+        cy.get('[href="/others"] [tabindex="0"] div span').click();
+        cy.get('#home-desktop-menu-item-button button').click();
+        cy.get('[href="/"] [tabindex="0"] div span').click();
+    });
+});
 
 // describe('All Time page', () => {
 //   it('Enters All Time page and interact with filters', function() {
