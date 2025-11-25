@@ -19,5 +19,8 @@
 			"src": "/(.*)",
 			"dest": "formula1charts/wsgi.py"
 		}
-	]
+	],
+	"git": {
+		"deploymentEnabled": false
+	}
 }
