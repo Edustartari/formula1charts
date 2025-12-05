@@ -30,14 +30,13 @@ jobs:
       with:
         context: .
         file: Dockerfile-live
-        tags: formula1charts
+        tags: formula1charts:latest
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache
 
-
     - name: Start Django server in Docker container
       run: |
-        docker run -d --name formula1charts-test -p 8000:8000 --env DJANGO_SETTINGS_MODULE=formula1charts.settings formula1charts
+        docker run -d --name formula1charts-test -p 8000:8000 --env DJANGO_SETTINGS_MODULE=formula1charts.settings formula1charts:latest
 
     - name: Wait for Django server in container
       run: |
