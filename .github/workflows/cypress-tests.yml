@@ -35,16 +35,16 @@ jobs:
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache
 
-    - name: Get built image ID
-      id: get_image_id
+    - name: Get built image tag
+      id: get_image_tag
       run: |
-        IMAGE_ID=$(docker images --format '{{.Repository}}:{{.Tag}} {{.ID}}' | grep 'formula1charts:latest' | awk '{print $2}')
-        echo "image_id=$IMAGE_ID" >> $GITHUB_OUTPUT
+        IMAGE_TAG=$(docker images --format '{{.Repository}}:{{.Tag}}' | grep 'formula1charts:latest')
+        echo "image_tag=$IMAGE_TAG" >> $GITHUB_OUTPUT
 
     - name: Start Django server in Docker container
       run: |
         docker images
-        docker run -d --name formula1charts-test -p 8000:8000 --env DJANGO_SETTINGS_MODULE=formula1charts.settings ${{ steps.get_image_id.outputs.image_id }}
+        docker run -d --name formula1charts-test -p 8000:8000 --env DJANGO_SETTINGS_MODULE=formula1charts.settings ${{ steps.get_image_tag.outputs.image_tag }}
 
     - name: Wait for Django server in container
       run: |
