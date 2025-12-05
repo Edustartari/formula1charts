@@ -72,12 +72,21 @@ module.exports = {
 			filename: 'webpack-stats.json'
 		}),
 	],
-    module: {
+	module: {
 		rules: [
 			{
 				test: /\.jsx?$/,
 				loader: 'babel-loader',
 				exclude: /node_modules/,
+				options: {
+					presets: [
+						require.resolve('@babel/preset-env'),
+						require.resolve('@babel/preset-react')
+					],
+					plugins: [
+						require.resolve('@babel/plugin-syntax-jsx')
+					]
+				},
 			},
             {
                 test: /\.css$/i,
@@ -92,5 +101,11 @@ module.exports = {
                 ],
             }
 		],
+	},
+	resolve: {
+		extensions: ['.ts', '.js', '.jsx', '.css'],
+		alias: {
+		   "@": path.resolve(__dirname, ""),
+		}
 	},
 }

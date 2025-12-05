@@ -1,43 +1,49 @@
-#This is an example webapp.io configuration for Django!
-FROM vm/ubuntu:18.04
+### FRONTEND BUILD STAGE
+FROM node:24.1.0 AS frontend
 
-ENV NODE_VERSION=14.17.6
-RUN apt install -y curl
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-ENV NVM_DIR=/root/.nvm
-RUN . "$NVM_DIR/nvm.sh" && nvm install ${NODE_VERSION}
-RUN . "$NVM_DIR/nvm.sh" && nvm use v${NODE_VERSION}
-RUN . "$NVM_DIR/nvm.sh" && nvm alias default v${NODE_VERSION}
-ENV PATH="/root/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
-RUN node --version
-RUN npm --version
+# Set working directory
+WORKDIR /app
 
-# To note: Layerfiles create entire VMs, *not* containers!
+# Copy frontend source files required for build
+COPY package.json ./
+COPY webpack.config.js ./
+COPY src ./src
 
-# node is a memory hog
-ENV NODE_OPTIONS=--max-old-space-size=8192
+# Install dependencies and build frontend
+RUN npm install && npm run build
 
-COPY . .
-RUN npm install
-RUN BACKGROUND npm start
+### BACKEND BUILD STAGE
+FROM python:3.9-slim AS backend
 
-# Install python 3 & postgresql
+# Install system dependencies
 RUN apt-get update && \
-    apt-get install python3.8 python3-pip python3.8-dev libpq-dev \
-            postgresql postgresql-contrib nginx curl
+    apt-get install -y build-essential libsqlite3-dev && \
+    rm -rf /var/lib/apt/lists/*
 
-RUN cat requirements.txt | xargs -n 1 pip3 install || true
-RUN pip3 install tqdm==4.64.0
-RUN pip3 install pydash==5.1.2
-RUN pip3 install redis==4.3.6
-RUN pip3 install django-utils-six
+# Copy requirements and install
+COPY requirements.txt .
+RUN python3.9 -m pip install --upgrade pip && \
+    python3.9 -m pip install --no-cache-dir -r requirements.txt && \
+    python3.9 -m pip install gunicorn
 
-# Allow local connections to the site
-RUN echo "ALLOWED_HOSTS = ['localhost']" >> settings.py
+# Copy backend application code
+COPY . .
 
-# Run migrations (implicitly checks that they work)
-RUN python3 manage.py makemigrations && python3 manage.py migrate
+# Copy built frontend assets from frontend stage
+COPY --from=frontend /app/static ./static
 
-# Start the server
-RUN BACKGROUND python3 manage.py runserver 0.0.0.0:8000
-EXPOSE WEBSITE localhost:8000
+# Set environment variables
+ENV PYTHONUNBUFFERED=1
+ENV DJANGO_SETTINGS_MODULE=formula1charts.settings
+
+# Collect static files (optional, if using Django staticfiles)
+RUN python3.9 manage.py collectstatic --noinput || true
+
+# Run migrations
+RUN python3.9 manage.py migrate || true
+
+# Expose port for Gunicorn
+EXPOSE 8000
+
+# Start Gunicorn server for production
+CMD ["gunicorn", "formula1charts.wsgi:application", "--bind", "0.0.0.0:8000"]
