@@ -35,14 +35,20 @@ jobs:
         cache-to: type=local,dest=/tmp/.buildx-cache
         load: true
 
-    - name: Run Cypress tests in Docker container
+    - name: Start Django server in Docker container
       run: |
-        docker run --name formula1charts-test \
-          -v ${{ github.workspace }}:/app \
-          -w /app \
-          -e CYPRESS_baseUrl=http://127.0.0.1:8000 \
-          formula1charts:latest \
-          npx cypress run --browser chrome --spec cypress/e2e/test_pages.cy.js
+        docker run -d --name formula1charts-test -p 8000:8000 --env DJANGO_SETTINGS_MODULE=formula1charts.settings formula1charts:latest gunicorn formula1charts.wsgi:application --bind 0.0.0.0:8000
+
+    - name: Run Cypress tests
+      uses: cypress-io/github-action@v6
+      with:
+        working-directory: ./
+        wait-on: 'http://127.0.0.1:8000'
+        wait-on-timeout: 120
+        browser: chrome
+        spec: cypress/e2e/test_pages.cy.js
+      env:
+        CYPRESS_baseUrl: http://127.0.0.1:8000
 
     - name: Trigger Vercel Deploy
       run: |
@@ -53,3 +59,8 @@ jobs:
       run: |
         docker stop formula1charts-test || true
         docker rm formula1charts-test || true
+    - name: Cleanup Docker images
+      if: always()
+      run: |
+        docker rmi formula1charts:latest || true
+        docker system prune -f || true
