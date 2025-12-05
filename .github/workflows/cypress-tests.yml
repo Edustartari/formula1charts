@@ -26,6 +26,7 @@ jobs:
           buildx-
 
     - name: Build Docker image with cache
+      id: build_image
       uses: docker/build-push-action@v5
       with:
         context: .
@@ -34,14 +35,10 @@ jobs:
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache
 
-    - name: Ensure Docker image is available
-      run: |
-        docker pull formula1charts:latest || echo "Image not found remotely, using locally built image."
-
     - name: Start Django server in Docker container
       run: |
         docker images
-        docker run -d --name formula1charts-test -p 8000:8000 --env DJANGO_SETTINGS_MODULE=formula1charts.settings formula1charts:latest
+        docker run -d --name formula1charts-test -p 8000:8000 --env DJANGO_SETTINGS_MODULE=formula1charts.settings ${{ steps.build_image.outputs.image }}
 
     - name: Wait for Django server in container
       run: |
