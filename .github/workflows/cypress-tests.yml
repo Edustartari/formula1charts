@@ -35,18 +35,20 @@ jobs:
         cache-to: type=local,dest=/tmp/.buildx-cache
 
     - name: Run Cypress tests in Docker container
+      container:
+        image: formula1charts
+        options: --name formula1charts-test -p 8000:8000
       run: |
-        docker run --rm \
-          -v ${{ github.workspace }}:/app \
-          -w /app \
-          -e CYPRESS_baseUrl=http://127.0.0.1:8000 \
-          formula1charts \
-          bash -c "# Start Django and webpack in background, then run Cypress
-            nohup python3 manage.py runserver 0.0.0.0:8000 &
-            sleep 10
-            nohup npx webpack --config webpack.config.js &
-            sleep 30
-            npx cypress run --browser chrome --spec cypress/e2e/test_pages.cy.js"
+        # Start the Django application in the background
+        gunicorn formula1charts.wsgi:application --bind 0.0.0.0:8000 &
+        # Wait for the application to be ready
+        sleep 10
+        # Install Cypress dependencies
+        apt-get update && apt-get install -y libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xdg-utils wget
+        # Install Cypress
+        npm install cypress
+        # Run Cypress tests
+        npx cypress run --config baseUrl=http://localhost:8000
 
     - name: Trigger Vercel Deploy
       run: |
