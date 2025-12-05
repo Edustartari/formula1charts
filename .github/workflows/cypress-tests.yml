@@ -26,36 +26,27 @@ jobs:
           buildx-
 
     - name: Build Docker image with cache
-      id: build_image
       uses: docker/build-push-action@v5
       with:
         context: .
         file: Dockerfile-live
-        tags: formula1charts:latest
+        tags: formula1charts
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache
 
-    - name: Get built image tag
-      id: get_image_tag
+    - name: Run Cypress tests in Docker container
       run: |
-        IMAGE_TAG=$(docker images --format '{{.Repository}}:{{.Tag}}' | grep 'formula1charts:latest')
-        echo "image_tag=$IMAGE_TAG" >> $GITHUB_OUTPUT
-
-    - name: Start Django server in Docker container
-      run: |
-        docker images
-        docker run -d --name formula1charts-test -p 8000:8000 --env DJANGO_SETTINGS_MODULE=formula1charts.settings ${{ steps.get_image_tag.outputs.image_tag }}
-
-    - name: Wait for Django server in container
-      run: |
-        echo "Waiting for Django server in container..."
-        timeout 60 bash -c 'until curl -f http://127.0.0.1:8000; do sleep 2; done'
-        echo "Django server is ready!"
-
-
-    - name: Run Cypress tests inside container
-      run: |
-        docker exec formula1charts-test npx cypress run --browser chrome --spec cypress/e2e/test_pages.cy.js --config baseUrl=http://127.0.0.1:8000
+        docker run --rm \
+          -v ${{ github.workspace }}:/app \
+          -w /app \
+          -e CYPRESS_baseUrl=http://127.0.0.1:8000 \
+          formula1charts \
+          bash -c "# Start Django and webpack in background, then run Cypress
+            nohup python3 manage.py runserver 0.0.0.0:8000 &
+            sleep 10
+            nohup npx webpack --config webpack.config.js &
+            sleep 30
+            npx cypress run --browser chrome --spec cypress/e2e/test_pages.cy.js"
 
     - name: Trigger Vercel Deploy
       run: |
