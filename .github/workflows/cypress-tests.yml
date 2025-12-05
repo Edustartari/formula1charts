@@ -14,85 +14,48 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Setup Python
-      uses: actions/setup-python@v4
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+
+    - name: Cache Docker layers
+      uses: actions/cache@v3
       with:
-        python-version: '3.9'
+        path: /tmp/.buildx-cache
+        key: buildx-${{ github.sha }}
+        restore-keys: |
+          buildx-
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
+    - name: Build Docker image with cache
+      uses: docker/build-push-action@v5
       with:
-        node-version: '24'
-        cache: 'npm'
+        context: .
+        file: Dockerfile-live
+        tags: formula1charts
+        cache-from: type=local,src=/tmp/.buildx-cache
+        cache-to: type=local,dest=/tmp/.buildx-cache
 
-    - name: Install Python dependencies
+
+    - name: Start Django server in Docker container
       run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+        docker run -d --name formula1charts-test -p 8000:8000 --env DJANGO_SETTINGS_MODULE=formula1charts.settings formula1charts
 
-    - name: Install Node.js dependencies 
-      run: | 
-        npm ci - ignore-scripts 
-
-    - name: Run Django migrations
+    - name: Wait for Django server in container
       run: |
-        python manage.py migrate --noinput
-
-    # - name: Collect static files
-    #   run: |
-    #     python manage.py collectstatic --noinput
-
-    # - name: Build frontend assets
-    #   run: |
-    #     npm run build
-
-    - name: Start Django server
-      run: |
-        python manage.py runserver 127.0.0.1:8000 &
-        echo $! > django.pid
-      env:
-        DJANGO_SETTINGS_MODULE: formula1charts.settings
-
-    - name: Start frontend development server
-      run: |
-        npm run start &
-        echo $! > webpack.pid
-
-    - name: Wait for servers to be ready
-      run: |
-        echo "Waiting for Django server..."
+        echo "Waiting for Django server in container..."
         timeout 60 bash -c 'until curl -f http://127.0.0.1:8000; do sleep 2; done'
         echo "Django server is ready!"
-        
-        echo "Waiting for webpack to compile..."
-        sleep 30
 
-    - name: Run Cypress tests
-      uses: cypress-io/github-action@v6
-      with:
-        working-directory: ./
-        wait-on: 'http://127.0.0.1:8000'
-        wait-on-timeout: 120
-        browser: chrome
-        spec: cypress/e2e/test_pages.cy.js
-      env:
-        CYPRESS_baseUrl: http://127.0.0.1:8000
+
+    - name: Run Cypress tests inside container
+      run: |
+        docker exec formula1charts-test npx cypress run --browser chrome --spec cypress/e2e/test_pages.cy.js --config baseUrl=http://127.0.0.1:8000
 
     - name: Trigger Vercel Deploy
       run: |
         curl -X POST https://api.vercel.com/v1/integrations/deploy/${{secrets.VERCEL_DEPLOY_HOOK}}
 
-    - name: Cleanup processes
+    - name: Cleanup Docker container
       if: always()
       run: |
-        if [ -f django.pid ]; then
-          kill $(cat django.pid) || true
-          rm django.pid
-        fi
-        if [ -f webpack.pid ]; then
-          kill $(cat webpack.pid) || true
-          rm webpack.pid
-        fi
-        # Kill any remaining processes
-        pkill -f "manage.py runserver" || true
-        pkill -f "webpack" || true
+        docker stop formula1charts-test || true
+        docker rm formula1charts-test || true
