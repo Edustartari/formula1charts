@@ -64,9 +64,9 @@ jobs:
         push: true
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/formula1charts:${{ github.run_number }}
 
-    # - name: Trigger Vercel Deploy
-    #   run: |
-    #     curl -X POST https://api.vercel.com/v1/integrations/deploy/${{secrets.VERCEL_DEPLOY_HOOK}}
+    - name: Trigger Vercel Deploy
+      run: |
+        curl -X POST https://api.vercel.com/v1/integrations/deploy/${{secrets.VERCEL_DEPLOY_HOOK}}
 
     - name: Cleanup Docker container
       if: always()
