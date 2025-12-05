@@ -1,0 +1,57 @@
+### FRONTEND BUILD STAGE
+FROM node:24.1.0 AS frontend
+
+# Set working directory
+WORKDIR /app
+
+# Copy frontend source files required for build
+COPY package.json ./
+COPY webpack.config.js ./
+COPY src ./src
+
+# Install dependencies and build frontend
+RUN npm install
+
+### BACKEND BUILD STAGE
+FROM python:3.9-slim AS backend
+
+# Install system dependencies
+RUN apt-get update && \
+    apt-get install -y build-essential libsqlite3-dev curl && \
+    curl -fsSL https://deb.nodesource.com/setup_24.x | bash - && \
+    apt-get install -y nodejs && \
+    rm -rf /var/lib/apt/lists/*
+
+# Copy requirements and install
+COPY requirements.txt .
+RUN python3.9 -m pip install --upgrade pip && \
+    python3.9 -m pip install --no-cache-dir -r requirements.txt && \
+    python3.9 -m pip install gunicorn
+
+# Copy backend application code
+COPY . .
+
+# Set environment variables
+ENV PYTHONUNBUFFERED=1
+ENV DJANGO_SETTINGS_MODULE=formula1charts.settings
+
+############################################################
+# Build Docker image:
+# docker build -t formula1charts-dev -f Dockerfile-dev .
+
+# Create Docker container for development:
+# docker run -it -d --name formula1charts-container-dev -p 8000:8000 -v $PWD:/app --env DJANGO_SETTINGS_MODULE=formula1charts.settings formula1charts-dev
+
+# Enter Docker container (open a bash):
+# docker exec -it formula1charts-container-dev /bin/bash
+# docker exec -it formula1charts-container-dev /bin/bash -c "cd app/ && python manage.py runserver 0.0.0.0:8000; exec bash"
+# docker exec -it formula1charts-container-dev /bin/bash -c "cd app/ && npm start; exec bash"
+
+# List containers:
+# docker ps -a
+
+# Stop the container:
+# docker stop formula1charts-container-dev
+
+# Remove the container:
+# docker rm formula1charts-container-dev
