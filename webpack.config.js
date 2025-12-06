@@ -47,6 +47,7 @@ for (var i = folder_pool.length - 1; i >= 0; i--) {
 // }
 
 module.exports = {
+	mode: 'production',
 	entry: entries,  
 	output: {
 		path: path.join(__dirname, 'static'),
