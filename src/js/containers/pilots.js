@@ -285,7 +285,12 @@ class Pilots extends React.Component {
 							onClick={() =>
 								this.setState({ toggle_option: this.state.toggle_option === 'absolute' ? 'percentage' : 'absolute' })
 							}
-							style={this.state.toggle_option === 'absolute' ? {} : { backgroundColor: '#ffcccc', borderColor: '#ff9292' }}
+							style={{
+								background: this.state.toggle_option === 'absolute'
+									? 'linear-gradient(90deg, #667eea 0%, #764ba2 100%)'
+									: 'linear-gradient(90deg, #ff9292 0%, #ffcccc 100%)',
+								color: this.state.toggle_option === 'absolute' ? 'white' : '#333',
+							}}
 						>
 							{this.state.toggle_option === 'percentage' && 'Percentage'}
 							<Switch checked={this.state.toggle_option === 'absolute' ? true : false} />
@@ -293,41 +298,25 @@ class Pilots extends React.Component {
 						</div>
 					</div>
 					<div className='pilots-desktop-photos-list'>
-						<div className='pilots-desktop-photo-card' onClick={() => this.setState({ open_dialog: 'driver_1' })}>
-							<img src={driver_1_image.default} />
-							<div className='pilots-desktop-photo-card-title'>
-								<div className='pilots-desktop-photo-card-title-text'>{this.state.driver_1['name']}</div>
-								<span className='material-icons'>expand_more</span>
-							</div>
-						</div>
-						<div className='pilots-desktop-photo-card' onClick={() => this.setState({ open_dialog: 'driver_2' })}>
-							<img src={driver_2_image.default} />
-							<div className='pilots-desktop-photo-card-title'>
-								<div className='pilots-desktop-photo-card-title-text'>{this.state.driver_2['name']}</div>
-								<span className='material-icons'>expand_more</span>
-							</div>
-						</div>
-						<div className='pilots-desktop-photo-card' onClick={() => this.setState({ open_dialog: 'driver_3' })}>
-							<img src={driver_3_image.default} />
-							<div className='pilots-desktop-photo-card-title'>
-								<div className='pilots-desktop-photo-card-title-text'>{this.state.driver_3['name']}</div>
-								<span className='material-icons'>expand_more</span>
-							</div>
-						</div>
-						<div className='pilots-desktop-photo-card' onClick={() => this.setState({ open_dialog: 'driver_4' })}>
-							<img src={driver_4_image.default} />
-							<div className='pilots-desktop-photo-card-title'>
-								<div className='pilots-desktop-photo-card-title-text'>{this.state.driver_4['name']}</div>
-								<span className='material-icons'>expand_more</span>
-							</div>
-						</div>
-						<div className='pilots-desktop-photo-card' onClick={() => this.setState({ open_dialog: 'driver_5' })}>
-							<img src={driver_5_image.default} />
-							<div className='pilots-desktop-photo-card-title'>
-								<div className='pilots-desktop-photo-card-title-text'>{this.state.driver_5['name']}</div>
-								<span className='material-icons'>expand_more</span>
-							</div>
-						</div>
+						{[1,2,3,4,5].map(i => {
+							const driver = this.state[`driver_${i}`];
+							const driver_image = eval(`driver_${i}_image`);
+							return (
+								<div
+									key={i}
+									className='pilots-desktop-photo-card'
+									onClick={() => this.setState({ open_dialog: `driver_${i}` })}
+									onMouseOver={e => e.currentTarget.style.transform = 'scale(1.04)'}
+									onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'}
+								>
+									<img src={driver_image.default}/>
+									<div className='pilots-desktop-photo-card-title'>
+										<div className='pilots-desktop-photo-card-title-text'>{driver['name']}</div>
+										<span className='material-icons' style={{ color: '#667eea' }}>expand_more</span>
+									</div>
+								</div>
+							);
+						})}
 					</div>
 					<div className='pilots-desktop-chart'>
 						<div className='pilots-desktop-chart-details'>
@@ -364,28 +353,6 @@ class Pilots extends React.Component {
 										precision: 0.01,
 										velocity: 0
 									}}
-									// legends={[
-									// 	{
-									// 		anchor: 'top-left',
-									// 		direction: 'column',
-									// 		translateX: -50,
-									// 		translateY: -40,
-									// 		itemWidth: 80,
-									// 		itemHeight: 20,
-									// 		itemTextColor: '#999',
-									// 		symbolSize: 12,
-									// 		symbolShape: 'circle',
-									// 		effects: [
-									// 			{
-									// 				on: 'hover',
-									// 				style: {
-									// 					itemTextColor: '#000'
-									// 				}
-									// 			}
-									// 		]
-									// 	}
-									// ]}
-									// theme={theme}
 								/>
 							</ThemeProvider>
 							{this.state.toggle_option === 'percentage' && (
@@ -397,7 +364,9 @@ class Pilots extends React.Component {
 							)}
 						</div>
 					</div>
-					<div className='pilots-desktop-chart'>CHART TWO</div>
+					<div className='pilots-desktop-chart'>
+						CHART TWO (coming soon)
+					</div>
 					<PilotsOverlay handle_change={this.handle_change} select_driver={this.select_driver} {...this.state} />
 				</div>
 			);

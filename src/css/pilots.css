@@ -4,6 +4,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 100%);
+    min-height: 100vh;
 }
 .pilots-desktop-photos-list {
     position: fixed;
@@ -14,18 +16,25 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    z-index: 2;
 }
 .pilots-desktop-photo-card {
     width: 240px;
-    margin: 30px 0 0px 0;
-    border: 1px solid #dbdbdb;
-    border-radius: 5px;
+    margin: 20px 0 0px 0;
+    cursor: pointer;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px 0 rgba(80,80,180,0.10);
+    background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 100%);
+    transition: transform 0.15s;
     cursor: pointer;
 }
 .pilots-desktop-photo-card img{
     width: 100%;
     object-fit: contain;
-    height: 120px;
+    height: 105px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px 0 rgba(80,80,180,0.10);
 }
 .pilots-desktop-photo-card .css-1869usk-MuiFormControl-root {
     margin: 0px;
@@ -39,7 +48,15 @@
     justify-content: center;
     align-items: center;
     width: calc(100% - 230px);
-    margin: 0 0 0 230px;
+    background: rgba(255,255,255,0.95);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
+    margin: 40px 0;
+    padding: 30px 0;
+    text-align: center;
+    color: #aaa;
+    font-weight: 600;
+    font-size: 1.2rem;
 }
 .pilots-desktop-chart-details {
     height: 70%;
@@ -58,17 +75,23 @@
     align-items: center;
     width: 100vw;
     z-index: 1;
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 .pilots-desktop-menu-button {
-    padding: 10px 15px;
-    border-radius: 15px;
     background-color: gainsboro;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 190px;
-    border-style: solid;
-    border-width: 1px;
+    border: none;
+    box-shadow: 0 4px 24px 0 rgba(80,80,180,0.10);
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 12px 30px;
+    border-radius: 18px;
+    transition: 'all 0.2s';
+    cursor: 'pointer';
 }
 .pilots-desktop-menu-button .css-jsexje-MuiSwitch-thumb {
     background-color: lightblue;
@@ -85,21 +108,20 @@
     right: 0;
     width: 30%;
     font-size: 14px;
+    background: rgba(102,126,234,0.08);
+    border-radius: 8px;
+    padding: 10px 18px;
+    color: #333;
+    font-weight: 500;
 }
 .pilots-desktop-photo-card-title {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 5px;
-}
-.pilots-desktop-photo-card-title-text {
-    
-}
-.pilots-desktop-photo-card-title .material-icons{
-    
-}
-.pilots-dialog {
-
+    padding: 8px 10px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: #333;
 }
 .pilots-overlay{
     min-width: 400px;
@@ -126,10 +148,6 @@
     position: absolute;
     top: 48px;
 }
-/* .pilots-overlay .css-1c2i806-MuiFormLabel-root-MuiInputLabel-root{
-    left: 12px;
-    top: 10px;
-} */
 .pilots-overlay .MuiFormLabel-root{
     left: 12px;
     top: 10px;
@@ -163,9 +181,6 @@
     background-color: #dbdbdb;
     cursor: pointer;
 }
-.pilots-overlay-input-filter {
-
-}
 .pilots-overlay-input-item {
     padding: 5px 15px;
 }
@@ -175,11 +190,16 @@
 }
 
 /* Adapt classes based on differente screen sizes */
-@media (max-width: 1460px) {
+@media (max-width: 1550px) {
     .pilots-desktop-photo-card {
         width: 200px;
+        margin: 10px 0 0px 0;
     }
     .pilots-desktop-photo-card img{
         height: 80px;
     }
+    .pilots-desktop-photos-list {
+        justify-content: flex-start;
+    }
+
 }

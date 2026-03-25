@@ -124,24 +124,20 @@ class AppDesktop extends React.Component {
 		const home_desktop_menu = document.getElementById('home-desktop-menu');
 		const home_desktop_menu_item_button = document.getElementById('home-desktop-menu-item-button');
 		if (home_desktop_container_top < -40) {
-			// Get home-desktop-menu element and add class
 			home_desktop_menu.style.position = 'fixed';
 			home_desktop_menu.style.zIndex = 2;
 			home_desktop_menu.style.backgroundColor = 'white';
 
-			// Get home-desktop-menu-item element and add class
 			home_desktop_menu_item_button.style.color = 'black';
 			home_desktop_menu_item_button.style.margin = '0 20px 0 0';
 			home_desktop_menu_item_button.style.fontWeight = '600';
 			home_desktop_menu_item_button.style.border = '1px solid black';
 			home_desktop_menu_item_button.style.backgroundColor = 'unset';
 		} else {
-			// Get home-desktop-menu element and add class
 			home_desktop_menu.style.position = 'absolute';
 			home_desktop_menu.style.zIndex = 2;
 			home_desktop_menu.style.backgroundColor = 'transparent';
 
-			// Get home-desktop-menu-item element and add class
 			home_desktop_menu_item_button.style.color = '#454545';
 			home_desktop_menu_item_button.style.margin = '60px 40px 0 0';
 			home_desktop_menu_item_button.style.fontWeight = 'normal';
