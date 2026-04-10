@@ -24,7 +24,7 @@ requests==2.27.1
 soupsieve==2.3.2.post1
 sqlparse==0.4.3
 tomli==2.2.1
-tqdm==4.66.1
+tqdm==4.66.6
 typing-extensions==4.1.1
 tzdata==2022.4
 urllib3==1.26.20
