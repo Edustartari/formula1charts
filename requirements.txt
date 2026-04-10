@@ -16,7 +16,7 @@ iniconfig==2.0.0
 packaging==24.2
 pluggy==1.6.0
 pydash==7.0.6
-pytest==8.3.4
+pytest==8.3.5
 pytest-django==4.10.0
 pytz==2022.2.1
 ratelimit==2.2.1
