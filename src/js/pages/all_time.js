@@ -3,14 +3,14 @@ import '../../css/all_time.css';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import { Loading } from '../components/loading';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import Tooltip from '@mui/material/Tooltip';
-
+import CircularProgress from '@mui/material/CircularProgress';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
 import moment from 'moment';
+import { Loading } from '../components/loading';
 
 // ******************************************************
 // ******************************************************
@@ -213,22 +213,20 @@ class AllTime extends React.Component {
   }
 
   render() {
-    if (this.state.drivers.length === 0 || Object.keys(this.state.nationalities).length === 0) {
-      return (
-        <Loading open={true} />
-      );
-    } else {
-      let image_test = require(`../../img/f1_background_ferrari_2.webp`);
+    let image_fallback = require(`../../img/f1_background_ferrari_2.webp`);
 
-      return (
-        <div className='all-time-background'>
-          <div className='all-time-main-container'>
-            <div className='all-time-main-title'>All Time Comparison</div>
-            <div className='all-time-options'>
-              <div className='all-time-options-column-1'>
-                <div className='all-time-option-box'>
-                  <div className='all-time-option-box-text'>Nationality: {this.state.nationality}</div>
-                  <div className='all-time-option-box-component'>
+    return (
+      <div className='all-time-background'>
+        <div className='all-time-main-container'>
+          <div className='all-time-main-title'>All Time Comparison</div>
+          <div className='all-time-options'>
+            <div className='all-time-options-column-1'>
+              <div className='all-time-option-box'>
+                <div className='all-time-option-box-text'>Nationality: {this.state.nationality}</div>
+                <div className='all-time-option-box-component'>
+                  {Object.keys(this.state.nationalities).length === 0 ? (
+                    <CircularProgress color='inherit' />
+                  ) : (
                     <FormControl fullWidth>
                       <Select
                         value={this.state.nationality}
@@ -248,139 +246,147 @@ class AllTime extends React.Component {
                         })}
                       </Select>
                     </FormControl>
-                  </div>
-                </div>
-                <div className='all-time-option-box'>
-                  <div className='all-time-option-box-text'>Number of drivers: {this.state.range}</div>
-                  <div className='all-time-option-box-component'>
-                    <FormControl fullWidth>
-                      <Select
-                        id='number-of-drivers-select'
-                        value={this.state.range}
-                        onChange={e => this.setState({ range: e.target.value })}
-                      >
-                        <MenuItem value={1}>1</MenuItem>
-                        <MenuItem value={2}>2</MenuItem>
-                        <MenuItem value={3}>3</MenuItem>
-                        <MenuItem value={4}>4</MenuItem>
-                        <MenuItem value={5}>5</MenuItem>
-                      </Select>
-                    </FormControl>
-                  </div>
+                  )}
                 </div>
               </div>
               <div className='all-time-option-box'>
-                <div className='all-time-option-box-text'>Range Date</div>
-                <div className='all-time-option-box-component'>
-                  <LocalizationProvider dateAdapter={AdapterMoment}>
-                    <DemoContainer components={['DatePicker']}>
-                      <div id='date-picker-from'>
-                        <DatePicker
-                          id='date-picker-from'
-                          disableFuture={true}
-                          label='From'
-                          views={['year']}
-                          minDate={moment(new Date(1950, 1, 1))}
-                          maxDate={moment(new Date(2024, 1, 1))}
-                          value={this.state.first_date}
-                          onChange={newValue => this.setState({ first_date: newValue })}
-                        />
-                      </div>
-                      <div id='date-picker-to'>
-                        <DatePicker
-                          id='date-picker-to'
-                          disableFuture={true}
-                          label='To'
-                          views={['year']}
-                          minDate={moment(new Date(1950, 1, 1))}
-                          maxDate={moment(new Date(2024, 1, 1))}
-                          value={this.state.second_date}
-                          onChange={newValue => this.setState({ second_date: newValue })}
-                        />
-                      </div>
-                    </DemoContainer>
-                  </LocalizationProvider>
-                </div>
-              </div>
-              <div className='all-time-option-box'>
-                <div className='all-time-option-box-text'>
-                  Filter: {this.state.filter_type.charAt(0).toUpperCase() + this.state.filter_type.slice(1)}
-                </div>
+                <div className='all-time-option-box-text'>Number of drivers: {this.state.range}</div>
                 <div className='all-time-option-box-component'>
                   <FormControl fullWidth>
                     <Select
-                      id='accomplishments-select'
-                      value={this.state.filter_type}
-                      onChange={e => this.setState({ filter_type: e.target.value })}
+                      id='number-of-drivers-select'
+                      value={this.state.range}
+                      onChange={e => this.setState({ range: e.target.value })}
                     >
-                      <MenuItem value={'title'}>Titles</MenuItem>
-                      <MenuItem value={'wins'}>Wins</MenuItem>
-                      <MenuItem value={'poles'}>Poles</MenuItem>
-                      <MenuItem value={'podiums'}>Podiums</MenuItem>
+                      <MenuItem value={1}>1</MenuItem>
+                      <MenuItem value={2}>2</MenuItem>
+                      <MenuItem value={3}>3</MenuItem>
+                      <MenuItem value={4}>4</MenuItem>
+                      <MenuItem value={5}>5</MenuItem>
                     </Select>
                   </FormControl>
                 </div>
               </div>
-              <div className='all-time-option-box'>
-                <div className='all-time-option-box-text'>Absolute</div>
-                <div className='all-time-option-box-component'>option component</div>
+            </div>
+            <div className='all-time-option-box'>
+              <div className='all-time-option-box-text'>Range Date</div>
+              <div className='all-time-option-box-component'>
+                <LocalizationProvider dateAdapter={AdapterMoment}>
+                  <DemoContainer components={['DatePicker']}>
+                    <div id='date-picker-from'>
+                      <DatePicker
+                        id='date-picker-from'
+                        disableFuture={true}
+                        label='From'
+                        views={['year']}
+                        minDate={moment(new Date(1950, 1, 1))}
+                        maxDate={moment(new Date(2024, 1, 1))}
+                        value={this.state.first_date}
+                        onChange={newValue => this.setState({ first_date: newValue })}
+                      />
+                    </div>
+                    <div id='date-picker-to'>
+                      <DatePicker
+                        id='date-picker-to'
+                        disableFuture={true}
+                        label='To'
+                        views={['year']}
+                        minDate={moment(new Date(1950, 1, 1))}
+                        maxDate={moment(new Date(2024, 1, 1))}
+                        value={this.state.second_date}
+                        onChange={newValue => this.setState({ second_date: newValue })}
+                      />
+                    </div>
+                  </DemoContainer>
+                </LocalizationProvider>
               </div>
             </div>
-            <div className='all-time-search-button' id='search-button' onClick={this.search_drivers}>
-              SEARCH
-            </div>
-            <div className='all-time-charts'>
-              {this.state.drivers_filtered.slice(0, this.state.range).map((driver, index) => {
-                return (
-                  <div
-                    key={driver.id}
-                    className='all-time-chart-box'
-                    style={{ width: 'calc(100% / ' + this.state.range + ')' }}
+            <div className='all-time-option-box'>
+              <div className='all-time-option-box-text'>
+                Filter: {this.state.filter_type.charAt(0).toUpperCase() + this.state.filter_type.slice(1)}
+              </div>
+              <div className='all-time-option-box-component'>
+                <FormControl fullWidth>
+                  <Select
+                    id='accomplishments-select'
+                    value={this.state.filter_type}
+                    onChange={e => this.setState({ filter_type: e.target.value })}
                   >
-                    <div className='all-time-chart-box-info'>
-                      {driver.image && (
-                        <div
-                          className='all-time-chart-box-info-photo'
-                          style={{ backgroundImage: 'url(' + require(`../../img/${driver.image}`).default + ')' }}
-                        ></div>
-                      )}
-                      {!driver.image && (
-                        <div
-                          className='all-time-chart-box-info-photo'
-                          style={{ backgroundImage: 'url(' + image_test.default + ')' }}
-                        ></div>
-                      )}
-                      <div className='all-time-chart-box-info-text'>{driver.name}</div>
-                    </div>
-                    <div className='all-time-chart-details'>
-                      <BarChart data={driver} {...this.state} />
-                    </div>
-                  </div>
-                );
-              })}
+                    <MenuItem value={'title'}>Titles</MenuItem>
+                    <MenuItem value={'wins'}>Wins</MenuItem>
+                    <MenuItem value={'poles'}>Poles</MenuItem>
+                    <MenuItem value={'podiums'}>Podiums</MenuItem>
+                  </Select>
+                </FormControl>
+              </div>
             </div>
-            <div className='all-time-chart-labels'>
-              <div className='all-time-chart-label-details'>
-                <div className='all-time-chart-label-details-box'></div>
-                <div className='all-time-chart-label-details-text'>Titles</div>
-              </div>
-              <div className='all-time-chart-label-details'>
-                <div className='all-time-chart-label-details-box'></div>
-                <div className='all-time-chart-label-details-text'>Wins</div>
-              </div>
-              <div className='all-time-chart-label-details'>
-                <div className='all-time-chart-label-details-box'></div>
-                <div className='all-time-chart-label-details-text'>Poles</div>
-              </div>
-              <div className='all-time-chart-label-details'>
-                <div className='all-time-chart-label-details-box'></div>
-                <div className='all-time-chart-label-details-text'>Podiums</div>
-              </div>
+            <div className='all-time-option-box'>
+              <div className='all-time-option-box-text'>Absolute</div>
+              <div className='all-time-option-box-component'>option component</div>
             </div>
           </div>
+          {
+            (this.state.drivers.length === 0 || Object.keys(this.state.nationalities).length === 0) ? (
+              <CircularProgress color='inherit' />
+            ) : (
+              <React.Fragment>
+                <div className='all-time-search-button' id='search-button' onClick={this.search_drivers}>
+                  SEARCH
+                </div>
+                <div className='all-time-charts'>
+                  {this.state.drivers_filtered.slice(0, this.state.range).map((driver, index) => {
+                    return (
+                      <div
+                        key={driver.id}
+                        className='all-time-chart-box'
+                        style={{ width: 'calc(100% / ' + this.state.range + ')' }}
+                      >
+                        <div className='all-time-chart-box-info'>
+                          {driver.image && (
+                            <div
+                              className='all-time-chart-box-info-photo'
+                              style={{ backgroundImage: 'url(' + require(`../../img/${driver.image}`).default + ')' }}
+                            ></div>
+                          )}
+                          {!driver.image && (
+                            <div
+                              className='all-time-chart-box-info-photo'
+                              style={{ backgroundImage: 'url(' + image_fallback.default + ')' }}
+                            ></div>
+                          )}
+                          <div className='all-time-chart-box-info-text'>{driver.name}</div>
+                        </div>
+                        <div className='all-time-chart-details'>
+                          <BarChart data={driver} {...this.state} />
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+                <div className='all-time-chart-labels'>
+                  <div className='all-time-chart-label-details'>
+                    <div className='all-time-chart-label-details-box'></div>
+                    <div className='all-time-chart-label-details-text'>Titles</div>
+                  </div>
+                  <div className='all-time-chart-label-details'>
+                    <div className='all-time-chart-label-details-box'></div>
+                    <div className='all-time-chart-label-details-text'>Wins</div>
+                  </div>
+                  <div className='all-time-chart-label-details'>
+                    <div className='all-time-chart-label-details-box'></div>
+                    <div className='all-time-chart-label-details-text'>Poles</div>
+                  </div>
+                  <div className='all-time-chart-label-details'>
+                    <div className='all-time-chart-label-details-box'></div>
+                    <div className='all-time-chart-label-details-text'>Podiums</div>
+                  </div>
+                </div>
+              </React.Fragment>
+            )
+          }
         </div>
-      );
-    }
+      </div>
+    );
   }
 }
 

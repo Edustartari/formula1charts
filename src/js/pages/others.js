@@ -7,6 +7,7 @@ import { ResponsiveWaffle } from '@nivo/waffle'
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { Loading } from '../components/loading';
+import CircularProgress from '@mui/material/CircularProgress';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
 import moment from 'moment';
@@ -196,175 +197,175 @@ class Others extends React.Component {
   }
 
   render() {
-    if (this.state.drivers.length === 0 || Object.keys(this.state.nationalities).length === 0) {
-      return (
-        <Loading open={true} />
-      );
-    } else {
-      let image_test = require(`../../img/f1_background_ferrari_2.webp`);
-
-      return (
-        <div className='others-background'>
-          <div className='others-main-container'>
-            <div className='others-main-title'>Others</div>
-            <div className='others-options'>
-              <div className='others-option-box'>
-                <div className='others-option-box-text'>Range Date</div>
-                <div className='others-option-box-component'>
-                  <LocalizationProvider dateAdapter={AdapterMoment}>
-                    <DemoContainer components={['DatePicker']}>
-                      <DatePicker
-                        disableFuture={true}
-                        label='From'
-                        views={['year']}
-                        minDate={moment(new Date(1950, 1, 1))}
-                        maxDate={moment(new Date(2024, 1, 1))}
-                        value={this.state.first_date}
-                        onChange={newValue => this.setState({ first_date: newValue })}
-                      />
-                      <DatePicker
-                        disableFuture={true}
-                        label='To'
-                        views={['year']}
-                        minDate={moment(new Date(1950, 1, 1))}
-                        maxDate={moment(new Date(2024, 1, 1))}
-                        value={this.state.second_date}
-                        onChange={newValue => this.setState({ second_date: newValue })}
-                      />
-                    </DemoContainer>
-                  </LocalizationProvider>
-                </div>
-              </div>
-              <div className='others-option-box'>
-                <div className='others-option-box-text'>
-                  Filter: {this.state.filter_type.charAt(0).toUpperCase() + this.state.filter_type.slice(1)}
-                </div>
-                <div className='others-option-box-component'>
-                  <FormControl fullWidth>
-                    <Select
-                      id='demo-simple-select'
-                      value={this.state.filter_type}
-                      onChange={e => this.setState({ filter_type: e.target.value })}
-                    >
-                      <MenuItem value={'title'}>Titles</MenuItem>
-                      <MenuItem value={'wins'}>Wins</MenuItem>
-                      <MenuItem value={'poles'}>Poles</MenuItem>
-                      <MenuItem value={'podiums'}>Podiums</MenuItem>
-                    </Select>
-                  </FormControl>
-                </div>
+    return (
+      <div className='others-background'>
+        <div className='others-main-container'>
+          <div className='others-main-title'>Others</div>
+          <div className='others-options'>
+            <div className='others-option-box'>
+              <div className='others-option-box-text'>Range Date</div>
+              <div className='others-option-box-component'>
+                <LocalizationProvider dateAdapter={AdapterMoment}>
+                  <DemoContainer components={['DatePicker']}>
+                    <DatePicker
+                      disableFuture={true}
+                      label='From'
+                      views={['year']}
+                      minDate={moment(new Date(1950, 1, 1))}
+                      maxDate={moment(new Date(2024, 1, 1))}
+                      value={this.state.first_date}
+                      onChange={newValue => this.setState({ first_date: newValue })}
+                    />
+                    <DatePicker
+                      disableFuture={true}
+                      label='To'
+                      views={['year']}
+                      minDate={moment(new Date(1950, 1, 1))}
+                      maxDate={moment(new Date(2024, 1, 1))}
+                      value={this.state.second_date}
+                      onChange={newValue => this.setState({ second_date: newValue })}
+                    />
+                  </DemoContainer>
+                </LocalizationProvider>
               </div>
             </div>
-            <div className='others-main-button' onClick={this.search_drivers}>
-              SEARCH
-            </div>
-            <div className='others-charts-container'>
-              <div className='others-chart'>
-                <div className='others-chart-text'>Total drivers between period {this.state.first_date._d.getFullYear()} - {this.state.second_date._d.getFullYear()}</div>
-                <ResponsiveWaffle
-                  data={this.state.drivers_filtered}
-                  total={this.state.drivers_filtered.reduce((acc, item) => acc + item.value, 0)}
-                  colors={{ scheme: 'paired' }}
-                  // colors={colors_list}
-                  rows={35}
-                  columns={20}
-                  padding={1}
-                  fillDirection="bottom"
-                  valueFormat=".2f"
-                  margin={{ top: 10, right: 10, bottom: 10, left: 120 }}
-                  borderRadius={3}
-                  borderColor={{
-                    from: 'color',
-                    modifiers: [
-                      [
-                        'darker',
-                        0.3
-                      ]
-                    ]
-                  }}
-                  motionStagger={2}
-                  legends={[
-                    {
-                      anchor: 'top-left',
-                      direction: 'column',
-                      justify: false,
-                      translateX: -60,
-                      translateY: 0,
-                      itemsSpacing: 4,
-                      itemWidth: 100,
-                      itemHeight: 20,
-                      itemDirection: 'left-to-right',
-                      itemOpacity: 1,
-                      itemTextColor: '#777',
-                      symbolSize: 20,
-                      effects: [
-                        {
-                          on: 'hover',
-                          style: {
-                            itemTextColor: '#000',
-                            itemBackground: '#f7fafb'
-                          }
-                        }
-                      ]
-                    }
-                  ]}
-                />
+            <div className='others-option-box'>
+              <div className='others-option-box-text'>
+                Filter: {this.state.filter_type.charAt(0).toUpperCase() + this.state.filter_type.slice(1)}
               </div>
-              <div className='others-chart'>
-                <div className='others-chart-text'>Total drivers with {this.state.filter_type} for each country</div>
-                <ResponsiveWaffle
-                  data={this.state.drivers_filtered_by_type}
-                  total={this.state.drivers_filtered_by_type.reduce((acc, item) => acc + item.value, 0)}
-                  colors={{ scheme: 'paired' }}
-                  rows={35}
-                  columns={20}
-                  padding={1}
-                  fillDirection="bottom"
-                  valueFormat=".2f"
-                  margin={{ top: 10, right: 10, bottom: 10, left: 120 }}
-                  borderRadius={3}
-                  borderColor={{
-                    from: 'color',
-                    modifiers: [
-                      [
-                        'darker',
-                        0.3
-                      ]
-                    ]
-                  }}
-                  motionStagger={2}
-                  legends={[
-                    {
-                      anchor: 'top-left',
-                      direction: 'column',
-                      justify: false,
-                      translateX: -60,
-                      translateY: 0,
-                      itemsSpacing: 4,
-                      itemWidth: 100,
-                      itemHeight: 20,
-                      itemDirection: 'left-to-right',
-                      itemOpacity: 1,
-                      itemTextColor: '#777',
-                      symbolSize: 20,
-                      effects: [
-                        {
-                          on: 'hover',
-                          style: {
-                            itemTextColor: '#000',
-                            itemBackground: '#f7fafb'
-                          }
-                        }
-                      ]
-                    }
-                  ]}
-                />
+              <div className='others-option-box-component'>
+                <FormControl fullWidth>
+                  <Select
+                    id='demo-simple-select'
+                    value={this.state.filter_type}
+                    onChange={e => this.setState({ filter_type: e.target.value })}
+                  >
+                    <MenuItem value={'title'}>Titles</MenuItem>
+                    <MenuItem value={'wins'}>Wins</MenuItem>
+                    <MenuItem value={'poles'}>Poles</MenuItem>
+                    <MenuItem value={'podiums'}>Podiums</MenuItem>
+                  </Select>
+                </FormControl>
               </div>
             </div>
           </div>
+          {
+            (this.state.drivers.length === 0 || Object.keys(this.state.nationalities).length === 0) ? (
+              <CircularProgress color='inherit' />
+            ) : (
+              <React.Fragment>
+                <div className='others-main-button' onClick={this.search_drivers}>
+                  SEARCH
+                </div>
+                <div className='others-charts-container'>
+                  <div className='others-chart'>
+                    <div className='others-chart-text'>Total drivers between period {this.state.first_date._d.getFullYear()} - {this.state.second_date._d.getFullYear()}</div>
+                    <ResponsiveWaffle
+                      data={this.state.drivers_filtered}
+                      total={this.state.drivers_filtered.reduce((acc, item) => acc + item.value, 0)}
+                      colors={{ scheme: 'paired' }}
+                      // colors={colors_list}
+                      rows={35}
+                      columns={20}
+                      padding={1}
+                      fillDirection="bottom"
+                      valueFormat=".2f"
+                      margin={{ top: 10, right: 10, bottom: 10, left: 120 }}
+                      borderRadius={3}
+                      borderColor={{
+                        from: 'color',
+                        modifiers: [
+                          [
+                            'darker',
+                            0.3
+                          ]
+                        ]
+                      }}
+                      motionStagger={2}
+                      legends={[
+                        {
+                          anchor: 'top-left',
+                          direction: 'column',
+                          justify: false,
+                          translateX: -60,
+                          translateY: 0,
+                          itemsSpacing: 4,
+                          itemWidth: 100,
+                          itemHeight: 20,
+                          itemDirection: 'left-to-right',
+                          itemOpacity: 1,
+                          itemTextColor: '#777',
+                          symbolSize: 20,
+                          effects: [
+                            {
+                              on: 'hover',
+                              style: {
+                                itemTextColor: '#000',
+                                itemBackground: '#f7fafb'
+                              }
+                            }
+                          ]
+                        }
+                      ]}
+                    />
+                  </div>
+                  <div className='others-chart'>
+                    <div className='others-chart-text'>Total drivers with {this.state.filter_type} for each country</div>
+                    <ResponsiveWaffle
+                      data={this.state.drivers_filtered_by_type}
+                      total={this.state.drivers_filtered_by_type.reduce((acc, item) => acc + item.value, 0)}
+                      colors={{ scheme: 'paired' }}
+                      rows={35}
+                      columns={20}
+                      padding={1}
+                      fillDirection="bottom"
+                      valueFormat=".2f"
+                      margin={{ top: 10, right: 10, bottom: 10, left: 120 }}
+                      borderRadius={3}
+                      borderColor={{
+                        from: 'color',
+                        modifiers: [
+                          [
+                            'darker',
+                            0.3
+                          ]
+                        ]
+                      }}
+                      motionStagger={2}
+                      legends={[
+                        {
+                          anchor: 'top-left',
+                          direction: 'column',
+                          justify: false,
+                          translateX: -60,
+                          translateY: 0,
+                          itemsSpacing: 4,
+                          itemWidth: 100,
+                          itemHeight: 20,
+                          itemDirection: 'left-to-right',
+                          itemOpacity: 1,
+                          itemTextColor: '#777',
+                          symbolSize: 20,
+                          effects: [
+                            {
+                              on: 'hover',
+                              style: {
+                                itemTextColor: '#000',
+                                itemBackground: '#f7fafb'
+                              }
+                            }
+                          ]
+                        }
+                      ]}
+                    />
+                  </div>
+                </div>
+              </React.Fragment>
+            )
+          }
         </div>
-      );
-    }
+      </div>
+    );
   }
 }
 

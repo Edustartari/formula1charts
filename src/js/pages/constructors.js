@@ -10,20 +10,7 @@ import { Loading } from '../components/loading';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
 import moment from 'moment';
-
-const colors_dict = {
-  ferrari: '#db4848',
-  williams: '#0082FA',
-  mclaren: '#FF8700',
-  mercedes: '#00D2BE',
-  red_bull: '#4662ff',
-  team_lotus: '#FFD700',
-  'brabham-repco': '#00A550',
-  renault: '#FFF500',
-  benetton: '#0060B1',
-  tyrrell: '#800080',
-  alfa: '#900000'
-};
+import { constructors_colors } from '../constants/constructors_colors';
 
 function create_random_color() {
   let letters = '0123456789ABCDEF';
@@ -137,7 +124,7 @@ class Constructors extends React.Component {
       constructor['id'] = constructor['constructorId'];
       constructor['label'] = constructor['name'];
       constructor['value'] = sum;
-      constructor['color'] = constructor['id'] in colors_dict ? colors_dict[constructor['id']] : create_random_color();
+      constructor['color'] = constructor['id'] in constructors_colors ? constructors_colors[constructor['id']] : create_random_color();
       constructor['children'] = [];
       let children_temporary = [];
 

@@ -22,10 +22,14 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "cypress": "^15.1.0",
+    "eslint": "^10.4.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-unused-imports": "^4.4.1",
     "node-sass": "^7.0.3",
     "webpack-bundle-tracker": "^1.6.0"
   },
   "dependencies": {
+    "@babel/core": "^7.29.0",
     "@babel/preset-env": "^7.26.9",
     "@babel/preset-react": "^7.26.3",
     "@emotion/react": "^11.14.0",

@@ -240,7 +240,6 @@ class Pilots extends React.Component {
     }
 
     const theme = {
-      // fontSize: '16px',
       "background": "#ff0000",
       "legends": {
         "text": {
@@ -260,14 +259,6 @@ class Pilots extends React.Component {
         }
       }
     };
-
-    // const theme = {
-    // 	tooltip: {
-    // 	  tableCell: {
-    // 		background: 'red',
-    // 	  }
-    // 	}
-    //   }
 
     if (this.state.loading) {
       return (
