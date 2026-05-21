@@ -23,8 +23,6 @@
     "babel-core": "^6.26.3",
     "cypress": "^15.1.0",
     "eslint": "^10.4.0",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-unused-imports": "^4.4.1",
     "node-sass": "^7.0.3",
     "webpack-bundle-tracker": "^1.6.0"
   },

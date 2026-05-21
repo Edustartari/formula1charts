@@ -10,7 +10,7 @@ COPY webpack.config.js ./
 COPY src ./src
 
 # Install dependencies and build frontend
-RUN npm install --legacy-peer-deps && npm run build
+RUN npm install && npm run build
 
 ### BACKEND BUILD STAGE
 FROM python:3.9-slim AS backend
