@@ -17,7 +17,7 @@ for (var i = folder_pool.length - 1; i >= 0; i--) {
 	
 	// List all the files in the current folder
 	var files = fs.readdirSync(path.join(current_folder));
-	// files = [ 'components', 'containers', 'index.js' ]
+	// files = [ 'components', 'pages', 'index.js' ]
 
 	// Append all the keys to the dict
 	for (var j= files.length - 1; j >= 0; j--) {
@@ -37,12 +37,12 @@ for (var i = folder_pool.length - 1; i >= 0; i--) {
 
 // entries = {
 // 	'index.js': '/Users/magroove/coding/edu_projects/formula1charts/src/js/index.js',
-// 	'season.js': '/Users/magroove/coding/edu_projects/formula1charts/src/js/containers/season.js',
-// 	'pilots.js': '/Users/magroove/coding/edu_projects/formula1charts/src/js/containers/pilots.js',
-// 	'home.js': '/Users/magroove/coding/edu_projects/formula1charts/src/js/containers/home.js',
-// 	'final_result_test.js': '/Users/magroove/coding/edu_projects/formula1charts/src/js/containers/final_result_test.js',
-// 	'app.js': '/Users/magroove/coding/edu_projects/formula1charts/src/js/containers/app.js',
-// 	'all_seasons.js': '/Users/magroove/coding/edu_projects/formula1charts/src/js/containers/all_seasons.js',
+// 	'season.js': '/Users/magroove/coding/edu_projects/formula1charts/src/js/pages/season.js',
+// 	'pilots.js': '/Users/magroove/coding/edu_projects/formula1charts/src/js/pages/pilots.js',
+// 	'home.js': '/Users/magroove/coding/edu_projects/formula1charts/src/js/pages/home.js',
+// 	'final_result_test.js': '/Users/magroove/coding/edu_projects/formula1charts/src/js/pages/final_result_test.js',
+// 	'app.js': '/Users/magroove/coding/edu_projects/formula1charts/src/js/pages/app.js',
+// 	'all_seasons.js': '/Users/magroove/coding/edu_projects/formula1charts/src/js/pages/all_seasons.js',
 // 	'image.js': '/Users/magroove/coding/edu_projects/formula1charts/src/js/components/image.js'
 // }
 
