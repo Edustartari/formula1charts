@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 
 import { isMobile } from 'react-device-detect';
@@ -21,8 +21,8 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 
-function Menu() {
-  const [state, setState] = React.useState({
+const Menu = () => {
+  const [state, setState] = useState({
     top: false,
     left: false,
     bottom: false,
@@ -106,18 +106,10 @@ function Menu() {
   );
 }
 
-class AppDesktop extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      open_menu: false
-    };
+const AppDesktop = () => {
+  const [open_menu, setOpenMenu] = useState(false);
 
-    this.change_menu = this.change_menu.bind(this);
-    this.handle_change = this.handle_change.bind(this);
-  }
-
-  change_menu() {
+  const change_menu = () => {
     // get app-desktop-container element and find the top position
     const home_desktop_container = document.getElementById('app-desktop-container');
     const home_desktop_container_top = home_desktop_container.getBoundingClientRect().top;
@@ -148,72 +140,60 @@ class AppDesktop extends React.Component {
     home_desktop_menu_item_button.style.transition = 'all 0.3s ease';
   }
 
-  handle_change(key, value) {
-    this.setState({ [key]: value });
-  }
+  useEffect(() => {
+    window.addEventListener('scroll', change_menu);
+    return () => {
+      window.removeEventListener('scroll', change_menu);
+    };
+  }, []);
 
-  componentDidMount() {
-    window.addEventListener('scroll', this.change_menu);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.change_menu);
-  }
-
-  render() {
-    return (
-      <div className='app-desktop-container' id='app-desktop-container'>
-        <Router>
-          <div className='home-desktop-menu' id='home-desktop-menu'>
-            <div
-              className='home-desktop-menu-item'
-              id='home-desktop-menu-item'
-              onClick={() => this.handle_change('open_menu', true)}
-            >
-              <div className='home-desktop-menu-item-button' id='home-desktop-menu-item-button'>
-                <Menu />
-              </div>
+  return (
+    <div className='app-desktop-container' id='app-desktop-container'>
+      <Router>
+        <div className='home-desktop-menu' id='home-desktop-menu'>
+          <div
+            className='home-desktop-menu-item'
+            id='home-desktop-menu-item'
+            onClick={() => setOpenMenu(true)}
+          >
+            <div className='home-desktop-menu-item-button' id='home-desktop-menu-item-button'>
+              <Menu />
             </div>
           </div>
-          <Switch>
-            <Route exact path='/'>
-              <Home />
-            </Route>
-            <Route path='/all-seasons'>
-              <AllSeasons />
-            </Route>
-            <Route path='/pilots'>
-              <Pilots />
-            </Route>
-            <Route path='/all-time'>
-              <AllTime />
-            </Route>
-            <Route path='/constructors'>
-              <Constructors />
-            </Route>
-            <Route path='/others'>
-              <Others />
-            </Route>
-            <Route path='/:slug'>
-              <Season />
-            </Route>
-          </Switch>
-        </Router>
-      </div>
-    );
-  }
+        </div>
+        <Switch>
+          <Route exact path='/'>
+            <Home />
+          </Route>
+          <Route path='/all-seasons'>
+            <AllSeasons />
+          </Route>
+          <Route path='/pilots'>
+            <Pilots />
+          </Route>
+          <Route path='/all-time'>
+            <AllTime />
+          </Route>
+          <Route path='/constructors'>
+            <Constructors />
+          </Route>
+          <Route path='/others'>
+            <Others />
+          </Route>
+          <Route path='/:slug'>
+            <Season />
+          </Route>
+        </Switch>
+      </Router>
+    </div>
+  );
 }
-class AppMobile extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-  render() {
-    return <div>Edu testing mobile</div>;
-  }
+
+const AppMobile = () => {
+  return <div>testing mobile</div>;
 }
+
 const App = isMobile ? AppMobile : AppDesktop;
 export default App;
-
 
 ReactDOM.render(<App />, document.getElementById('react-app'));
