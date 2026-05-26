@@ -110,7 +110,6 @@ const Others = () => {
     // Round the chart_max_value to the nearest 10
     max_value = Math.ceil(max_value / 10) * 10;
 
-
     let nationality_temp_all = {};
     for (let i = 0; i < range_date_list_all.length; i++) {
       let nationality = range_date_list_all[i]['nationality']['nationality_acronym'];
