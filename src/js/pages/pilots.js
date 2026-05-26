@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../../css/pilots.css';
 import { ResponsiveRadar } from '@nivo/radar';
 import Switch from '@mui/material/Switch';
@@ -15,15 +15,13 @@ import { Loading } from '../components/loading';
 // For example: select all pilots from specific country
 // *************************************************************
 
-function PilotsOverlay(props) {
-  const [driver_name, set_driver_name] = React.useState('');
-  const [filtered_driver, set_filtered_driver] = React.useState('');
-  const [filtered_list, set_filtered_list] = React.useState(props.drivers);
+const PilotsOverlay = (props) => {
+  const [driver_name, set_driver_name] = useState('');
+  const [filtered_driver, set_filtered_driver] = useState('');
+  const [filtered_list, set_filtered_list] = useState(props.drivers);
 
   function filter_driver(value) {
-
     let drivers_list = props.drivers;
-
     if (value.length > 0) {
       let searcher = new FuzzySearch(props.drivers, ['name'], { caseSensitive: false });
       drivers_list = searcher.search(value);
@@ -34,14 +32,13 @@ function PilotsOverlay(props) {
 
   function close_dialog(confirm) {
     if (confirm) {
-      props.select_driver(props.open_dialog, filtered_driver);
+      props.select_driver(props.open_dialog, filtered_driver, props.drivers);
     }
     props.handle_change('open_dialog', false);
     set_driver_name('');
     set_filtered_driver('');
     set_filtered_list(props.drivers);
   }
-
 
   return (
     <Dialog className='pilots-dialog' onClose={() => close_dialog(false)} open={props.open_dialog.length > 0 ? true : false}>
@@ -90,60 +87,84 @@ function PilotsOverlay(props) {
   );
 }
 
-class Pilots extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      loading: true,
-      drivers: [],
-      driver_1: {},
-      driver_2: {},
-      driver_3: {},
-      driver_4: {},
-      driver_5: {},
-      radar_list_absolute: [],
-      radar_list_percentage: [],
-      toggle_option: 'absolute',
-      open_dialog: false
-    };
-    this.select_driver = this.select_driver.bind(this);
-    this.load_content = this.load_content.bind(this);
-    this.handle_change = this.handle_change.bind(this);
+const Pilots = () => {
+  const [loading, set_loading] = useState(true);
+  const [drivers, set_drivers] = useState([]);
+  const [driver_1, set_driver_1] = useState({});
+  const [driver_2, set_driver_2] = useState({});
+  const [driver_3, set_driver_3] = useState({});
+  const [driver_4, set_driver_4] = useState({});
+  const [driver_5, set_driver_5] = useState({});
+  const [radar_list_absolute, set_radar_list_absolute] = useState([]);
+  const [radar_list_percentage, set_radar_list_percentage] = useState([]);
+  const [toggle_option, set_toggle_option] = useState('absolute');
+  const [open_dialog, set_open_dialog] = useState(false);
 
-    this.load_content();
+  useEffect(() => {
+    load_content();
+  }, []);
+
+  const handle_change = (key, value) => {
+    switch (key) {
+      case 'driver_1':
+        set_driver_1(value);
+        break;
+      case 'driver_2':
+        set_driver_2(value);
+        break;
+      case 'driver_3':
+        set_driver_3(value);
+        break;
+      case 'driver_4':
+        set_driver_4(value);
+        break;
+      case 'driver_5':
+        set_driver_5(value);
+        break;
+      case 'radar_list_absolute':
+        set_radar_list_absolute(value);
+        break;
+      case 'radar_list_percentage':
+        set_radar_list_percentage(value);
+        break;
+      case 'toggle_option':
+        set_toggle_option(value);
+        break;
+      case 'open_dialog':
+        set_open_dialog(value);
+        break;
+      default:
+        break;
+    }
   }
 
-  handle_change(key, value) {
-    this.setState({ [key]: value });
-  }
-
-  load_content() {
+  const load_content = () => {
     fetch('/pilots-list')
       .then(response => response.json())
       .then(data => {
-        this.setState({ drivers: data.drivers });
+        set_drivers(data.drivers);
 
-        let drivers_list = this.state.drivers.filter(function (o) {
+        let drivers_list = data.drivers.filter(function (o) {
           return o.wins > 0;
         });
         let random_drivers = drivers_list.sort(() => Math.random() - Math.random()).slice(0, 5);
         for (let i = 0; i < random_drivers.length; i++) {
-          this.select_driver('driver_' + (i + 1), random_drivers[i]);
+          select_driver('driver_' + (i + 1), random_drivers[i], data.drivers);
         }
         setTimeout(() => {
-          this.setState({ loading: false });
+          set_loading(false);
         }, 1000);
       });
   }
 
-  select_driver(key, value) {
+  const select_driver = (key, value, drivers_list) => {
     let driver_id = value.id;
-    let current_driver = this.state[key];
-    let selected_driver = this.state.drivers.find(driver => driver.id === driver_id);
-    this.setState({ [key]: selected_driver });
+    let current_driver = eval(key);
+    let selected_driver = drivers_list.find(driver => driver.id === driver_id);
+    handle_change(key, selected_driver);
 
-    let temporary_radar_list_absolute = this.state.radar_list_absolute;
-    let temporary_radar_list_percentage = this.state.radar_list_percentage;
+    let temporary_radar_list_absolute = radar_list_absolute;
+    let temporary_radar_list_percentage = radar_list_percentage;
 
     // Remove the keys in which the driver with the current key appears from the radar_list_absolute
     for (let item of temporary_radar_list_absolute) {
@@ -200,165 +221,166 @@ class Pilots extends React.Component {
       }
     }
 
-    this.setState({
-      radar_list_absolute: temporary_radar_list_absolute,
-      radar_list_percentage: temporary_radar_list_percentage
-    });
+    set_radar_list_absolute(temporary_radar_list_absolute);
+    set_radar_list_percentage(temporary_radar_list_percentage);
   }
 
-  render() {
-    let image_test = require(`../../img/f1_background_ferrari_2.webp`);
-    let driver_1_image = '';
-    let driver_2_image = '';
-    let driver_3_image = '';
-    let driver_4_image = '';
-    let driver_5_image = '';
-    try {
-      driver_1_image = require(`../../img/${this.state.driver_1.image}`);
-    } catch (error) {
-      driver_1_image = require(`../../img/default_image.webp`);
-    }
-    try {
-      driver_2_image = require(`../../img/${this.state.driver_2.image}`);
-    } catch (error) {
-      driver_2_image = require(`../../img/default_image.webp`);
-    }
-    try {
-      driver_3_image = require(`../../img/${this.state.driver_3.image}`);
-    } catch (error) {
-      driver_3_image = require(`../../img/default_image.webp`);
-    }
-    try {
-      driver_4_image = require(`../../img/${this.state.driver_4.image}`);
-    } catch (error) {
-      driver_4_image = require(`../../img/default_image.webp`);
-    }
-    try {
-      driver_5_image = require(`../../img/${this.state.driver_5.image}`);
-    } catch (error) {
-      driver_5_image = require(`../../img/default_image.webp`);
-    }
+  let image_test = require(`../../img/f1_background_ferrari_2.webp`);
+  let driver_1_image = '';
+  let driver_2_image = '';
+  let driver_3_image = '';
+  let driver_4_image = '';
+  let driver_5_image = '';
+  try {
+    driver_1_image = require(`../../img/${driver_1.image}`);
+  } catch (error) {
+    driver_1_image = require(`../../img/default_image.webp`);
+  }
+  try {
+    driver_2_image = require(`../../img/${driver_2.image}`);
+  } catch (error) {
+    driver_2_image = require(`../../img/default_image.webp`);
+  }
+  try {
+    driver_3_image = require(`../../img/${driver_3.image}`);
+  } catch (error) {
+    driver_3_image = require(`../../img/default_image.webp`);
+  }
+  try {
+    driver_4_image = require(`../../img/${driver_4.image}`);
+  } catch (error) {
+    driver_4_image = require(`../../img/default_image.webp`);
+  }
+  try {
+    driver_5_image = require(`../../img/${driver_5.image}`);
+  } catch (error) {
+    driver_5_image = require(`../../img/default_image.webp`);
+  }
 
-    const theme = {
-      "background": "#ff0000",
-      "legends": {
+  const theme = {
+    "background": "#ff0000",
+    "legends": {
+      "text": {
+        "fontSize": 40,
+        "fill": "#333333",
+        "outlineWidth": 0,
+        "outlineColor": "transparent"
+      },
+      "ticks": {
+        "line": {},
         "text": {
           "fontSize": 40,
           "fill": "#333333",
           "outlineWidth": 0,
           "outlineColor": "transparent"
-        },
-        "ticks": {
-          "line": {},
-          "text": {
-            "fontSize": 40,
-            "fill": "#333333",
-            "outlineWidth": 0,
-            "outlineColor": "transparent"
-          }
         }
       }
-    };
-
-    if (this.state.loading) {
-      return (
-        <Loading open={true} />
-      );
-    } else {
-      return (
-        <div className='pilots-desktop-container'>
-          <div className='pilots-desktop-menu'>
-            <div
-              className='pilots-desktop-menu-button'
-              onClick={() =>
-                this.setState({ toggle_option: this.state.toggle_option === 'absolute' ? 'percentage' : 'absolute' })
-              }
-              style={{
-                background: this.state.toggle_option === 'absolute'
-                  ? 'linear-gradient(90deg, #667eea 0%, #764ba2 100%)'
-                  : 'linear-gradient(90deg, #ff9292 0%, #ffcccc 100%)',
-                color: this.state.toggle_option === 'absolute' ? 'white' : '#333',
-              }}
-            >
-              {this.state.toggle_option === 'percentage' && 'Percentage'}
-              <Switch checked={this.state.toggle_option === 'absolute' ? true : false} />
-              {this.state.toggle_option === 'absolute' && 'Absolute'}
-            </div>
-          </div>
-          <div className='pilots-desktop-photos-list'>
-            {[1, 2, 3, 4, 5].map(i => {
-              const driver = this.state[`driver_${i}`];
-              const driver_image = eval(`driver_${i}_image`);
-              return (
-                <div
-                  key={i}
-                  className='pilots-desktop-photo-card'
-                  onClick={() => this.setState({ open_dialog: `driver_${i}` })}
-                  onMouseOver={e => e.currentTarget.style.transform = 'scale(1.04)'}
-                  onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'}
-                >
-                  <img src={driver_image.default} />
-                  <div className='pilots-desktop-photo-card-title'>
-                    <div className='pilots-desktop-photo-card-title-text'>{driver['name']}</div>
-                    <span className='material-icons' style={{ color: '#667eea' }}>expand_more</span>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-          <div className='pilots-desktop-chart'>
-            <div className='pilots-desktop-chart-details'>
-              <ThemeProvider theme={theme}>
-                <ResponsiveRadar
-                  data={
-                    this.state.toggle_option === 'absolute'
-                      ? this.state.radar_list_absolute
-                      : this.state.radar_list_percentage
-                  }
-                  keys={[
-                    this.state.driver_1['name'],
-                    this.state.driver_2['name'],
-                    this.state.driver_3['name'],
-                    this.state.driver_4['name'],
-                    this.state.driver_5['name']
-                  ]}
-                  indexBy={this.state.toggle_option === 'absolute' ? 'absolute' : 'percentage'}
-                  valueFormat='>-.0f'
-                  margin={{ top: 70, right: 80, bottom: 40, left: 80 }}
-                  borderColor={{ from: 'color', modifiers: [] }}
-                  gridLevels={6}
-                  gridLabelOffset={36}
-                  dotColor={{ from: 'color', modifiers: [] }}
-                  dotBorderWidth={2}
-                  dotBorderColor={{ from: 'color', modifiers: [] }}
-                  colors={{ scheme: 'category10' }}
-                  blendMode='multiply'
-                  motionConfig={{
-                    mass: 1,
-                    tension: 171,
-                    friction: 26,
-                    clamp: false,
-                    precision: 0.01,
-                    velocity: 0
-                  }}
-                />
-              </ThemeProvider>
-              {this.state.toggle_option === 'percentage' && (
-                <div className='pilots-desktop-chart-details-note'>
-                  Titles: according to total seasons disputed
-                  <br />
-                  Wins, podiums and poles: according to total races
-                </div>
-              )}
-            </div>
-          </div>
-          <div className='pilots-desktop-chart'>
-            CHART TWO (coming soon)
-          </div>
-          <PilotsOverlay handle_change={this.handle_change} select_driver={this.select_driver} {...this.state} />
-        </div>
-      );
     }
+  };
+
+  if (loading) {
+    return (
+      <Loading open={true} />
+    );
+  } else {
+    return (
+      <div className='pilots-desktop-container'>
+        <div className='pilots-desktop-menu'>
+          <div
+            className='pilots-desktop-menu-button'
+            onClick={() =>
+              set_toggle_option(toggle_option === 'absolute' ? 'percentage' : 'absolute')
+            }
+            style={{
+              background: toggle_option === 'absolute'
+                ? 'linear-gradient(90deg, #667eea 0%, #764ba2 100%)'
+                : 'linear-gradient(90deg, #ff9292 0%, #ffcccc 100%)',
+              color: toggle_option === 'absolute' ? 'white' : '#333',
+            }}
+          >
+            {toggle_option === 'percentage' && 'Percentage'}
+            <Switch checked={toggle_option === 'absolute' ? true : false} />
+            {toggle_option === 'absolute' && 'Absolute'}
+          </div>
+        </div>
+        <div className='pilots-desktop-photos-list'>
+          {[1, 2, 3, 4, 5].map(i => {
+            const driver = eval(`driver_${i}`);
+            const driver_image = eval(`driver_${i}_image`);
+            return (
+              <div
+                key={i}
+                className='pilots-desktop-photo-card'
+                onClick={() => set_open_dialog(`driver_${i}`)}
+                onMouseOver={e => e.currentTarget.style.transform = 'scale(1.04)'}
+                onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'}
+              >
+                <img src={driver_image.default} />
+                <div className='pilots-desktop-photo-card-title'>
+                  <div className='pilots-desktop-photo-card-title-text'>{driver['name']}</div>
+                  <span className='material-icons' style={{ color: '#667eea' }}>expand_more</span>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <div className='pilots-desktop-chart'>
+          <div className='pilots-desktop-chart-details'>
+            <ThemeProvider theme={theme}>
+              <ResponsiveRadar
+                data={
+                  toggle_option === 'absolute'
+                    ? radar_list_absolute
+                    : radar_list_percentage
+                }
+                keys={[
+                  driver_1['name'],
+                  driver_2['name'],
+                  driver_3['name'],
+                  driver_4['name'],
+                  driver_5['name']
+                ]}
+                indexBy={toggle_option === 'absolute' ? 'absolute' : 'percentage'}
+                valueFormat='>-.0f'
+                margin={{ top: 70, right: 80, bottom: 40, left: 80 }}
+                borderColor={{ from: 'color', modifiers: [] }}
+                gridLevels={6}
+                gridLabelOffset={36}
+                dotColor={{ from: 'color', modifiers: [] }}
+                dotBorderWidth={2}
+                dotBorderColor={{ from: 'color', modifiers: [] }}
+                colors={{ scheme: 'category10' }}
+                blendMode='multiply'
+                motionConfig={{
+                  mass: 1,
+                  tension: 171,
+                  friction: 26,
+                  clamp: false,
+                  precision: 0.01,
+                  velocity: 0
+                }}
+              />
+            </ThemeProvider>
+            {toggle_option === 'percentage' && (
+              <div className='pilots-desktop-chart-details-note'>
+                Titles: according to total seasons disputed
+                <br />
+                Wins, podiums and poles: according to total races
+              </div>
+            )}
+          </div>
+        </div>
+        <div className='pilots-desktop-chart'>
+          CHART TWO (coming soon)
+        </div>
+        <PilotsOverlay
+          handle_change={handle_change}
+          select_driver={select_driver}
+          drivers={drivers}
+          open_dialog={open_dialog}
+        />
+      </div>
+    );
   }
 }
 
