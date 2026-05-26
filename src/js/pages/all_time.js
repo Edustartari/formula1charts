@@ -117,6 +117,7 @@ class AllTime extends React.Component {
     fetch('/pilots-complete-info')
       .then(response => response.json())
       .then(data => {
+        console.log('drivers: ', data.drivers);
         this.setState({ drivers_filtered: data.drivers });
         this.setState({ drivers: data.drivers });
         this.search_drivers();
