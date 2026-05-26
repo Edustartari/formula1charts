@@ -1,25 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, lazy, Suspense, useEffect } from 'react';
 import ReactDOM from 'react-dom';
-
 import { isMobile } from 'react-device-detect';
 import '../css/app.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Home from './pages/home.js';
-import AllSeasons from './pages/all_seasons.js';
-import Season from './pages/season.js';
-import Pilots from './pages/pilots.js';
-import AllTime from './pages/all_time.js';
-import Constructors from './pages/constructors.js';
-import Others from './pages/others.js';
+const AllSeasons = lazy(() => import('./pages/all_seasons.js'));
+const Season = lazy(() => import('./pages/season.js'));
+const Pilots = lazy(() => import('./pages/pilots.js'));
+const AllTime = lazy(() => import('./pages/all_time.js'));
+const Constructors = lazy(() => import('./pages/constructors.js'));
+const Others = lazy(() => import('./pages/others.js'));
 
-import Box from '@mui/material/Box';
-import Drawer from '@mui/material/Drawer';
-import Button from '@mui/material/Button';
-import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
+import { LinearProgress, Box, Drawer, Button, List, Divider, ListItem, ListItemButton, ListItemText } from '@mui/material';
 
 const Menu = () => {
   const [state, setState] = useState({
@@ -161,29 +153,35 @@ const AppDesktop = () => {
             </div>
           </div>
         </div>
-        <Switch>
-          <Route exact path='/'>
-            <Home />
-          </Route>
-          <Route path='/all-seasons'>
-            <AllSeasons />
-          </Route>
-          <Route path='/pilots'>
-            <Pilots />
-          </Route>
-          <Route path='/all-time'>
-            <AllTime />
-          </Route>
-          <Route path='/constructors'>
-            <Constructors />
-          </Route>
-          <Route path='/others'>
-            <Others />
-          </Route>
-          <Route path='/:slug'>
-            <Season />
-          </Route>
-        </Switch>
+        <Suspense fallback={
+          <div className='linear-progress-bg'>
+            <LinearProgress style={{ width: '50%' }} />
+          </div>
+        }>
+          <Switch>
+            <Route exact path='/'>
+              <Home />
+            </Route>
+            <Route path='/all-seasons'>
+              <AllSeasons />
+            </Route>
+            <Route path='/pilots'>
+              <Pilots />
+            </Route>
+            <Route path='/all-time'>
+              <AllTime />
+            </Route>
+            <Route path='/constructors'>
+              <Constructors />
+            </Route>
+            <Route path='/others'>
+              <Others />
+            </Route>
+            <Route path='/:slug'>
+              <Season />
+            </Route>
+          </Switch>
+        </Suspense>
       </Router>
     </div>
   );
