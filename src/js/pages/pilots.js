@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../../css/pilots.css';
 import { ResponsiveRadar } from '@nivo/radar';
-import Switch from '@mui/material/Switch';
-import Dialog from '@mui/material/Dialog';
-import TextField from '@mui/material/TextField';
+import { Switch, Dialog, TextField } from '@mui/material';
 import FuzzySearch from 'fuzzy-search';
 import { ThemeProvider } from '@nivo/core';
 import { Loading } from '../components/loading';

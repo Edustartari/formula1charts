@@ -1,14 +1,12 @@
 import React from 'react';
 import '../../css/constructors.css';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
+import { MenuItem, FormControl, Select} from '@mui/material';
 import { ResponsivePie } from '@nivo/pie';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
-import { Loading } from '../components/loading';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
+import { Loading } from '../components/loading';
 import moment from 'moment';
 import { constructors_colors } from '../constants/constructors_colors';
 

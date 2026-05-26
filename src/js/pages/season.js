@@ -1,8 +1,7 @@
 import React from 'react';
 import '../../css/season.css';
 import { ResponsiveBump } from '@nivo/bump';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
+import { Tabs, Tab } from '@mui/material';
 
 class Season extends React.Component {
   constructor(props) {
