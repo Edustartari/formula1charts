@@ -3,6 +3,9 @@ import '../../css/season.css';
 import { ResponsiveBump } from '@nivo/bump';
 import { Tabs, Tab } from '@mui/material';
 
+/* eslint-disable-next-line */
+const data = content
+
 class Season extends React.Component {
   constructor(props) {
     super(props);
@@ -18,7 +21,8 @@ class Season extends React.Component {
   render() {
     let image;
     try {
-      image = require(`../../img/season_` + content.year + `_car.webp`);
+      image = require(`../../img/season_` + data.year + `_car.webp`);
+      /* eslint-disable-next-line */
     } catch (error) {
       image = require(`../../img/f1_background_ferrari_2.webp`);
     }
@@ -29,13 +33,13 @@ class Season extends React.Component {
       <div className='season-desktop-container'>
         <div className='season-desktop-card season-desktop-first-card' style={{ backgroundImage: "url('" + image.default + "')" }}>
           <div className='season-desktop-card-text'>
-            <div className='season-desktop-card-subtitle'>{content.year}</div>
-            <div className='season-desktop-card-title'>{content.champion_name}</div>
+            <div className='season-desktop-card-subtitle'>{data.year}</div>
+            <div className='season-desktop-card-title'>{data.champion_name}</div>
           </div>
           <div className='season-desktop-card-opacity'></div>
         </div>
         <div className='season-desktop-text'>
-          <div className='season-desktop-text-title'>{content.season_title}</div>
+          <div className='season-desktop-text-title'>{data.season_title}</div>
           <div className='season-desktop-text-description'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at finibus mauris. Pellentesque sagittis malesuada
             purus non auctor. Nulla sodales odio a nisi congue ultrices. Mauris tristique vitae dui nec ornare. Nullam vitae
@@ -54,7 +58,7 @@ class Season extends React.Component {
         <div className='season-desktop-chart'>
           {this.state.tab === 0 &&
             <ResponsiveBump
-              data={content.grid_by_position}
+              data={data.grid_by_position}
               colors={{ scheme: 'category10' }}
               lineWidth={3}
               activeLineWidth={6}
@@ -100,7 +104,7 @@ class Season extends React.Component {
           }
           {this.state.tab === 1 &&
             <ResponsiveBump
-              data={content.grid_by_points}
+              data={data.grid_by_points}
               interpolation="linear"
               xPadding={0}
               colors={{ scheme: 'category10' }}
