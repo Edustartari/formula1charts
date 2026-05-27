@@ -66,12 +66,12 @@ const MenuComponent = () => {
       </List>
       <Divider />
       {/* <List>
-                <ListItem key={'About'} disablePadding>
-                    <ListItemButton>
-                        <ListItemText primary={'About'} />
-                    </ListItemButton>
-                </ListItem>
-            </List> */}
+        <ListItem key={'About'} disablePadding>
+          <ListItemButton>
+            <ListItemText primary={'About'} />
+          </ListItemButton>
+        </ListItem>
+      </List> */}
     </Box>
   );
 

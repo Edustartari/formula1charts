@@ -8,6 +8,59 @@ import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
 import moment from 'moment';
 
+const ResponsiveWaffleComponent = (props) => {
+  return (
+    <ResponsiveWaffle
+      data={props.drivers_filtered}
+      total={props.drivers_filtered.reduce((acc, item) => acc + item.value, 0)}
+      colors={{ scheme: 'paired' }}
+      // colors={colors_list}
+      rows={35}
+      columns={20}
+      padding={1}
+      fillDirection="bottom"
+      valueFormat=".2f"
+      margin={{ top: 10, right: 10, bottom: 10, left: 120 }}
+      borderRadius={3}
+      borderColor={{
+        from: 'color',
+        modifiers: [
+          [
+            'darker',
+            0.3
+          ]
+        ]
+      }}
+      motionStagger={2}
+      legends={[
+        {
+          anchor: 'top-left',
+          direction: 'column',
+          justify: false,
+          translateX: -60,
+          translateY: 0,
+          itemsSpacing: 4,
+          itemWidth: 100,
+          itemHeight: 20,
+          itemDirection: 'left-to-right',
+          itemOpacity: 1,
+          itemTextColor: '#777',
+          symbolSize: 20,
+          effects: [
+            {
+              on: 'hover',
+              style: {
+                itemTextColor: '#000',
+                itemBackground: '#f7fafb'
+              }
+            }
+          ]
+        }
+      ]}
+    />
+  )
+};
+
 const Others = () => {
   /* eslint-disable-next-line */
   const [nationality, setNationality] = useState('World');
@@ -247,104 +300,11 @@ const Others = () => {
               <div className='others-charts-container'>
                 <div className='others-chart'>
                   <div className='others-chart-text'>Total drivers between period {first_date._d.getFullYear()} - {second_date._d.getFullYear()}</div>
-                  <ResponsiveWaffle
-                    data={drivers_filtered}
-                    total={drivers_filtered.reduce((acc, item) => acc + item.value, 0)}
-                    colors={{ scheme: 'paired' }}
-                    // colors={colors_list}
-                    rows={35}
-                    columns={20}
-                    padding={1}
-                    fillDirection="bottom"
-                    valueFormat=".2f"
-                    margin={{ top: 10, right: 10, bottom: 10, left: 120 }}
-                    borderRadius={3}
-                    borderColor={{
-                      from: 'color',
-                      modifiers: [
-                        [
-                          'darker',
-                          0.3
-                        ]
-                      ]
-                    }}
-                    motionStagger={2}
-                    legends={[
-                      {
-                        anchor: 'top-left',
-                        direction: 'column',
-                        justify: false,
-                        translateX: -60,
-                        translateY: 0,
-                        itemsSpacing: 4,
-                        itemWidth: 100,
-                        itemHeight: 20,
-                        itemDirection: 'left-to-right',
-                        itemOpacity: 1,
-                        itemTextColor: '#777',
-                        symbolSize: 20,
-                        effects: [
-                          {
-                            on: 'hover',
-                            style: {
-                              itemTextColor: '#000',
-                              itemBackground: '#f7fafb'
-                            }
-                          }
-                        ]
-                      }
-                    ]}
-                  />
+                  <ResponsiveWaffleComponent drivers_filtered={drivers_filtered ? drivers_filtered : []} />
                 </div>
                 <div className='others-chart'>
                   <div className='others-chart-text'>Total drivers with {filter_type} for each country</div>
-                  <ResponsiveWaffle
-                    data={drivers_filtered_by_type}
-                    total={drivers_filtered_by_type.reduce((acc, item) => acc + item.value, 0)}
-                    colors={{ scheme: 'paired' }}
-                    rows={35}
-                    columns={20}
-                    padding={1}
-                    fillDirection="bottom"
-                    valueFormat=".2f"
-                    margin={{ top: 10, right: 10, bottom: 10, left: 120 }}
-                    borderRadius={3}
-                    borderColor={{
-                      from: 'color',
-                      modifiers: [
-                        [
-                          'darker',
-                          0.3
-                        ]
-                      ]
-                    }}
-                    motionStagger={2}
-                    legends={[
-                      {
-                        anchor: 'top-left',
-                        direction: 'column',
-                        justify: false,
-                        translateX: -60,
-                        translateY: 0,
-                        itemsSpacing: 4,
-                        itemWidth: 100,
-                        itemHeight: 20,
-                        itemDirection: 'left-to-right',
-                        itemOpacity: 1,
-                        itemTextColor: '#777',
-                        symbolSize: 20,
-                        effects: [
-                          {
-                            on: 'hover',
-                            style: {
-                              itemTextColor: '#000',
-                              itemBackground: '#f7fafb'
-                            }
-                          }
-                        ]
-                      }
-                    ]}
-                  />
+                  <ResponsiveWaffleComponent drivers_filtered={drivers_filtered_by_type ? drivers_filtered_by_type : []} />
                 </div>
               </div>
             </React.Fragment>
