@@ -1,6 +1,6 @@
 import React, { memo, useState } from "react";
-import { LinearProgress, Box, Drawer, Button, List, Divider, ListItem, ListItemButton, ListItemText } from '@mui/material';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { Box, Drawer, Button, List, Divider, ListItem, ListItemButton, ListItemText } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const MenuComponent = () => {
   const [state, setState] = useState({

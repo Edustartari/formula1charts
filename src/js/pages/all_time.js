@@ -6,7 +6,6 @@ import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
 import moment from 'moment';
-import { Loading } from '../components/loading';
 import { fix_filter_names } from '../utils/index.js';
 
 // ******************************************************
@@ -320,7 +319,7 @@ const AllTime = () => {
                 SEARCH
               </div>
               <div className='all-time-charts'>
-                {drivers_filtered.slice(0, range).map((driver, index) => {
+                {drivers_filtered.slice(0, range).map((driver) => {
                   return (
                     <div
                       key={driver.id}

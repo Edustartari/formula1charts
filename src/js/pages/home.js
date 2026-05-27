@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+
+/* eslint-disable-next-line */
+import React from 'react';
 import '../../css/home.css';
 import Image from '../components/image.js';
 import { Link } from 'react-router-dom';

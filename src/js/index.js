@@ -1,7 +1,9 @@
-import React, { useState, lazy, Suspense, useEffect } from 'react';
+/* eslint-disable-next-line */
+import React, { lazy, Suspense, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { isMobile } from 'react-device-detect';
 import '../css/app.css';
+/* eslint-disable-next-line */
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { Menu } from './components/menu.js';
 import Home from './pages/home.js';
@@ -12,11 +14,9 @@ const AllTime = lazy(() => import('./pages/all_time.js'));
 const Constructors = lazy(() => import('./pages/constructors.js'));
 const Others = lazy(() => import('./pages/others.js'));
 
-import { LinearProgress, Box, Drawer, Button, List, Divider, ListItem, ListItemButton, ListItemText } from '@mui/material';
+import { LinearProgress } from '@mui/material';
 
 const AppDesktop = () => {
-  const [open_menu, setOpenMenu] = useState(false);
-
   const change_menu = () => {
     // get app-desktop-container element and find the top position
     const home_desktop_container = document.getElementById('app-desktop-container');
@@ -62,7 +62,6 @@ const AppDesktop = () => {
           <div
             className='home-desktop-menu-item'
             id='home-desktop-menu-item'
-            onClick={() => setOpenMenu(true)}
           >
             <div className='home-desktop-menu-item-button' id='home-desktop-menu-item-button'>
               <Menu />

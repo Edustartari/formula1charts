@@ -9,7 +9,7 @@ import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
 import moment from 'moment';
 
 const Others = () => {
-  const [range, setRange] = useState(5);
+  /* eslint-disable-next-line */
   const [nationality, setNationality] = useState('World');
   const [filter_type, setFilterType] = useState('title');
   const [first_date, setFirstDate] = useState(moment(new Date(1950, 1, 1)));
@@ -18,6 +18,7 @@ const Others = () => {
   const [drivers_filtered, setDriversFiltered] = useState([]);
   const [drivers_filtered_by_type, setDriversFilteredByType] = useState([]);
   const [nationalities, setNationalities] = useState({});
+  /* eslint-disable-next-line */
   const [chart_max_value, setChartMaxValue] = useState(100);
 
   useEffect(() => {

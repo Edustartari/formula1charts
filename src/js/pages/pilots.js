@@ -1,3 +1,4 @@
+/* eslint-disable-next-line */
 import React, { useState, useEffect } from 'react';
 import '../../css/pilots.css';
 import { ResponsiveRadar } from '@nivo/radar';
@@ -223,12 +224,12 @@ const Pilots = () => {
     set_radar_list_percentage(temporary_radar_list_percentage);
   }
 
-  let image_test = require(`../../img/f1_background_ferrari_2.webp`);
   let driver_1_image = '';
   let driver_2_image = '';
   let driver_3_image = '';
   let driver_4_image = '';
   let driver_5_image = '';
+  /* eslint-disable */
   try {
     driver_1_image = require(`../../img/${driver_1.image}`);
   } catch (error) {
@@ -254,6 +255,7 @@ const Pilots = () => {
   } catch (error) {
     driver_5_image = require(`../../img/default_image.webp`);
   }
+  /* eslint-enable */
 
   const theme = {
     "background": "#ff0000",

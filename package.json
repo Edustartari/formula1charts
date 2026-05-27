@@ -8,7 +8,9 @@
     "start": "webpack --watch --mode development",
     "watch": "npm run start -- --watch",
     "build": "webpack --mode production",
-    "cy:open": "cypress open"
+    "cy:open": "cypress open",
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix"
   },
   "engines": {
     "node": "20.x",

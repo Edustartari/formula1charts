@@ -164,8 +164,6 @@ class Constructors extends React.Component {
         <Loading open={true} />
       );
     } else {
-      let image_test = require(`../../img/f1_background_ferrari_2.webp`);
-
       let colors_list = this.state.constructors_filtered.map(constructor => constructor['color']);
       let pilots_colors_list = [];
       let pilots_list = [];
@@ -192,7 +190,10 @@ class Constructors extends React.Component {
         // Replace the first color with the original color
         pilots_colors_list[0] = pilots_color;
 
-      } catch (error) { }
+      } catch (error) {
+        /* eslint-disable-next-line */
+        console.log(error);
+      }
 
       return (
         <div className='constructors-background'>
