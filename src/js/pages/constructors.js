@@ -1,6 +1,7 @@
-import React from 'react';
+/* eslint-disable-next-line */
+import React, { useState, useEffect } from 'react';
 import '../../css/constructors.css';
-import { MenuItem, FormControl, Select} from '@mui/material';
+import { MenuItem, FormControl, Select } from '@mui/material';
 import { ResponsivePie } from '@nivo/pie';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
@@ -11,41 +12,41 @@ import moment from 'moment';
 import { constructors_colors } from '../constants/constructors_colors';
 import { create_random_color, replace_underscore } from '../utils/index.js';
 
-class Constructors extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      filter_type: 'title',
-      first_date: moment(new Date(1950, 1, 1)),
-      second_date: moment(new Date(2022, 1, 1)),
-      selected_years: [],
-      constructors: [],
-      constructors_filtered: [],
-      chart_max_value: 100,
-      on_hover_value: 'ferrari'
+const Constructors = () => {
+  const [filter_type, setFilterType] = useState('title');
+  const [first_date, setFirstDate] = useState(moment(new Date(1950, 1, 1)));
+  const [second_date, setSecondDate] = useState(moment(new Date(2022, 1, 1)));
+  /* eslint-disable-next-line */
+  const [selected_years, setSelectedYears] = useState([]);
+  const [constructors, setConstructors] = useState([]);
+  const [constructors_filtered, setConstructorsFiltered] = useState([]);
+  /* eslint-disable-next-line */
+  const [chart_max_value, setChartMaxValue] = useState(100);
+  const [on_hover_value, setOnHoverValue] = useState('ferrari');
+
+  useEffect(() => {
+    const fetchData = async () => {
+      await load_constructors();
     };
+    fetchData();
+  }, [])
 
-    this.load_constructors = this.load_constructors.bind(this);
-    this.search_constructors = this.search_constructors.bind(this);
+  useEffect(() => {
+    search_constructors();
+  }, [constructors])
 
-    this.load_constructors();
+  const load_constructors = async () => {
+    const response = await fetch('/get-constructors-stats');
+    const data = await response.json();
+    setConstructorsFiltered(data.constructors);
+    setConstructors(data.constructors);
   }
 
-  load_constructors() {
-    fetch('/get-constructors-stats')
-      .then(response => response.json())
-      .then(data => {
-        this.setState({ constructors_filtered: data.constructors });
-        this.setState({ constructors: data.constructors });
-        this.search_constructors();
-      });
-  }
+  const search_constructors = () => {
+    let constructors_list = JSON.parse(JSON.stringify([...constructors]));
 
-  search_constructors() {
-    let constructors_list = JSON.parse(JSON.stringify([...this.state.constructors]));
-
-    let first_year = this.state.first_date._d.getFullYear();
-    let second_year = this.state.second_date._d.getFullYear();
+    let first_year = first_date._d.getFullYear();
+    let second_year = second_date._d.getFullYear();
     // Create a range of years between first_year and second_year
     let selected_years = [];
     for (let i = first_year; i <= second_year; i++) {
@@ -82,10 +83,10 @@ class Constructors extends React.Component {
       let sum = 0;
       let pilots_stats = {};
       Object.keys(seasons_results).forEach(year => {
-        sum += seasons_results[year][this.state.filter_type];
+        sum += seasons_results[year][filter_type];
 
-        if (!(this.state.filter_type === 'title')) {
-          let pilots_dict = seasons_results[year]['pilots_' + this.state.filter_type]
+        if (!(filter_type === 'title')) {
+          let pilots_dict = seasons_results[year]['pilots_' + filter_type]
           Object.keys(pilots_dict).forEach(pilot => {
             if (pilot in pilots_stats) {
               pilots_stats[pilot] += pilots_dict[pilot];
@@ -143,239 +144,235 @@ class Constructors extends React.Component {
       let a_sum = 0;
       let b_sum = 0;
       Object.keys(a['seasons_results']).forEach(year => {
-        a_sum += a['seasons_results'][year][this.state.filter_type];
+        a_sum += a['seasons_results'][year][filter_type];
       });
       Object.keys(b['seasons_results']).forEach(year => {
-        b_sum += b['seasons_results'][year][this.state.filter_type];
+        b_sum += b['seasons_results'][year][filter_type];
       });
       return b_sum - a_sum;
     });
 
-    this.setState({
-      constructors_filtered: range_date_list,
-      chart_max_value: max_value,
-      selected_years: selected_years
-    });
+    setConstructorsFiltered(range_date_list);
+    setChartMaxValue(max_value);
+    setSelectedYears(selected_years);
   }
 
-  render() {
-    if (this.state.constructors.length === 0) {
-      return (
-        <Loading open={true} />
-      );
-    } else {
-      let colors_list = this.state.constructors_filtered.map(constructor => constructor['color']);
-      let pilots_colors_list = [];
-      let pilots_list = [];
-      try {
-        let filter_by = this.state.constructors_filtered.filter(item => item['constructorId'] === this.state.on_hover_value)
+  if (constructors.length === 0) {
+    return (
+      <Loading open={true} />
+    );
+  } else {
+    let colors_list = constructors_filtered.map(constructor => constructor['color']);
+    let pilots_colors_list = [];
+    let pilots_list = [];
+    try {
+      let filter_by = constructors_filtered.filter(item => item['constructorId'] === on_hover_value)
 
-        pilots_list = filter_by[0]['children'];
+      pilots_list = filter_by[0]['children'];
 
-        let pilots_color = filter_by[0]['color'];
+      let pilots_color = filter_by[0]['color'];
 
-        // Make a list with different tinalities from pilots_colors_list
-        for (let i = 0; i < 5; i++) {
-          let color = pilots_color;
-          color = color.replace('#', '');
-          let r = parseInt(color.substring(0, 2), 16);
-          let g = parseInt(color.substring(2, 4), 16);
-          let b = parseInt(color.substring(4, 6), 16);
-          r = Math.min(255, r + 20 * i);
-          g = Math.min(255, g + 20 * i);
-          b = Math.min(255, b + 20 * i);
-          let new_color = '#' + r.toString(16) + g.toString(16) + b.toString(16);
-          pilots_colors_list.push(new_color);
-        }
-        // Replace the first color with the original color
-        pilots_colors_list[0] = pilots_color;
-
-      } catch (error) {
-        /* eslint-disable-next-line */
-        console.log(error);
+      // Make a list with different tinalities from pilots_colors_list
+      for (let i = 0; i < 5; i++) {
+        let color = pilots_color;
+        color = color.replace('#', '');
+        let r = parseInt(color.substring(0, 2), 16);
+        let g = parseInt(color.substring(2, 4), 16);
+        let b = parseInt(color.substring(4, 6), 16);
+        r = Math.min(255, r + 20 * i);
+        g = Math.min(255, g + 20 * i);
+        b = Math.min(255, b + 20 * i);
+        let new_color = '#' + r.toString(16) + g.toString(16) + b.toString(16);
+        pilots_colors_list.push(new_color);
       }
+      // Replace the first color with the original color
+      pilots_colors_list[0] = pilots_color;
 
-      return (
-        <div className='constructors-background'>
-          <div className='constructors-main-container'>
-            <div className='constructors-main-title'>Constructors</div>
-            <div className='constructors-options'>
-              <div className='constructors-option-box'>
-                <div className='constructors-option-box-text'>Range Date</div>
+    } catch (error) {
+      /* eslint-disable-next-line */
+      console.log(error);
+    }
+
+    return (
+      <div className='constructors-background'>
+        <div className='constructors-main-container'>
+          <div className='constructors-main-title'>Constructors</div>
+          <div className='constructors-options'>
+            <div className='constructors-option-box'>
+              <div className='constructors-option-box-text'>Range Date</div>
+              <div className='constructors-option-box-component'>
+                <LocalizationProvider dateAdapter={AdapterMoment}>
+                  <DemoContainer components={['DatePicker']}>
+                    <div id='constructor-date-picker-from'>
+                      <DatePicker
+                        disableFuture={true}
+                        label='From'
+                        views={['year']}
+                        minDate={moment(new Date(1950, 1, 1))}
+                        maxDate={moment(new Date(2022, 1, 1))}
+                        value={first_date}
+                        onChange={newValue => setFirstDate(newValue)}
+                      />
+                    </div>
+                    <div id='constructor-date-picker-to'>
+                      <DatePicker
+                        disableFuture={true}
+                        label='To'
+                        views={['year']}
+                        minDate={moment(new Date(1950, 1, 1))}
+                        maxDate={moment(new Date(2022, 1, 1))}
+                        value={second_date}
+                        onChange={newValue => setSecondDate(newValue)}
+                      />
+                    </div>
+                  </DemoContainer>
+                </LocalizationProvider>
+              </div>
+            </div>
+            <div className='constructors-options-column-1'>
+              <div className='constructors-option-box' id='constructors-accomplishments-select-container'>
+                <div className='constructors-option-box-text'>
+                  Filter: {filter_type.charAt(0).toUpperCase() + filter_type.slice(1)}
+                </div>
                 <div className='constructors-option-box-component'>
-                  <LocalizationProvider dateAdapter={AdapterMoment}>
-                    <DemoContainer components={['DatePicker']}>
-                      <div id='constructor-date-picker-from'>
-                        <DatePicker
-                          disableFuture={true}
-                          label='From'
-                          views={['year']}
-                          minDate={moment(new Date(1950, 1, 1))}
-                          maxDate={moment(new Date(2022, 1, 1))}
-                          value={this.state.first_date}
-                          onChange={newValue => this.setState({ first_date: newValue })}
-                        />
-                      </div>
-                      <div id='constructor-date-picker-to'>
-                        <DatePicker
-                          disableFuture={true}
-                          label='To'
-                          views={['year']}
-                          minDate={moment(new Date(1950, 1, 1))}
-                          maxDate={moment(new Date(2022, 1, 1))}
-                          value={this.state.second_date}
-                          onChange={newValue => this.setState({ second_date: newValue })}
-                        />
-                      </div>
-                    </DemoContainer>
-                  </LocalizationProvider>
+                  <FormControl fullWidth>
+                    <Select
+                      id='constructors-accomplishments-select'
+                      value={filter_type}
+                      onChange={e => setFilterType(e.target.value)}
+                    >
+                      <MenuItem value={'title'}>Titles</MenuItem>
+                      <MenuItem value={'wins'}>Wins</MenuItem>
+                      <MenuItem value={'podiums'}>Podiums</MenuItem>
+                    </Select>
+                  </FormControl>
                 </div>
-              </div>
-              <div className='constructors-options-column-1'>
-                <div className='constructors-option-box' id='constructors-accomplishments-select-container'>
-                  <div className='constructors-option-box-text'>
-                    Filter: {this.state.filter_type.charAt(0).toUpperCase() + this.state.filter_type.slice(1)}
-                  </div>
-                  <div className='constructors-option-box-component'>
-                    <FormControl fullWidth>
-                      <Select
-                        id='constructors-accomplishments-select'
-                        value={this.state.filter_type}
-                        onChange={e => this.setState({ filter_type: e.target.value })}
-                      >
-                        <MenuItem value={'title'}>Titles</MenuItem>
-                        <MenuItem value={'wins'}>Wins</MenuItem>
-                        <MenuItem value={'podiums'}>Podiums</MenuItem>
-                      </Select>
-                    </FormControl>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className='constructors-search-button' onClick={this.search_constructors}>
-              SEARCH
-            </div>
-            <div className='constructors-charts-container'>
-              <div className='constructors-chart'>
-                <div></div>
-                <ResponsivePie
-                  data={this.state.constructors_filtered}
-                  colors={colors_list}
-                  margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
-                  sortByValue={true}
-                  innerRadius={0.4}
-                  cornerRadius={3}
-                  fit={false}
-                  activeInnerRadiusOffset={20}
-                  activeOuterRadiusOffset={20}
-                  borderWidth={1}
-                  borderColor={{
-                    from: 'color',
-                    modifiers: [['darker', '0.2']]
-                  }}
-                  arcLinkLabel={e => e.label}
-                  arcLinkLabelsSkipAngle={10}
-                  arcLinkLabelsTextColor='#333333'
-                  arcLinkLabelsThickness={4}
-                  arcLinkLabelsColor={{ from: 'color' }}
-                  arcLabelsSkipAngle={10}
-                  arcLabelsTextColor='black'
-                  defs={[
-                    {
-                      id: 'dots',
-                      type: 'patternDots',
-                      background: 'inherit',
-                      color: 'rgba(255, 255, 255, 0.3)',
-                      size: 4,
-                      padding: 1,
-                      stagger: true
-                    },
-                    {
-                      id: 'lines',
-                      type: 'patternLines',
-                      background: 'inherit',
-                      color: 'rgba(255, 255, 255, 0.3)',
-                      rotation: -45,
-                      lineWidth: 6,
-                      spacing: 10
-                    }
-                  ]}
-                  legends={[]}
-                  tooltip={e => {
-                    let { datum: t } = e;
-                    return (
-                      <div className='constructors-chart-tooltip'>
-                        <div className='constructors-chart-tooltip-name'>{t.label}:</div>
-                        <div className='constructors-chart-tooltip-value'>{t.value}</div>
-                      </div>
-                    );
-                  }}
-                  onMouseEnter={(e) => {
-                    this.setState({ on_hover_value: e.id });
-                  }}
-                />
-              </div>
-              <div className='constructors-chart'>
-                <div className='constructors-chart-footer-note'>{this.state.filter_type === 'title' ? "Drivers' that won the Constructors' Championship" : ""}</div>
-                <ResponsivePie
-                  data={pilots_list}
-                  colors={pilots_colors_list}
-                  margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
-                  sortByValue={true}
-                  innerRadius={0.4}
-                  cornerRadius={3}
-                  fit={false}
-                  activeInnerRadiusOffset={20}
-                  activeOuterRadiusOffset={20}
-                  borderWidth={1}
-                  borderColor={{
-                    from: 'color',
-                    modifiers: [['darker', '0.2']]
-                  }}
-                  arcLinkLabel={e => replace_underscore(e.label)}
-                  arcLinkLabelsSkipAngle={10}
-                  arcLinkLabelsTextColor='#333333'
-                  arcLinkLabelsThickness={4}
-                  arcLinkLabelsColor={{ from: 'color' }}
-                  arcLabelsSkipAngle={10}
-                  arcLabelsTextColor='black'
-                  defs={[
-                    {
-                      id: 'dots',
-                      type: 'patternDots',
-                      background: 'inherit',
-                      color: 'rgba(255, 255, 255, 0.3)',
-                      size: 4,
-                      padding: 1,
-                      stagger: true
-                    },
-                    {
-                      id: 'lines',
-                      type: 'patternLines',
-                      background: 'inherit',
-                      color: 'rgba(255, 255, 255, 0.3)',
-                      rotation: -45,
-                      lineWidth: 6,
-                      spacing: 10
-                    }
-                  ]}
-                  legends={[]}
-                  tooltip={e => {
-                    let { datum: t } = e;
-                    return (
-                      <div className='constructors-chart-tooltip'>
-                        <div className='constructors-chart-tooltip-name'>{replace_underscore(t.label)}:</div>
-                        <div className='constructors-chart-tooltip-value'>{t.value}</div>
-                      </div>
-                    );
-                  }}
-                />
               </div>
             </div>
           </div>
+          <div className='constructors-search-button' onClick={search_constructors}>
+            SEARCH
+          </div>
+          <div className='constructors-charts-container'>
+            <div className='constructors-chart'>
+              <div></div>
+              <ResponsivePie
+                data={constructors_filtered}
+                colors={colors_list}
+                margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
+                sortByValue={true}
+                innerRadius={0.4}
+                cornerRadius={3}
+                fit={false}
+                activeInnerRadiusOffset={20}
+                activeOuterRadiusOffset={20}
+                borderWidth={1}
+                borderColor={{
+                  from: 'color',
+                  modifiers: [['darker', '0.2']]
+                }}
+                arcLinkLabel={e => e.label}
+                arcLinkLabelsSkipAngle={10}
+                arcLinkLabelsTextColor='#333333'
+                arcLinkLabelsThickness={4}
+                arcLinkLabelsColor={{ from: 'color' }}
+                arcLabelsSkipAngle={10}
+                arcLabelsTextColor='black'
+                defs={[
+                  {
+                    id: 'dots',
+                    type: 'patternDots',
+                    background: 'inherit',
+                    color: 'rgba(255, 255, 255, 0.3)',
+                    size: 4,
+                    padding: 1,
+                    stagger: true
+                  },
+                  {
+                    id: 'lines',
+                    type: 'patternLines',
+                    background: 'inherit',
+                    color: 'rgba(255, 255, 255, 0.3)',
+                    rotation: -45,
+                    lineWidth: 6,
+                    spacing: 10
+                  }
+                ]}
+                legends={[]}
+                tooltip={e => {
+                  let { datum: t } = e;
+                  return (
+                    <div className='constructors-chart-tooltip'>
+                      <div className='constructors-chart-tooltip-name'>{t.label}:</div>
+                      <div className='constructors-chart-tooltip-value'>{t.value}</div>
+                    </div>
+                  );
+                }}
+                onMouseEnter={(e) => {
+                  setOnHoverValue(e.id);
+                }}
+              />
+            </div>
+            <div className='constructors-chart'>
+              <div className='constructors-chart-footer-note'>{filter_type === 'title' ? "Drivers' that won the Constructors' Championship" : ""}</div>
+              <ResponsivePie
+                data={pilots_list}
+                colors={pilots_colors_list}
+                margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
+                sortByValue={true}
+                innerRadius={0.4}
+                cornerRadius={3}
+                fit={false}
+                activeInnerRadiusOffset={20}
+                activeOuterRadiusOffset={20}
+                borderWidth={1}
+                borderColor={{
+                  from: 'color',
+                  modifiers: [['darker', '0.2']]
+                }}
+                arcLinkLabel={e => replace_underscore(e.label)}
+                arcLinkLabelsSkipAngle={10}
+                arcLinkLabelsTextColor='#333333'
+                arcLinkLabelsThickness={4}
+                arcLinkLabelsColor={{ from: 'color' }}
+                arcLabelsSkipAngle={10}
+                arcLabelsTextColor='black'
+                defs={[
+                  {
+                    id: 'dots',
+                    type: 'patternDots',
+                    background: 'inherit',
+                    color: 'rgba(255, 255, 255, 0.3)',
+                    size: 4,
+                    padding: 1,
+                    stagger: true
+                  },
+                  {
+                    id: 'lines',
+                    type: 'patternLines',
+                    background: 'inherit',
+                    color: 'rgba(255, 255, 255, 0.3)',
+                    rotation: -45,
+                    lineWidth: 6,
+                    spacing: 10
+                  }
+                ]}
+                legends={[]}
+                tooltip={e => {
+                  let { datum: t } = e;
+                  return (
+                    <div className='constructors-chart-tooltip'>
+                      <div className='constructors-chart-tooltip-name'>{replace_underscore(t.label)}:</div>
+                      <div className='constructors-chart-tooltip-value'>{t.value}</div>
+                    </div>
+                  );
+                }}
+              />
+            </div>
+          </div>
         </div>
-      );
-    }
+      </div>
+    );
   }
 }
 
