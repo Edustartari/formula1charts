@@ -315,7 +315,7 @@ const Pilots = () => {
                 onMouseOver={e => e.currentTarget.style.transform = 'scale(1.04)'}
                 onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'}
               >
-                <img src={driver_image.default} />
+                <img src={driver_image.default} loading="lazy"/>
                 <div className='pilots-desktop-photo-card-title'>
                   <div className='pilots-desktop-photo-card-title-text'>{driver['name']}</div>
                   <span className='material-icons' style={{ color: '#667eea' }}>expand_more</span>

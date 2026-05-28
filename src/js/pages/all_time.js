@@ -221,7 +221,7 @@ const AllTime = () => {
                         return (
                           <MenuItem key={key} value={value.nationality_title}>
                             <div className='all-time-option-box-component-nationality-item'>
-                              <img src={value.nationality_flag} />
+                              <img src={value.nationality_flag} loading="lazy"/>
                               <div className='all-time-option-box-component-nationality-item-text'>
                                 {value.nationality_title}
                               </div>

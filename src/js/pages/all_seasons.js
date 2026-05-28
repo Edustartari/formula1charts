@@ -5,6 +5,7 @@ function SeasonCard(props) {
   let image;
   try {
     image = require(`../../img/season_` + props.year + `.webp`);
+    /* eslint-disable-next-line */
   } catch (error) {
     image = require(`../../img/f1_background_ferrari_2.webp`);
   }
