@@ -57,9 +57,9 @@ class AllSeasons extends React.Component {
   }
 
   render() {
-    // Create list of years since the year 1950 until 2024, and reverse it
+    // Create list of years since the year 1950 until 2025, and reverse it
     let years = [];
-    for (let i = 2024; i >= 1950; i--) {
+    for (let i = 2025; i >= 1950; i--) {
       years.push(i);
     }
 

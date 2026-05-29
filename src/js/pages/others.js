@@ -66,7 +66,7 @@ const Others = () => {
   const [nationality, setNationality] = useState('World');
   const [filter_type, setFilterType] = useState('title');
   const [first_date, setFirstDate] = useState(moment(new Date(1950, 1, 1)));
-  const [second_date, setSecondDate] = useState(moment(new Date(2024, 1, 1)));
+  const [second_date, setSecondDate] = useState(moment(new Date(2025, 1, 1)));
   const [drivers, setDrivers] = useState([]);
   const [drivers_filtered, setDriversFiltered] = useState([]);
   const [drivers_filtered_by_type, setDriversFilteredByType] = useState([]);
@@ -252,7 +252,7 @@ const Others = () => {
                     label='From'
                     views={['year']}
                     minDate={moment(new Date(1950, 1, 1))}
-                    maxDate={moment(new Date(2024, 1, 1))}
+                    maxDate={moment(new Date(2025, 1, 1))}
                     value={first_date}
                     onChange={newValue => setFirstDate(newValue)}
                   />
@@ -261,7 +261,7 @@ const Others = () => {
                     label='To'
                     views={['year']}
                     minDate={moment(new Date(1950, 1, 1))}
-                    maxDate={moment(new Date(2024, 1, 1))}
+                    maxDate={moment(new Date(2025, 1, 1))}
                     value={second_date}
                     onChange={newValue => setSecondDate(newValue)}
                   />

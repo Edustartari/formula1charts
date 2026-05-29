@@ -80,7 +80,7 @@ const AllTime = () => {
   const [nationality, setNationality] = useState('World');
   const [filter_type, setFilterType] = useState('title');
   const [first_date, setFirstDate] = useState(moment(new Date(1950, 1, 1)));
-  const [second_date, setSecondDate] = useState(moment(new Date(2024, 1, 1)));
+  const [second_date, setSecondDate] = useState(moment(new Date(2025, 1, 1)));
   const [drivers, setDrivers] = useState([]);
   const [drivers_filtered, setDriversFiltered] = useState([]);
   const [nationalities, setNationalities] = useState({});
@@ -265,7 +265,7 @@ const AllTime = () => {
                       label='From'
                       views={['year']}
                       minDate={moment(new Date(1950, 1, 1))}
-                      maxDate={moment(new Date(2024, 1, 1))}
+                      maxDate={moment(new Date(2025, 1, 1))}
                       value={first_date}
                       onChange={newValue => setFirstDate(newValue)}
                     />
@@ -277,7 +277,7 @@ const AllTime = () => {
                       label='To'
                       views={['year']}
                       minDate={moment(new Date(1950, 1, 1))}
-                      maxDate={moment(new Date(2024, 1, 1))}
+                      maxDate={moment(new Date(2025, 1, 1))}
                       value={second_date}
                       onChange={newValue => setSecondDate(newValue)}
                     />

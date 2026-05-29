@@ -40,7 +40,7 @@ def get_race_results():
 	print('circuit_path: ' + circuit_path)
 
 	current_year = datetime.now().year
-	years = [str(i) for i in range(1950, current_year + 1)]
+	years = [str(i) for i in range(2025, current_year)]
 
 	max_limit = 0
 
@@ -114,7 +114,7 @@ def get_drivers_standings():
 	print('circuit_path: ' + circuit_path)
 
 	current_year = datetime.now().year
-	years = [str(i) for i in range(1950, current_year + 1)]
+	years = [str(i) for i in range(2025, current_year)]
 
 	max_limit = 0
 
@@ -193,7 +193,7 @@ def update_poles_and_podiums():
 	print('race_results_path: ' + race_results_path)
 
 	current_year = datetime.now().year
-	years = [str(i) for i in range(1950, current_year)]
+	years = [str(i) for i in range(2025, current_year)]
 
 	all_drivers = {}
 	for year in years:
